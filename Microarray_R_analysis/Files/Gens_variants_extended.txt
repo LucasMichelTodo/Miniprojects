@@ -1,0 +1,515 @@
+ID	Old_Name	Old_Family	Annotation
+PF3D7_0100200	['MAL1P4.02', 'PFA0010c']	rifA	rifin
+PF3D7_0100300	['MAL1P4.03', 'PFA0015c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0100400	['MAL1P4.04', 'PFA0020w']	rifA	rifin
+PF3D7_0100600	['MAL1P4.06', 'PFA0030c']	rifB	rifin
+PF3D7_0100800	['MAL1P4.07', 'PFA0040w']	rifA	rifin
+PF3D7_0100900	['MAL1P4.08', 'PFA0045c']	rifA	rifin
+PF3D7_0101000	['MAL1P1.9a', 'PFA0050c']	rifA	rifin
+PF3D7_0101200	['MAL1P1.3', 'PFA0060w']	hyp4	exported protein family 3
+PF3D7_0101300	['MAL1P1.4', 'PFA0065w']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0101500	['MAL1P1.6', 'PFA0075w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0101600	['MAL1P1.7', 'PFA0080c']	rifA	rifin
+PF3D7_0101700	['MAL1P1.8', 'PFA0085c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0101800	['MAL1P1.9b', 'PFA0090c']	stevor	stevor
+PF3D7_0101900	['MAL1P1.10', 'PFA0095c']	rifB	rifin
+PF3D7_0102000	['MAL1P1.11', 'PFA0100c']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_0102100	['MAL1P1.11a', 'PFA0105w']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0102200	['MAL1P1.13', 'PFA0110w']	PHISTb_dnaj	ring-infected erythrocyte surface antigen
+PF3D7_0102400	['MAL1P1.15', 'PFA0120c']	Lysophospholipase	lysophospholipase%2C putative%2C pseudogene
+PF3D7_0102600	['MAL1P1.17', 'PFA0130c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0114000	['MAL1P4.13', 'PFA0675w']	dnaj_III	exported protein family 1
+PF3D7_0114100	['MAL1P4.14', 'PFA0680c']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0114200	['MAL1P4.15', 'PFA0685c']	hyp4	exported protein family 3
+PF3D7_0114400	['MAL1P4.16c', 'PFA0695c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0114500	['MAL1P4.16d', 'PFA0700c']	hyp10	Plasmodium exported protein (hyp10)%2C unknown function
+PF3D7_0114600	['MAL1P4.16e', 'PFA0705c']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0114700	['MAL1P4.17', 'PFA0710c']	rifB	rifin
+PF3D7_0114800	['MAL1P4.19', 'PFA0715c']	hyp7	Plasmodium exported protein (hyp7)%2C unknown function
+PF3D7_0115100	['MAL1P4.22', 'PFA0735w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_0115200	['MAL1P4.23', 'PFA0740w']	rifA	rifin
+PF3D7_0115300	['MAL1P4.25', 'PFA0745w']	rifB	rifin
+PF3D7_0115400	['MAL1P4.26', 'PFA0750w']	stevor	stevor
+PF3D7_0115500	['PFA0755w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0115600	['MAL1P4.28', 'PFA0760w']	rifA	rifin
+PF3D7_0115700	['MAL1P4.29', 'PFA0765c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0200100	['812597', 'PF02_0001', 'PFB0010w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0200200	['812598', 'PF02_0002', 'PFB0015c']	rifA	rifin
+PF3D7_0200300	['812599', 'PF02_0003', 'PFB0020c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2
+PF3D7_0200400	['812600', 'PF02_0004', 'PFB0025c']	stevor	stevor
+PF3D7_0200500	['812601', 'PF02_0005', 'PFB0030c']	rifA	rifin
+PF3D7_0200600	['812602', 'PF02_0006', 'PFB0035c']	rifB	rifin
+PF3D7_0200700	['812603', 'PF02_0007', 'PFB0040c']	rifA	rifin
+PF3D7_0200800	['812604', 'PF02_0008', 'PFB0045c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0200900	['812605', 'PF02_0009', 'PFB0050c']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0201000	['812606', 'PF02_0010', 'PFB0055c']	rifB	rifin
+PF3D7_0201200	['812608', 'PF02_0012', 'PFB0060w']	rifA	rifin
+PF3D7_0201300	['812609', 'PF02_0013', 'PFB0065w']	stevor	stevor
+PF3D7_0201400	['812610', 'PF02_0014', 'PFB0070w']	hyp10	Plasmodium exported protein (hyp10)%2C unknown function
+PF3D7_0201600	['812612', 'PF02_0016', 'PFB0080c']	PHISTb	PHISTb domain-containing RESA-like protein 1
+PF3D7_0201700	['812613', 'PF02_0017', 'PFB0085c']	PHISTb_dnaj	DnaJ protein%2C putative
+PF3D7_0202100	['812617', 'PF02_0021', 'PFB0105c']	PHISTc	liver stage associated protein 2
+PF3D7_0208900	['812681', 'PF02_0085', 'PFB0400w']	6-cys	6-cysteine protein
+PF3D7_0209000	['812682', 'PF02_0086', 'PFB0405w']	6-cys	6-cysteine protein
+PF3D7_0209100	['812683', 'PF02_0087', 'PFB0410c']	Lysophospholipase	phospholipase A2%2C putative
+PF3D7_0215000	['812737', 'PF02_0141', 'PFB0685c']	acs	acyl-CoA synthetase
+PF3D7_0215300	['812740', 'PF02_0144', 'PFB0695c']	acs	acyl-CoA synthetase
+PF3D7_0218600	['812772', 'PF02_0176', 'PFB0870w']	Lysophospholipase	conserved Plasmodium protein%2C unknown function
+PF3D7_0219700	['812780', 'PF02_0184', 'PFB0900c']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0219800	['812781', 'PF02_0185', 'PFB0905c']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0220100	['812784', 'PF02_0188', 'PFB0920w']	PHISTb_dnaj	DnaJ protein%2C putative
+PF3D7_0220400	['812787', 'PF02_0191', 'PFB0925w']	dnaj_III	DnaJ protein%2C putative%2C pseudogene
+PF3D7_0220800	['812791', 'PF02_0195', 'PFB0935w']	clag	cytoadherence linked asexual protein 2
+PF3D7_0221200	['812794', 'PF02_0198', 'PFB0953w']	hyp15	Plasmodium exported protein (hyp15)%2C unknown function
+PF3D7_0221400	['812795', 'PF02_0199', 'PFB0955w']	stevor	stevor
+PF3D7_0221500	['812796', 'PF02_0200', 'PFB0960c']	pfmc-2tm pseudogene	Pfmc-2TM Maurer's cleft two transmembrane protein%2C pseudogene
+PF3D7_0221900	['812800', '812801', '812802', 'PF02_0204', 'PF02_0205', 'PF02_0206', 'PFB0973c', 'PFB0974c', 'PFB0975c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0222100	['812805', 'PF02_0209', 'PFB0985c']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0222200	['812806', 'PF02_0210', 'PFB0990c']	hyp4	exported protein family 3
+PF3D7_0222400	['812808', 'PF02_0212', 'PFB1000w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0222500	['812809', 'PF02_0213', 'PFB1005w']	rifB	rifin
+PF3D7_0222600	['812810', 'PF02_0214', 'PFB1010w']	rifA	rifin
+PF3D7_0222700	['812811', 'PF02_0215', 'PFB1015w']	rifB	rifin
+PF3D7_0222800	['812812', 'PF02_0216', 'PFB1020w']	stevor	stevor
+PF3D7_0222900	['812813', '812814', 'PF02_0217', 'PF02_0218', 'PF3D7_0223000', 'PFB1025w', 'PFB1030w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0223100	['812815', 'PF02_0219', 'PFB1035w']	rifA	rifin
+PF3D7_0223200	['812816', 'PF02_0220', 'PFB1040w']	rifB	rifin
+PF3D7_0223300	['812817', 'PF02_0221', 'PFB1045w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2
+PF3D7_0223400	['812818', 'PF02_0222', 'PFB1050w']	rifA	rifin
+PF3D7_0223500	['812819', 'PF02_0223', 'PFB1055c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0300100	['814321', 'MAL3P8.1', 'PFC0005w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0300200	['814322', 'MAL3P8.2', 'PFC0010c']	rifA	rifin
+PF3D7_0300300	['814323', 'PFC0015c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0300400	['814324', 'MAL3P8.4', 'PFC0025c']	stevor	stevor
+PF3D7_0300500	['814325', 'MAL3P8.5', 'PFC0030c']	rifB	rifin
+PF3D7_0300700	['814326', 'MAL3P8.6', 'PFC0035w']	rifA	rifin
+PF3D7_0300800	['4794143', 'MAL3P8.7', 'PFC0040w']	rifA	rifin
+PF3D7_0300900	['814327', 'MAL3P8.8', 'PFC0045w']	rif-like	stevor-like
+PF3D7_0301000	['814328', 'MAL3P8.9', 'PFC0050c']	acs	acyl-CoA synthetase
+PF3D7_0301200	['9221788', 'MAL3P8.10', 'PFC0060c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0302200	['814340', 'MAL3P1.2', 'PFC0110w']	clag	cytoadherence linked asexual protein 3.2
+PF3D7_0302500	['814342', 'MAL3P1.5', 'PFC0120w']	clag	cytoadherence linked asexual protein 3.1
+PF3D7_0314800	['9221779', '9221814', 'MAL3P5.10', 'MAL3P5.9', 'PFC0615w', 'PFC0620w', 'PFD0620c']	rif pseudogen.	conserved Plasmodium protein%2C unknown function
+PF3D7_0323900	['9221785', 'MAL3P7.45', 'PFC1070c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0324100	['814556', 'MAL3P7.47', 'PFC1080c']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0324200	['814557', 'MAL3P7.48', 'PFC1085c']	hyp4	exported protein family 3
+PF3D7_0324400	['814559', 'MAL3P7.50', 'PFC1095w']	rifA	rifin
+PF3D7_0324500	['814560', 'MAL3P7.51', 'PFC1100w']	rifB	rifin
+PF3D7_0324600	['814561', 'MAL3P7.52', 'PFC1105w']	stevor	stevor
+PF3D7_0324700	['814562', 'PFC1110w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0324800	['814563', 'MAL3P7.54', 'PFC1115w']	rifA	rifin
+PF3D7_0324900	['814564', 'MAL3P7.55', 'PFC1120c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0400100	['812552', 'MAL4P1.1', 'PFD0005w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0400300	['812550', 'MAL4P1.3', 'PFD0015c']	rifA	rifin
+PF3D7_0400400	['812551', 'MAL4P1.4', 'PFD0020c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0400500	['812548', 'MAL4P1.5', 'PFD0025w']	rifA	rifin
+PF3D7_0400600	['9221811', 'PFD0028w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 1%2C pseudogene
+PF3D7_0400700	['812549', 'MAL4P1.6', 'PFD0030c']	rifA	rifin
+PF3D7_0400800	['812539', 'MAL4P1.7', 'PFD0035c']	stevor	stevor
+PF3D7_0400900	['812536', 'MAL4P1.8', 'PFD0040c']	rifA	rifin
+PF3D7_0401000	['4794146', 'MAL4P1.9', 'PFD0045c']	rifB	rifin
+PF3D7_0401200	['4794149', 'MAL4P1.10', 'PFD0050w']	rifA	rifin
+PF3D7_0401300	['4794150', 'MAL4P1.11', 'PFD0055w']	rifA	rifin
+PF3D7_0401400	['4794147', 'MAL4P1.12', 'PFD0060w']	rifA	rifin
+PF3D7_0401500	['812535', 'MAL4P1.13', 'PFD0065w']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0401700	['812533', 'MAL4P1.15', 'PFD0075w']	PFD0075-like	Plasmodium exported protein%2C unknown function%2C pseudogene
+PF3D7_0401800	['812531', 'MAL4P1.16', 'PFD0080c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0401900	['812532', 'MAL4P1.17', 'PFD0085c']	acs	acyl-CoA synthetase
+PF3D7_0402000	['812529', 'MAL4P1.18', 'PFD0090c']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_0402100	['812530', 'MAL4P1.19', 'PFD0095c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0402500	['812507', 'MAL4P1.24', 'PFD0120w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0402600	['812506', 'MAL4P1.26', 'PFD0125c', 'PFD0130c']	stevor	stevor
+PF3D7_0402700	['812495', '812499', 'MAL4P1.27', 'MAL4P1.27b', 'PFD0134c', 'PFD0135c']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0402800	['9221812', 'MAL4P1.28', 'PFD0135w', 'PFD0140w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0404400	['812450', 'MAL4P1.42', 'PFD0210c']	6-cys	6-cysteine protein
+PF3D7_0404500	['9221796', 'MAL4P1.43', 'PFD0215c']	6-cys	6-cysteine protein
+PF3D7_0404900	['812447', 'MAL4P1.47', 'PFD0240c']	6-cys	6-cysteine protein
+PF3D7_0412400	['812583', 'MAL4P2.56', 'PFD0615c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0412600	['MAL4P2.57', 'PFD0595c', 'PFD0620c']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0412700	['812580', 'MAL4P2.58', 'PFD0625c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0412900	['812579', 'PFD0630c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0413100	['4794155', 'PFD0635c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0413200	['812578', 'MAL4P1.123', 'PFD0640c']	rifA	rifin
+PF3D7_0413300	['812577', 'MAL4P1.124', 'PFD0645w']	rifA	rifin
+PF3D7_0413400	['812573', 'MAL4P1.126', 'PFD0655w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 1%2C pseudogene
+PF3D7_0420700	['812476', 'MAL4P1.194', 'PFD0995c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0420900	['4794161', 'MAL4P1.195', 'PFD1000c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0421100	['4794162', 'MAL4P1.196', 'PFD1005c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0421200	['812474', 'MAL4P1.197', 'PFD1010w']	rifB	rifin
+PF3D7_0421300	['4794163', 'MAL4P1.198', 'PFD1015c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0421500	['812473', 'MAL4P1.199', 'PFD1020c']	rifA	rifin%2C pseudogene
+PF3D7_0421600	['812472', 'MAL4P1.200', 'PFD1025w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)-like pseudogene
+PF3D7_0424000	['812434', 'MAL4P1.223', 'PFD1140w']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0424500	['812596', 'MAL4P1.228', 'PFD1165w']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0424600	['812429', 'MAL4P1.229', 'PFD1170c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0424700	['812427', 'MAL4P1.230', 'PFD1175w']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0424800	['812424', 'MAL4P1.231', 'PFD1180w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0424900	['812425', 'MAL4P1.232', 'PFD1185w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_0425000	['812421', 'MAL4P1.234', 'PFD1190c', 'PFD1195c']	PFD0075-like	Plasmodium exported protein%2C unknown function%2C pseudogene
+PF3D7_0425100	['812418', 'MAL4P1.235', 'PFD1200c']	hyp6	Plasmodium exported protein (hyp6)%2C unknown function
+PF3D7_0425200	['812411', 'MAL4P1.236', 'PFD1205w']	hyp15	Plasmodium exported protein (hyp15)%2C unknown function
+PF3D7_0425300	['812412', 'MAL4P1.237', 'PFD1210w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_0425400	['812407', 'MAL4P1.238', 'PFD1215w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_0425500	['812405', 'MAL4P1.239', 'PFD1220c']	stevor	stevor
+PF3D7_0425600	['9221813', 'MAL4P1.240', 'PFD1200w', 'PFD1225w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0425700	['812402', 'MAL4P1.241', 'PFD1230c']	rifA	rifin
+PF3D7_0425800	['812400', '9221939', 'MAL4P1.242', 'MAL7P1.1', 'MAL8P1.207', 'PFD1235w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0425900	['812399', 'MAL4P1.243', 'PFD1240w']	rifA	rifin
+PF3D7_0426000	['812398', 'MAL4P1.244', 'PFD1245c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0500100	['812899', 'MAL5P1.2', 'PFE0005w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0500200	['812900', 'MAL5P1.3', 'PFE0010c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0500300	['812898', 'MAL5P1.4', 'PFE0015c']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0500400	['812896', 'MAL5P1.5', 'PFE0020c']	rifA	rifin
+PF3D7_0500500	['4794172', 'MAL5P1.6', 'PFE0025c']	rifB	rifin
+PF3D7_0500600	['812897', 'MAL5P1.7', 'PFE0030c']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0500800	['812891', 'MAL5P1.9', 'PFE0040c']	dnaj_III	mature parasite-infected erythrocyte surface antigen
+PF3D7_0500900	['812888', 'MAL5P1.10', 'PFE0045c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0508000	['812868', 'MAL5P1.81', 'PFE0395c']	6-cys	6-cysteine protein
+PF3D7_0523400	['813049', 'MAL5P1.234', 'PFE1170w']	dnaj_III	DnaJ protein%2C putative
+PF3D7_0525100	['813065', 'MAL5P1.250', 'PFE1250w']	acs	acyl-CoA synthetase
+PF3D7_0532200	['813128', 'MAL5P1.313', 'PFE1595c']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0532300	['813129', 'MAL5P1.314', 'PFE1600w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0532400	['813130', 'MAL5P1.315', 'PFE1605w']	PHISTb	lysine-rich membrane-associated PHISTb protein
+PF3D7_0532700	['813133', '813134', 'MAL5P1.318', 'MAL5P1.319', 'PFE1620c', 'PFE1625c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0532900	['813135', 'MAL5P1.320', 'PFE1630w']	rifB	rifin
+PF3D7_0533000	['813136', 'MAL5P1.321', 'PFE1635w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0533100	['813137', 'MAL5P1.322', 'PFE1640w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0600100	['2270.t00001', '3885989', 'MAL6P1.317', 'PFF0005c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0600200	['2270.t00002', '3885990', 'MAL6P1.316', 'PFF0010w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0600300	['2270.t00003', '3885991', 'MAL6P1.315', 'PFF0015c']	rifA	rifin
+PF3D7_0600400	['2270.t00005', '3885677', 'MAL6P1.314', 'PFF0020c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0600500	['2270.t00006', '3885678', 'MAL6P1.313', 'PFF0025w']	rifA	rifin
+PF3D7_0600600	['2270.t00007', '3885679', 'MAL6P1.312', 'PFF0030c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2
+PF3D7_0600700	['2270.t00008', '3885680', 'MAL6P1.311', 'PFF0035c']	rifA	rifin
+PF3D7_0600800	['3885681', 'PFF0040c']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0600900	['3885682', 'PFF0045c']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0601100	['3885684', 'PFF0055w']	hyp4	exported protein family 3
+PF3D7_0601200	['3885743', 'PFF0060w']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0601400	['3885745', 'PFF0070w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0601500	['2270.t00299', '3885746', 'MAL6P1.19', 'PFF0075c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0601700	['2270.t00297', '3885748', 'MAL6P1.21', 'PFF0085w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_0612700	['2270.t00477', '3885775', 'MAL6P1.299', 'PFF0615c', 'Pf12']	6-cys	6-cysteine protein
+PF3D7_0612800	['2270.t00020', '3885776', 'MAL6P1.298', 'PFF0620c']	6-cys	6-cysteine protein
+PF3D7_0617400	['2270.t00065', '3885794', 'MAL6P1.252', 'PFF0845c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0617500	['9221871', 'PFF0847w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0617600	['2270.t00066', '3885795', 'MAL6P1.251', 'PFF0850c']	stevor	stevor
+PF3D7_0617700	['2270.t00067', '3885796', 'MAL6P1.250', 'PFF0855c']	rifA	rifin
+PF3D7_0619500	['2270.t00084', '3885943', 'MAL6P1.231', 'PFF0945c']	acs	acyl-CoA synthetase
+PF3D7_0631100	['3885815', 'PFF1510w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0631400	['2270.t00309', '3885818', 'MAL6P1.15', 'PFF1525c']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0631500	['2270.t00310', '3885819', 'MAL6P1.14', 'PFF1530c']	hyp4	exported protein family 3
+PF3D7_0631700	['2270.t00312', '3885821', 'MAL6P1.12', 'PFF1540w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0631800	['2270.t00313', '3885822', 'MAL6P1.11', 'PFF1545w']	rifB	rifin
+PF3D7_0631900	['2270.t00314', '3885823', 'MAL6P1.10', 'PFF1550w']	stevor	stevor
+PF3D7_0632000	['2270.t00315', '3885824', 'MAL6P1.9', 'PFF1555w']	rifA	rifin
+PF3D7_0632100	['2270.t00316', '3885825', 'MAL6P1.8', 'PFF1560c']	rifA	rifin
+PF3D7_0632200	['2270.t00317', '3885826', 'MAL6P1.7', 'PFF1565c']	rifA	rifin
+PF3D7_0632300	['2270.t00318', '3885827', 'MAL6P1.6', 'PFF1570w']	rifB	rifin
+PF3D7_0632400	['2270.t00319', '3885828', 'MAL6P1.5', 'PFF1575w']	rifA	rifin
+PF3D7_0632500	['2270.t00320', '3885829', 'MAL6P1.4', 'PFF1580c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0632600	['2270.t00321', '3885830', 'MAL6P1.3', 'PFF1585w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0632700	['2270.t00322', '3885831', 'MAL6P1.2', 'PFF1590w']	rifA	rifin
+PF3D7_0632800	['2270.t00323', '3885832', 'MAL6P1.1', 'PFF1595c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0700100	['9221962', 'MAL8P1.220']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0700200	['9221961', 'MAL8P1.219']	rifA	rifin
+PF3D7_0700300	['9221947', 'MAL8P1.218']	rifA	rifin
+PF3D7_0700400	['9221946', 'MAL8P1.217']	stevor	stevor
+PF3D7_0700500	['9221945', 'MAL8P1.216']	rifA	rifin
+PF3D7_0700700	['9221958', 'MAL8P1.214']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_0700800	['9221949', 'MAL8P1.213']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0701000	['9221941', '9221960', 'MAL8P1.209', 'MAL8P1.211']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0701300	['9221891', 'MAL7P1.200']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0701500	['2655000', 'MAL7P1.4']	hyp4	exported protein family 3
+PF3D7_0701600	['2655003', 'MAL7P1.5']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0701800	['2654944', 'PF07_0003']	rifA	rifin
+PF3D7_0702100	['2655018', 'MAL7P1.7']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function%2C pseudogene
+PF3D7_0702200	['2654972', 'PF07_0005']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_0709700	['2655076', 'PF07_0040']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_0711700	['2654957', 'PF07_0048']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0711900	['2655001', 'MAL7P1.43']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0712000	['2654960', 'PF07_0049']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0712200	['2655002', 'MAL7P1.47']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0712300	['2654929', 'MAL7P1.50']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0712400	['4794183', 'PF07_0050']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0712500	['2655004', 'MAL7P1.52']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0712600	['4794184', 'PF07_0051']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0712800	['2654948', 'MAL7P1.55']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0712900	['4794185', 'MAL7P1.56']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0713000	['2654942', 'MAL7P1.57']	rifA	rifin
+PF3D7_0713100	['2655005', 'MAL7P1.58']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_0713300	['2655009', 'MAL7P1.60', 'MAL7P1.61', 'MAL7P1.62', 'MAL7P1.63']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0726200	['2655087', 'MAL7P1.144']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0731100	['2654994', 'MAL7P1.172']	PHISTc	EMP1-trafficking protein
+PF3D7_0731300	['2654996', 'MAL7P1.174']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0731400	['2654997', 'MAL7P1.175']	FIKK pseudogene.	serine/threonine protein kinase%2C FIKK family%2C pseudogene
+PF3D7_0731600	['2655181', 'PF07_0129']	acs	acyl-CoA synthetase
+PF3D7_0731900	['9221876', 'MAL7P1.179']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0732000	['2655182', 'PF07_0130']	stevor	stevor
+PF3D7_0732100	['2654941', 'MAL7P1.183', 'PF07_0131']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_0732200	['1791.m00049', '4794188', 'PF07_0132']	rifA	rifin
+PF3D7_0732300	['2654945', 'MAL7P1.184', 'PF07_0133']	rifA	rifin
+PF3D7_0732400	['1791.m00047', '4794189', 'PF07_0134']	rifA	rifin
+PF3D7_0732500	['4794190', 'MAL7P1.185', 'PF07_0135']	rifA	rifin
+PF3D7_0732700	['4794191', 'MAL7P1.210', 'PF07_0136']	rifB	rifin
+PF3D7_0732800	['2654943', 'MAL7P1.186', 'MAL7P1.211', 'PF07_0137']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2
+PF3D7_0732900	['1842.m00016', '4794192', 'PF07_0138']	rifA	rifin
+PF3D7_0733000	['2654949', 'MAL7P1.187', 'PF07_0139']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0800100	['4794199', 'MAL8P1.168', 'PF08_0142']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0800200	['2655302', 'MAL8P1.167', 'PF08_0141']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0800300	['2655305', 'MAL8P1.166', 'PF08_0140']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0800500	['2655306', 'PF08_0138']	rifA	rifin
+PF3D7_0800600	['2655361', 'MAL8P1.163']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_0800800	['2655359', 'MAL8P1.161']	hyp7	Plasmodium exported protein (hyp7)%2C unknown function
+PF3D7_0800900	['2655358', 'MAL8P1.160']	hyp7	Plasmodium exported protein (hyp7)%2C unknown function%2C pseudogene
+PF3D7_0801000	['2655336', 'PF08_0137']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0805700	['9221936', 'MAL8P1.203']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0808600	['4794195', 'MAL8P1.119', 'PF08_0107']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0808700	['2655304', 'MAL8P1.118', 'PF08_0106']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0808800	['4794194', 'PF08_0105']	rifA	rifin
+PF3D7_0808900	['2655307', 'MAL8P1.117', 'PF08_0104']	rifA	rifin
+PF3D7_0809100	['2655303', 'PF08_0103']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0810000	['2655298', 'PF08_0099']	acbp	acyl-CoA binding protein%2C putative
+PF3D7_0830600	['2655380', 'MAL8P1.4']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0831000	['2655365', 'MAL8P1.2']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0831800	['9221889', 'MAL7P1.231']	hrp	histidine-rich protein II
+PF3D7_0832000	['9221927', 'MAL7P1.227']	stevor	stevor
+PF3D7_0832100	['9221890', 'MAL7P1.226']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_0832300	['9221887', 'MAL7P1.224']	PHISTa-like	Plasmodium exported protein (PHISTa-like)%2C unknown function
+PF3D7_0832400	['9221926', 'MAL7P1.223']	stevor	stevor
+PF3D7_0832500	['9221893', 'MAL7P1.222']	rifA	rifin
+PF3D7_0832600	['9221886', 'MAL7P1.310']	stevor pseudogene	stevor
+PF3D7_0832700	['9221925', 'MAL7P1.220']	PHISTa-like	Plasmodium exported protein (PHISTa-like)%2C unknown function%2C pseudogene
+PF3D7_0832800	['9221928', 'MAL7P1.219']	rifB	rifin
+PF3D7_0832900	['9221924', 'MAL7P1.218']	stevor	stevor
+PF3D7_0833000	['9221923', 'MAL7P1.217']	rifA	rifin
+PF3D7_0833100	['9221922', 'MAL7P1.216']	rifA	rifin
+PF3D7_0833200	['9221931', 'MAL7P1.215']	rifB	rifin
+PF3D7_0833300	['9221921', 'MAL7P1.214']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0833400	['9221930', 'MAL7P1.213']	rifA	rifin
+PF3D7_0833500	['9221932', 'MAL7P1.212']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0900100	['813289', 'PFI0005w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0900200	['813290', 'PFI0010c']	rifA	rifin
+PF3D7_0900300	['4794200', 'PFI0015c']	rifB	rifin
+PF3D7_0900400	['813291', 'PFI0020w']	rifA	rifin
+PF3D7_0900500	['4794201', 'PFI0025c']	rifB	rifin
+PF3D7_0900600	['4794202', 'PFI0030c']	rifA	rifin
+PF3D7_0900700	['4794203', 'PFI0035c']	rifA	rifin
+PF3D7_0900800	['813292', 'PFI0040c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_0900900	['813293', 'PFI0045c']	stevor	stevor
+PF3D7_0901000	['813294', 'PFI0050c']	rifB	rifin
+PF3D7_0901100	['4794204', 'PFI0055c']	rifA	rifin
+PF3D7_0901300	['4794205', 'PFI0065w']	rifA	rifin
+PF3D7_0901400	['4794206', 'PFI0070w']	rifA	rifin
+PF3D7_0901500	['4794207', 'PFI0075w']	rifA	rifin
+PF3D7_0901600	['813296', 'PFI0080w']	stevor	stevor
+PF3D7_0902000	['813299', 'PFI0095c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902100	['813300', 'PFI0100c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902200	['813301', 'PFI0105c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902300	['813302', 'PFI0110c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902400	['813303', 'PFI0115c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902500	['813304', 'PFI0120c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902600	['813305', 'PFI0125c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_0902700	['813306', 'PFI0130c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function%2C pseudogene
+PF3D7_0924000	['813516', 'PFI1180w']	Lysophospholipase	patatin-like phospholipase%2C putative
+PF3D7_0936600	['813634', 'PFI1770w']	PHISTb	gametocyte exported protein 5
+PF3D7_0936700	['813635', 'PFI1775w']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_0936800	['813636', 'PFI1780w']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_0936900	['813637', 'PFI1785w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function%2C pseudogene
+PF3D7_0937000	['813638', 'PFI1790w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_0937200	['813640', 'PFI1800w']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_0937300	['813641', 'PFI1805w']	rifA	rifin
+PF3D7_0937400	['4794209', 'PFI1810w']	rifB	rifin
+PF3D7_0937500	['813642', 'PFI1815c']	rifA	rifin
+PF3D7_0937600	['813643', 'PFI1820w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_0937700	['813644', 'PFI1825w']	rifA	rifin
+PF3D7_0937800	['813645', 'PFI1830c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1000100	['810160', 'PF10_0001']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1000200	['810161', 'PF10_0002']	rifA	rifin
+PF3D7_1000300	['810162', 'PF10_0003']	rifB	rifin
+PF3D7_1000400	['810163', 'PF10_0004']	rifA	rifin
+PF3D7_1000500	['810164', 'PF10_0005']	rifA	rifin
+PF3D7_1000600	['810165', 'PF10_0006']	rifB	rifin
+PF3D7_1000800	['810168', 'PF10_0009']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_1000900	['810170', 'PF10_0011', 'PF10_0012']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1001100	['810173', 'PF10_0014', 'PF10_0015']	acbp	acyl-CoA binding protein%2C isoform 1%2C ACBP1
+PF3D7_1001200	['810174', 'PF10_0016']	acbp	acyl-CoA binding protein%2C isoform 2%2C ACBP2
+PF3D7_1001300	['810175', 'PF10_0017']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1001700	['810179', 'PF10_0021']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1001800	['810180', 'PF10_0022']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1016300	['810317', 'PF10_0159']	gbp	glycophorin binding protein
+PF3D7_1016400	['810318', 'PF10_0160']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_1016500	['810319', 'PF10_0161']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1016600	['8444980', 'PF10_0161', 'PF10_0161a']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1016700	['810320', 'PF10_0162']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1016800	['810321', 'PF10_0163']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1038800	['810535', 'PF10_0378']	PHISTb_dnaj	RESA-like protein with PHIST and DnaJ domains
+PF3D7_1038900	['810536', 'PF10_0379']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_1039000	['810537', 'PF10_0380']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_1039100	['810538', '810539', 'PF10_0381', 'PF10_0382']	dnaj_III	DnaJ protein%2C putative%2C pseudogene
+PF3D7_1039700	['810547', 'PF10_0390']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_1039800	['810548', 'PF10_0391']	hyp4	exported protein family 3
+PF3D7_1040000	['810550', 'PF10_0393']	rifA	rifin
+PF3D7_1040100	['810551', 'PF10_0394']	rifB	rifin
+PF3D7_1040200	['810552', 'PF10_0395']	stevor	stevor
+PF3D7_1040300	['810553', 'PF10_0396']	rifA	rifin
+PF3D7_1040400	['810554', 'PF10_0397']	rifB	rifin
+PF3D7_1040500	['810555', 'PF10_0398']	rifA	rifin
+PF3D7_1040600	['810556', 'PF10_0399']	rifB	rifin
+PF3D7_1040700	['810557', 'PF10_0400']	rifA	rifin
+PF3D7_1040800	['810558', 'PF10_0401']	rifB	rifin
+PF3D7_1040900	['810559', 'PF10_0402']	rifB	rifin
+PF3D7_1041000	['810560', 'PF10_0403']	rifA	rifin
+PF3D7_1041100	['810561', 'PF10_0404']	rifB	rifin
+PF3D7_1041200	['810562', 'PF10_0405']	rifA	rifin
+PF3D7_1041300	['1398.t00021', '810563', 'PF10_0406']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1100100	['810585', 'PF11_0007']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1100200	['810584', 'PF11_0008']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1100300	['810583', 'PF11_0009']	rifA	rifin
+PF3D7_1100400	['810582', 'PF11_0010']	rifA	rifin
+PF3D7_1100500	['810581', 'PF11_0011']	rifA	rifin
+PF3D7_1100600	['810580', 'PF11_0012']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1100700	['810579', 'PF11_0013']	stevor pseudogene	stevor%2C pseudogene
+PF3D7_1100800	['810578', 'PF11_0014']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_1101000	['810575', 'PF11_0522']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1101100	['810574', 'PF11_0529']	rifA	rifin
+PF3D7_1101200	['810573', 'PF11_0020']	rifB	rifin
+PF3D7_1101300	['810599', 'PF11_0021']	rifA	rifin
+PF3D7_1101400	['810571', 'PF11_0022']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_1101600	['2297.t00488', '810570', 'PF11_0024']	hyp4	exported protein family 3
+PF3D7_1101700	['810569', 'PF11_0025']	pfmc-2tm	Pfmc-2TM Maurer's cleft two transmembrane protein
+PF3D7_1101900	['810567', 'PF11_0523']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1102200	['810586', 'PF11_0034']	dnaj_III	DnaJ protein%2C putative
+PF3D7_1102500	['810590', 'PF11_0037']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1148700	['811035', 'PF11_0503']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1149200	['811041', 'PF11_0509']	PHISTb_dnaj	ring-infected erythrocyte surface antigen
+PF3D7_1149300	['811042', 'PF11_0510']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_1149500	['811044', 'PF11_0512']	PHISTb_dnaj	ring-infected erythrocyte surface antigen 2%2C pseudogene
+PF3D7_1149600	['811045', 'PF11_0513']	dnaj_III	DnaJ protein%2C putative
+PF3D7_1149700	['811046', 'PF11_0514']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1149800	['811047', 'PF11_0515']	rifB	rifin
+PF3D7_1149900	['811048', 'PF11_0516']	stevor	stevor
+PF3D7_1150000	['811049', 'PF11_0517']	rifA	rifin
+PF3D7_1150200	['811051', 'PF11_0519']	rifA	rifin
+PF3D7_1150300	['811052', 'PF11_0520']	rifA	rifin
+PF3D7_1150400	['811053', 'PF11_0521']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1200100	['2277.t00001', '811065', 'MAL12P1.1', 'PFL0005w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1200200	['2277.t00002', '811064', 'MAL12P1.2', 'PFL0010c']	rifA	rifin
+PF3D7_1200300	['2277.t00003', '811063', 'MAL12P1.3', 'PFL0015c']	rifB	rifin
+PF3D7_1200400	['2277.t00004', '811062', 'MAL12P1.4', 'PFL0020w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1200500	['2277.t00005', '811061', 'MAL12P1.5', 'PF13_0363', 'PFL0025c']	rifA	rifin
+PF3D7_1200600	['2277.t00006', '811060', 'MAL12P1.6', 'PFL0030c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1200700	['2277.t00007', '811059', 'MAL12P1.7', 'PFL0035c']	acs	acyl-CoA synthetase
+PF3D7_1200800	['2277.t00008', '811058', 'MAL12P1.8', 'PFL0040c']	FIKK	serine/threonine protein kinase%2C FIKK family
+PF3D7_1200900	['2277.t00009', '811057', 'MAL12P1.9', 'PFL0045c']	PHISTc	Plasmodium exported protein (PHISTc)%2C unknown function
+PF3D7_1201000	['2277.t00010', '811056', 'MAL12P1.10', 'PFL0050c']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1201100	['2277.t00011', '811055', 'MAL12P1.11', 'PFL0055c']	PHISTb_dnaj	RESA-like protein with PHIST and DnaJ domains
+PF3D7_1219200	['8445023', 'PFL0933w']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_1219300	['2277.t00187', '811239', 'MAL12P1.188', 'PFL0935c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1219400	['2277.t00188', '811240', 'PF12_0001', 'PFL0940c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1219500	['2277.t00189', '811241', 'PF12_0002', 'PFL0945w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_1222600	['2277.t00217', '811269', 'MAL12P1.217', 'PFL1085w']	ApiAP2-TF	transcription factor with AP2 domain(s)
+PF3D7_1238800	['2277.t00376', '811428', 'MAL12P1.374', 'PFL1880w']	acs	acyl-CoA synthetase
+PF3D7_1240200	['8444981', 'PFL1947c']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1240300	['2277.t00390', '811442', 'MAL12P1.388', 'PFL1950w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1240400	['2277.t00391', '811443', 'MAL12P1.389', 'PFL1955w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1240600	['2277.t00392', '811444', 'MAL12P1.390', 'PFL1960w']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1240900	['2277.t00394', '811446', 'MAL12P1.392', 'PFL1970w']	var pseudo,truncated or -like.	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1252600	['2277.t00504', '811556', 'MAL12P1.501', 'PFL2530w']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_1252700	['2277.t00505', '811557', 'MAL12P1.502', 'PFL2535w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1252800	['2277.t00506', '811558', 'MAL12P1.503', 'PFL2540w']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1253000	['2277.t00508', '811560', 'PF12_0010', 'PFL2550w']	dnaj_III	gametocyte erythrocyte cytosolic protein
+PF3D7_1253100	['2277.t00509', '811561', 'MAL12P1.506', 'PFL2555w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1253300	['2277.t00511', '811563', 'MAL12P1.508', 'PFL2565w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1253400	['2277.t00512', '811564', 'MAL12P1.509', 'PFL2570w']	acs	acyl-CoA synthetase
+PF3D7_1253500	['2277.t00513', '811565', 'MAL12P1.510', 'PFL2575c']	PFD0075-like	Plasmodium exported protein%2C unknown function
+PF3D7_1253700	['2277.t00515', '811567', 'MAL12P1.512', 'PFL2585c']	rifA	rifin
+PF3D7_1253800	['2277.t00516', '811568', 'MAL12P1.513', 'PFL2590w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1253900	['2277.t00517', '811569', 'MAL12P1.514', 'PFL2595w', 'PFL2600w']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1254000	['2277.t00519', '811571', 'MAL12P1.516', 'PFL2605w']	rifB	rifin
+PF3D7_1254100	['2277.t00520', '811572', 'MAL12P1.517', 'PFL2610w']	stevor	stevor
+PF3D7_1254200	['2277.t00521', '811573', 'MAL12P1.518', 'PFL2615w']	rifA	rifin
+PF3D7_1254300	['2277.t00522', '811574', 'MAL12P1.519', 'PFL2620w']	stevor	stevor
+PF3D7_1254400	['2277.t00523', '811575', 'MAL12P1.520', 'PFL2625w']	rifA	rifin
+PF3D7_1254500	['2277.t00524', '811576', 'MAL12P1.521', 'PFL2630w']	rifB	rifin
+PF3D7_1254600	['2277.t00525', '811577', 'MAL12P1.522', 'PFL2635w']	stevor	stevor
+PF3D7_1254700	['2277.t00526', '811578', 'MAL12P1.523', 'PFL2640c']	rifA	rifin
+PF3D7_1254800	['2277.t00527', '811579', 'MAL12P1.524', 'PFL2645c']	rifA	rifin
+PF3D7_1255000	['2277.t00529', '811581', 'MAL12P1.526', 'PFL2655w']	rifB	rifin
+PF3D7_1255100	['2277.t00530', '811582', 'MAL12P1.527', 'PFL2660w']	rifA	rifin
+PF3D7_1255200	['2277.t00531', '811583', 'MAL12P1.528', 'PFL2665c']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1300100	['813647', 'MAL13P1.1', 'PF13_0001']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1300200	['813755', 'MAL13P1.2', 'PF13_0002']	rifA	rifin
+PF3D7_1300300	['813648', 'PF13_0003']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1300400	['813753', 'PF13_0004']	rifA	rifin
+PF3D7_1300500	['4794210', 'PF13_0005']	rifA	rifin
+PF3D7_1300600	['4794211', 'PF13_0006']	rifB	rifin
+PF3D7_1300700	['813756', 'MAL13P1.4', 'PF13_0007']	rifA	rifin
+PF3D7_1300800	['4794212', 'MAL13P1.6']	var pseudo,truncated or -like.	erythrocyte membrane protein 1-like
+PF3D7_1300900	['813959', 'MAL13P1.7', 'PF13_0009']	stevor	stevor
+PF3D7_1301000	['4794213', 'MAL13P1.8']	rif pseudogen.	rifin%2C pseudogene
+PF3D7_1301100	['813657', 'MAL13P1.11', 'MAL13P1.11a']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1301200	['813989', 'PF13_0010']	gbp	glycophorin binding protein
+PF3D7_1301300	['813947', 'MAL13P1.58']	PHISTa-like	Plasmodium exported protein (PHISTa-like)%2C unknown function%2C pseudogene
+PF3D7_1301500	['813948', 'MAL13P1.59']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1301600	['813949', 'MAL13P1.60']	eba	erythrocyte binding antigen-140
+PF3D7_1312000	['814044', 'PF13_0066']	Lysophospholipase	malonyl CoA-acyl carrier protein transacylase
+PF3D7_1346700	['814212', 'PF13_0247']	6-cys	6-cysteine protein
+PF3D7_1346800	['814213', 'PF13_0248']	6-cys	6-cysteine protein
+PF3D7_1358000	['813847', 'MAL13P1.285']	Lysophospholipase	patatin-like phospholipase%2C putative
+PF3D7_1372000	['9221997', 'MAL13P1.470']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1372100	['9221998', 'MAL13P1.475']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1372200	['9221999', 'MAL13P1.480']	hrp	histidine-rich protein III
+PF3D7_1372400	['9222022', 'MAL13P1.485']	acs	acyl-CoA synthetase
+PF3D7_1372500	['9222000', 'MAL13P1.490']	stevor	stevor%2C pseudogene
+PF3D7_1372600	['9222032', 'MAL13P1.495']	rifB	rifin
+PF3D7_1372700	['9222027', 'MAL13P1.500']	rifA	rifin
+PF3D7_1372800	['9222028', 'MAL13P1.505']	stevor	stevor
+PF3D7_1372900	['9222033', 'MAL13P1.510']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C exon 2%2C pseudogene
+PF3D7_1373000	['9222034', 'MAL13P1.515']	rifA	rifin
+PF3D7_1373100	['9222029', 'MAL13P1.520']	rifA	rifin
+PF3D7_1373300	['9222001', 'MAL13P1.530']	rifB	rifin
+PF3D7_1373400	['9222002', 'MAL13P1.535']	rifA	rifin
+PF3D7_1373500	['813649', 'MAL13P1.356', 'PF13_0364']	var	erythrocyte membrane protein 1%2C PfEMP1
+PF3D7_1400100	['811589', 'PF14_0001']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene
+PF3D7_1400200	['811600', 'PF14_0002']	rifA	rifin
+PF3D7_1400300	['811596', 'PF14_0003']	rifB	rifin
+PF3D7_1400400	['811586', 'PF14_0004']	rifA	rifin
+PF3D7_1400500	['811605', 'PF14_0005']	rifB	rifin
+PF3D7_1400600	['811606', 'PF14_0006']	rifA	rifin
+PF3D7_1400700	['811603', 'PF14_0007']	stevor	stevor
+PF3D7_1400800	['811602', 'PF14_0008']	rifB	rifin
+PF3D7_1400900	['811604', 'PF14_0009']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1401000	['811601', 'PF14_0010']	gbp	glycophorin binding protein
+PF3D7_1401100	['811599', 'PF14_0013']	dnaj_III	DnaJ protein%2C putative
+PF3D7_1401500	['811594', 'PF14_0017']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_1401600	['811593', 'PF14_0018']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1476200	['812312', 'PF14_0730', 'PF14_0731']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1476300	['812314', 'PF14_0732']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1476400	['812315', '812316', 'PF14_0733', 'PF14_0734']	FIKK	serine/threonine protein kinase%2C FIKK family%2C pseudogene
+PF3D7_1476700	['812319', 'PF14_0737']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_1476800	['812320', 'PF14_0738']	Lysophospholipase	lysophospholipase%2C putative
+PF3D7_1477000	['812322', 'PF14_0740', 'pf14_0741']	hyp17	Plasmodium exported protein (hyp17)%2C unknown function%2C pseudogene
+PF3D7_1477100	['812324', 'PF14_0742']	hyp6	Plasmodium exported protein (hyp6)%2C unknown function
+PF3D7_1477200	['812325', 'PF14_0743']	hyp15	Plasmodium exported protein (hyp15)%2C unknown function
+PF3D7_1477500	['812328', 'PF14_0746']	PHISTb	Plasmodium exported protein (PHISTb)%2C unknown function
+PF3D7_1477700	['812330', 'PF14_0748']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1477800	['812331', 'PF14_0749']	acbp	acyl-CoA binding protein
+PF3D7_1477900	['812332', 'PF14_0751']	acs	acyl-CoA synthetase%2C pseudogene
+PF3D7_1478000	['812333', 'PF14_0752']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1478300	['812336', 'PF14_0755']	hyp15	Plasmodium exported protein%2C unknown function%2C pseudogene
+PF3D7_1478400	['812337', 'PF14_0756']	PFD0075-like	Plasmodium exported protein%2C unknown function%2C pseudogene
+PF3D7_1478500	['812338', 'PF14_0757']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1478600	['812339', 'PF14_0758']	hyp17	EMP1-trafficking protein
+PF3D7_1478700	['812340', 'PF14_0759']	PFD0075-like	Plasmodium exported protein%2C unknown function%2C pseudogene
+PF3D7_1479000	['812342', 'PF14_0761']	acs	acyl-CoA synthetase
+PF3D7_1479100	['812343', 'PF14_0762']	PFD0075-like	Plasmodium exported protein%2C unknown function
+PF3D7_1479200	['812344', 'PF14_0763']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function
+PF3D7_1479300	['812345', 'PF14_0764', 'PF14_0765']	PHISTa	Plasmodium exported protein (PHISTa)%2C unknown function%2C pseudogene
+PF3D7_1479400	['812347', 'PF14_0766']	rifB	rifin
+PF3D7_1479500	['812348', 'PF14_0767']	stevor	stevor
+PF3D7_1479600	['812349', 'PF14_0768']	rifB	rifin
+PF3D7_1479700	['812350', 'PF14_0769']	rifA	rifin
+PF3D7_1479800	['812351', 'PF14_0770']	rifB	rifin
+PF3D7_1479900	['812352', 'PF14_0771']	stevor	stevor
+PF3D7_1480000	['812353', 'PF14_0772']	rifA	rifin
+PF3D7_1480100	['812354', 'PF14_0773']	var pseudo,truncated or -like.	erythrocyte membrane protein 1 (PfEMP1)%2C pseudogene

@@ -1,0 +1,69 @@
+* Create fasta file
+#+begin_src python
+import pandas as pd
+import os
+
+wd = "/mnt/Disc4T/Projects/Miniprojects/Blast_primers/"
+os.chdir(wd)
+primers = pd.read_excel("Primers_2blast_OLpaperInducGam.xlsx")
+
+with open("primers.fasta", "w+") as outfile:
+    for name, seq in zip(primers["Name_long"], primers["Sequence"]):
+        name = ">"+name+" | "+str(len(seq))
+        outfile.write(name+"\n"+seq+"\n")
+#+end_src
+* Parse Blast results
+#+begin_src python :tangle parse_xml.py
+import sys
+import subprocess
+from Bio.Blast import NCBIXML
+import pandas as pd
+import os
+
+
+def parse_blastp(blast_xml):
+
+    # Run BLAST fom web interface first and download xml output (much faster)
+    result_handle = open(blast_xml)
+    blast_records = NCBIXML.parse(result_handle)
+
+    best_hits = []
+
+    for record in blast_records:
+
+        # record = next(blast_records)
+        epitope_length = record.query.split(" | ")[1]
+
+        hits = []
+
+        if record.alignments:
+            for alignment in record.alignments:
+                for hsp in alignment.hsps:
+
+                    hits.append((record.query.split(" | ")[0],
+                                 alignment.title.split("|")[1],
+                                 float(hsp.identities) /
+                                 int(epitope_length)*100,
+                                 hsp.expect, hsp.bits,
+                                 hsp.score))
+
+            sorted_hits = sorted(hits, key=lambda x: x[3], reverse=True)
+            best_hits.append(sorted_hits[0])
+
+        else:
+            best_hits.append((record.query.split(" | ")[0],
+                              "NA",
+                              "NA",
+                              "NA",
+                              "NA",
+                              "NA"))
+
+    df = pd.DataFrame(best_hits, columns=[
+                      "Epi", "Hit", "Idty", "Eval", "Bits", "Score"])
+    return(df)
+
+
+xml = "2XVAPJHJ016-Alignment.xml"
+df = parse_blastp(xml)
+df.to_csv("blasted_primers.csv", index=False)
+#+end_src

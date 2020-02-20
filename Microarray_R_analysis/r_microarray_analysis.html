@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-01-21 mar 16:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Readme</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Lucas Michel Todó" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Readme
+<br />
+<span class="subtitle">Micro-array generic Analysis</span>
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org84d7f7b">1. Introduction</a></li>
+<li><a href="#org1c429f5">2. Script: Modifiable Parts</a>
+<ul>
+<li><a href="#org3397deb">2.1. Set directories</a></li>
+<li><a href="#orgef8bea7">2.2. Describe Data structure</a></li>
+<li><a href="#org1d0f3c9">2.3. Load Raw_Data</a></li>
+<li><a href="#org24bbce0">2.4. Set number of plots</a></li>
+</ul>
+</li>
+<li><a href="#orgf05cdc6">3. Script: Data Analysis</a>
+<ul>
+<li><a href="#org0857213">3.1. Import libraries</a></li>
+<li><a href="#org8ea6815">3.2. Create folders for output</a></li>
+<li><a href="#orgbaff598">3.3. Load Array annotation, Gene-list and Variant Genes.</a></li>
+<li><a href="#org2959ecd">3.4. Create Probe-DF</a></li>
+<li><a href="#org7f40433">3.5. Group Columns</a></li>
+<li><a href="#org28e0dbe">3.6. Remove low expression probes</a></li>
+<li><a href="#org68f104b">3.7. Arrays QC</a>
+<ul>
+<li><a href="#org86c266a">3.7.1. Array Plots</a></li>
+<li><a href="#orge19be97">3.7.2. MA Plots</a></li>
+</ul>
+</li>
+<li><a href="#org9aef148">3.8. Eset creation</a>
+<ul>
+<li><a href="#org4d2a6d6">3.8.1. Change to Log2 (Log Ratio cols, originally log10)</a></li>
+<li><a href="#org6468a1c">3.8.2. Change to Log2 (Raw signal Cols, originally unlogged)</a></li>
+<li><a href="#orge4c22e6">3.8.3. Create eSet: xprobe</a></li>
+<li><a href="#org947da69">3.8.4. Rename and Summarize</a></li>
+</ul>
+</li>
+<li><a href="#org4896976">3.9. Estimate times</a></li>
+<li><a href="#orgc5f04d5">3.10. Save results in CSVs</a></li>
+<li><a href="#org6f25f27">3.11. Fold Change</a>
+<ul>
+<li><a href="#org7797bfa">3.11.1. Probe Level</a></li>
+<li><a href="#org7959e24">3.11.2. Gene Level</a></li>
+</ul>
+</li>
+<li><a href="#org06c187c">3.12. Arees</a>
+<ul>
+<li><a href="#org4abee85">3.12.1. Functions</a></li>
+<li><a href="#orgf6a8af4">3.12.2. Calls: Compute Areas</a></li>
+<li><a href="#org5213d18">3.12.3. Calculate aAFC (average Area Fold-Change)</a></li>
+</ul>
+</li>
+<li><a href="#org0132fca">3.13. Plots</a>
+<ul>
+<li><a href="#orgfd535fc">3.13.1. PCAs</a></li>
+<li><a href="#orgbc3d988">3.13.2. Expression Plots</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org84d7f7b" class="outline-2">
+<h2 id="org84d7f7b"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This folder contains everything you need to run a preliminary analysis on your micro-array data.
+Unzip the file wherever you want. Inside the resultant folder you should find:
+</p>
+<ol class="org-ol">
+<li><code>microarray_analysis.R</code>: This is the R script which runs the analysis. You will first have to modify this file (on RStudio, i.e.) to fit your data and then run it.</li>
+<li><code>Files</code> This folder contains necessary files for the script to run. Just leave it there (must be in the same folder as the script).</li>
+<li><code>Readme.html</code> This file!</li>
+</ol>
+
+<p>
+To be able to run this analysis you will need a working R installation. We highly encourage to install RStudio also, it has a way more user-friendly interface than base R.
+</p>
+<ul class="org-ul">
+<li>To install R follow the instrucions from here: <a href="https://cran.r-project.org/">Download R</a></li>
+<li>To download RStudio follow the instructions from here: <a href="https://www.rstudio.com/products/rstudio/#Desktop">Download RStudio</a></li>
+</ul>
+
+<p>
+To run the analysis you just have to modify <code>microarrray_analysis.R</code> as explained in the following sections. You can modify the file using any text editor that accepts plain text (notepad, i.e.) but is probably more convinient to modify it directly on RStudio then run it.
+</p>
+
+<ol class="org-ol">
+<li>Open RStudio</li>
+<li>Go to <code>File</code> -&gt; <code>Open file</code> and open the script.</li>
+<li>Modify the script (skip this step if you have already done it).</li>
+<li>Go to <code>Code</code> -&gt; <code>Run region</code> -&gt; <code>Run All</code>. You can do the same by pressing <code>ctl+Shift+Enter</code>.</li>
+<li>A folder with your chosen name will appear on the same directory where you have the script with the results of your analysis.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1c429f5" class="outline-2">
+<h2 id="org1c429f5"><span class="section-number-2">2</span> Script: Modifiable Parts</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-R">  <span style="color: #5F7F5F;">########################################################################################</span>
+  <span style="color: #5F7F5F;">############################## </span><span style="color: #7F9F7F;">Modify this part ########################################</span>
+  <span style="color: #5F7F5F;">########################################################################################</span>
+</pre>
+</div>
+<p>
+The only part of code that must be modified are the ones depicted here. They correspond to the begining of the script.
+</p>
+</div>
+<div id="outline-container-org3397deb" class="outline-3">
+<h3 id="org3397deb"><span class="section-number-3">2.1</span> Set directories</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-R">  datadir <span style="color: #BFEBBF;">&lt;-</span> <span style="color: #CC9393;">"/media/lucas/Disc4T/Projects/Miniprojects/Microarray_R_analysis/Raw_Data/"</span>
+  outdir <span style="color: #BFEBBF;">&lt;-</span> <span style="color: #CC9393;">"/media/lucas/Disc4T/Projects/Miniprojects/Microarray_R_analysis/R_results_NewTry"</span>
+  annot <span style="color: #BFEBBF;">&lt;-</span> read.csv(<span style="color: #CC9393;">"/media/lucas/Disc4T/Projects/Miniprojects/Microarray_R_analysis/Files/array_anotation.csv"</span>,
+                    sep=<span style="color: #CC9393;">"\t"</span>, header = F)
+  infiles <span style="color: #BFEBBF;">&lt;-</span> <span style="color: #CC9393;">"/media/lucas/Disc4T/Projects/Miniprojects/Microarray_R_analysis/Files/"</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>datadir</code> Set to the path of the folder where the raw-data is. (remember that in windows "\" must be replaced by "/").</li>
+<li><code>outdir</code> Set this variable to any name you want. A folder with this name will be created and all outputs will be stored in it.</li>
+<li><code>annot</code> Set this variable to the path to the annotation file for this array.</li>
+<li><code>infiles</code> Set this variable to the path to the folder where files necessary for this analysis is located.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgef8bea7" class="outline-3">
+<h3 id="orgef8bea7"><span class="section-number-3">2.2</span> Describe Data structure</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Example code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">  nsamples <span style="color: #BFEBBF;">&lt;-</span> 9
+  sample_names <span style="color: #BFEBBF;">&lt;-</span> c(<span style="color: #CC9393;">"Ctl_1"</span>,
+                    <span style="color: #CC9393;">"Ctl_2"</span>,
+                    <span style="color: #CC9393;">"Ctl_3"</span>,
+                    <span style="color: #CC9393;">"A_1"</span>,
+                    <span style="color: #CC9393;">"A_2"</span>,
+                    <span style="color: #CC9393;">"A_3"</span>,
+                    <span style="color: #CC9393;">"B_1"</span>,
+                    <span style="color: #CC9393;">"B_2"</span>,
+                    <span style="color: #CC9393;">"B_3"</span>)
+
+  times <span style="color: #BFEBBF;">&lt;-</span> c(1,2,3, 1,2,3, 1,2,3)
+  types <span style="color: #BFEBBF;">&lt;-</span> c(<span style="color: #CC9393;">"ctl"</span>, <span style="color: #CC9393;">"ctl"</span>, <span style="color: #CC9393;">"ctl"</span>, <span style="color: #CC9393;">"treatA"</span>, <span style="color: #CC9393;">"treatA"</span>, <span style="color: #CC9393;">"treatA"</span>, <span style="color: #CC9393;">"treatB"</span>, <span style="color: #CC9393;">"treatB"</span>, <span style="color: #CC9393;">"treatB"</span>)
+
+</pre>
+</div>
+
+<p>
+In this part you have to modify the following variables:
+</p>
+<ul class="org-ul">
+<li><code>nsamples</code> Set to the total number of samples (micro-arrays) in your experient.</li>
+
+<li><code>sample_names</code> Set to the name you want for each sample. It will be used to name the columns in the generated tables.</li>
+
+<li><code>times</code> Set to a series of coma-separated integers. It represents the ordinal time-points of your experiments (1,2,3&#x2026;). Do not confound with real age/hpi which will be inferred from the expression data. The order of the time-points must correspond to the sample order. For example, if samples 1 and 2 correspond to treatment and control of the first time-point and samples 3 and 4 to the second time-point, must be set to: <code>times &lt;- c(1,1,2,2)</code></li>
+
+<li><code>types</code> Set to a coma separated list of quoted names. It represents the status of each sample regarding the variable of interest (teatment/control, strainA/strainB/strainC, wt/KO&#x2026;). Again the order of the labels must correspond to the order of the samples.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d0f3c9" class="outline-3">
+<h3 id="org1d0f3c9"><span class="section-number-3">2.3</span> Load Raw_Data</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+In this part of the script we define the computer folder in which we will be working and load the raw array data.
+</p>
+
+<p>
+Example code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">  Ctl_1 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"ctl_tp1.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  Ctl_2 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"ctl_tp2.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  Ctl_3 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"ctl_tp3.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+
+
+  A_1 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatA_tp1.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  A_2 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatA_tp2.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  A_3 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatA_tp3.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+
+  B_1 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatB_tp1.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  B_2 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatB_tp2.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+  B_3 <span style="color: #BFEBBF;">&lt;-</span> read.table(paste0(datadir, <span style="color: #CC9393;">"treatB_tp3.txt"</span>), sep=<span style="color: #CC9393;">"\t"</span>,stringsAsFactors=<span style="color: #7CB8BB;">FALSE</span>, skip = 9, header = <span style="color: #7CB8BB;">TRUE</span>)
+
+  array_list <span style="color: #BFEBBF;">&lt;-</span> list(Ctl_1,
+                     Ctl_2,
+                     Ctl_3,
+                     A_1,
+                     A_2,
+                     A_3,
+                     B_1,
+                     B_2,
+                     B_3)
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>Filenames</code> <i>(ctl_tp1.txt, ctl_tp2.txt, &#x2026;)</i> In this part you just have to change the quoted part with the name of the file ("ctl_tp1.txt" in the example above). Change it for the names of your raw-data files.</li>
+<li><code>Sample names</code> <i>(Ctl_1, Ctl_2, &#x2026;)</i> Set each sample to the same names you set in the previous part.</li>
+<li><code>array_list</code> Fill this list with the sample names. They must be <b>unquoted</b>. They must be in the same order you specified in <code>sample_names</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org24bbce0" class="outline-3">
+<h3 id="org24bbce0"><span class="section-number-3">2.4</span> Set number of plots</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Example code:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">run_all_plots <span style="color: #BFEBBF;">&lt;-</span> <span style="color: #CC9393;">"no"</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>run_all_plots</code> If this variable is set to "yes" expression plots for each gene and probe both for red/green ratio and red-signal will be plotted. This can be quite time and computer-resource consuming so by default it is set to "no" and only 20 plots of each class will be plotted as an example.</li>
+</ul>
+
+<p>
+Thats all! You are now set to run the analysis. Just start an R session, run the modified script and enjoy!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">  <span style="color: #5F7F5F;">########################################################################################</span>
+  <span style="color: #5F7F5F;">############################ </span><span style="color: #7F9F7F;">End of modifiable part ####################################</span>
+  <span style="color: #5F7F5F;">########################################################################################</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf05cdc6" class="outline-2">
+<h2 id="orgf05cdc6"><span class="section-number-2">3</span> Script: Data Analysis</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+This is the part of the script that runs the analysis. You do not have to modifiy anything from here on, but if you are curious here is the code!
+</p>
+</div>
+<div id="outline-container-org0857213" class="outline-3">
+<h3 id="org0857213"><span class="section-number-3">3.1</span> Import libraries</h3>
+</div>
+<div id="outline-container-org8ea6815" class="outline-3">
+<h3 id="org8ea6815"><span class="section-number-3">3.2</span> Create folders for output</h3>
+</div>
+<div id="outline-container-orgbaff598" class="outline-3">
+<h3 id="orgbaff598"><span class="section-number-3">3.3</span> Load Array annotation, Gene-list and Variant Genes.</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Load <code>array_anotation.csv</code> a table with the array annotation.
+Load <code>gene_list.txt</code> a list of genes present in the array.
+This will be used for calculating the mean intensity in the array
+for excluding low expressed genes.
+</p>
+</div>
+</div>
+<div id="outline-container-org2959ecd" class="outline-3">
+<h3 id="org2959ecd"><span class="section-number-3">3.4</span> Create Probe-DF</h3>
+</div>
+<div id="outline-container-org7f40433" class="outline-3">
+<h3 id="org7f40433"><span class="section-number-3">3.5</span> Group Columns</h3>
+</div>
+<div id="outline-container-org28e0dbe" class="outline-3">
+<h3 id="org28e0dbe"><span class="section-number-3">3.6</span> Remove low expression probes</h3>
+</div>
+<div id="outline-container-org68f104b" class="outline-3">
+<h3 id="org68f104b"><span class="section-number-3">3.7</span> Arrays QC</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+<div id="outline-container-org86c266a" class="outline-4">
+<h4 id="org86c266a"><span class="section-number-4">3.7.1</span> Array Plots</h4>
+</div>
+<div id="outline-container-orge19be97" class="outline-4">
+<h4 id="orge19be97"><span class="section-number-4">3.7.2</span> MA Plots</h4>
+</div>
+</div>
+<div id="outline-container-org9aef148" class="outline-3">
+<h3 id="org9aef148"><span class="section-number-3">3.8</span> Eset creation</h3>
+<div class="outline-text-3" id="text-3-8">
+</div>
+<div id="outline-container-org4d2a6d6" class="outline-4">
+<h4 id="org4d2a6d6"><span class="section-number-4">3.8.1</span> Change to Log2 (Log Ratio cols, originally log10)</h4>
+</div>
+<div id="outline-container-org6468a1c" class="outline-4">
+<h4 id="org6468a1c"><span class="section-number-4">3.8.2</span> Change to Log2 (Raw signal Cols, originally unlogged)</h4>
+</div>
+<div id="outline-container-orge4c22e6" class="outline-4">
+<h4 id="orge4c22e6"><span class="section-number-4">3.8.3</span> Create eSet: xprobe</h4>
+</div>
+<div id="outline-container-org947da69" class="outline-4">
+<h4 id="org947da69"><span class="section-number-4">3.8.4</span> Rename and Summarize</h4>
+<div class="outline-text-4" id="text-3-8-4">
+<p>
+Summarize all probes for a same gene, using median polish.
+Here we are considering the ratio between green and red signal as the expression
+value.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4896976" class="outline-3">
+<h3 id="org4896976"><span class="section-number-3">3.9</span> Estimate times</h3>
+</div>
+<div id="outline-container-orgc5f04d5" class="outline-3">
+<h3 id="orgc5f04d5"><span class="section-number-3">3.10</span> Save results in CSVs</h3>
+</div>
+<div id="outline-container-org6f25f27" class="outline-3">
+<h3 id="org6f25f27"><span class="section-number-3">3.11</span> Fold Change</h3>
+<div class="outline-text-3" id="text-3-11">
+</div>
+<div id="outline-container-org7797bfa" class="outline-4">
+<h4 id="org7797bfa"><span class="section-number-4">3.11.1</span> Probe Level</h4>
+</div>
+<div id="outline-container-org7959e24" class="outline-4">
+<h4 id="org7959e24"><span class="section-number-4">3.11.2</span> Gene Level</h4>
+</div>
+</div>
+<div id="outline-container-org06c187c" class="outline-3">
+<h3 id="org06c187c"><span class="section-number-3">3.12</span> Arees</h3>
+<div class="outline-text-3" id="text-3-12">
+</div>
+<div id="outline-container-org4abee85" class="outline-4">
+<h4 id="org4abee85"><span class="section-number-4">3.12.1</span> Functions</h4>
+</div>
+<div id="outline-container-orgf6a8af4" class="outline-4">
+<h4 id="orgf6a8af4"><span class="section-number-4">3.12.2</span> Calls: Compute Areas</h4>
+</div>
+<div id="outline-container-org5213d18" class="outline-4">
+<h4 id="org5213d18"><span class="section-number-4">3.12.3</span> Calculate aAFC (average Area Fold-Change)</h4>
+<div class="outline-text-4" id="text-3-12-3">
+</div>
+<ol class="org-ol">
+<li><a id="org48671d3"></a>Custom Max<br /></li>
+<li><a id="orgf8ef146"></a>Calculate Differences and Max<br /></li>
+<li><a id="org7ebf073"></a>Convert Partitions into life stages<br />
+<div class="outline-text-5" id="text-3-12-3-3">
+<p>
+We consider the the timepoint in the middle of a partition (left,right,mid,sides) as it's timepoint.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org0132fca" class="outline-3">
+<h3 id="org0132fca"><span class="section-number-3">3.13</span> Plots</h3>
+<div class="outline-text-3" id="text-3-13">
+</div>
+<div id="outline-container-orgfd535fc" class="outline-4">
+<h4 id="orgfd535fc"><span class="section-number-4">3.13.1</span> PCAs</h4>
+</div>
+<div id="outline-container-orgbc3d988" class="outline-4">
+<h4 id="orgbc3d988"><span class="section-number-4">3.13.2</span> Expression Plots</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 15/06/2019</p>
+<p class="author">Author: Lucas Michel Todó</p>
+<p class="date">Created: 2020-01-21 mar 16:08</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

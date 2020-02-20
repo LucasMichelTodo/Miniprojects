@@ -1,0 +1,159 @@
+This is a script used to call MACS2 programm a perform a differential
+peak-calling on 2 ChIP-Seq samples.
+
+Our protocol consists on a 2 step process:
+- First we perform one peak-calling round using MACS2.
+- Then we use MANorm and use the peaks from MACS2 to call differential events.
+
+* Script
+:PROPERTIES:
+:header-args:python: :session s1 :tangle diff_peak_calling.py
+:END:
+** Definitions
+#+begin_src python
+import subprocess
+import os
+import itertools
+
+## Functions
+
+def getName(filename):
+    outname = filename.rsplit("/", 1)[1] #Remove path
+    out = outname.split("_", 1)[0] #Remove added names
+    return(out)
+
+
+def getDepth(peaksfile):
+    dlist = []
+    with open(peaksfile) as f:
+        for line in f:
+            if line.startswith("# total fragments"):
+                d = line.split(":")[1].strip()
+                dlist.append(int(d))
+    return(str(min(dlist)))
+
+
+def macs2callpeak(t, c):
+
+    # Make sure we are using apropiate MACS2 version (2.1.2)
+    print("You are using MACS version:")
+    cmd = "macs2 --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    outname = getName(t)
+
+    cmd = ("macs2 callpeak -f BAMPE -B -t {} -c {} "
+           "-g 2.41e7 --keep-dup all --fe-cutoff 1.5 --broad "
+           "--nomodel --extsize 150 -n {}" .format(t, c, outname))
+
+    subprocess.call(cmd, shell=True)
+
+def macs2DifPeaks(t1, c1, t2, c2):
+
+    # Make sure we are using apropiate MACS2 version (2.1.2)
+    print("You are using MACS version:")
+    cmd = "macs2 --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    t1pile = getName(t1) + "_treat_pileup.bdg"
+    c1pile = getName(c1) + "_control_lambda.bdg"
+
+    t2pile = getName(t2) + "_treat_pileup.bdg"
+    c2pile = getName(c2) + "_control_lambda.bdg"
+
+    peaks1 = getName(t1) + "_peaks.xls"
+    peaks2 = getName(t2) + "_peaks.xls"
+
+    d1 = getDepth(peaks1)
+    d2 = getDepth(peaks2)
+
+    prefix = getName(t1)+"_vs_"+getName(t2)+"_g140_l150_c50"
+
+    cmd = ("macs2 bdgdiff "
+           "--t1 {} --c1 {} "
+           "--t2 {} --c2 {} "
+           "--d1 {} --d2 {} "
+           "--o-prefix {} "
+           "-g 140 -l 150 --cutoff 50" .format(t1pile, c1pile,
+                                               t2pile, c2pile,
+                                               d1, d2, prefix))
+    subprocess.call(cmd, shell=True)
+
+def manormDifPeaks(peaks1, peaks2, reads1, reads2, outfld):
+
+    #Check which MaNorm version we are using:
+    print("\n")
+    print("You are using MANorm version:")
+    cmd = "manorm --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    #Get output folder name
+    out = outfld+"/"+getName(peaks1)+"_vs_"+getName(peaks2)
+
+    cmd = ("manorm --p1 {} --p2 {} --pf narrowpeak "
+           "--r1 {} --r2 {} --rf bam --pe -o {}" .format(peaks1, peaks2,
+                                                         reads1, reads2,
+                                                         out))
+
+    subprocess.call(cmd, shell=True)
+#+end_src
+
+#+RESULTS:
+
+** Calls
+*** MACS2 diffpeaks
+#+begin_src python
+# Load BAMs and create an equally sorted list of chips and controls.
+indir = "/mnt/Disc4T/Projects/Cristina_ChIP_All/New_Coverage/NoDupBams"
+os.chdir(indir)
+
+bams = [b for b in os.listdir(indir) if b.endswith(".bam")]
+
+chips = sorted([b for b in bams if "_me_" in b])
+ctls = sorted([b for b in bams if "_in_" in b])
+
+## Individual Pileup Tracks
+# pairs = zip(chips, ctls)
+# for pair in pairs:
+#     macs2callpeak(pair[0], pair[1])
+
+
+## Differential Peak-Calling
+pairs = zip(chips, ctls)
+difs = list(itertools.combinations(pairs, 2))
+
+for dif in difs:
+    macs2DifPeaks(dif[0][0], dif[0][1], dif[1][0], dif[1][1])
+
+#+end_src
+*** MANorm diffpeaks
+#+begin_src python
+import os
+import itertools
+
+peaksdir = "/mnt/Disc4T/Projects/Cristina_ChIP_All/New_Coverage/New_Peaks/"
+peakfiles = os.listdir(peaksdir)
+peakfiles = sorted([p for p in peakfiles if p.endswith(".narrowPeak")])
+
+readsdir = "/mnt/Disc4T/Projects/Cristina_ChIP_All/New_Coverage/NoDupBams/"
+readfiles = os.listdir(readsdir)
+readfiles = [b for b in readfiles if b.endswith(".bam")]
+readfiles = sorted([b for b in readfiles if b.split("_")[1] == "me"])
+
+outdir = "/mnt/Disc4T/Projects/Cristina_ChIP_All/New_Coverage/MaNormPeaks"
+pairs = zip(peakfiles, readfiles)
+difs = list(itertools.combinations(pairs, 2))
+
+for dif in difs:
+
+    p1 = peaksdir+dif[0][0]
+    p2 = peaksdir+dif[1][0]
+
+    r1 = readsdir+dif[0][1]
+    r2 = readsdir+dif[1][1]
+
+    manormDifPeaks(p1, p2, r1, r2, outdir)
+#+end_src
