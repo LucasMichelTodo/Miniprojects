@@ -50,7 +50,7 @@ def normCoverage(bam, binsize, process):
     cmd = ("bamCoverage --bam {} --outFileName {} "
            "--binSize {} --numberOfProcessors {} "
            "--extendReads --outFileFormat bedgraph "
-           "--normalizeUsingRPKM") .format(*params)
+           "--normalizeUsing RPKM") .format(*params)
 
     print(cmd)
     sp.call(cmd, shell=True)
