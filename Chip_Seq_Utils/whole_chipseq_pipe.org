@@ -1,1 +1,0 @@
-This is our current ChIP-Seq Pipe

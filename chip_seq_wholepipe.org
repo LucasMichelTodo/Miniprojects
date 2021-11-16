@@ -1,0 +1,580 @@
+* Functions
+#+begin_src python :tangle whole_chipseq_pipe.py
+#### Functions ####
+import subprocess
+import os
+import itertools
+import pybedtools as pb
+import subprocess as sp
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats
+import pandas as pd
+import itertools
+
+## Functions
+def get_RPKMs(bam, out):
+
+    cmd = ('bamCoverage -b {} '
+       '--outFileFormat bedgraph '
+       '--normalizeUsing RPKM '
+       '-p 8 '
+       '-bs 100 '
+       '-o {}')
+
+    subprocess.call(cmd .format(bam, out), shell=True)
+
+
+def get_RPKMs_normInput(bam_IP, bam_in, out):
+
+    cmd = ('bamCompare -b1 {} -b2 {} '
+       '--outFileFormat bedgraph '
+       '--scaleFactorsMethod None '
+       '--normalizeUsing RPKM '
+       '-p 8 '
+       '-bs 100 '
+       '-o {}')
+
+    subprocess.call(cmd .format(bam_IP, bam_in, out), shell=True)
+
+def subtract_bams(bam1, bam2, outname):
+
+    cmd = ('bamCompare -b1 {} -b2 {} '
+           '--operation subtract '
+           '-bs 100 '
+           '-p 8 '
+           '--outFileFormat bedgraph '
+           '--scaleFactorsMethod None '
+           '--normalizeUsing RPKM '
+           '--smoothLength 500 '
+           '-o {}')
+    sp.call(cmd .format(bam1, bam2, outname), shell=True)
+
+
+def getName(filename):
+    if '/' in filename:
+        filename = filename.rsplit("/", 1)[1] #Remove path
+    out = filename.split("_", 1)[0] #Remove added names
+    return(out)
+
+
+def getDepth(peaksfile):
+    dlist = []
+    with open(peaksfile) as f:
+        for line in f:
+            if line.startswith("# total fragments "):
+                d = line.split(":")[1].strip()
+                dlist.append(int(d))
+    depth = int(round(min(dlist) / 1000000))
+    return(str(depth))
+
+
+def macs2callpeak(t, c, params):
+
+    # Make sure we are using apropiate MACS2 version (2.1.2)
+    print("You are using MACS version:")
+    cmd = "macs2 --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    cmd = ("macs2 callpeak -t {} -c {} ") .format(t, c) + params
+
+    subprocess.call(cmd, shell=True)
+
+
+def macs2DifPeaks(t1, c1, t2, c2, g, l, c, outdir):
+
+    # Make sure we are using apropiate MACS2 version (2.1.2)
+    print("You are using MACS version:")
+    cmd = "macs2 --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    t1pile = getName(t1) + "_me_Macspeaks_treat_pileup.bdg"
+    c1pile = getName(t1) + "_me_Macspeaks_control_lambda.bdg"
+
+    t2pile = getName(t2) + "_me_Macspeaks_treat_pileup.bdg"
+    c2pile = getName(t2) + "_me_Macspeaks_control_lambda.bdg"
+
+    peaks1 = getName(t1) + "_me_Macspeaks_peaks.xls"
+    peaks2 = getName(t2) + "_me_Macspeaks_peaks.xls"
+
+    d1 = getDepth(peaks1)
+    d2 = getDepth(peaks2)
+
+    prefix = getName(t1)+"_vs_"+getName(t2)+"_g{}_l{}_c{}" .format(g,l,c)
+
+    cmd = ("macs2 bdgdiff "
+           "--t1 {} --c1 {} "
+           "--t2 {} --c2 {} "
+           "--d1 {} --d2 {} "
+           "--outdir {} "
+           "--o-prefix {} "
+           "-g {} -l {} --cutoff {}") .format(t1pile, c1pile,
+                                              t2pile, c2pile,
+                                              d1, d2,
+                                              outdir,
+                                              prefix,
+                                              g, l, c)
+
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+def manormDifPeaks(peaks1, peaks2, reads1, reads2, params):
+
+    #Check which MaNorm version we are using:
+    print("\n")
+    print("You are using MANorm version:")
+    cmd = "manorm --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    cmd = ("manorm --p1 {} --p2 {} --r1 {} --r2 {} ") .format(peaks1, peaks2,
+                                                              reads1, reads2)
+    cmd = cmd + params
+    subprocess.call(cmd, shell=True)
+
+def create_log2_tracks(treat, ctl):
+    outfile = treat.replace('.bam', '_log2.bdg')
+    cmd = 'bamCompare -b1 {} -b2 {} -o {} -of bedgraph -p8' .format(treat, ctl, outfile)
+    subprocess.call(cmd, shell=True)
+
+#+end_src
+* Dirs and variables
+#+begin_src python :tangle whole_chipseq_pipe.py
+#### Set directories and variables ####
+
+wd = '/mnt/Disc4T/Projects/Chip_Seq_Data_2020/'
+os.chdir(wd)
+
+bamdir = '/mnt/Disc4T/Projects/Chip_Seq_Data_2020/Bams/'
+bams = [b for b in os.listdir(bamdir) if b.endswith('.bam')]
+IPs = [f for f in bams if '_me_' in f or '_ac_' in f]
+IPs.sort()
+inputs = [f for f in bams if '_in_' in f]
+inputs.sort()
+me_files = [f for f in bams if '_me_' in f]
+me_files.sort()
+ac_files = [f for f in bams if '_ac_' in f]
+ac_files.sort()
+
+#+end_src
+* Calls Script
+** Sample-wise
+*** Get RPKMs
+We use DeepTools to get raw and normalized by input RPKMs per sample.
+#+begin_src python :tangle whole_chipseq_pipe.py
+#### Get RPKMs ####
+os.makedirs('./RPKMs', exist_ok=True)
+outdir = './RPKMs/'
+
+for bam in bams:
+    out = outdir+bam.replace('.bam', '_RPKMs.bdg')
+    get_RPKMs(bamdir+bam, out)
+
+#### Get normalized by input RPKMs ####
+os.makedirs('./RPKMs_normInput', exist_ok=True)
+outdir = './RPKMs_normInput/'
+
+for ip in IPs:
+    prefix = ip.split('_')[0]
+    inpt = [f for f in inputs if prefix in f][0]
+    print(ip, inpt)
+    pair = [ip, inpt]
+    out = outdir+pair[0].replace('.bam', '_RPKMs_normInput.bdg')
+    get_RPKMs_normInput(bamdir+pair[0],
+                        bamdir+pair[1],
+                        out)
+#+end_src
+*** Call Peaks
+We use MACS2 to make the peak-calling for all samples.
+#+begin_src python :tangle whole_chipseq_pipe.py
+#### Peak-Calling ####
+
+os.makedirs('./Peak_Calling_MACS2', exist_ok=True)
+outdir = './Peak_Calling_MACS2/'
+
+params_form = ("-f BAMPE -B "
+               "-g 2.41e7 "
+               "--keep-dup all "
+               "--fe-cutoff 1.5 "
+               "--nomodel "
+               "--extsize 150 "
+               "-n {} "
+               f"--outdir {outdir}")
+
+for ip in IPs:
+    prefix = ip.split('_')[0]
+    inpt = [f for f in inputs if prefix in f][0]
+    print(ip, inpt)
+    pair = [ip, inpt]
+
+    t = bamdir + pair[0]
+    c = bamdir + pair[1]
+    name = pair[0].split("_")[0]+'_'+pair[0].split("_")[1]+"_Macspeaks"
+    params = params_form .format(name)
+
+    macs2callpeak(t, c, params)
+
+    print("==============================")
+    print("Finished {}!" .format(name))
+    print("==============================\n\n\n")
+#+end_src
+** Pair-wise
+*** Differential peaks using MACS2 'callpeak'
+In this approach differential peaks are called using one sample as input and another sample as control (as if it was an input) and using the 'normal' MACS2 peakcaller.
+
+#+BEGIN_SRC python :tangle whole_chipseq_pipe.py
+
+os.makedirs('./RPKMs_normInput', exist_ok=True)
+outdir = './DiffPeaks_MACS2callpeak/'
+
+# Call PeakCalling
+params_form = ("-f BAMPE -B "
+               "-g 2.41e7 "
+               "--keep-dup all "
+               "--fe-cutoff 1.5 "
+               "--nomodel "
+               "--extsize 150 "
+               "-n {} "
+               f"--outdir {outdir}")
+
+contrasts = list(itertools.permutations(me_files, 2))
+
+for pair in contrasts:
+
+    t = bamdir + pair[0]
+    c = bamdir + pair[1]
+    name = pair[0].split("_")[0]+"_over_"+pair[1].split("_")[0]+"_difpeaks"
+    params = params_form .format(name)
+
+    macs2callpeak(t, c, params)
+
+    print("==============================")
+    print("Finished {}!" .format(name))
+#+END_SRC
+*** Filter and Overlap peaks
+As postprocessing of MACS2 differential peak calling we can apply this two small scripts:
+- peak_overlapper.py : This overlaps two peaks.xls files (from macs2). The peaks on the first file will only be reatained if they overlap a peak in the second file. Afterwards it can apply filters to FE and/or qval.
+- csv_to_bed.py : This simply converts a peaks.xls file (from macs2) into bed format. (for visualitzation for example).
+
+#+BEGIN_SRC python :tangle whole_chipseq_pipe.py
+## Overlap and Filter
+
+difpeaksdir = './DiffPeaks_MACS2callpeak/'
+
+cmd = 'python3 ./peak_overlapper.py -p1 {} -p2 {} -f 2'
+
+dif_peaks = [f for f in os.listdir(difpeaksdir) if f.endswith('_difpeaks_peaks.xls')]
+dif_peaks.sort()
+
+for f in dif_peaks:
+    ref_peaks = './Peak_Calling_MACS2/'+f.split('_')[0]+'_me_Macspeaks_peaks.xls'
+
+    print(cmd .format(difpeaksdir+f, ref_peaks))
+    subprocess.call(cmd .format(difpeaksdir+f, ref_peaks), shell=True)
+
+
+## Convert to Bed
+cmd = 'python3 ./csv_to_bed.py {}'
+
+overlaps = [f for f in os.listdir(difpeaksdir) if f.endswith('overlappandfilter.csv')]
+
+for f in overlaps:
+    print(cmd .format(difpeaksdir+f))
+    subprocess.call(cmd .format(difpeaksdir+f), shell=True)
+
+## Create output folders and move files there
+
+os.makedirs('./DiffPeaks_MACS2callpeak_OverlappedAndFiltered/', exist_ok=True)
+cmd = ('mv ./DiffPeaks_MACS2callpeak/*overlappandfilter* '
+       './DiffPeaks_MACS2callpeak_OverlappedAndFiltered')
+
+subprocess.call(cmd, shell=True)
+#+END_SRC
+*** Call BdgDiff
+In this approach we use the MACS2 differential peaks subcomand BdgDiff. We use a low threshold because peaks will be filtered in posterior steps.
+#+begin_src python :tangle whole_chipseq_pipe.py
+#### Call BdgDiff ####
+
+path_chips = [bamdir + c for c in me_files]
+path_inputs = [bamdir + i for i in inputs]
+
+# Ensure same ordering (by name)
+path_chips = sorted(path_chips)
+path_inputs = sorted(path_inputs)
+
+## Differential Peak-Calling
+pairs = zip(path_chips, path_inputs)
+difs = list(itertools.combinations(pairs, 2))
+
+## Change to input dir and set outdir
+
+os.chdir('./Peak_Calling_MACS2')
+os.makedirs('../DiffPeaks_BdgDiff', exist_ok=True)
+outdir = '../DiffPeaks_BdgDiff/'
+
+for dif in difs:
+    g, l, c = 200, 150, 1
+    macs2DifPeaks(dif[0][0], dif[0][1], dif[1][0], dif[1][1], g, l, c, outdir)
+
+os.chdir('../')
+#+end_src
+*** Filter BdgDiff Peaks
+We filter the peaks obtained in the previous BdgDiff call. Two kinds of filters are applied:
+- BetaFit: We first use a quantile based approach to remove outliers in the peaks score distribution. We then fit a beta distribution to it. We use this fitted beta to retain only peaks that are above the score that accumulates certain probability (0.99).
+- CrossOld: We retain only the peaks that overlap a peak called using the "old" differential-peaks approach of using the "normal" MACS2 peak-caller with one sample as IP and another as input. The same betafit method as above is used with a more stringent threshold (0.999) to retain the highest scoring non-overlapping peaks.
+#+begin_src python :tangle whole_chipseq_pipe.py
+me_files
+me_names = [getName(f) for f in me_files]
+difs = list(itertools.permutations(me_names, 2))
+
+oldFC = 20
+
+betafld = './DiffPeaks_BdgDiff_BetaFit/'
+os.makedirs(betafld, exist_ok=True)
+
+crossoldfld = './DiffPeaks_BdgDiff_CrossOld/'
+os.makedirs(crossoldfld, exist_ok=True)
+
+for pair in difs:
+
+    print(pair)
+
+    bedfiles = os.listdir('./DiffPeaks_BdgDiff/')
+    subset = [f for f in bedfiles if pair[0]+'_' in f and pair[1]+'_' in f]
+    if subset[0].startswith(pair[0]):
+        bed = './DiffPeaks_BdgDiff/{}_vs_{}_g200_l150_c1_c1.0_cond1.bed'
+        bedname = bed .format(*pair)
+    else:
+        bed = './DiffPeaks_BdgDiff/{}_vs_{}_g200_l150_c1_c1.0_cond2.bed'
+        bedname = bed .format(pair[1], pair[0])
+
+    overbed = ('./DiffPeaks_MACS2callpeak_OverlappedAndFiltered/'
+               '{}_over_{}_difpeaks_peaks_{}_overlappandfilter.bed')
+
+    overbedname = overbed .format(*pair, oldFC)
+
+    bed = pb.BedTool(bedname)
+    overbed = pb.BedTool(overbedname)
+
+    ## Set dinamic filter based on Beta distribution
+
+    cumprobs = [0.99]
+
+    for prob in cumprobs:
+
+        strprob = str(prob).replace('.', '')
+        name = bedname.rsplit('/', 1)[1]
+        outname = betafld+name.replace('.bed', '_beta_cdf_{}.bed' .format(strprob))
+
+        scores = [float(feat.score) for feat in bed]
+        Q1 = np.quantile(scores,0.25)
+        Q3 = np.quantile(scores,0.75)
+        IQR = Q3 - Q1
+        mult = 1
+
+        low_out = Q1 - mult*IQR
+        high_out = Q3 + mult*IQR
+
+        no_outlier_scores = [x for x in scores if x > low_out and x < high_out]
+        fit = scipy.stats.beta.fit(no_outlier_scores)
+        th = scipy.stats.beta.ppf(prob, *fit)
+
+        thbed = bed.filter(lambda x: float(x.score) >= th).saveas(outname)
+        print(th)
+
+    ## Filter using 'old', intersecting
+
+    ## Set astringent score threshold (for peaks in bdgdiff with no overlapp in 'old')
+    perc = 0.999
+    scores = [float(feat.score) for feat in bed]
+    Q1 = np.quantile(scores,0.25)
+    Q3 = np.quantile(scores,0.75)
+    IQR = Q3 - Q1
+    mult = 1
+
+    low_out = Q1 - mult*IQR
+    high_out = Q3 + mult*IQR
+
+    no_outlier_scores = [x for x in scores if x > low_out and x < high_out]
+    fit = scipy.stats.beta.fit(no_outlier_scores)
+    th = scipy.stats.beta.ppf(prob, *fit)
+
+    ## Get overlaps with old
+    cross = bed.intersect(overbed, loj=True)
+
+    ## Retain only those peaks with overlap in old or score > threshold
+    subset = cross.filter(lambda x: x.fields[5] != '.' or
+                          float(x.fields[4]) >= th)
+
+    outname = crossoldfld+name.replace('.bed', '_crossold{}_th{}.bed' .format(oldFC, perc))
+    subset.saveas(outname)
+
+    ## Use pandas to eliminate columns
+    df = pd.read_csv(outname, sep='\t', header = None)
+    df.iloc[:,:5].to_csv(outname, sep='\t', header = False, index = False)
+
+    ## Get peaks in 'old' that don't overlapp with bdfdiff
+    ## Should we keept those? No! This wat we are truly using BdgDiff
+    #oldunique = overbed.intersect(bed, v=True)
+
+
+## Plot graphs
+
+# bedname = ''
+
+# bed = pb.BedTool(bedname)
+# scores = [float(feat.score) for feat in bed]
+
+# Q1 = np.quantile(scores,0.25)
+# Q3 = np.quantile(scores,0.75)
+# IQR = Q3 - Q1
+# mult = 1
+
+# low_out = Q1 - mult*IQR
+# high_out = Q3 + mult*IQR
+
+# no_outlier_scores = [x for x in scores if x > low_out and x < high_out]
+
+# #plt.hist(scores, bins = 200, density=True)
+# plt.hist(no_outlier_scores, bins = 200, density=True)
+# plt.style.use('ggplot')
+
+# # find minimum and maximum of xticks, so we know
+# # where we should compute theoretical distribution
+# xt = plt.xticks()[0]
+# xmin, xmax = min(xt), max(xt)
+# #lnspc = np.linspace(xmin, xmax, len(scores))
+# lnspc = np.linspace(xmin, xmax, len(no_outlier_scores))
+
+# ## Normal
+# #fit = scipy.stats.norm.fit(scores)
+# fit = scipy.stats.norm.fit(no_outlier_scores)
+# pdf_norm = scipy.stats.norm.pdf(lnspc, *fit)
+# plt.plot(lnspc, pdf_norm, label="Norm")
+
+# plt.show()
+# ## Beta
+# #fit = scipy.stats.beta.fit(scores)
+# fit = scipy.stats.beta.fit(no_outlier_scores)
+# pdf_beta = scipy.stats.beta.pdf(lnspc, *fit)
+# plt.plot(lnspc, pdf_beta, label="Beta")
+
+# plt.show()
+
+# ## Gamma
+# fit = scipy.stats.gamma.fit(scores)
+# pdf_gamma = scipy.stats.gamma.pdf(lnspc, *fit)
+# plt.plot(lnspc, pdf_gamma, label="Gamma")
+
+# ## Exponential
+# fit = scipy.stats.expon.fit(scores)
+# pdf_expon = scipy.stats.expon.pdf(lnspc, *fit)
+# plt.plot(lnspc, pdf_expon, label="Expon")
+
+#+end_src
+*** Check for indel/duplication areas
+Our aim is to detect large duplicated or deleted regions in our samples genome. This approach consists in making the difference between two coverage tracks and detect regions with outlier values.
+#+begin_src python :tangle whole_chipseq_pipe.py
+## Create pairwise comparison coverage Bedgraph
+os.makedirs('./Input_Subtractions/', exist_ok=True)
+
+for pair in itertools.combinations(inputs, 2):
+    name1 = pair[0].split('_')[0]
+    name2 = pair[1].split('_')[0]
+    outname = './Input_Subtractions/'+name1+'_minus_'+name2+'_100bp_500smth_RPKM_cov.bdg'
+    print(pair)
+    print(outname)
+    subtract_bams(bamdir+pair[0], bamdir+pair[1], outname)
+
+## Load Bedgraph and put threshold
+
+subtractions = os.listdir('./Input_Subtractions')
+ddfld = './Duplication_Deletion_Regions/'
+os.makedirs(ddfld, exist_ok=True)
+
+for s in subtractions:
+
+    mergenlen = 200
+    minlen = 500
+    probs = [1-1e-6, 1-1e-10]
+
+    bedname = s
+    print(bedname)
+    bed = pb.BedTool('./Input_Subtractions/'+s)
+
+    ## Filter by prob
+
+    for prob in probs:
+
+        strprob = str(prob).replace('.', '')
+
+        scores = [float(feat.name) for feat in bed]
+        Q1 = np.quantile(scores,0.25)
+        Q3 = np.quantile(scores,0.75)
+        IQR = Q3 - Q1
+        mult = 1.5
+
+        low_out = Q1 - mult*IQR
+        high_out = Q3 + mult*IQR
+        no_outlier_scores = [x for x in scores if x > low_out and x < high_out]
+
+        fit = scipy.stats.norm.fit(no_outlier_scores)
+        th = scipy.stats.norm.interval(prob, *fit)
+
+        thbed = bed.filter(lambda x: float(x.name) <= th[0] or
+                           float(x.name) >= th[1])
+        print(prob)
+        print(th)
+
+        ## Filter by length
+        ## first cluster toghether peaks
+        clustered_bed = thbed.merge(d = mergenlen)
+
+        len_th_bed = clustered_bed.filter(lambda x: float(x.stop) - float(x.start) >= minlen)
+
+        ## Create bed output
+        outname = ddfld+bedname.replace('.bdg', '_norm_pdf_{}_minlen{}.bed' .format(strprob, minlen))
+        str_bed = ''
+        for feat in len_th_bed:
+            newline = [feat.chrom, feat.start, feat.stop]
+            newline = [str(x) for x in newline]
+            str_bed += '\t'.join(newline)+'\n'
+        outbed = pb.BedTool(str_bed, from_string=True).saveas(outname)
+#+end_src
+
+*** Cross peaks with indels
+In this filtering step we remove those peaks that overlap a duplicated or deleted region as defined in the previous step.
+#+begin_src python :tangle whole_chipseq_pipe.py
+me_names = [getName(f) for f in me_files]
+difs = list(itertools.combinations(me_names, 2))
+betafitfld = './BetaFit_DuplDel_Filtered/'
+crossoldfld = './CrossOld_DuplDel_Filtered/'
+os.makedirs(betafitfld, exist_ok=True)
+os.makedirs(crossoldfld, exist_ok=True)
+
+for pair in difs:
+
+    subst = './Duplication_Deletion_Regions/{}_minus_{}_100bp_500smth_RPKM_cov_norm_pdf_0999999_minlen500.bed'
+    subst = subst .format(pair[0], pair[1])
+    subst_bed = pb.BedTool(subst)
+
+    for n in [1,2]:
+        peak = './DiffPeaks_BdgDiff_BetaFit/{}_vs_{}_g200_l150_c1_c1.0_cond{}_beta_cdf_099.bed'
+        peak = peak .format(pair[0], pair[1], n)
+        peak_bed = pb.BedTool(peak)
+        filtered_bed = peak_bed.intersect(subst_bed, v=True)
+        outname = peak.replace('.bed', '_IndelDup_filtered.bed')
+        outname = outname.replace('./DiffPeaks_BdgDiff_BetaFit/', betafitfld)
+        filtered_bed.saveas(outname)
+
+        peak = './DiffPeaks_BdgDiff_CrossOld/{}_vs_{}_g200_l150_c1_c1.0_cond{}_crossold20_th0.999.bed'
+        peak = peak .format(pair[0], pair[1], n)
+        peak_bed = pb.BedTool(peak)
+        filtered_bed = peak_bed.intersect(subst_bed, v=True)
+        outname = peak.replace('.bed', '_IndelDup_filtered.bed')
+        outname = outname.replace('./DiffPeaks_BdgDiff_CrossOld/', crossoldfld)
+        filtered_bed.saveas(outname)
+
+#+end_src

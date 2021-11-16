@@ -1,4 +1,5 @@
 import pybedtools as pb
+import sys
 
 def extract_gff_info(feat, bdlen):
     """
@@ -95,3 +96,8 @@ def annotate_bed(bed, gff, only_genes=True):
 
     finally:
         out.close()
+
+bed = "/mnt/Disc4T/Projects/Cristina_ChIP_All/Data/New_Coverage/New_Peaks/all_peaks_tests.bed"
+gff = "/mnt/Disc4T/Projects/PhD_Project/Data/PlDB-46_Pf3D7_GDV1_ncRNAs_500bp_bothends.gff"    
+
+annotate_bed(bed, gff)

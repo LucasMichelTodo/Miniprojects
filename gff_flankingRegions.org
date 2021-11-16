@@ -12,53 +12,80 @@ Provide:
 #!/usr/bin/env python
 
 # Import packages
-import pybedtools as py
+import os
+import pybedtools as pb
 from pybedtools.featurefuncs import TSS
 from pybedtools.featurefuncs import three_prime
 import subprocess as sp
 
+wd = '/mnt/Disc4T/Projects/PhD_Project/Binned_Coverage/'
+os.chdir(wd)
+
 # Parameters to set
-upstream = 500
-dwstream = 0
-ref = '/home/lucas/ISGlobal/Gen_Referencies/PlasmoDB-46_Pfalciparum3D7.gff'
-out_name = "/mnt/Disc4T/Projects/Llistat_CVG/Reference_GFF/annotation_PlasmoDB-46"
+upstream = 1000
+dwstream = 1000
+ref = './filtered_only_genes_sorted.gff'
+out_name = './bedtool_3_ORF_5'
+excep_file = './gene_exceptions.txt'
+genome_file = './PlasmoDB-46_Pfalciparum3D7_Genome.fasta'
 
-# Create genome dict
-genome_file = "/home/lucas/ISGlobal/Gen_Referencies/Pf3D7.genome"
+def get_5prime_ORF_3prime(gff, genome_file, excep_file, out_name, fiveP=1000, threeP=1000):
 
-genome={}
-with open(genome_file, "r+") as infile:
-    for line in infile:
-        genome[line.split()[0]] = (0, int(line.split()[1]))
+    ## Get a list of genes that fall inside another gene
+    with open(excep_file, 'r+') as f:
+        exceptions = [g.strip() for g in f.readlines()]
 
-gff = py.BedTool(ref)
-sel = ["gene", "rRNA", "snoRNA", "snRNA", "tRNA", "ncRNA"]
+    ## Create dict with lenght of each chromosome
+    genome={}
+    with open(genome_file, 'r+') as infile:
+        for line in infile:
+            if line.startswith('>'):
+                linelist = line.strip().split(' | ')
+                chrom = linelist[0].replace('>', '')
+                seize = linelist[3].replace('length=', '')
+                genome[chrom] = (0, int(seize))
 
-gene_gff = gff.filter(lambda x: x.fields[2] in sel)
+    gff = pb.BedTool(gff)
 
-fivePrime = gene_gff.each(TSS,
-                          upstream=upstream,
-                          downstream=1,
-                          add_to_name="_fivePrime",
-                          genome=genome).saveas(out_name+"_fivePrime.gff")
+    fivePrime = gff.each(TSS,
+                         upstream=fiveP,
+                         downstream=1,
+                         add_to_name="_5prime",
+                         genome=genome).saveas(out_name+"_fivePrime.gff")
 
-gene_gff = gff.filter(lambda x: x.fields[2] in sel)
+    threePrime = gff.each(three_prime,
+                          upstream=1,
+                          downstream=threeP,
+                          add_to_name="_3prime",
+                          genome=genome).saveas(out_name+"_threePrime.gff")
 
-threePrime = gene_gff.each(three_prime,
-                           upstream=1,
-                           downstream=dwstream,
-                           add_to_name="_threePrime",
-                           genome=genome).saveas(out_name+"_threePrime.gff")
+    cmd = "cat {} {}_fivePrime.gff {}_threePrime.gff > {}.gff" .format(ref,
+                                                                       out_name,
+                                                                       out_name,
+                                                                       out_name)
+    sp.call(cmd, shell = True)
 
-cmd = "cat {} {}_fivePrime.gff {}_threePrime.gff > {}.gff" .format(ref,
-                                                                   out_name,
-                                                                   out_name,
-                                                                   out_name)
-sp.call(cmd, shell = True)
+    cmd = "python ./gff_sorter.py {}.gff > {}_sorted.gff" .format(out_name, out_name)
+    sp.call(cmd, shell = True)
 
-cmd = "gff_sorter.py {}.gff > {}_sorted.gff" .format(out_name, out_name)
+    cmd = "rm {}.gff {}_fivePrime.gff {}_threePrime.gff" .format(out_name,
+                                                                 out_name,
+                                                                 out_name)
+    sp.call(cmd, shell = True)
 
-sp.call(cmd, shell = True)
+get_5prime_ORF_3prime(ref, genome_file, excep_file, out_name)
+
+bed = pb.BedTool('./bedtool_3_ORF_5_sorted.gff')
+
+for idx, gene in enumerate(bed[0:3]):
+    gid = gene.fields[8].split(';')[0].replace('ID=', '')
+    is_reg = 'prime' in gid
+
+    print(idx)
+    print(gene)
+    print(is_reg)
+
+
 #+end_src
 
 #+RESULTS:

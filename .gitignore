@@ -1,2 +1,4 @@
 Microarray_R_analysis/R_results/
 *.pyc
+Peak_Calling_Comparison/
+*.png
