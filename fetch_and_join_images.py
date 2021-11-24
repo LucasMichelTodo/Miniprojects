@@ -11,12 +11,16 @@ old = '/mnt/Disc4T/Projects/PhD_Project/Microarrays/New_Old_separate_approach/Ol
 ratio = 'Ratio/Gene_Level/'
 red = 'Red_Signal/Gene_Level/'
 
-outdir = '/mnt/Disc4T/Projects/PhD_Project/Plots/Gens_sense_diferencies_Het/'
+outdir = '/mnt/Disc4T/Projects/PhD_Project/Plots/Temp/'
 os.makedirs(outdir, exist_ok=True)
 
 ## Load genes from a plain text file with one gene ID per line.
-gene_file = '/mnt/Disc4T/Projects/PhD_Project/Microarrays/Gene_lists_for_plots/gens_sense_dif_coverage.txt'
-gids = [line.strip() for line in open(gene_file, 'r+')]
+# gene_file = '/mnt/Disc4T/Projects/PhD_Project/Microarrays/Gene_lists_for_plots/gens_sense_dif_coverage.txt'
+# gids = [line.strip() for line in open(gene_file, 'r+')]
+
+gids = [
+    'PF3D7_0102200'
+]
 
 ## Main Loop
 for gid in tqdm(gids, position = 0, leave = True, desc = 'Completed'):
