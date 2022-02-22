@@ -11,54 +11,165 @@ import pandas as pd
 import itertools
 
 ## Functions
-def get_RPKMs(bam, bs, smooth, out):
+def get_RPKMs(bam, bs, smooth, norm, out):
+    
+    out = out if out.endswith('/') else out + '/'
+    name = bam.rsplit('/', 1)[1]
+    outname = name.replace('.bam', f'_rpkm_raw_bs{bs}_smth{smooth}.bdg')
 
     cmd = (
-        'bamCoverage -b {} '
+        f'bamCoverage -b {bam} '
         '--outFileFormat bedgraph '
-        '--normalizeUsing RPKM '
+        f'--normalizeUsing {norm} '
         '-p 8 '
-        '-bs {} '
-        '--smoothLength {} '
-        '-o {}'
+        f'-bs {bs} '
+        f'--smoothLength {smooth} '
+        f'-o {outname}'
     )
+    print(cmd)
+    subprocess.call(cmd, shell=True)
 
-    subprocess.call(cmd .format(bam, bs, smooth, out), shell=True)
 
-
-def get_RPKMs_normInput(bam_IP, bam_in, bs, smooth, out):
-
+def get_RPKMs_normInput(bam_IP, bam_in, bs, smooth, norm, of, outfld):
+    outfld = outfld if outfld.endswith('/') else outfld + '/'
+    name = bam_IP.rsplit('/', 1)[1]
+    outname = name.replace('.bam', f'_rpkm_normInput_bs{bs}_smth{smooth}.bdg')
     cmd = (
-        'bamCompare -b1 {} -b2 {} '
+        f'bamCompare -b1 {bam_IP} -b2 {bam_in} '
         '--outFileFormat bedgraph '
         '--scaleFactorsMethod None '
-        '--normalizeUsing RPKM '
+        f'--normalizeUsing {norm} '
         '-p 8 '
-        '-bs {} '
-        '--smoothLength {} '
-        '-o {}'
+        f'-bs {bs} '
+        f'--smoothLength {smooth} '
+        f'-o {outfld+outname} '
+        f'-of {of}'
     )
 
-    subprocess.call(cmd .format(bam_IP, bam_in, bs, smooth, out), shell=True)
+    print(cmd)
+    subprocess.call(cmd, shell=True)
 
-def subtract_bams(bam1, bam2, outname):
+def params_to_name(params_dict):
+    """
+    Take a dicttionary with params and convert it to a string to add to name files.
+    """
+    suffix = ''
+    for k,v in params_dict.items():
+        k_str = k.replace('-', '').strip()
+        v_str = v.strip()
+        suffix += f'_{k_str}{v_str}'
+    return(suffix)
 
-    cmd = ('bamCompare -b1 {} -b2 {} '
+def get_coverage(
+        bam_IP,
+        outfld = './',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--normalizeUsing':'RPKM',
+            '-p':'8',
+            '-of':'bedgraph',
+        },
+):
+    """
+    Wrapper for deepTools bamCoverage command. 
+    If you want to run with custom params,
+    copy the default params dict and then modify and add/remove
+    the ones you want to change.
+    """
+    name = bam_IP.rsplit('/', 1)[1].rsplit('.', 1)[0]
+    suffix = params_to_name(params)
+    ext = '.bdg' if params['-of'] == 'bedgraph' else '.bw'
+    outfile = outfld+name+suffix+ext
+
+    cmd = f'bamCoverage -b {bam_IP} -o {outfile}'
+    for k,v in params.items():
+        cmd += ' '+k+' '+v
+
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+
+def get_coverage_normInput(
+        bam_IP,
+        bam_in,
+        outfld = './',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactorsMethod':'None',
+            '--normalizeUsing':'RPKM',
+            '-p':'8',
+            '-of':'bedgraph',
+        },
+):
+    """
+    Wrapper for deepTools bamCompare command. 
+    If you want to run with custom params,
+    copy the default params dict and then modify and add/remove
+    the ones you want to change.
+    """
+    name = bam_IP.rsplit('/', 1)[1].rsplit('.', 1)[0]
+    suffix = params_to_name(params)
+    ext = '.bdg' if params['-of'] == 'bedgraph' else '.bw'
+    outfile = outfld+name+suffix+ext
+
+    cmd = f'bamCompare -b1 {bam_IP} -b2 {bam_in} -o {outfile}'
+    for k,v in params.items():
+        cmd += ' '+k+' '+v
+
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+def bigWigCompare(
+        bw_IP,
+        bw_in,
+        outfld = './',
+        params = {
+            '-bs':'50',
+            '-p':'8',
+            '-of':'bedgraph',
+        },
+):
+    """
+    Wrapper for deepTools bigwigCompare command. 
+    If you want to run with custom params,
+    copy the default params dict and then modify and add/remove
+    the ones you want to change.
+    """
+    name = bw_IP.rsplit('/', 1)[1].rsplit('.', 1)[0]
+    suffix = params_to_name(params)
+    ext = '.bdg' if params['-of'] == 'bedgraph' else '.bw'
+    outfile = outfld+name+suffix+ext
+
+    cmd = f'bigwigCompare -b1 {bw_IP} -b2 {bw_in} -o {outfile}'
+    for k,v in params.items():
+        cmd += ' '+k+' '+v
+        
+    print('\n--------------\n')
+    print(cmd)
+    print('\n--------------\n')
+    subprocess.call(cmd, shell=True)
+    
+def subtract_bams(bam1, bam2, bs, smooth, outname):
+
+    cmd = (f'bamCompare -b1 {bam1} -b2 {bam2} '
            '--operation subtract '
-           '-bs 100 '
+           f'-bs {bs} '
            '-p 8 '
            '--outFileFormat bedgraph '
            '--scaleFactorsMethod None '
            '--normalizeUsing RPKM '
-           '--smoothLength 500 '
-           '-o {}')
-    sp.call(cmd .format(bam1, bam2, outname), shell=True)
+           f'--smoothLength {smooth} '
+           f'-o {outname}')
+    
+    sp.call(cmd, shell=True)
 
 
 def getName(filename):
     if '/' in filename:
         filename = filename.rsplit("/", 1)[1] #Remove path
-    out = filename.split("_", 1)[0] #Remove added names
+    out = filename.rsplit(".", 1)[0] #Remove extension
     return(out)
 
 
@@ -69,7 +180,7 @@ def getDepth(peaksfile):
             if line.startswith("# total fragments "):
                 d = line.split(":")[1].strip()
                 dlist.append(int(d))
-    depth = int(round(min(dlist) / 1000000))
+    depth = round(min(dlist) / 1000000, 2)
     return(str(depth))
 
 
@@ -80,13 +191,13 @@ def macs2callpeak(t, c, params):
     cmd = "macs2 --version"
     subprocess.call(cmd, shell=True)
     print("\n")
-
-    cmd = ("macs2 callpeak -t {} -c {} ") .format(t, c) + params
+    n = t.rsplit('/', 1)[1].replace('.bam', '')
+    cmd = ("macs2 callpeak -t {} -c {} -n {} ") .format(t, c, n) + params
 
     subprocess.call(cmd, shell=True)
 
 
-def macs2DifPeaks(t1, c1, t2, c2, g, l, c, outdir):
+def macs2DifPeaks(indir, t1, c1, t2, c2, g, l, outdir, c='3'):
 
     # Make sure we are using apropiate MACS2 version (2.1.2)
     print("You are using MACS version:")
@@ -94,14 +205,14 @@ def macs2DifPeaks(t1, c1, t2, c2, g, l, c, outdir):
     subprocess.call(cmd, shell=True)
     print("\n")
 
-    t1pile = getName(t1) + "_me_Macspeaks_treat_pileup.bdg"
-    c1pile = getName(t1) + "_me_Macspeaks_control_lambda.bdg"
+    t1pile = indir + getName(t1) + "_treat_pileup.bdg"
+    c1pile = indir + getName(t1) + "_control_lambda.bdg"
 
-    t2pile = getName(t2) + "_me_Macspeaks_treat_pileup.bdg"
-    c2pile = getName(t2) + "_me_Macspeaks_control_lambda.bdg"
+    t2pile = indir + getName(t2) + "_treat_pileup.bdg"
+    c2pile = indir + getName(t2) + "_control_lambda.bdg"
 
-    peaks1 = getName(t1) + "_me_Macspeaks_peaks.xls"
-    peaks2 = getName(t2) + "_me_Macspeaks_peaks.xls"
+    peaks1 = indir + getName(t1) + "_peaks.xls"
+    peaks2 = indir + getName(t2) + "_peaks.xls"
 
     d1 = getDepth(peaks1)
     d2 = getDepth(peaks2)
@@ -142,3 +253,21 @@ def create_log2_tracks(treat, ctl):
     outfile = treat.replace('.bam', '_log2.bdg')
     cmd = 'bamCompare -b1 {} -b2 {} -o {} -of bedgraph -p8' .format(treat, ctl, outfile)
     subprocess.call(cmd, shell=True)
+
+
+class ChIP_seq():
+    def __init__(self, ID, ip=None, bf=None, s=None, c=None, h=None, com=None):
+        self.ID = ID
+        self.ip_type = ip
+        self.bamfile = bf
+        self.strain = s
+        self.condition = c
+        self.hpi = h
+        self.conmments = com
+
+    
+def pairwise(iterable):
+    "s -> (s0, s1), (s2, s3), (s4, s5), ..."
+    a = iter(iterable)
+    return zip(a, a)
+

@@ -1,0 +1,374 @@
+We aim to design a new normalitzation method for ChIP-Seq data. The underlying idea is that subtelomeric heterochromatic regions should be the same "height" across all samples.
+We will compute mean coverage over predefines heterochromatic and euchromatic portions of the genome and compute a signal/ratio factor that we will use to normalize between samples.
+
+* Manual aproach
+#+begin_src python
+import os
+import pybedtools as pb
+import numpy as np
+import subprocess
+from chip_seq_processing import *
+
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Norm_By_Het_Regions/'
+os.chdir(wd)
+
+## Functions
+
+def get_s_to_n(ref_bed, ip_rpkms, in_rpkms):
+    peaks = pb.BedTool(ref_bed)
+    cov_ip = pb.BedTool(ip_rpkms)
+    cov_in = pb.BedTool(in_rpkms)
+
+    cov_ip_peaks = peaks.sort().map(cov_ip, c = 4, o = 'mean')
+    cov_in_peaks = peaks.sort().map(cov_in, c = 4, o = 'mean')
+    ip_covs = [float(feat.fields[-1]) for feat in cov_ip_peaks]
+    in_covs = [float(feat.fields[-1]) for feat in cov_in_peaks]
+
+    np.mean(ip_covs)
+    np.mean(in_covs)
+
+    s_to_n = np.mean(ip_covs) / np.mean(in_covs)
+    to_10_fact = 10 / s_to_n
+
+    result = {
+        's_to_n':s_to_n,
+        'to_10_fact': to_10_fact,
+        'ip_cov': np.mean(ip_covs),
+        'in_cov': np.mean(in_covs),
+    }
+
+    return(result)
+
+## Get common peaks
+
+peaks_list = [peaks_dir+f for f in peak_files]
+outbed = pb.BedTool()
+peaks = [pb.BedTool(f) for f in peaks_list]
+## Intersect all peak files
+mintersect = outbed.multi_intersect(i = [x.fn for x in peaks])
+## Keep only peaks in all samples
+common = mintersect.filter(lambda x: len(x.fields[4].split(',')) == len(peaks))
+common.saveas('common_peaks_bed.bed')
+
+ref_bed = './common_peaks_bed.bed'
+
+
+## Load Data
+
+peaks_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/Peak_Calling_MACS2/'
+rpkms_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/RPKMs/'
+bam_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/Bams/'
+norm_rpkms_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/RPKMs_normInput/'
+
+
+peak_files = [
+    '1.2B_me_Macspeaks_peaks.narrowPeak',
+    'NF54_me_Macspeaks_peaks.narrowPeak'
+]
+
+ip_rpkms = [
+    '1.2B_me_sort_q5_RPKMs.bdg',
+    'NF54_me_renamed_q5_sort_RPKMs.bdg'
+]
+
+in_rpkms = [
+    '1.2B_in_sort_q5_RPKMs.bdg',
+    'NF54_in_renamed_q5_sort_RPKMs.bdg'
+]
+
+bam_me_files = [
+    '1.2B_me_sort_q5.bam',
+    'NF54_me_renamed_sort_q5.bam'
+]
+
+bam_in_files = [
+    '1.2B_in_sort_q5.bam',
+    'NF54_in_renamed_sort_q5.bam'
+]
+
+norm_rpkms_files = [
+    '1.2B_me_sort_q5_RPKMs_normInput.bdg',
+    'NF54_me_renamed_q5_sort_RPKMs_normInput.bdg'
+]
+
+
+## Trying to scale the rpkm_normbyinput files
+
+s_t_n_1 = get_s_to_n(peaks_dir+peak_files[0], rpkms_dir+ip_rpkms[0], rpkms_dir+in_rpkms[0])
+s_t_n_2 = get_s_to_n(peaks_dir+peak_files[1], rpkms_dir+ip_rpkms[1], rpkms_dir+in_rpkms[1])
+
+ratio_12 = s_t_n_1['ip_cov']/s_t_n_2['ip_cov']
+
+nf54 = pb.BedTool(norm_rpkms_dir+norm_rpkms_files[1])
+
+with open('nf54_rpkms_norminput_corrected.bdg', 'w+') as outfile:
+    for feat in nf54:
+        scaled_cov = str(float(feat.fields[3]) * ratio_12)
+        outfile.write('\t'.join([feat.fields[0],
+                                 feat.fields[1],
+                                 feat.fields[2],
+                                 scaled_cov])+'\n')
+
+### First scale raw bam files (both IP and in) and generate scaled bigwigs
+### Scale both by nreads and by calculated factor
+### then generate log2(IP/in) from scaled bigwigs
+
+## Generate raw biwigs for IP and in
+
+## First we need to create unnormalized ("raw") coverage files
+
+params = {
+    '-bs':'50',
+    '--smoothLength':'100',
+    '--normalizeUsing':'None',
+    '-p':'8',
+    '-of':'bedgraph',
+}
+
+for idx in [0,1]:
+    get_coverage(
+        bam_dir+bam_me_files[idx],
+        './Raw_Cov_BDGs/',
+        params
+    )
+    get_coverage(
+        bam_dir+bam_in_files[idx],
+        './Raw_Cov_BDGs/',
+        params
+    )
+
+raw_cov_dir = './Raw_Cov_BDGs/'
+raw_cov_me = sorted([f for f in os.listdir(raw_cov_dir) if '_me_' in f])
+raw_cov_in = sorted([f for f in os.listdir(raw_cov_dir) if '_in_' in f])
+
+stn_raw_1 = get_s_to_n(ref_bed, raw_cov_dir+raw_cov_me[0], raw_cov_dir+raw_cov_in[0])
+stn_raw_2 = get_s_to_n(ref_bed, raw_cov_dir+raw_cov_me[1], raw_cov_dir+raw_cov_in[1])
+
+nreads_IP = [6272123/1000000, 12968769/1000000]
+nreads_in = [15161002/1000000, 18217941/1000000]
+
+nreads_IP
+nreads_in
+
+IP_fact_12 = [1, (stn_raw_1['ip_cov']/nreads_IP[0]) / (stn_raw_2['ip_cov']/nreads_IP[1])]
+in_fact_12 = [1, (stn_raw_1['in_cov']/nreads_in[0]) / (stn_raw_2['in_cov']/nreads_in[1])]
+
+IP_fact_12
+in_fact_12
+
+for idx in [0,1]:
+    get_coverage(
+        bam_dir+bam_me_files[idx],
+        './Manually_Scaled_Raw_BWs/',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactor': str(IP_fact_12[idx]),
+            '-p':'8',
+            '-of':'bigwig',
+        }
+    )
+    get_coverage(
+        bam_dir+bam_in_files[idx],
+        './Manually_Scaled_Raw_BWs/',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactor': str(in_fact_12[idx]),
+            '-p':'8',
+            '-of':'bigwig',
+        }
+    )
+
+bw_dir = './Manually_Scaled_Raw_BWs/'
+
+bigwig_IPs = sorted([f for f in os.listdir(bw_dir) if '_me_' in f and f.endswith('bw')])
+bigwig_ins = sorted([f for f in os.listdir(bw_dir) if '_in_' in f and f.endswith('bw')])
+
+bw_dir
+bigwig_IPs
+bigwig_ins
+
+for bwIP, bwin in zip(bigwig_IPs, bigwig_ins):
+    bigWigCompare(
+        bw_dir+bwIP,
+        bw_dir+bwin,
+        './Manually_Scaled_NormIn_BDGs/'
+    )
+
+#+end_src
+
+* Define common peaks
+#+begin_src python
+peaks_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/Peak_Calling_MACS2/'
+me_files = [f for f in os.listdir(peaks_dir) if '_me_' in f and f.endswith('.narrowPeak')]
+
+### Creating a consensus peak list first ####
+
+peaks_list = [peaks_dir+f for f in peak_files]
+outbed = pb.BedTool()
+peaks = [pb.BedTool(f) for f in peaks_list]
+
+## Intersect all peak files
+mintersect = outbed.multi_intersect(i = [x.fn for x in peaks])
+
+## Keep only peaks in all samples
+common = mintersect.filter(lambda x: len(x.fields[4].split(',')) == len(peaks))
+common.saveas('common_peaks_ALL_me_files.bed')
+
+#+end_src
+
+* Define join peaks
+#+begin_src python
+import os
+import subprocess as sp
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Norm_By_Het_Regions/'
+os.chdir(wd)
+
+peaks_dir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/Peak_Calling_MACS2/'
+me_files = [f for f in os.listdir(peaks_dir) if '_me_' in f and f.endswith('.narrowPeak')]
+
+### Creating a consensus peak list first ####
+
+peaks_list = [peaks_dir+f for f in me_files]
+
+## Cat all beds into one file:
+peaks_str = ' '.join([p for p in peaks_list])
+cmd = f'cat {peaks_str} > cat_peaks.bed'
+sp.call(cmd, shell = True)
+
+## Keep only chrom, start and stop lines
+cmd = 'cut -d "\t" -f 1-3 cat_peaks.bed > join_peaks.bed'
+sp.call(cmd, shell = True)
+
+## Sort join bed
+cmd = 'bedtools sort -i join_peaks.bed > join_peaks_sorted.bed'
+sp.call(cmd, shell = True)
+
+## Merge join bed
+cmd = 'bedtools merge -i join_peaks_sorted.bed > join_peaks_sorted_merged.bed'
+sp.call(cmd, shell = True)
+
+#+end_src
+
+* Use edgeR TMM normalitzation on IPs only
+#+begin_src python
+import os
+from chip_seq_processing import *
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Norm_By_Het_Regions/'
+os.chdir(wd)
+
+factors_f = './bamfiles_and_factors_join_peaks.tsv'
+
+## Reads files and factors table
+with open(factors_f, 'r+') as infile:
+    first = True
+    bam_files = []
+    factors = []
+    for line in infile:
+        if first:
+            first = False
+        else:
+            linelist = line.strip().split('\t')
+            bam_files.append(linelist[0])
+            factors.append(linelist[1])
+
+for bam, fact in zip(bam_files, factors):
+    get_coverage(
+        bam,
+        './',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactor':fact,
+            '-p':'8',
+            '-of':'bedgraph',
+        }
+    )
+
+
+#+end_src
+* Use edgeR TMM normalitzation on Inputs
+#+begin_src python
+import os
+from chip_seq_processing import *
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Norm_By_Het_Regions/'
+os.chdir(wd)
+
+factors_me = './bamfiles_and_factors_join_peaks.tsv'
+
+## Reads files and factors table, IP(me) files
+with open(factors_me, 'r+') as infile:
+    first = True
+    bam_files = []
+    factors = []
+    for line in infile:
+        if first:
+            first = False
+        else:
+            linelist = line.strip().split('\t')
+            bam_files.append(linelist[0])
+            factors.append(linelist[1])
+
+for bam, fact in zip(bam_files, factors):
+    get_coverage(
+        bam,
+        './Tmm_scaled_Me_BW/',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactor':fact,
+            '-p':'8',
+            '-of':'bigwig',
+        }
+    )
+
+factors_in = './bamfiles_and_factors_inputs_binned10000.tsv'
+
+## Reads files and factors table, Input files
+with open(factors_in, 'r+') as infile:
+    first = True
+    bam_in_files = []
+    factors_in = []
+    for line in infile:
+        if first:
+            first = False
+        else:
+            linelist = line.strip().split('\t')
+            bam_in_files.append(linelist[0])
+            factors_in.append(linelist[1])
+
+for bam, fact in zip(bam_in_files, factors_in):
+    get_coverage(
+        bam,
+        './Tmm_scaled_In_BW/',
+        params = {
+            '-bs':'50',
+            '--smoothLength':'100',
+            '--scaleFactor':fact,
+            '-p':'8',
+            '-of':'bigwig',
+        }
+    )
+
+#### Use bigwig compare to create norm by input tracks
+
+bigwig_IPs = sorted([f for f in os.listdir('./Tmm_scaled_Me_BW') if f.endswith('bw')])
+bigwig_ins = sorted([f for f in os.listdir('./Tmm_scaled_In_BW') if f.endswith('bw')])
+
+for bwIP, bwin in zip(bigwig_IPs, bigwig_ins):
+    bigWigCompare(
+        './Tmm_scaled_Me_BW/'+bwIP,
+        './Tmm_scaled_In_BW/'+bwin,
+        './Tmm_scaled_NormIn/'
+    )
+
+
+
+
+
+#+end_src

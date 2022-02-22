@@ -2,3 +2,12 @@ Microarray_R_analysis/R_results/
 *.pyc
 Peak_Calling_Comparison/
 *.png
+BigWigs_Nonreads_fact/
+Manually_Scaled_NormIn_BDGs/
+Manually_Scaled_Raw_BWs/
+Raw_Cov_BDGs/
+Snapshots/
+Tmm_scaled_In_BW/
+Tmm_scaled_Me_BW/
+Tmm_scaled_NormIn/
+Tracks/
