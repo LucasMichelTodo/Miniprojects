@@ -11,11 +11,11 @@ import pandas as pd
 import itertools
 
 ## Functions
-def get_RPKMs(bam, bs, smooth, norm, out):
+def get_RPKMs(bam, bs, smooth, norm, outfld):
     
-    out = out if out.endswith('/') else out + '/'
+    outfld = outfld if outfld.endswith('/') else outfld + '/'
     name = bam.rsplit('/', 1)[1]
-    outname = name.replace('.bam', f'_rpkm_raw_bs{bs}_smth{smooth}.bdg')
+    outname = outfld+name.replace('.bam', f'_rpkm_raw_bs{bs}_smth{smooth}.bdg')
 
     cmd = (
         f'bamCoverage -b {bam} '

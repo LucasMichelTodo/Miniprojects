@@ -1,0 +1,1 @@
+python3 bed_to_igv_batch.py -gff PlasmoDB-52_Pfalciparum3D7.gff -ids all_gene_ids.txt -f /home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/igv_session_RPKMsnromInputs.xml -o All_gene_snapshots/ -th 150
