@@ -30,18 +30,29 @@ def get_RPKMs(bam, bs, smooth, norm, outfld):
     subprocess.call(cmd, shell=True)
 
 
-def get_RPKMs_normInput(bam_IP, bam_in, bs, smooth, norm, of, outfld):
+def get_RPKMs_normInput(
+        bam_IP,
+        bam_in,
+        bs = 50,
+        smooth = 150,
+        norm = 'RPKM',
+        of = 'bedgraph',
+        outfld = './',
+        pseudo = 1,
+        num_process = 8,
+):
     outfld = outfld if outfld.endswith('/') else outfld + '/'
     name = bam_IP.rsplit('/', 1)[1]
-    outname = name.replace('.bam', f'_rpkm_normInput_bs{bs}_smth{smooth}.bdg')
+    outname = name.replace('.bam', f'_rpkm_normInput_bs{bs}_smth{smooth}_pseudo{pseudo}.bdg')
     cmd = (
         f'bamCompare -b1 {bam_IP} -b2 {bam_in} '
         '--outFileFormat bedgraph '
         '--scaleFactorsMethod None '
         f'--normalizeUsing {norm} '
-        '-p 8 '
+        f'-p {num_process} '
         f'-bs {bs} '
         f'--smoothLength {smooth} '
+        f'--pseudocount {pseudo} '
         f'-o {outfld+outname} '
         f'-of {of}'
     )
