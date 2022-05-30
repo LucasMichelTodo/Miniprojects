@@ -1,5 +1,8 @@
 Microarray_R_analysis/R_results/
 *.pyc
+**/*.bdg
+**/*.bed
+*.narrowPeak
 Peak_Calling_Comparison/
 *.png
 BigWigs_Nonreads_fact/
