@@ -12,6 +12,11 @@ from itertools import repeat
 
 ## Functions
 
+def create_window_ref(window_size, genome_file, step):
+    bed = pb.BedTool()
+    win_ref = bed.window_maker(w=window_size, g = genome_file, s = step)
+    return(win_ref)
+
 def plot_skewnorm(cov_vector, params, plotname):
 
     # Plot the histogram.
@@ -39,12 +44,26 @@ def compare_cov(feat, skewnorm_params1, skewnorm_params2):
 def get_differential_peaks(
         peakfile1, peakfile2,
         covfile1, covfile2,
-        minprobdif, mergedist, minlen,
+        prefix1, prefix2,
+        genome_file,
+        window_size, stepsize,
+        minprobdif,
+        mergedist,
+        minlen,
         outfld):
 
     start = time.time()
+
+    ## Create folders for output
     os.makedirs(outfld, exist_ok = True)
     if not outfld.endswith('/'): outfld = outfld+'/'
+    os.makedirs(outfld+'Data/', exist_ok = True)
+    os.makedirs(outfld+'Data/Common_Coverage/', exist_ok = True)
+    os.makedirs(outfld+'Data/Common_Peaks/', exist_ok = True)
+    os.makedirs(outfld+'Data/Plots/', exist_ok = True)
+    os.makedirs(outfld+'Data/Window_Coverage/', exist_ok = True)
+    os.makedirs(outfld+'Data/PreFilter_Difpeaks/', exist_ok = True)
+
 
     ## Generate skewnorm distribution model for coverage in peaks
     ## Peaks coverage
@@ -61,14 +80,24 @@ def get_differential_peaks(
     skewnorm_params1 = skewnorm.fit(cov_peaks1)
     skewnorm_params2 = skewnorm.fit(cov_peaks2)
 
-    plot_skewnorm(cov_peaks1, skewnorm_params1, f'{outfld}peak_coverage_fit_1.png')
-    plot_skewnorm(cov_peaks2, skewnorm_params2, f'{outfld}peak_coverage_fit_2.png')
+    suffix = '_peak_coverage_fit.png'
+    plot_skewnorm(cov_peaks1, skewnorm_params1, f'{outfld}Data/Plots/{prefix1}{suffix}')
+    plot_skewnorm(cov_peaks2, skewnorm_params2, f'{outfld}Data/Plots/{prefix2}{suffix}')
+
+    ## Create window reference
+    print('Creating windowed coverage...')
+    suffix = '_window_coverage.bdg'
+    win_ref = create_window_ref(window_size, genome_file, stepsize)
+    win_cov1 = win_ref.map(cf1, c=4, o='mean').saveas(f'{outfld}Data/Window_Coverage/{prefix1}{suffix}')
+    win_cov2 = win_ref.map(cf2, c=4, o='mean').saveas(f'{outfld}Data/Window_Coverage/{prefix2}{suffix}')
 
     ## Create join coverage bdg
     print('Creating join coverage bed...')
-
-    outfile = outfld+'common_coverage.bdg'
-    cmd = ['bedtools', 'unionbedg', '-i', covfile1, covfile2, '>', outfile]
+    outfile = outfld+f'Data/Common_Coverage/{prefix1}_{prefix2}_common_coverage.bdg'
+    cmd = ['bedtools', 'unionbedg', '-i',
+           f'{outfld}Data/Window_Coverage/{prefix1}{suffix}',
+           f'{outfld}Data/Window_Coverage/{prefix2}{suffix}',
+           '>', outfile]
     sp.call(' '.join(cmd), shell = True)
     union_bed = pb.BedTool(outfile)
 
@@ -77,9 +106,10 @@ def get_differential_peaks(
 
     files_to_cross = []
     str_beds = peakfile1 + ' ' + peakfile2
-    cmd = 'awk \'{print}\' '+f'{str_beds} > {outfld}common_peaks.bed'
+    outfile = f'{outfld}Data/Common_Peaks/{prefix1}_{prefix2}_common_peaks.bed'
+    cmd = 'awk \'{print}\' '+f'{str_beds} > {outfile}'
     sp.call(cmd, shell = True)
-    common_peaks = pb.BedTool(f'{outfld}common_peaks.bed').sort()
+    common_peaks = pb.BedTool(outfile).sort()
 
     ## Subset union_bed to common_peaks
     common_cov_common_peaks = union_bed.intersect(common_peaks)
@@ -110,8 +140,8 @@ def get_differential_peaks(
         common_cov_common_peaks.fn,
         names=['#chrom', 'start', 'stop', 'cov1', 'cov2']
                )
-    rawout1 = f'{outfld}peaks_1over2_mpd{minprobdif}_merge{mergedist}_minlen{minlen}.bed'
-    rawout2 = f'{outfld}peaks_2over1_mpd{minprobdif}_merge{mergedist}_minlen{minlen}.bed'
+    rawout1 = f'{outfld}Data/PreFilter_Difpeaks/difpeaks_{prefix1}over{prefix2}_w{window_size}_s{stepsize}_pd{minprobdif}.bed'
+    rawout2 = f'{outfld}Data/PreFilter_Difpeaks/difpeaks_{prefix2}over{prefix1}_w{window_size}_s{stepsize}_pd{minprobdif}.bed'
 
     df[peaks1over2].to_csv(rawout1, sep='\t', index=False)
     df[peaks2over1].to_csv(rawout2, sep='\t', index=False)
@@ -119,10 +149,13 @@ def get_differential_peaks(
     rawbed1 = pb.BedTool(rawout1)
     rawbed2 = pb.BedTool(rawout2)
 
-    out1 = rawbed1.sort().merge(d=mergedist).filter(lambda f: f.stop - f.start > minlen).saveas(f'{outfld}filtered_peaks_1over2.bed')
-    out2 = rawbed2.sort().merge(d=mergedist).filter(lambda f: f.stop - f.start > minlen).saveas(f'{outfld}filtered_peaks_2over1.bed')
+    ## Merge peaks and filter by length
+    out1 = f'{outfld}difpeaks_{prefix1}over{prefix2}_w{window_size}_s{stepsize}_pd{minprobdif}_mg{mergedist}_ml{minlen}.bed'
+    out2 = f'{outfld}difpeaks_{prefix2}over{prefix1}_w{window_size}_s{stepsize}_pd{minprobdif}_mg{mergedist}_ml{minlen}.bed'
+    out1 = rawbed1.sort().merge(d=mergedist).filter(lambda f: f.stop - f.start > minlen).saveas(out1)
+    out2 = rawbed2.sort().merge(d=mergedist).filter(lambda f: f.stop - f.start > minlen).saveas(out2)
 
     end = time.time()
     print('Finished! Elapsed time:')
     print(end - start)
-   
+
