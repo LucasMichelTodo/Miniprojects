@@ -35,7 +35,7 @@ genome = './Pf3D7.genome'
 winsize = 100
 stepsize = 100
 minprobdif = 0.3
-mergedist = 1000
+mergedist = 500
 minlen = 1000
 outfld = f'./DifPeaks_W{winsize}_S{stepsize}_PD{minprobdif}_Mg{mergedist}_Ml{minlen}/'
 

@@ -2,6 +2,7 @@ import os
 import pybedtools as pb
 
 wd = '/mnt/Disc4T/Projects/Miniprojects/PhD_Project_Gene_Plots/'
+os.makedirs(wd)
 os.chdir(wd)
 ref_gff = pb.BedTool('PlasmoDB-52_Pfalciparum3D7.gff')
 
