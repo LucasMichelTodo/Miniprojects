@@ -22,19 +22,6 @@ def plot_gaussian_mixture(cov_vector, gm, plotname):
     plt.savefig(plotname)
     plt.clf()
 
-def plot_component(cov_vector, gm, comp, plotname):
-    # Plot the histogram.
-    plt.hist(cov_vector, bins=25, density=True, alpha=0.6, color='g')
-
-    # Plot the PDF.
-    xmin, xmax = plt.xlim()
-    x = np.linspace(xmin, xmax, 100)
-    logprob = gm.predict_proba(x.reshape(-1, 1))
-    cdf = logprob[:,comp]
-    plt.plot(x, cdf, 'k', linewidth=2)
-    plt.savefig(plotname)
-    plt.clf()
-
 def plot_components(cov_vector, gm, plotname):
     # Plot the histogram.
     plt.hist(cov_vector, bins=25, density=True, alpha=0.6, color='g')
@@ -43,7 +30,11 @@ def plot_components(cov_vector, gm, plotname):
     xmin, xmax = plt.xlim()
     x = np.linspace(xmin, xmax, 100)
     logprob = gm.predict_proba(x.reshape(-1, 1))
-    plt.plot(x, logprob, 'k', linewidth=2)
+    cdf1 = logprob[:,0]
+    cdf2 = logprob[:,1]
+    plt.plot(x, cdf1, 'k', linewidth=2, color='blue', label="Component 1")
+    plt.plot(x, cdf2, 'k', linewidth=2, color='green', label="Component 2")
+    plt.legend(loc='upper left')
     plt.savefig(plotname)
     plt.clf()
 
@@ -67,9 +58,8 @@ cov = np.array([float(feat.fields[cov_field]) for feat in covbed])
 gm = GaussianMixture(n_components=2).fit(cov.reshape(-1, 1))
 
 plot_gaussian_mixture(cov, gm, f'gm_fit.png')
-plot_component(cov, gm, 0, f'component_1_cdf.png')
-plot_component(cov, gm, 1, f'component_2_cdf.png')
 plot_components(cov, gm, f'gm_components.png')
+
 
 ## All sklearn estimators use as input a 2D array,
 ## with samples as rows and features as columns.
@@ -80,9 +70,14 @@ plot_components(cov, gm, f'gm_components.png')
 ## So (-1, 1) means: any number of rows and 1 column
 
 cov.reshape(-1,1).shape
-
 probs = gm.predict_proba(cov.reshape(-1,1))
+
+labels = gm.predict(cov.reshape(-1,1))
+labels
+np.unique(labels)
+mask
 mask = probs[:,0] < probs[:,1]
+# labels = gm.predict(cov.reshape(-1,1)) produces same result as 0s and 1s
 
 with open(f'pre_{out_name}', 'w+') as outfile:
     for feat, mask in zip(covbed, mask):
@@ -92,5 +87,4 @@ with open(f'pre_{out_name}', 'w+') as outfile:
 outbed_raw = pb.BedTool('peaks.bed')
 out_pre = outbed_raw.sort().merge(d=mergedist)
 out = out_pre.filter(lambda f: f.stop - f.start > minlen).saveas(out_name)
-        
-        
+
