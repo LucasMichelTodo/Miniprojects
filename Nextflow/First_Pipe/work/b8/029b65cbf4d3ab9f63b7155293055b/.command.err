@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 90, in <module>
+    parse_agregated_report(report_file, linestart, out_file)
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 36, in parse_agregated_report
+    print(out[name]['paired'])
+KeyError: 'paired'

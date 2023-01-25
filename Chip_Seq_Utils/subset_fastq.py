@@ -20,15 +20,10 @@ def subset_fastq_paired_parallel(fastq1, fastq2, nreads):
 
 ## Calls
 
-wd = '/mnt/Disc4T/Projects/Nuria/ChIP_151021_NCV/Raw_Data/'
+wd = '/mnt/Disc4T/Projects/Alba/Mostres_13_09_22/Raw_Data/'
 os.chdir(wd)
 
-fastq1s = [
-    'NCV26_lib_08246AAC_ATCACG_R1_001.fastq.gz',
-    'NCV27_lib_08247AAC_CGATGT_R1_001.fastq.gz',
-    'NCV28_lib_08248AAC_TTAGGC_R1_001.fastq.gz',
-    'NCV29_lib_08249AAC_TGACCA_R1_001.fastq.gz',
-]
+fastq1s = [f for f in os.listdir()]
 fastq2s = [
     'NCV26_lib_08246AAC_ATCACG_R2_001.fastq.gz',
     'NCV27_lib_08247AAC_CGATGT_R2_001.fastq.gz',

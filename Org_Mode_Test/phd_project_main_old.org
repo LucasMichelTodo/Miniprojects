@@ -1,0 +1,71 @@
+#+STARTUP: hideblocks
+#+PROPERTY: header-args :eval never-export
+#qq+OPTIONS: ^:{}
+#+SETUPFILE: /home/lucas/org-html-themes-master/org/theme-readtheorg-local.setup
+#+HTML_HEAD: <style>pre.src {background-color: #3F3F3F ; color: #e5e5e5;}</style>
+
+#+TITLE:  Integration of different Omics Data
+#+AUTHOR: Lucas Michel Todó
+#+EMAIL:  lucas.michel@isglobal.org
+#+DATE:   10/12/2018
+
+
+#+LaTeX: \pagebreak
+
+This is a working draft of my PhD project.
+/home/lucas/.emacs.d/html_formatting/org-html-themes-master/setup/theme-readtheorg.setup
+
+#+LaTeX: \pagebreak
+* Chip-Seq Data Processing
+** Pre-processing
+*** Reads Quality Control
+The first step is to evaluate the quality of the reads using ~fastqc~
+We check the report for any possible problem in the data.
+#+begin_example
+$fastqc ./*\.fastq
+#+end_example
+*** Clean reads: BBDUK
+The next step is to "clean" the read files using ~BBDUK~
+#+begin_src python :tangle ./Scripts/raw_reads_to_bam.py
+import subprocess as sp
+import os
+
+## Functions
+
+def call_BBDUK(in1, in2, out1, out2, outm, ref, params):
+    cmd = ("bbduk.sh in={} in2={} "
+           "out={} out2={} outm={} "
+           "ref={}") .format(in1, in2, out1, out2, outm, ref)
+
+    cmd = cmd+" "+params
+    sp.call(cmd, shell=True)
+
+## Calls
+
+params = "ktrim=r k=22 mink=6 overwrite=t"
+ref = "/home/lucas/Programs/bbmap/resources/adapters.fa"
+
+root_path = "/mnt/Disc4T/Projects/Cristina_ChIP_All/Raw_Data/"
+read1s = []
+read2s = []
+for path, subdirs, files in os.walk(root_path):
+    for f in files:
+        if all(x in f for x in ["read1", ".fastq"]):
+            read1s.append(os.path.join(path, f))
+        elif all(x in f for x in ["read2", ".fastq"]):
+            read2s.append(os.path.join(path, f))
+        else:
+            print(f)
+
+
+read1s = sorted(read1s)
+read2s = sorted(read2s)
+outpath = "/mnt/Disc4T/Projects/Cristina_ChIP_All/Clean_Reads/"
+
+for pair in zip(read1s, read2s):
+    in1, in2 = pair[0], pair[1]
+    out1 = outpath + pair[0].rsplit("/", 1)[1].replace(".fastq", "_clean.fastq")
+    out2 = outpath + pair[1].rsplit("/", 1)[1].replace(".fastq", "_clean.fastq")
+    outm = outpath + pair[0].rsplit("/", 1)[1].replace(".fastq", "_badreads.fastq")
+    call_BBDUK(in1, in2, out1, out2, outm, ref, params)
+#+end_src

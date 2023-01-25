@@ -1,0 +1,4 @@
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/work/1b/475a5daced66a30ce053fa7c43d83a/.command.sh", line 4
+    try:
+    ^
+IndentationError: unexpected indent

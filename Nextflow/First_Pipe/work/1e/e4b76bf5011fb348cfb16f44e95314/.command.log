@@ -1,0 +1,10 @@
+java.io.IOException: closed
+	at java.desktop/javax.imageio.stream.ImageInputStreamImpl.checkClosed(ImageInputStreamImpl.java:110)
+	at java.desktop/javax.imageio.stream.ImageInputStreamImpl.close(ImageInputStreamImpl.java:857)
+	at java.desktop/javax.imageio.stream.FileCacheImageInputStream.close(FileCacheImageInputStream.java:253)
+	at java.desktop/javax.imageio.ImageIO.read(ImageIO.java:1422)
+	at uk.ac.babraham.FastQC.Report.HTMLReportArchive.base64ForIcon(HTMLReportArchive.java:379)
+	at uk.ac.babraham.FastQC.Report.HTMLReportArchive.<init>(HTMLReportArchive.java:111)
+	at uk.ac.babraham.FastQC.Analysis.OfflineRunner.analysisComplete(OfflineRunner.java:185)
+	at uk.ac.babraham.FastQC.Analysis.AnalysisRunner.run(AnalysisRunner.java:123)
+	at java.base/java.lang.Thread.run(Thread.java:830)

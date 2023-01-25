@@ -1,0 +1,10 @@
+/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/Results/Alignments/Reports/agregated_report.tsv
+re.compile('^[0-9]+ reads; of these:')
+915 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+973 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+939 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+989 reads; of these:
+{'NCV29_in': {'nreads': '915', 'paired': '100.00%', 'conc_0': '32.79%', 'conc_1': '41.86%', 'conc_more': '25.36%', 'conc_0_disc1': '3.00%', 'conc_0_disc0_al0': '96.22%', 'conc_0_disc0_al1': '0.34%', 'conc_0_disc0_almore': '3.44%', 'overall_al': '69.40%'}, 'NCV27_in': {'nreads': '973', 'paired': '100.00%', 'conc_0': '18.40%', 'conc_1': '54.68%', 'conc_more': '26.93%', 'conc_0_disc1': '5.59%', 'conc_0_disc0_al0': '90.83%', 'conc_0_disc0_al1': '3.25%', 'conc_0_disc0_almore': '5.92%', 'overall_al': '84.22%'}, 'NCV28_me': {'nreads': '939', 'paired': '100.00%', 'conc_0': '83.39%', 'conc_1': '6.07%', 'conc_more': '10.54%', 'conc_0_disc1': '0.26%', 'conc_0_disc0_al0': '97.63%', 'conc_0_disc0_al1': '0.32%', 'conc_0_disc0_almore': '2.05%', 'overall_al': '18.80%'}, 'NCV26_me': {'nreads': '989', 'paired': '100.00%', 'conc_0': '70.17%', 'conc_1': '10.72%', 'conc_more': '19.11%', 'conc_0_disc1': '0.14%', 'conc_0_disc0_al0': '96.68%', 'conc_0_disc0_al1': '0.65%', 'conc_0_disc0_almore': '2.67%', 'overall_al': '32.25%'}}

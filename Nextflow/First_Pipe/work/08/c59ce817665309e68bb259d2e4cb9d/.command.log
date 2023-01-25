@@ -1,0 +1,43 @@
+join_report.log
+re.compile('^[0-9]+ reads; of these:')
+/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/Alignments/Reports/agregated_report.tsv
+2
+  989 (100.00%) were paired; of these:
+    694 (70.17%) aligned concordantly 0 times
+    106 (10.72%) aligned concordantly exactly 1 time
+NCV27_in
+989
+100.00%
+20
+  915 (100.00%) were paired; of these:
+    300 (32.79%) aligned concordantly 0 times
+    383 (41.86%) aligned concordantly exactly 1 time
+NCV29_in
+915
+100.00%
+38
+  973 (100.00%) were paired; of these:
+    179 (18.40%) aligned concordantly 0 times
+    532 (54.68%) aligned concordantly exactly 1 time
+NCV26_me
+973
+100.00%
+56
+  939 (100.00%) were paired; of these:
+    783 (83.39%) aligned concordantly 0 times
+    57 (6.07%) aligned concordantly exactly 1 time
+NCV28_me
+939
+100.00%
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 90, in <module>
+    parse_agregated_report(report_file, linestart, out_file)
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 78, in parse_agregated_report
+    out_df.to_csv(out_name, sep='\t')
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/io/formats/csvs.py", line 190, in save
+    compression=dict(self.compression_args, method=self.compression),
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/io/common.py", line 493, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, errors=errors, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/Alignments/Reports/agregated_report.tsv'

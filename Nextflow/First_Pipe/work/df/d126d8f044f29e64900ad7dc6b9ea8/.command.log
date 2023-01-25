@@ -1,0 +1,23 @@
+java -Djava.library.path=/home/lucas/Programs/bbmap/jni/ -ea -Xmx5751m -Xms5751m -cp /home/lucas/Programs/bbmap/current/ jgi.BBDukF in=NCV29_in_R1_subset1000.fq in2=NCV29_in_R2_subset1000.fq out=CleanReads/NCV29_in_R1_subset1000_cleanReads.fq out2=CleanReads/NCV29_in_R2_subset1000_cleanReads.fq outm=CleanReads/NCV29_inbadReads.fq ktrim=r k=22 mink=6 overwrite=t ref=/home/lucas/Programs/bbmap/resources/adapters.fa
+Executing jgi.BBDukF [in=NCV29_in_R1_subset1000.fq, in2=NCV29_in_R2_subset1000.fq, out=CleanReads/NCV29_in_R1_subset1000_cleanReads.fq, out2=CleanReads/NCV29_in_R2_subset1000_cleanReads.fq, outm=CleanReads/NCV29_inbadReads.fq, ktrim=r, k=22, mink=6, overwrite=t, ref=/home/lucas/Programs/bbmap/resources/adapters.fa]
+
+BBDuk version 36.99
+maskMiddle was disabled because useShortKmers=true
+Initial:
+Memory: max=6031m, free=6012m, used=19m
+
+Added 3309 kmers; time: 	0.267 seconds.
+Memory: max=6031m, free=6004m, used=27m
+
+Input is being processed as paired
+Started output streams:	0.078 seconds.
+Processing time:   		0.118 seconds.
+
+Input:                  	2000 reads 		250000 bases.
+KTrimmed:               	319 reads (15.95%) 	22994 bases (9.20%)
+Total Removed:          	170 reads (8.50%) 	22994 bases (9.20%)
+Result:                 	1830 reads (91.50%) 	227006 bases (90.80%)
+
+Time:   			0.509 seconds.
+Reads Processed:        2000 	3.93k reads/sec
+Bases Processed:        250k 	0.49m bases/sec

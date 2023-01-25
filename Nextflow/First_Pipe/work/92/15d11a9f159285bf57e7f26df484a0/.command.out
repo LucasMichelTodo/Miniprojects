@@ -1,0 +1,6 @@
+join_report.log
+re.compile('^[0-9]+ reads; of these:')
+Alignments/Reports/agregated_report.tsv
+1
+    179 (18.40%) aligned concordantly 0 times
+532

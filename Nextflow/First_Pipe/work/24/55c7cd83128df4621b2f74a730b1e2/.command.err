@@ -1,0 +1,16 @@
+java -Djava.library.path=/home/lucas/Programs/bbmap/jni/ -ea -Xmx11095m -Xms11095m -cp /home/lucas/Programs/bbmap/current/ jgi.BBDukF in=NCV29_in_R1_subset1000.fq in2=NCV29_in_R2_subset1000.fq out=CleanReads/NCV29_in_R1_subset1000_cleanReads.fq out2=CleanReads/NCV29_in_R2_subset1000_cleanReads.fq outm=CleanReads/NCV29_inbadReads.fq ktrim=r k=22 mink=6 overwrite=t
+Executing jgi.BBDukF [in=NCV29_in_R1_subset1000.fq, in2=NCV29_in_R2_subset1000.fq, out=CleanReads/NCV29_in_R1_subset1000_cleanReads.fq, out2=CleanReads/NCV29_in_R2_subset1000_cleanReads.fq, outm=CleanReads/NCV29_inbadReads.fq, ktrim=r, k=22, mink=6, overwrite=t]
+
+BBDuk version 36.99
+maskMiddle was disabled because useShortKmers=true
+NOTE: No reference files specified, no trimming mode, no min avg quality, no histograms - read sequences will not be changed.
+Initial:
+Memory: max=11634m, free=11613m, used=21m
+
+******  WARNING! A KMER OPERATION WAS CHOSEN BUT NO KMERS WERE LOADED.  ******
+******  YOU NEED TO SPECIFY A REFERENCE FILE OR LITERAL SEQUENCE.       ******
+
+Exception in thread "main" java.lang.AssertionError: You can bypass this assertion with the -da flag.
+	at jgi.BBDukF.process2(BBDukF.java:939)
+	at jgi.BBDukF.process(BBDukF.java:847)
+	at jgi.BBDukF.main(BBDukF.java:75)

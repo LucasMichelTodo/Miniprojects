@@ -1,0 +1,4 @@
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 23
+    print(Hi!)
+            ^
+SyntaxError: invalid syntax

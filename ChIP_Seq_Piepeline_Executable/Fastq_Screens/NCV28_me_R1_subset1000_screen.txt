@@ -1,0 +1,14 @@
+#Fastq_screen version: 0.15.0	#Aligner: bowtie2	#Reads in subset: 100000
+Genome	#Reads_processed	#Unmapped	%Unmapped	#One_hit_one_genome	%One_hit_one_genome	#Multiple_hits_one_genome	%Multiple_hits_one_genome	#One_hit_multiple_genomes	%One_hit_multiple_genomes	Multiple_hits_multiple_genomes	%Multiple_hits_multiple_genomes
+Pf3D7	1000	835	83.50	72	7.20	68	6.80	4	0.40	21	2.10
+Human	1000	214	21.40	468	46.80	293	29.30	4	0.40	21	2.10
+Mycoplasma_alaidlawii	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+Mycoplasma_marginini	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+Mycoplasma_mfermentans	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+Mycoplasma_mhominis	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+Mycoplasma_mhyorinis	1000	998	99.80	0	0.00	0	0.00	0	0.00	2	0.20
+Mycoplasma_morale	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+S.Aureus	1000	1000	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+P.falc_ribosomal	1000	991	99.10	0	0.00	0	0.00	2	0.20	7	0.70
+
+%Hit_no_genomes: 7.40

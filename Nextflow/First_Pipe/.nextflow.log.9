@@ -1,0 +1,106 @@
+Oct-18 16:18:16.381 [main] DEBUG nextflow.cli.Launcher - $> nextflow run -resume parse_csv.nf
+Oct-18 16:18:16.590 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.5
+Oct-18 16:18:16.609 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/nextflow.config
+Oct-18 16:18:16.610 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/nextflow.config
+Oct-18 16:18:16.637 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Oct-18 16:18:17.151 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Oct-18 16:18:17.166 [main] INFO  nextflow.cli.CmdRun - Launching `parse_csv.nf` [crazy_rubens] DSL2 - revision: 3e2f2ad949
+Oct-18 16:18:17.181 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/lucas/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Oct-18 16:18:17.184 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Oct-18 16:18:17.193 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Oct-18 16:18:17.195 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Oct-18 16:18:17.199 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Oct-18 16:18:17.209 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Oct-18 16:18:17.267 [main] DEBUG nextflow.Session - Session uuid: f41e8563-3367-467e-bf73-10aa8ccce29e
+Oct-18 16:18:17.267 [main] DEBUG nextflow.Session - Run name: crazy_rubens
+Oct-18 16:18:17.268 [main] DEBUG nextflow.Session - Executor pool size: 8
+Oct-18 16:18:17.294 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.5 build 5708
+  Created: 15-07-2022 16:09 UTC (18:09 CEST)
+  System: Linux 4.15.0-193-generic
+  Runtime: Groovy 3.0.10 on Java HotSpot(TM) 64-Bit Server VM 13.0.2+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 17974@lucas-Precision-Tower-3620 [127.0.1.1]
+  CPUs: 8 - Mem: 31.3 GB (17.6 GB) - Swap: 31.9 GB (31.7 GB)
+Oct-18 16:18:17.375 [main] DEBUG nextflow.Session - Work-dir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/work [ext2/ext3]
+Oct-18 16:18:17.406 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Oct-18 16:18:17.419 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Oct-18 16:18:17.440 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Oct-18 16:18:17.452 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Oct-18 16:18:17.521 [main] DEBUG nextflow.Session - Session start invoked
+Oct-18 16:18:18.060 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Oct-18 16:18:18.212 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FastQC_Raw
+Oct-18 16:18:18.213 [main] DEBUG nextflow.Session - Ignite dataflow network (1)
+Oct-18 16:18:18.219 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Oct-18 16:18:18.219 [main] DEBUG nextflow.Session - Session await
+Oct-18 16:18:18.219 [main] DEBUG nextflow.Session - Session await > all process finished
+Oct-18 16:18:18.219 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Oct-18 16:18:18.252 [Actor Thread 8] ERROR nextflow.extension.DataflowHelper - @unknown
+groovy.lang.MissingPropertyException: No such property: sample_id for class: nextflow.script.WorkflowBinding
+	at groovy.lang.Binding.getVariable(Binding.java:61)
+	at nextflow.script.WorkflowBinding.getVariable(WorkflowBinding.groovy:132)
+	at groovy.lang.Binding.getProperty(Binding.java:116)
+	at nextflow.script.WorkflowBinding.getProperty(WorkflowBinding.groovy:121)
+	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:194)
+	at groovy.lang.Closure.getPropertyTryThese(Closure.java:320)
+	at groovy.lang.Closure.getPropertyDelegateFirst(Closure.java:310)
+	at groovy.lang.Closure.getProperty(Closure.java:296)
+	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:194)
+	at groovy.lang.Closure.getPropertyTryThese(Closure.java:320)
+	at groovy.lang.Closure.getPropertyOwnerFirst(Closure.java:314)
+	at groovy.lang.Closure.getProperty(Closure.java:304)
+	at org.codehaus.groovy.runtime.callsite.PogoGetPropertySite.getProperty(PogoGetPropertySite.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGroovyObjectGetProperty(AbstractCallSite.java:341)
+	at Script_09072304$_runScript_closure2$_closure5$_closure9.doCall(Script_09072304:30)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:38)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.extension.OperatorEx$_view_closure37.doCall(OperatorEx.groovy:1312)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:38)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.extension.DataflowHelper$_subscribeImpl_closure2.doCall(DataflowHelper.groovy:285)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.onMessage(DataflowOperatorActor.java:108)
+	at groovyx.gpars.actor.impl.SDAClosure$1.call(SDAClosure.java:43)
+	at groovyx.gpars.actor.AbstractLoopingActor.runEnhancedWithoutRepliesOnMessages(AbstractLoopingActor.java:293)
+	at groovyx.gpars.actor.AbstractLoopingActor.access$400(AbstractLoopingActor.java:30)
+	at groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:93)
+	at groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Oct-18 16:18:18.261 [Actor Thread 8] DEBUG nextflow.Session - Session aborted -- Cause: No such property: sample_id for class: nextflow.script.WorkflowBinding
+Oct-18 16:18:18.286 [Actor Thread 8] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] view
+
+Oct-18 16:18:18.299 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Oct-18 16:18:18.364 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Oct-18 16:18:18.414 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

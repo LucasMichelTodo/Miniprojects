@@ -1,0 +1,17 @@
+NCV27_in
+939 reads; of these:
+  939 (100.00%) were paired; of these:
+    783 (83.39%) aligned concordantly 0 times
+    57 (6.07%) aligned concordantly exactly 1 time
+    99 (10.54%) aligned concordantly >1 times
+    ----
+    783 pairs aligned concordantly 0 times; of these:
+      2 (0.26%) aligned discordantly 1 time
+    ----
+    781 pairs aligned 0 times concordantly or discordantly; of these:
+      1562 mates make up the pairs; of these:
+        1525 (97.63%) aligned 0 times
+        5 (0.32%) aligned exactly 1 time
+        32 (2.05%) aligned >1 times
+18.80% overall alignment rate
+

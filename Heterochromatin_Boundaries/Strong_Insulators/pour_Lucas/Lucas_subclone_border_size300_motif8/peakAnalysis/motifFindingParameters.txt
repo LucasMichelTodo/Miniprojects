@@ -1,0 +1,1 @@
+cmd = manual_intervals_subclones.pos /home/sandra/Documents/Malaria_epigenetics/H3K9me3_plasticity_during_early_SC/0_Plasmodium_falciparum_genomics_ressources/PlasmoDB-55_Pfalciparum3D7_Genome.fasta peakAnalysis -size 300 -len 8

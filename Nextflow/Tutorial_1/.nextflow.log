@@ -1,0 +1,114 @@
+Sep-29 11:50:50.018 [main] DEBUG nextflow.cli.Launcher - $> nextflow run isugifNF/blast -profile test
+Sep-29 11:50:50.109 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.10.0
+Sep-29 11:50:50.806 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/lucas/.nextflow/assets/isugifNF/blast/.git/config; branch: master; remote: origin; url: https://github.com/isugifNF/blast.git
+Sep-29 11:50:50.817 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/lucas/.nextflow/assets/isugifNF/blast/.git/config; branch: master; remote: origin; url: https://github.com/isugifNF/blast.git
+Sep-29 11:50:50.907 [main] INFO  nextflow.cli.CmdRun - Launching `isugifNF/blast` [elegant_agnesi] - revision: 799b748598 [master]
+Sep-29 11:50:51.483 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/lucas/.nextflow/assets/isugifNF/blast/nextflow.config
+Sep-29 11:50:51.484 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/lucas/.nextflow/assets/isugifNF/blast/nextflow.config
+Sep-29 11:50:51.494 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test`
+Sep-29 11:50:51.614 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [test, condo, singularity, ceres, local, nova, docker]
+Sep-29 11:50:51.634 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/lucas/.nextflow/plugins
+Sep-29 11:50:51.635 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-29 11:50:51.644 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-29 11:50:51.645 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-29 11:50:51.649 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-29 11:50:51.657 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-29 11:50:51.703 [main] DEBUG nextflow.Session - Session uuid: 2c28d24e-8743-49b4-92fc-c397446f8dc6
+Sep-29 11:50:51.703 [main] DEBUG nextflow.Session - Run name: elegant_agnesi
+Sep-29 11:50:51.704 [main] DEBUG nextflow.Session - Executor pool size: 8
+Sep-29 11:50:51.721 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.10.0 build 5640
+  Created: 11-11-2021 18:27 UTC (19:27 CEST)
+  System: Linux 4.15.0-193-generic
+  Runtime: Groovy 3.0.9 on Java HotSpot(TM) 64-Bit Server VM 13.0.2+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 31418@lucas-Precision-Tower-3620 [127.0.1.1]
+  CPUs: 8 - Mem: 31.3 GB (21.5 GB) - Swap: 31.9 GB (31.9 GB)
+Sep-29 11:50:51.733 [main] DEBUG nextflow.Session - Work-dir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work [ext2/ext3]
+Sep-29 11:50:51.734 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/lucas/.nextflow/assets/isugifNF/blast/bin
+Sep-29 11:50:51.740 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-29 11:50:51.750 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-29 11:50:51.807 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Sep-29 11:50:51.913 [main] DEBUG nextflow.Session - Session start invoked
+Sep-29 11:50:52.267 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-29 11:50:52.367 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Sep-29 11:50:52.398 [Actor Thread 1] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.fasta
+Sep-29 11:50:52.410 [Actor Thread 1] DEBUG n.splitter.AbstractTextSplitter - Splitter `Fasta` collector path: nextflow.splitter.TextFileCollector$CachePath(/mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/de/b9d1a8355c40c6c7dcdd7a28e58120/headtest.fasta, null)
+Sep-29 11:50:52.449 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:software_check` matches process software_check
+Sep-29 11:50:52.453 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Sep-29 11:50:52.453 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Sep-29 11:50:52.459 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Sep-29 11:50:52.464 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=31.3 GB; capacity=20; pollInterval=100ms; dumpInterval=5m
+Sep-29 11:50:52.470 [main] DEBUG n.processor.TaskPollingMonitor - Creating submit rate limit of 10 reqs by 1 seconds
+Sep-29 11:50:52.572 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:runMakeBlastDB` matches process runMakeBlastDB
+Sep-29 11:50:52.575 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Sep-29 11:50:52.575 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Sep-29 11:50:52.617 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nin
+Sep-29 11:50:52.618 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ptf
+Sep-29 11:50:52.618 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pdb
+Sep-29 11:50:52.618 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nhr
+Sep-29 11:50:52.619 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ndb
+Sep-29 11:50:52.619 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pin
+Sep-29 11:50:52.619 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nsq
+Sep-29 11:50:52.619 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.phr
+Sep-29 11:50:52.620 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.psq
+Sep-29 11:50:52.620 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pto
+Sep-29 11:50:52.620 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.not
+Sep-29 11:50:52.620 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ntf
+Sep-29 11:50:52.621 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pot
+Sep-29 11:50:52.621 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nto
+Sep-29 11:50:52.657 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:52.677 [Task submitter] INFO  nextflow.Session - [7a/99109b] Submitted process > software_check
+Sep-29 11:50:52.699 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:52.700 [Task submitter] INFO  nextflow.Session - [08/a25dfb] Submitted process > runMakeBlastDB (1)
+Sep-29 11:50:54.507 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: runMakeBlastDB (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/08/a25dfb1a5e3172e9a798dd8aaccdb4]
+Sep-29 11:50:54.519 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:runBlast` matches process runBlast
+Sep-29 11:50:54.519 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Sep-29 11:50:54.519 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Sep-29 11:50:54.547 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: runMakeBlastDB, runBlast, software_check
+Sep-29 11:50:54.548 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Sep-29 11:50:54.548 [main] DEBUG nextflow.Session - Session await
+Sep-29 11:50:54.591 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.591 [Task submitter] INFO  nextflow.Session - [f4/b97b84] Submitted process > runBlast (6)
+Sep-29 11:50:54.600 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.601 [Task submitter] INFO  nextflow.Session - [e8/de0b3a] Submitted process > runBlast (5)
+Sep-29 11:50:54.605 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: software_check; status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/7a/99109b3ea95375643df06b3b211b14]
+Sep-29 11:50:54.605 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.606 [Task submitter] INFO  nextflow.Session - [97/88b74c] Submitted process > runBlast (4)
+Sep-29 11:50:54.612 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.612 [Task submitter] INFO  nextflow.Session - [27/925abd] Submitted process > runBlast (7)
+Sep-29 11:50:54.618 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.618 [Task submitter] INFO  nextflow.Session - [1e/3cde6c] Submitted process > runBlast (8)
+Sep-29 11:50:54.625 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.626 [Task submitter] INFO  nextflow.Session - [8a/e5b380] Submitted process > runBlast (3)
+Sep-29 11:50:54.633 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.634 [Task submitter] INFO  nextflow.Session - [50/9649df] Submitted process > runBlast (2)
+Sep-29 11:50:54.639 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:54.640 [Task submitter] INFO  nextflow.Session - [f8/1775c9] Submitted process > runBlast (1)
+Sep-29 11:50:55.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: runBlast (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/50/9649dfc07bd1a17e0236309f0a9518]
+Sep-29 11:50:55.008 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:55.008 [Task submitter] INFO  nextflow.Session - [57/2a4dd1] Submitted process > runBlast (10)
+Sep-29 11:50:55.019 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: runBlast (4); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/97/88b74cba8f1e1a7db3cae550e88c4b]
+Sep-29 11:50:55.028 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: runBlast (7); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/27/925abd4b41601cef9f52ed3418d477]
+Sep-29 11:50:55.032 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: runBlast (8); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/1e/3cde6c799c5b9fc0e055b5b20369c1]
+Sep-29 11:50:55.067 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: runBlast (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/8a/e5b380a1197cd21b38eac94937d265]
+Sep-29 11:50:55.071 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: runBlast (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/f8/1775c92aa6878484d618f7e6ce482a]
+Sep-29 11:50:55.089 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Sep-29 11:50:55.089 [Task submitter] INFO  nextflow.Session - [5a/c07f13] Submitted process > runBlast (9)
+Sep-29 11:50:55.116 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: runBlast (6); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/f4/b97b847b3ba5a5695bf521c1e039b4]
+Sep-29 11:50:55.118 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: runBlast (5); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/e8/de0b3ac324e348f2abffc90ae33a42]
+Sep-29 11:50:55.142 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: runBlast (10); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/57/2a4dd1c86c76c32845ff21c88806b9]
+Sep-29 11:50:55.241 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: runBlast (9); status: COMPLETED; exit: 0; error: -; workDir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/5a/c07f133da40649f892667775214e7e]
+Sep-29 11:50:55.243 [main] DEBUG nextflow.Session - Session await > all process finished
+Sep-29 11:50:55.244 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Sep-29 11:50:55.327 [Actor Thread 12] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 10; slices: 1; internal sort time: 0.013 s; external sort time: 0.002 s; total time: 0.015 s
+Sep-29 11:50:55.391 [Actor Thread 12] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /tmp/e615dede972b10386c1746b22a3b66fd.collect-file
+Sep-29 11:50:55.393 [Actor Thread 19] INFO  nextflow.script.BaseScript - Entries are saved to file: ./out_dir/blast_output_combined.txt
+Sep-29 11:50:55.397 [Actor Thread 12] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-13425621429529495952
+Sep-29 11:50:55.403 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=12; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=5.9s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=8; peakCpus=8; peakMemory=0; ]
+Sep-29 11:50:55.403 [main] DEBUG nextflow.trace.ReportObserver - Flow completing -- rendering html report
+Sep-29 11:50:55.455 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":4,"min":4,"q1":4,"q2":4,"q3":4,"max":4,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"process":"runMakeBlastDB","mem":{"mean":15405056,"min":15405056,"q1":15405056,"q2":15405056,"q3":15405056,"max":15405056,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":206839808,"min":206839808,"q1":206839808,"q2":206839808,"q3":206839808,"max":206839808,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"reads":{"mean":224876,"min":224876,"q1":224876,"q2":224876,"q3":224876,"max":224876,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"cpu":{"mean":4,"min":4,"q1":4,"q2":4,"q3":4,"max":4,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"time":{"mean":1738,"min":1738,"q1":1738,"q2":1738,"q3":1738,"max":1738,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"},"writes":{"mean":63034,"min":63034,"q1":63034,"q2":63034,"q3":63034,"max":63034,"minLabel":"runMakeBlastDB (1)","maxLabel":"runMakeBlastDB (1)","q1Label":"runMakeBlastDB (1)","q2Label":"runMakeBlastDB (1)","q3Label":"runMakeBlastDB (1)"}},{"cpuUsage":{"mean":4.5,"min":4.5,"q1":4.5,"q2":4.5,"q3":4.5,"max":4.5,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"process":"software_check","mem":{"mean":16216064,"min":16216064,"q1":16216064,"q2":16216064,"q3":16216064,"max":16216064,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"memUsage":null,"timeUsage":null,"vmem":{"mean":238579712,"min":238579712,"q1":238579712,"q2":238579712,"q3":238579712,"max":238579712,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"reads":{"mean":220521,"min":220521,"q1":220521,"q2":220521,"q3":220521,"max":220521,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"cpu":{"mean":4.5,"min":4.5,"q1":4.5,"q2":4.5,"q3":4.5,"max":4.5,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"time":{"mean":1770,"min":1770,"q1":1770,"q2":1770,"q3":1770,"max":1770,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"},"writes":{"mean":350,"min":350,"q1":350,"q2":350,"q3":350,"max":350,"minLabel":"software_check","maxLabel":"software_check","q1Label":"software_check","q2Label":"software_check","q3Label":"software_check"}},{"cpuUsage":{"mean":94.32,"min":45.6,"q1":50.6,"q2":52,"q3":72.55,"max":279.4,"minLabel":"runBlast (5)","maxLabel":"runBlast (9)","q1Label":"runBlast (2)","q2Label":"runBlast (8)","q3Label":"runBlast (7)"},"process":"runBlast","mem":{"mean":39217561.6,"min":3411968,"q1":35220480,"q2":39995392,"q3":51006464,"max":51712000,"minLabel":"runBlast (1)","maxLabel":"runBlast (8)","q1Label":"runBlast (7)","q2Label":"runBlast (4)","q3Label":"runBlast (10)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":522433331.2,"min":14454784,"q1":249929728,"q2":258320384,"q3":736538624,"max":1235218432,"minLabel":"runBlast (1)","maxLabel":"runBlast (9)","q1Label":"runBlast (4)","q2Label":"runBlast (6)","q3Label":"runBlast (8)"},"reads":{"mean":173086.5,"min":172889,"q1":173127.5,"q2":173131,"q3":173131,"max":173132,"minLabel":"runBlast (1)","maxLabel":"runBlast (4)","q1Label":"runBlast (9)","q2Label":"runBlast (7)","q3Label":"runBlast (3)"},"cpu":{"mean":94.32,"min":45.6,"q1":50.6,"q2":52,"q3":72.55,"max":279.4,"minLabel":"runBlast (5)","maxLabel":"runBlast (9)","q1Label":"runBlast (2)","q2Label":"runBlast (8)","q3Label":"runBlast (7)"},"time":{"mean":241.6,"min":77,"q1":237.25,"q2":279,"q3":297,"max":328,"minLabel":"runBlast (9)","maxLabel":"runBlast (5)","q1Label":"runBlast (1)","q2Label":"runBlast (2)","q3Label":"runBlast (4)"},"writes":{"mean":7212,"min":6493,"q1":6856,"q2":7047,"q3":7428.5,"max":8614,"minLabel":"runBlast (1)","maxLabel":"runBlast (2)","q1Label":"runBlast (4)","q2Label":"runBlast (3)","q3Label":"runBlast (7)"}}]
+Sep-29 11:50:56.018 [main] DEBUG nextflow.trace.TimelineObserver - Flow completing -- rendering html timeline
+Sep-29 11:50:56.192 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Sep-29 11:50:56.200 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,599 @@
+* Intro
+In this project we want two compare different differential peak calling methods. As a comparison metric we will use the number of differntial peaks that overlap a DE gene.
+* Scripts
+** Set indir and outdir
+#+BEGIN_SRC python :session pypeakcalling :tangle ./Scripts/diff_peaks_compare.py
+import os
+import itertools
+import pandas as pd
+import pybedtools as pb
+from chip_seq_processing import *
+
+indir = '/home/lucas/ISGlobal/Projects/Phd_Project/ChIP_Seq/'
+
+chips = [
+    '1.2B_me_sort_q5.bam',
+    '10G_me_sort_q5.bam',
+    'A7K9_me_sort_q5.bam',
+    'E5K9_me_sort_q5.bam',
+    'B11_me_sort_q5.bam',
+]
+
+inputs = [
+    '1.2B_in_sort_q5.bam',
+    '10G_in_sort_q5.bam',
+    'A7K9_in_sort_q5.bam',
+    'E5K9_in_sort_q5.bam',
+    'B11_in_sort_q5.bam',
+]
+#+END_SRC
+** Differential peaks using MACS2 'bdgdiff'
+In this approach we use MACS2 differential peak caller (bdgdiff).
+#+BEGIN_SRC python :session pypeakcalling :tangle ./Scripts/diff_peaks_compare.py
+## Inputs
+path_chips = [indir + c for c in chips]
+path_inputs = [indir + i for i in inputs]
+
+## Ensure same ordering (by name)
+path_chips = sorted(path_chips)
+path_inputs = sorted(path_inputs)
+
+## Make macs2_names
+macs_chips = [f.replace('_sort_q5', '_Macspeaks') for f in path_chips]
+macs_inputs = [f.replace('_sort_q5', '_Macspeaks') for f in path_inputs]
+
+## Differential Peak-Calling
+pairs = zip(macs_chips, macs_inputs)
+difs = list(itertools.combinations(pairs, 2))
+
+## Call macs2
+
+def getName(filename):
+    if '/' in filename:
+        filename = filename.rsplit("/", 1)[1] #Remove path
+    out = filename.rsplit(".", 1)[0] #Remove extension
+    return(out)
+
+def getDepth(peaksfile):
+    dlist = []
+    with open(peaksfile) as f:
+        for line in f:
+            if line.startswith("# total fragments "):
+                d = line.split(":")[1].strip()
+                dlist.append(int(d))
+    depth = round(min(dlist) / 1000000, 2)
+    return(str(depth))
+
+def macs2DifPeaks(indir, t1, c1, t2, c2, outdir):
+
+    # Make sure we are using apropiate MACS2 version (2.1.2)
+    print("You are using MACS version:")
+    cmd = "macs2 --version"
+    subprocess.call(cmd, shell=True)
+    print("\n")
+
+    t1pile = indir + getName(t1) + "_treat_pileup.bdg"
+    c1pile = indir + getName(t1) + "_control_lambda.bdg"
+
+    t2pile = indir + getName(t2) + "_treat_pileup.bdg"
+    c2pile = indir + getName(t2) + "_control_lambda.bdg"
+
+    peaks1 = indir + getName(t1) + "_peaks.xls"
+    peaks2 = indir + getName(t2) + "_peaks.xls"
+
+    d1 = getDepth(peaks1)
+    d2 = getDepth(peaks2)
+
+    prefix = getName(t1)+"_vs_"+getName(t2)
+
+    cmd = ("macs2 bdgdiff "
+           "--t1 {} --c1 {} "
+           "--t2 {} --c2 {} "
+           "--d1 {} --d2 {} "
+           "--cutoff 4 "
+           "--outdir {} "
+           "--o-prefix {} ") .format(t1pile, c1pile,
+                                     t2pile, c2pile,
+                                     d1, d2,
+                                     outdir,
+                                     prefix)
+
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+
+macs2_input = indir+'Peak_Calling_MACS2/'
+macs2_out = '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/Difpeaks_MACS2/'
+
+for dif in difs:
+    macs2DifPeaks(macs2_input, dif[0][0], dif[0][1], dif[1][0], dif[1][1], macs2_out)
+#+END_SRC
+** Parse MACS2 difpeaks into simple bed
+#+begin_src python
+macs2_difpeaks = [f for f in os.listdir(macs2_out) if '_cond' in f]
+macs2_difpeaks
+outdir = macs2_out+'Parsed/'
+os.makedirs(macs2_out+'Parsed/', exist_ok=True)
+
+for f in macs2_difpeaks:
+    fname_l = f.split('_')
+    outname = '_'.join(['macs2dif', fname_l[0],fname_l[3],fname_l[4],fname_l[8]])
+    print(outname)
+    with open(macs2_out+f, 'r+') as infile:
+        with open(outdir+outname, 'w+') as outfile:
+            first = True
+            for line in infile.readlines():
+                if first == True:
+                    first = False
+                else:
+                    linelist =  line.split()
+                    parsed_line = '\t'.join([linelist[0], linelist[1], linelist[2]])
+                    outfile.write(parsed_line+'\n')
+#+end_src
+** Differential peaks using MANorm
+Call differential peaks using MANorm. It requires having performed individual
+peak calling with MACS2 previously.
+
+#+begin_src python :session pypeakcalling :tangle ./Scripts/diff_peaks_compare.py
+## Original Call
+
+peaksdir = indir + 'Peak_Calling_MACS2'
+peakfiles = os.listdir(peaksdir)
+peakfiles = sorted([p for p in peakfiles if p.endswith("_Macspeaks_peaks.narrowPeak")])
+peakfiles = [
+    '1.2B_me_Macspeaks_peaks.narrowPeak',
+    '10G_me_Macspeaks_peaks.narrowPeak',
+    'B11_me_Macspeaks_peaks.narrowPeak',
+    'A7K9_me_Macspeaks_peaks.narrowPeak',
+    'E5K9_me_Macspeaks_peaks.narrowPeak',
+]
+
+readsdir = indir + 'Bams/'
+readfiles = chips
+
+pairs = zip(peakfiles, readfiles)
+difs = list(itertools.combinations(pairs, 2))
+manorm_out = '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/Difpeaks_MANorm'
+
+for dif in difs:
+
+    p1 = peaksdir+dif[0][0]
+    p2 = peaksdir+dif[1][0]
+
+    r1 = readsdir+dif[0][1]
+    r2 = readsdir+dif[1][1]
+
+    params = ("--pf narrowpeak "
+              "--rf bam --pe -o {}") .format(manorm_out)
+
+    manormDifPeaks(p1, p2, r1, r2, params)
+
+#+end_src
+** Parse MANorm difpeaks into simple bed
+#+begin_src python
+manorm_difpeaks = [f for f in os.listdir(manorm_out) if f.endswith('.xls')]
+outdir = manorm_out+'/Parsed/'
+os.makedirs(outdir, exist_ok=True)
+
+for f in manorm_difpeaks:
+    fname_l = f.split('_')
+    out_1 = '_'.join(['manormdif', fname_l[0],fname_l[4],fname_l[5]])+ '_cond1.bed'
+    out_2 = '_'.join(['manormdif', fname_l[0],fname_l[4],fname_l[5]])+ '_cond2.bed'
+    prefix_1 = '_'.join(fname_l[0:4])+'_unique'
+    prefix_2 = '_'.join(fname_l[5:9])+'_unique'
+
+    print(out_1, out_2)
+    print(prefix_1, prefix_2)
+
+    with open(manorm_out+'/'+f, 'r+') as infile:
+        with open(outdir+out_1, 'w+') as outfile:
+            first = True
+            for line in infile.readlines():
+                if first == True:
+                    first = False
+                else:
+                    linelist =  line.split()
+                    parsed_line = '\t'.join([linelist[0], linelist[1], linelist[2]])
+                    if linelist[7] == prefix_1:
+                        outfile.write(parsed_line+'\n')
+
+    with open(manorm_out+'/'+f, 'r+') as infile:
+        with open(outdir+out_2, 'w+') as outfile:
+            first = True
+            for line in infile.readlines():
+                if first == True:
+                    first = False
+                else:
+                    linelist =  line.split()
+                    parsed_line = '\t'.join([linelist[0], linelist[1], linelist[2]])
+                    if linelist[7] == prefix_2:
+                        outfile.write(parsed_line+'\n')
+
+#+end_src
+** Differential Peaks using SICER
+*** Call SICER
+#+begin_src python
+import os
+import subprocess as sp
+from chip_seq_processing import *
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/'
+os.chdir(wd)
+
+align_dir = indir+'Bams/'
+chips
+inputs
+
+outdir = './Difpeaks_SICER/'
+os.makedirs(outdir, exist_ok = True)
+
+pairs = zip(chips, inputs)
+difs = list(itertools.combinations(pairs, 2))
+
+difs
+
+for pair in difs:
+    t1 = align_dir + pair[0][0]
+    t2 = align_dir + pair[1][0]
+
+    c1 = align_dir + pair[0][1]
+    c2 = align_dir + pair[1][1]
+
+    cmd = ['sicer_df', '-t', t1, t2, '-c', c1, c2, '-s', 'pf3d7', '-o', outdir]
+    print(' '.join(cmd))
+    print('...')
+    sp.run(cmd)
+#+end_src
+*** Parse SICER output
+#+begin_src r
+library(tidyverse)
+
+sicer_fld <- './SICER/'
+sicer_files <- list.files(sicer_fld, pattern = '-G150-summary$')
+sicer_files
+
+for (f in sicer_files){
+  #f <- sicer_files[1]
+  df <- read_tsv(paste0(sicer_fld, f))
+
+  fdr_th <- 0.01
+  fc_th <- 1.3
+
+  suffix <- paste0('_FC_', as.character(fc_th), '_FDR_', as.character(fdr_th), '.bed')
+
+  peaks_1 <- df %>%
+    filter(FDR_A_vs_B < fdr_th) %>%
+    filter(Fc_A_vs_B > fc_th) %>%
+    select(`#chrom`, start, end, Fc_A_vs_B, FDR_A_vs_B) %>%
+    rename(`#Chrom` = `#chrom`, FC = Fc_A_vs_B, FDR = FDR_A_vs_B)
+
+  peaks_2 <- df %>%
+    filter(FDR_B_vs_A < fdr_th) %>%
+    filter(Fc_B_vs_A > fc_th) %>%
+    select(`#chrom`, start, end, Fc_B_vs_A, FDR_B_vs_A) %>%
+    rename(`#Chrom` = `#chrom`, FC = Fc_B_vs_A, FDR = FDR_B_vs_A)
+
+  name1 <- gsub('sort_q5-and-', '', f)
+  name2 <- gsub('_sort_q5-W50-G150-summary', '', name1)
+  name <- paste0(name2, '_')
+  outname1 <- paste0(sicer_fld, 'parsed_', name, 'difpeaks1', suffix)
+  outname2 <- paste0(sicer_fld, 'parsed_', name, 'difpeaks2', suffix)
+
+  write_tsv(peaks_1, outname1)
+  write_tsv(peaks_2, outname2)
+}
+#+end_src
+** Annotate differential Peaks
+#+begin_src python
+#### Annotate differential peaks ####
+
+## Function
+
+def annotate_bed(peaks_bed, ref_bed, ncols, gid_col):
+
+    ref = pb.BedTool(ref_bed)
+    ref = ref.sort()
+
+    bed = pb.BedTool(peaks_bed)
+    anot = bed.intersect(ref, wao=True)
+
+    parsed_anot = []
+    for interval in anot:
+
+        originalfields = interval.fields[0:ncols]
+
+        if interval.fields[ncols] == '.':
+            gid = "intergenic"
+        else:
+            gid = interval.fields[ncols+gid_col-1]
+
+        parsed_anot.append(originalfields + [gid])
+
+    df = pd.DataFrame(parsed_anot)
+    outfile = peaks_bed.replace(".bed", "_10005p_500orf_gene_crossed.tsv")
+    df.to_csv(outfile, sep="\t", header=False, index=False)
+
+## Calls
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/'
+os.chdir(wd)
+
+gff = './binned_1000fp_500orf.bed'
+peaksdir = './Difpeaks_MACS2/Parsed/'
+peaksdir = './Difpeaks_MANorm/Parsed/'
+
+ncols = 3
+gid_col = 4
+
+filtered_peaks = [f for f in os.listdir(peaksdir) if f.endswith('.bed')]
+
+for f in filtered_peaks:
+    annotate_bed(
+        peaks_bed = peaksdir+f,
+        ref_bed = gff,
+        ncols = ncols,
+        gid_col = gid_col
+    )
+#+end_src
+* Compare with DE genes
+** Load DE data
+#+begin_src R
+library(tidyverse)
+
+wd <- '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/DE_genes/'
+setwd(wd)
+
+info_df <- read_tsv('/mnt/Disc4T/Projects/PhD_Project/Paper/Paper_Analysis/Output_Tables/info_df.tsv')
+microarrays_dir <- '/mnt/Disc4T/Projects/PhD_Project/Microarrays/New_Old_separate_approach/'
+
+old_arrays <- paste0(microarrays_dir, 'Old_Arrays/R_results_OldArrays_Variantome/')
+
+filtered_12B_10G <- read_tsv(paste0(old_arrays, '12B_10G_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+filtered_12B_3D7B <- read_tsv(paste0(old_arrays, '12B_3D7B_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+filtered_10G_3D7B <- read_tsv(paste0(old_arrays, '10G_3D7B_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+
+new_arrays <- paste0(microarrays_dir, 'New_Arrays/R_results_NewArray/')
+filtered_A7_B11 <- read_tsv(paste0(new_arrays, 'A7_B11_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+filtered_A7_E5 <- read_tsv(paste0(new_arrays, 'A7_E5_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+filtered_B11_E5 <- read_tsv(paste0(new_arrays, 'B11_E5_final_df.tsv')) %>%
+  filter(PassRed & PassDuplDel)
+
+## Swich B11vsE5 for E5vsB11
+filtered_E5_B11 <- filtered_B11_E5 %>%
+  rename(`E5-B11_MaxVal` = `B11-E5_MaxVal`, `E5-B11_MaxTime` = `B11-E5_MaxTime`) %>%
+  mutate(`E5-B11_MaxVal` = -`E5-B11_MaxVal`)
+
+## Create filtered lists for each comparison, we need to add MaxTime and tRNA filters
+filtered_12B_10G %>%
+  filter(`12B-10G_MaxVal` > 1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond1_12B_10G.tsv')
+
+filtered_12B_10G %>%
+  filter(`12B-10G_MaxVal` < -1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond2_12B_10G.tsv')
+
+filtered_A7_E5 %>%
+  filter(`A7-E5_MaxVal` > 1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond1_A7_E5.tsv')
+
+filtered_A7_E5 %>%
+  filter(`A7-E5_MaxVal` < -1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond2_A7_E5.tsv')
+
+filtered_A7_B11 %>%
+  filter(`A7-B11_MaxVal` > 1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond1_A7_B11.tsv')
+
+filtered_A7_B11 %>%
+  filter(`A7-B11_MaxVal` < -1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond2_A7_B11.tsv')
+
+filtered_E5_B11 %>%
+  filter(`E5-B11_MaxVal` > 1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond1_E5_B11.tsv')
+
+filtered_E5_B11 %>%
+  filter(`E5-B11_MaxVal` < -1) %>%
+  left_join(info_df %>% select(Gene_id, Is_tRNA)) %>%
+  filter(PassAll) %>%
+  filter(!Is_tRNA) %>%
+  write_tsv('cond2_E5_B11.tsv')
+
+#+end_src
+** Compare with DifPeaks
+#+begin_src python
+import os
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/'
+os.chdir(wd)
+
+## Difpeaks MACS2
+
+contrasts = [
+    '12B_10G_cond1',
+    '12B_10G_cond2',
+    'A7_E5_cond1',
+    'A7_E5_cond2',
+    'A7_B11_cond1',
+    'A7_B11_cond2',
+    'E5_B11_cond1',
+    'E5_B11_cond2',
+]
+
+rev_c = {
+    '12B_10G_cond1' : '12B_10G_cond2',
+    '12B_10G_cond2': '12B_10G_cond1',
+    'A7_E5_cond1' : 'A7_E5_cond2',
+    'A7_E5_cond2': 'A7_E5_cond1',
+    'A7_B11_cond1': 'A7_B11_cond2',
+    'A7_B11_cond2': 'A7_B11_cond1',
+    'E5_B11_cond1': 'E5_B11_cond2',
+    'E5_B11_cond2': 'E5_B11_cond1'
+}
+
+gids = {x:{} for x in contrasts}
+
+## Parse MACS2 peaks
+m2_peaks_dir = './Difpeaks_MACS2/Parsed/'
+m2_peaks = [f for f in os.listdir(m2_peaks_dir) if f.endswith('_crossed.tsv')]
+
+for c in contrasts:
+    gids[rev_c[c]]['MACS2'] = set()
+    for f in m2_peaks:
+        elements = c.split('_')
+        elements = ['1.2B' if x == '12B' else x for x in elements]
+        if all([el in f for el in elements]):
+            with open(m2_peaks_dir+f, 'r+') as infile:
+                for line in infile:
+                    linelist = line.split()
+                    if linelist[3] != 'intergenic':
+                        gids[rev_c[c]]['MACS2'].add(linelist[3])
+
+## Parse MANorm peaks
+ma_peaks_dir = './Difpeaks_MANorm/Parsed/'
+ma_peaks = [f for f in os.listdir(ma_peaks_dir) if f.endswith('_crossed.tsv')]
+
+for c in contrasts:
+    gids[rev_c[c]]['MANorm'] = set()
+    for f in ma_peaks:
+        elements = c.split('_')
+        elements = ['1.2B' if x == '12B' else x for x in elements]
+        if all([el in f for el in elements]):
+            with open(ma_peaks_dir+f, 'r+') as infile:
+                for line in infile:
+                    linelist = line.split()
+                    if linelist[3] != 'intergenic':
+                        gids[rev_c[c]]['MANorm'].add(linelist[3])
+
+## Parse Custom peaks
+custom_peaks_dir = '/mnt/Disc4T/Projects/PhD_Project/Paper/Paper_Analysis/Data_Files/DifPeaks_W100_S100_PD0.3_Mg500_Ml1000/'
+custom_peaks = [f for f in os.listdir(custom_peaks_dir) if f.endswith('_crossed.tsv')]
+
+translations = {
+    '12B_10G_cond1' : '1.2Bover10G',
+    '12B_10G_cond2': '10Gover1.2B',
+    'A7_E5_cond1' : 'A7K9overE5K9',
+    'A7_E5_cond2': 'E5K9overA7K9',
+    'A7_B11_cond1': 'A7K9overB11',
+    'A7_B11_cond2': 'B11overA7K9',
+    'E5_B11_cond1': 'E5K9overB11',
+    'E5_B11_cond2': 'B11overE5K9'
+}
+
+for c in contrasts:
+    gids[rev_c[c]]['Custom'] = set()
+    for f in custom_peaks:
+        if (translations[c] in f):
+            with open(custom_peaks_dir+f, 'r+') as infile:
+                for line in infile:
+                    linelist = line.split()
+                    if linelist[3] != 'intergenic':
+                        gids[rev_c[c]]['Custom'].add(linelist[3])
+
+## Parse DE genes
+de_dir = './DE_genes/'
+de_genes = os.listdir(de_dir)
+
+for c in contrasts:
+    gids[c]['DE'] = set()
+    for f in de_genes:
+        elements = c.split('_')
+        if all([el in f for el in elements]):
+            with open(de_dir+f, 'r+') as infile:
+                first = True
+                for line in infile:
+                    if first:
+                        first = False
+                    else:
+                        linelist = line.split()
+                        gids[c]['DE'].add(linelist[0])
+
+## Make calculations
+
+def get_scores(method):
+    only_de = 0
+    only_difpeak = 0
+    de_and_difpeak = 0
+
+    for c in contrasts:
+        only_de += len(gids[c]['DE'] - gids[c][method])
+        only_difpeak += len(gids[c][method] - gids[c]['DE'])
+        de_and_difpeak += len(gids[c][method] & gids[c]['DE'])
+
+    print(f'Method: {method}\nOnly DE: {only_de}\nOnly DifPeak: {only_difpeak}\nMatches {de_and_difpeak}\n.........\n')
+
+    return([method, only_de, only_difpeak, de_and_difpeak])
+
+results = []
+for method in ['MACS2', 'MANorm', 'Custom']:
+    results.append(get_scores(method))
+
+with open('results_table.tsv', 'w+') as outfile:
+    outfile.write('\t'.join(['Method', 'Only_DE', 'Only_DifPeak', 'Matches'])+'\n')
+    for x in results:
+        str_x = [str(y) for y in x]
+        outfile.write('\t'.join(str_x)+'\n')
+#+end_src
+** Plot results
+#+begin_src R
+library(tidyverse)
+library(eulerr)
+library(glue)
+
+wd <- '/mnt/Disc4T/Projects/Miniprojects/Difpeaks_Comparison/'
+setwd(wd)
+
+results <- read_tsv('results_table.tsv')
+
+plot_results <- function(method){
+  df <- results %>%
+    filter(Method == method)
+
+  ## Plot
+  a <- df$Only_DE
+  b <- df$Only_DifPeak
+  ab <- df$Matches
+  fit <- euler(c(A=a, B=b, "A&B"=ab))
+
+  scales::viridis_pal()(2)
+
+  d <- plot(fit, fills = list(fill = c('#440154FF', "#FDE725FF"), alpha = 0.5),
+            edges = list(lwd = 0.1),
+            quantities = list(quantities = T),
+            labels = list(labels=c("DE", "Dif.Peak-Calling")),
+            main = method)
+
+  ggsave(d, filename = glue('./{method}_results_venn.pdf'), device = "pdf")
+}
+
+plot_results('MACS2')
+plot_results('MANorm')
+plot_results('Custom')
+
+#+end_src

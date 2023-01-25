@@ -1,0 +1,2 @@
+2022-09-29 11:50:22	-	voluminous_booth	-	799b748598f7a1f2a1daec066c7a2ead7d2c34bd	83dc241d-4f76-4348-8ef6-5d790ac3e6c2	nextflow run isugifNF/blast -profile test,ceres
+2022-09-29 11:50:51	5.2s	elegant_agnesi	OK	799b748598f7a1f2a1daec066c7a2ead7d2c34bd	2c28d24e-8743-49b4-92fc-c397446f8dc6	nextflow run isugifNF/blast -profile test

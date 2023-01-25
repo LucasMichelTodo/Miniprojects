@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/work/7b/6f9136b0b738e52bf10de8385853fa/.command.sh", line 9, in <module>
+    from parse_bwt2_reports import*
+ModuleNotFoundError: No module named 'parse_bwt2_reports'

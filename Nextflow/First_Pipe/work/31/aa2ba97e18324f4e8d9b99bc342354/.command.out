@@ -1,0 +1,14 @@
+/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/Results/Alignments/Reports/agregated_report.tsv
+re.compile('^[0-9]+ reads; of these:')
+915 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+973 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+939 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+989 reads; of these:
+         nreads   paired  conc_0  conc_1 conc_more conc_0_disc1 conc_0_disc0_al0 conc_0_disc0_al1 conc_0_disc0_almore overall_al
+NCV29_in    915  100.00%  32.79%  41.86%    25.36%        3.00%           96.22%            0.34%               3.44%     69.40%
+NCV27_in    973  100.00%  18.40%  54.68%    26.93%        5.59%           90.83%            3.25%               5.92%     84.22%
+NCV28_me    939  100.00%  83.39%   6.07%    10.54%        0.26%           97.63%            0.32%               2.05%     18.80%
+NCV26_me    989  100.00%  70.17%  10.72%    19.11%        0.14%           96.68%            0.65%               2.67%     32.25%

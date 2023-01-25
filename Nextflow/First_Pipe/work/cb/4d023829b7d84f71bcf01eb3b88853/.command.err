@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 86, in <module>
+    parse_agregated_report(report_file, linestart, out_file)
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 35, in parse_agregated_report
+    out[name]['conc_0'] = conc_0.group(1)
+AttributeError: 'NoneType' object has no attribute 'group'

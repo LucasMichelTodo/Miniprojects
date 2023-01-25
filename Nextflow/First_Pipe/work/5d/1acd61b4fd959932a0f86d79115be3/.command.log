@@ -1,0 +1,4 @@
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/work/5d/1acd61b4fd959932a0f86d79115be3/.command.sh", line 2
+    from parse_bwt2_reports parse_agregated_report
+                                                 ^
+SyntaxError: invalid syntax

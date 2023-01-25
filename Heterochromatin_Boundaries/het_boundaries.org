@@ -1,0 +1,238 @@
+The idea here is to analyze the boundaries of heterochromatin in order to identify weak and strong insulators that act as heterochromatin "barriers".
+
+* Strong Insulators from Sandra's Limits
+We will use Sandra's data on gametocyte heterochromatin which seems to have very well defined and conserved boundaries.
+We will start by taking Sandra's bed files determining the end of heterochromatic domains in Gams II-IV and taking the sequences from -X/+X bp of those limits.
+** Getting Intervals of interest
+#+begin_src python :tangle ./Scripts/get_sequences_of_interest.py
+import os
+import pybedtools as pb
+import numpy as np
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/'
+os.chdir(wd)
+
+#### Functions ####
+
+def get_intervals_from_boundaries(bed, len_left, len_right, outdir):
+    outname = os.path.basename(bed).replace('.bed', '_intervals.bed')
+    with open(bed, 'r+') as infile, open(outdir+outname, 'w+') as outfile:
+        linelist = [l.strip().split('\t') for l in infile.readlines()]
+        chroms = sorted(np.unique([x[0] for x in linelist]))
+
+        for chrom in chroms:
+            chrom_list = [x for x in linelist if x[0] == chrom]
+            for idx, line in enumerate(chrom_list):
+                chrom, start, stop = line
+                start = int(start)
+                stop = int(stop)
+                if idx == 0:
+                    newstart = str(stop-len_left)
+                    newstop = str(stop+len_right)
+                    outfile.write('\t'.join([chrom, newstart, newstop])+'\n')
+                elif idx == len(chrom_list)-1:
+                    newstart = str(start-len_left)
+                    newstop = str(start+len_right)
+                    outfile.write('\t'.join([chrom, newstart, newstop])+'\n')
+                else:
+                    newstart1 = str(start-len_left)
+                    newstop1 = str(start+len_right)
+                    newstart2 = str(stop-len_left)
+                    newstop2 = str(stop+len_right)
+                    outfile.write('\t'.join([chrom, newstart1, newstop1])+'\n')
+                    outfile.write('\t'.join([chrom, newstart2, newstop2])+'\n')
+
+#### Calls ####
+
+indir = './Sandra/'
+bed_limits_files = [
+    'FRASCHKA_fulllength_merged_60000bp_gamIV.bed',
+    'BUNNIK_fulllengthtelomere_GamIV_rep2.bed',
+    'BUNNIK_fulllengthtelomere_GamIV_rep1.bed',
+    'US_fulltel_merged_60000bp_G2rep1.bed',
+]
+
+outdir = './Strong_Insulators/Seqs/'
+os.makedirs(outdir, exist_ok=True)
+
+for bed in bed_limits_files:
+    print(indir+bed)
+    get_intervals_from_boundaries(indir+bed, 5000, 5000, outdir)
+
+#+end_src
+** Extracting sequences from intervals
+#+begin_src python :tangle ./Scripts/get_sequences_of_interest.py
+import os
+import pybedtools as pb
+import numpy as np
+from Bio import SeqIO
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/'
+os.chdir(wd)
+
+#### Functions ####
+
+def fasta_seqs_from_bed(bed, ref_fasta, outname):
+
+    parser = SeqIO.parse(open(ref_fasta), 'fasta')
+    dict_fasta = dict([(seq.id, seq) for seq in parser])
+    inbed = pb.BedTool(bed)
+
+    with open(outname, 'w+') as outfile:
+        for feat in inbed:
+            if feat.chrom in dict_fasta:
+                file_id = outname.split('/')[-1].replace('.fasta', '')
+                outfile.write(f'>{feat.chrom}_{feat.start}:{feat.stop}_{file_id}\n')
+                outfile.write(str(dict_fasta[feat.chrom][feat.start:feat.stop+1].seq)+'\n')
+
+#### Calls ####
+
+ref_fasta = './Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta'
+indir = './Strong_Insulators/Intervals/'
+bed_files = os.listdir(indir)
+outdir = './Strong_Insulators/Seqs/'
+os.makedirs(outdir, exist_ok=True)
+
+for bed in bed_files:
+    outname = bed.replace('.bed', '_SEQs.fasta')
+    fasta_seqs_from_bed(indir+bed, ref_fasta, outdir+outname)
+
+#+end_src
+** Run MEME
+#+begin_src python :tangle ./Scripts/run_meme.py
+import os
+import subprocess as sp
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/Strong_Insulators/'
+os.chdir(wd)
+
+outdir = 'Motifs/'
+os.makedirs(outdir, exist_ok=True)
+
+infile = './Seqs/merged.fasta'
+control = '../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta'
+seed = 123
+nmotifs = 5
+function = 'de'
+numprocess = 8
+
+meme_call = (
+    f'meme {infile} '
+    f'-o {outdir} '
+    f'-objfun {function} '
+    f'-neg {control} '
+    '-dna -revcomp '
+    f'-nmotifs {nmotifs} '
+    f'-seed {seed} '
+    f'-p {numprocess} '
+)
+
+meme_call
+
+sp.call(meme_call, shell = True)
+#+end_src
+* Strong Insulators from Manually curated Subclones Boundaries
+We use the data from the PhD project (1.2B, 10G, A7, E5, B11, C2, 3D7imp, E5HA, NF54, P63) to manually curate heterochromatin boundaries of 300bp.
+All intervals are classified as subtelomeric/island and ans high/low confidence. Island intervals that span only a few genes are classified as low confidence.
+** Extract sequences from intervals
+#+begin_src python :tangle ./Scripts/get_sequences_of_interest_subclones.py
+import os
+import subprocess as sp
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/Strong_Insulators/'
+os.chdir(wd)
+
+intervals = './Intervals/manual_intervals_subclones.bed'
+ref_fasta = '../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta'
+outfile = './Seqs/manually_curated_subclones.fasta'
+
+cmd = f'bedtools getfasta -fi {ref_fasta} -bed {intervals} > {outfile}'
+sp.call(cmd, shell = True)
+#+end_src
+** Run meme
+#+begin_src python :tangle ./Scripts/run_meme_batch.py
+import os
+import subprocess as sp
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/Strong_Insulators/'
+os.chdir(wd)
+
+ref_fasta = '../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta'
+indir = './Seqs/'
+
+infiles = [
+    'ASR_border_flanked.fasta',
+    'GII_border_flanked.fasta',
+    'manually_curated_subclones.fasta'
+]
+
+for f in infiles:
+
+    infile = indir+f
+    control = ref_fasta
+    seed = 123
+    nmotifs = 10
+    function = 'de'
+    numprocess = 8
+
+    suffix = f.replace('.fasta', '')
+    outdir = f'./Motifs_{suffix}/'
+
+    meme_call = (
+        f'meme {infile} '
+        f'-o {outdir} '
+        f'-objfun {function} '
+        f'-neg {control} '
+        '-dna -revcomp '
+        f'-nmotifs {nmotifs} '
+        f'-seed {seed} '
+        f'-p {numprocess} '
+    )
+
+    print(meme_call)
+    sp.call(meme_call, shell = True)
+
+#+end_src
+** Run FIMO to find matching occurrences of found motifs
+FIMO looks in a fasta (plasmodium genome fasta) for all occurrences of a given motif (or set of motifs).
+#+begin_src python :tangle ./Scripts/run_fimo_and_parse.py
+import os
+import subprocess as sp
+import pybedtools as pb
+
+wd = '/mnt/Disc4T/Projects/Miniprojects/Heterochromatin_Boundaries/Strong_Insulators/'
+os.chdir(wd)
+
+ref_fasta = '../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta'
+indirs = [
+    './Motifs/',
+    './Motifs_ASR_border_flanked/',
+    './Motifs_GII_border_flanked/',
+    './Motifs_manually_curated_subclones/'
+]
+
+for d in indirs:
+
+    outdir = d+'Fimo_Results'
+    fimo_call = f'fimo -oc {outdir} {d}meme.txt {ref_fasta}'
+    print(fimo_call)
+    #sp.call(fimo_call, shell = True)
+
+## Parse FIMO
+## Fimo outputs all motifs in one single GFF. We want to separate it into one gff
+## per motif so we can observe their distribution.
+
+def get_alias(feat):
+    info = feat.fields[8].split(';')
+    info = [x.split('=') for x in info if x != '']
+    anot = {k:v for k, v in info}
+    return(anot['Alias'])
+
+for d in indirs:
+    original = pb.BedTool(d+'Fimo_Results/fimo.gff')
+    aliases = set([get_alias(feat) for feat in original])
+    for alias in aliases:
+        subset = original.filter(lambda x: get_alias(x) == alias)
+        subset.saveas(f'{d}/Fimo_Results/fimo_{alias}.gff')
+#+end_src
+* Weak Insulators

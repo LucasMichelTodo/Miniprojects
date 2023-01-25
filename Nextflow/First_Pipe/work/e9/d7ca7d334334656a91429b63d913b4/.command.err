@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 75, in <module>
+    linestart = re.compile(args.linestart)
+AttributeError: 'Namespace' object has no attribute 'linestart'

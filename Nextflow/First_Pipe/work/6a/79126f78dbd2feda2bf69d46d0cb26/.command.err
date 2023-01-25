@@ -1,0 +1,2 @@
+[E::idx_find_and_load] Could not retrieve index file for 'NCV28_me_sort_q5_noDup.bam'
+'NCV28_me_sort_q5_noDup.bam' does not appear to have an index. You MUST index the file first!

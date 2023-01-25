@@ -1,0 +1,360 @@
+2022-09-29 15:55:13	1.3s	clever_ardinghelli	OK	04d27fb1d2f3f4257d69d313d6d9272e	bdd7251a-58fa-4128-b6df-37153ab15a8c	nextflow chip_seq_pipe.nf
+2022-09-29 16:03:25	-	scruffy_hawking	-	15a20ee3fe62aec47f3847f8022f2664	483e57e2-2194-466a-86d1-a0015fd2c412	nextflow chip_seq_pipe.nf
+2022-09-29 16:04:02	1s	soggy_poisson	OK	510fd8d168a52967e317b34fcab878e7	93699c76-8e4b-4670-a53f-90c1af094edc	nextflow chip_seq_pipe.nf
+2022-09-29 16:04:45	1.7s	hopeful_tuckerman	OK	510fd8d168a52967e317b34fcab878e7	c6510540-b2bc-47ca-be46-31b88f6bcb9a	nextflow chip_seq_pipe.nf
+2022-09-29 16:05:24	-	sharp_leavitt	-	90cbb567509d13c54fded350b55fd1e7	113436a3-0879-40ca-836f-52ceb4154b0e	nextflow chip_seq_pipe.nf
+2022-09-29 16:05:46	1.6s	tender_leakey	OK	2d48bcc1d41f38be2b965a5d48bbcf78	c0e32d14-ab49-433b-9624-ad848671c372	nextflow chip_seq_pipe.nf
+2022-09-29 16:07:06	-	hopeful_bhaskara	-	f0ceb268f20f1321276f345d598e6dd7	f35fecc4-ec1c-4f00-ac71-5d4aae94670f	nextflow chip_seq_pipe.nf
+2022-09-29 16:07:51	-	gloomy_allen	-	7162052c7e1ef0088a6f5ef89bde22a9	06bb3afd-cf26-4100-916f-23a81915ae8a	nextflow chip_seq_pipe.nf
+2022-09-29 16:08:36	-	special_avogadro	-	20fa014a1424a08b91d57cd8681f8ebb	c2342406-a330-425b-9a93-2829afc1ec1b	nextflow chip_seq_pipe.nf
+2022-09-29 16:09:23	1.7s	condescending_wozniak	OK	c94c95e42278c8449d056bc2044aa057	64f47e59-e522-4659-b123-7eb3747f86b0	nextflow chip_seq_pipe.nf
+2022-09-29 16:09:55	1.3s	drunk_snyder	OK	483f3cd3477f0dbe385123d04b1897d3	0f09836a-fc67-4131-93d1-099ed019ff36	nextflow chip_seq_pipe.nf
+2022-09-29 16:10:16	808ms	shrivelled_blackwell	OK	81aa4b75945f8af5014557640e6750d8	8f3fb096-e36e-43ef-ad11-650a6be2a996	nextflow chip_seq_pipe.nf
+2022-09-29 16:11:02	-	sharp_albattani	-	c3e7bb11986c25b9f3d8cdffc5e11804	ca3d117d-1319-450b-87f3-e9cc7feab8e9	nextflow chip_seq_pipe.nf
+2022-09-29 16:11:41	1s	compassionate_wiles	OK	738b80663477a46cf1006b1b3620c7a6	45df0c7c-5923-4e09-8720-ac646e939cc5	nextflow chip_seq_pipe.nf
+2022-09-29 16:11:58	1.3s	cheesy_noether	OK	9f4ed9723141ae529ca6621b0d3fafec	9184a29d-7d93-40c3-96eb-bad08e4c7a05	nextflow chip_seq_pipe.nf
+2022-09-29 16:14:21	1.5s	disturbed_wilson	OK	510d24c35dc1b3ad2de620aefedc0bfe	8ff4ff52-113b-4bc8-b78f-7cdbbfdbcb4c	nextflow chip_seq_pipe.nf
+2022-09-29 16:14:53	1.3s	agitated_babbage	OK	7fe5ddf4fd8c82758ccdfbb85875fd36	c737d7a5-b701-400d-9d78-a73f826508cc	nextflow chip_seq_pipe.nf
+2022-09-29 16:15:13	2s	adoring_spence	OK	7fe5ddf4fd8c82758ccdfbb85875fd36	c7e35cfe-3634-4aca-85a5-72caa6c8d4ad	nextflow run chip_seq_pipe.nf
+2022-09-29 16:17:27	1.2s	angry_edison	OK	1c363c70f34911a09b71eba4aaadebfe	80a84dc0-0710-477e-b822-0097ef9d9114	nextflow run chip_seq_pipe.nf
+2022-09-29 16:20:24	1.9s	loving_ptolemy	OK	0092c91dc0cc3066bfff8d51fc0b5644	8c4d3297-9eba-4e5c-bbc4-93a0dfb9992c	nextflow run chip_seq_pipe.nf
+2022-09-29 16:21:35	1.9s	loving_poincare	OK	0092c91dc0cc3066bfff8d51fc0b5644	18445431-ee48-4adc-b9a4-d9c585a3b0fa	nextflow run chip_seq_pipe.nf
+2022-09-29 16:22:47	1.6s	pedantic_lamarr	ERR	9df2385a3f4b57b40f50a7452890b193	9e8b111f-a1db-4e1e-8be2-e408ec4a734a	nextflow run chip_seq_pipe.nf
+2022-09-29 16:23:20	1.3s	focused_murdock	ERR	c724aa55a3c3d171d66f7851db48988e	19e70b4b-84fa-4994-a14b-b7f2fc243aa5	nextflow run chip_seq_pipe.nf
+2022-09-29 16:23:50	1s	fervent_marconi	ERR	f1c298a5aa90dfe76f0434b2b5a6fbe3	169cd770-ab32-4627-8558-5460889871db	nextflow run chip_seq_pipe.nf
+2022-09-29 16:24:11	-	kickass_williams	-	7aa914f8bae6fb0346a73384c1f8697f	9f63a2e1-e7d1-40a6-8457-656342626aef	nextflow run chip_seq_pipe.nf
+2022-09-29 16:25:39	1.5s	distracted_mclean	ERR	a0963c779faac8278f8a8bc1ad654032	a14ef940-24ce-4ee7-a15f-ce72b369a74f	nextflow run chip_seq_pipe.nf
+2022-09-29 16:26:05	882ms	adoring_pare	ERR	e33f79e6df79ec90a3c1ec16ad3b8341	d5f89958-de86-4acd-9d00-63ca1a8283e3	nextflow run chip_seq_pipe.nf
+2022-09-29 16:28:25	1.3s	nauseous_carlsson	ERR	036febaf5479218794570fc82c7eb68b	cbd95849-be67-416b-8f41-8cefaf05db9b	nextflow run chip_seq_pipe.nf
+2022-09-29 16:29:45	621ms	determined_lamarck	OK	75363fc0a1467ec7b71516def742317d	a856ac98-7294-4214-8020-77ccd7190b1d	nextflow run chip_seq_pipe.nf
+2022-09-29 16:30:13	673ms	insane_meninsky	OK	4a2c854a6dec057c22e9d35221ddbefa	f6036187-b37d-4f17-9229-05b902f2d1a8	nextflow run chip_seq_pipe.nf
+2022-09-29 16:30:53	1.1s	big_venter	OK	a268603de9b3e6039dba1260e87aeaa9	a03ad87a-1e46-4a42-8734-aefd51107c93	nextflow run chip_seq_pipe.nf
+2022-09-29 16:31:12	1.2s	sad_jang	OK	899be2f19d11270b34281acf5195fef4	e87a2d51-46e9-45d4-a90f-c685d847244d	nextflow run chip_seq_pipe.nf
+2022-09-29 16:32:37	602ms	fervent_austin	OK	2706d3b15d1f28541487f9b9cb81af41	978a7f28-5d41-4faa-af53-7d6ce0afac22	nextflow run chip_seq_pipe.nf
+2022-09-29 16:34:04	946ms	furious_heyrovsky	OK	52098728d2b617993cb287c250146aaf	e59a78a8-7157-4f4b-a5dd-0e61ebae8888	nextflow run chip_seq_pipe.nf
+2022-09-29 17:30:32	-	festering_goldstine	-	1e3855632b1c3ca6bbcb5b4960949f74	311afa9d-1759-40f0-9240-8446fb15def9	nextflow run chip_seq_pipe.nf
+2022-09-29 17:30:46	7.6s	peaceful_archimedes	ERR	fc83cdcabebc8431df8600cfd1c32e0a	14f526d6-9321-459e-a95b-f589f42fa7fc	nextflow run chip_seq_pipe.nf
+2022-09-29 17:32:55	-	pensive_gautier	-	88d4ac880be23cf6d72597dd4cf7066b	00632ee8-5559-4a2c-a8fe-fc493538e8e5	nextflow run chip_seq_pipe.nf
+2022-09-29 17:33:37	6.2s	gigantic_ride	OK	86bbbc6db6d9523edbbca71d487fd782	e7ae7db1-723c-49de-8be8-f02428cc5d1a	nextflow run chip_seq_pipe.nf
+2022-09-29 17:36:33	6.4s	small_bardeen	OK	3477890511770f86078079b79fb93c05	fefb4753-c78d-4adb-a763-6a83d957790f	nextflow run chip_seq_pipe.nf
+2022-09-29 17:38:04	6.9s	friendly_albattani	OK	3477890511770f86078079b79fb93c05	9e2392e5-1b18-4de2-9a98-e10461d9eafd	nextflow run chip_seq_pipe.nf
+2022-09-29 17:40:40	6s	prickly_fermi	OK	9abdf1199db0bd39fc7e646909e850d6	1b0ab8c1-0126-4a70-8e05-cdd7b83e4d93	nextflow run chip_seq_pipe.nf
+2022-09-29 17:42:09	6.6s	fervent_heisenberg	OK	07d0d92e728dabbe1078ebb9fff02dc3	d0582a07-488b-4b2a-a00e-6ed07b37418c	nextflow run chip_seq_pipe.nf
+2022-09-29 17:53:52	1.7s	hopeful_yalow	OK	662fd449f3d23f1ecbee8f017cf80fab	cfb0ffe8-85da-4aa7-a9a6-f65fbb147683	nextflow run chip_seq_pipe.nf
+2022-09-29 17:55:52	-	adoring_lamarck	-	9c365fed35a48c85a45399c8b2a65562	137fe455-cc1b-43ff-9ffa-538d20c2abcc	nextflow run chip_seq_pipe.nf
+2022-09-29 17:56:34	-	voluminous_meitner	-	2359f80d8e9d2384cf45a249a317a3dd	bd4c9b14-9954-4c36-a562-80286e02f6ca	nextflow run chip_seq_pipe.nf
+2022-09-29 17:58:56	1.3s	distracted_carlsson	OK	7336ec23551db3d731b25df3cfbdbbdb	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run chip_seq_pipe.nf
+2022-09-30 12:43:11	6.9s	clever_euler	OK	910ee7429c4f55e96c015cb92ca8e1b1	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:44:46	-	confident_baekeland	-	81a51b62eaa23ee9792bcce915b930d4	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:45:07	2.1s	naughty_perlman	OK	c7b0b0f885adecc522db955e8a915a39	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:54:29	-	mad_yalow	-	d70fb8c48acd81825e5db35421cc7f41	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:55:37	-	wise_ramanujan	-	6cb2e55e57cf6c69984a72c17dd9c717	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:58:15	-	fervent_cori	-	29b0725d8ac87deba8eada33d5df8210	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:58:39	-	mad_easley	-	9e00c665d49f0708a9188891c43566b0	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 12:59:29	-	jovial_newton	-	bbc37d29e974f31b8e23afbc9f55a544	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:01:21	1.5s	backstabbing_wescoff	OK	db7b665d85bd6b6f91190b13bdbec151	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:01:47	7.4s	gigantic_hopper	OK	1000b3eafe5144d08f5be48d57c2934c	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:03:18	2.1s	compassionate_descartes	ERR	0d6c44787faa43ef4e45cc68c5e70747	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:03:52	2.2s	compassionate_sinoussi	ERR	84c02b50d5440afdea7d7d687c126a51	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:04:33	2.9s	silly_poisson	ERR	9f4ecebb947ced83fe8c8a2dca88ddd3	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:05:58	3.4s	fervent_swanson	ERR	7863fc56a0c2228b52b2725c638d6150	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:07:35	2.6s	ecstatic_albattani	ERR	34e88628658243ace4549342279491c9	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:08:45	7.2s	grave_ardinghelli	OK	56120caa056c5f450a5e63dc123fd83f	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:09:19	1.9s	goofy_agnesi	OK	fccd6e67b742d93f30283abdbe7f586a	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 13:10:34	2.1s	modest_dijkstra	OK	2d478b1af9240ad95474771ec5bda575	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 14:04:23	12s	deadly_dubinsky	OK	05f32b255199d53568c12545b6fbe2e4	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 14:13:33	12.7s	adoring_borg	ERR	b801576ebcacc11d583907e0a089e980	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 14:14:28	20.3s	insane_gilbert	OK	44fcf3534de6f89d4868b0be37b44f7d	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 14:46:12	1.8s	furious_goodall	ERR	2b7ddbd5aed42e39382969d3d85477c9	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 14:46:37	1m 21s	naughty_bartik	OK	2fce5a1e34e2f7bc0e1d8cb722fd94cb	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:22:56	-	berserk_feynman	-	ea517f48d07473034cc7466dbbb5745b	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:23:13	-	exotic_wilson	-	6693f1582253cc86eda1dfc8a9c14c84	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:24:27	-	wise_nightingale	-	b7947206f1906cbe1996e3777273e64c	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:25:33	-	stupefied_bose	-	78365df7829d552b3c232a63f58ce242	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:25:55	-	adoring_sammet	-	b73a27554391a34b4f7a3029c0421797	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:26:14	-	nauseous_murdock	-	1eabf944b185293ed00052cd47c2c558	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:26:42	-	grave_ptolemy	-	70d7a9c0c96f81ebd7b330483f1445e9	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:28:11	2.2s	amazing_hamilton	ERR	11f465f8b791f0211510d8144eb95709	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:34:04	3s	small_franklin	ERR	0bffaf67cf51e0bb1cf1c1b76a8cb878	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:40:16	2.3s	crazy_hamilton	ERR	be384966b2693a72247a5e84271aa77a	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:51:35	-	marvelous_avogadro	-	05128c0ffacc2904c6aae0534db79a28	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:52:52	-	clever_nobel	-	d37a5290c7d9c1be014ec7acd6327231	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:53:05	-	nasty_hilbert	-	b4c7bd759333f32c8345ca36ed3a2946	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:53:20	-	distraught_brenner	-	d37a5290c7d9c1be014ec7acd6327231	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:54:55	-	extravagant_shaw	-	bc63c8b3fa6aba6df03f2899cfadb997	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:55:58	2.3s	distraught_kowalevski	ERR	a3cd994855f69f72df3988f2166c0ceb	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:57:11	2.3s	fervent_pasteur	ERR	29a31456c92955042c00c58311b72259	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:57:28	1.9s	distracted_saha	ERR	2023c779b7eb2bf3cf9ad75e3a70daaa	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:57:45	3.4s	wise_carson	ERR	3b6d26c09f6574f51daf7f9c1d73ab08	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 15:59:23	3s	compassionate_pike	OK	df75707720f09d043db852633f42bca4	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:00:18	-	tender_kowalevski	-	b78b978a0d3a00601b05eb7b4425d848	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:01:02	-	wise_darwin	-	2262adc48b8ed4e9e71b99bfe0fdd428	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:01:21	2.1s	special_cray	OK	44a03370782e390597513f4b65d616de	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:04:38	2.7s	naughty_ptolemy	ERR	55f186d5b86dca0cefb79c7872e03ed7	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:06:45	2.7s	thirsty_hopper	ERR	6f361e252d5d4d48ce92f86dfa3f7138	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:07:36	2.7s	desperate_cray	ERR	c5d5adc50c2a9adccc58338d293ac8ab	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:08:07	2.3s	shrivelled_newton	OK	ad1deeee82f84307a561729fe786baf9	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:13:23	2.7s	scruffy_stone	OK	14d31ff3812741c3ed10811201b1ab21	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:15:08	2s	desperate_nightingale	OK	958b9c8a1a562b8fac499c9bc34c5a8b	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:15:29	2s	sad_poitras	OK	2814c145cf77b726f6e44c2a273c70bf	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:20:40	3.3s	pedantic_montalcini	OK	126b4b0497a1b02169208dcf72b5a1cf	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:25:27	-	spontaneous_ampere	-	79dd1fe98a7e1d902cda04f7c4f7170b	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:27:04	-	fervent_engelbart	-	89c0e2779fdee39710584d081524e852	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:28:13	4.1s	friendly_poincare	OK	dc3d6631517cf243ce4eed6e006c462d	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:28:29	1.8s	pensive_lavoisier	OK	d9029d85c87847d117dab35c81f435fe	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:28:48	3.1s	lethal_galileo	ERR	4d996b6c1dbcc746cc9b0aa3847c9db2	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:32:43	2s	elated_ekeblad	OK	d9029d85c87847d117dab35c81f435fe	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:33:07	2.7s	voluminous_hoover	ERR	77c46c5a5b503a72b0a5d87b741970ea	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:34:03	2.4s	backstabbing_dubinsky	OK	4096e10ac6ba19045272835cf165e7d5	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-09-30 16:34:20	2.1s	tender_darwin	OK	5c5f2474f07a241a66ce07ccacbcf100	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 09:53:22	2.5s	irreverent_sammet	OK	cf25b5877f3e1dc9776309fb71fb8341	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:00:12	3.5s	lonely_jepsen	ERR	5ce3f386c1be9dd02b9bd9e8a1f29e07	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:01:00	2.9s	distracted_cray	OK	0496473764d93811c946ee73c7109f38	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:02:58	-	loving_faggin	-	787845467d3ab56b51c85f331fd894c2	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:06:59	-	agitated_thompson	-	78604391d35dce53c44073c2b79839d3	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:07:22	3.1s	stupefied_darwin	ERR	d811a31ab25c15fa7df9162b38f944cd	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:07:57	3.6s	curious_mercator	OK	4258ccd1087cdf0fa45b88d506327500	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:11:01	2.4s	pensive_stonebraker	OK	0a458e5385ad6bb92a10e9b02c2d46d7	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:13:16	-	angry_khorana	-	404c7e355374f35f31a54d60376fd95f	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:13:31	3.9s	maniac_kare	OK	2c6a13c081805d74668dda6515afdeed	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:13:59	1.9s	dreamy_majorana	OK	2c6a13c081805d74668dda6515afdeed	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:16:27	-	thirsty_hodgkin	-	0f75b45149652f4b927a9675f298a77a	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:18:23	-	agitated_borg	-	0f75b45149652f4b927a9675f298a77a	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf -with-trace
+2022-10-05 10:18:46	2.5s	awesome_fermat	OK	955cf89a4ca6d87744dbd2afdfb33463	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf -with-trace
+2022-10-05 10:25:05	3.3s	gloomy_lamarr	OK	0f00e54e053d0be5f81950e407490785	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf -with-trace
+2022-10-05 10:25:17	1.7s	disturbed_hodgkin	OK	0f00e54e053d0be5f81950e407490785	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:27:04	2.8s	insane_church	ERR	3c1bace0a703a60c2f8485dd9c901f61	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:27:41	2.7s	festering_swartz	ERR	84ea1da7da4c240ef0d36339853b919c	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:29:04	2.3s	extravagant_kalman	ERR	5ef1ed74612f48a562fed250b08da930	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:29:20	2.2s	awesome_booth	ERR	0af4c5215eb3498a71b038e1aa7bb0df	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:31:05	2.9s	disturbed_chandrasekhar	ERR	134eca24a7486b089470ca7104eeb5df	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:33:52	2.6s	sad_cray	OK	aa5fa6f54224e110dbde40076a8ac9e2	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:35:39	2.3s	loving_wilson	OK	74f4fa5ce2de14b634fc2a06f4d3a272	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:36:31	2.2s	desperate_ekeblad	ERR	1f408c336bf3358845cc5044871ac21d	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:38:39	2.7s	evil_cantor	ERR	89c3a724b3d510a1451d2e2836037468	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:39:08	-	fervent_mayer	-	7243bc55b43b434f628643a361e2955a	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:43:11	2.3s	cheeky_ekeblad	ERR	f4e0bd6b60f36723da0c9d09019ffdee	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 10:43:30	2.1s	sick_northcutt	OK	fb8997968baede3df5dc0d6adad416eb	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run -resume chip_seq_pipe.nf
+2022-10-05 15:16:07	2.2s	nasty_heyrovsky	OK	6e64d189fa4143bf4346d1bd7906e1f0	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run chip_seq_pipe.nf -resume
+2022-10-05 15:48:23	3.4s	mad_roentgen	OK	6e64d189fa4143bf4346d1bd7906e1f0	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run chip_seq_pipe.nf -resume
+2022-10-05 15:48:40	2.4s	drunk_morse	OK	6e64d189fa4143bf4346d1bd7906e1f0	3b0f121d-284f-4348-ba1a-41a5d5db63c0	nextflow run chip_seq_pipe.nf -resume
+2022-10-11 10:18:16	1m 36s	curious_einstein	ERR	7776d621f3a7042326dcda776bfb87eb	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run chip_seq_pipe.nf
+2022-10-11 10:21:46	3.3s	marvelous_jepsen	ERR	bbf5ed48a1d04e3295f21e880f0d5119	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:26:34	2.5s	evil_swirles	ERR	dbeefd48119166f151695f8dd08fe674	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:27:05	2.9s	prickly_waddington	ERR	4b715f1aa0a406dc954e3a9449d9f8f2	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:29:40	-	drunk_mcclintock	-	7a950862bf0106d37fb06492abcd63dc	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:30:08	2.6s	friendly_feynman	ERR	4e3a9d4d021a3799ba4524e20a08f438	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:30:40	-	focused_franklin	-	ac2b84b5ce3605f6d0739446381a5bc8	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:31:01	2.7s	crazy_legentil	ERR	54b0c791c92ef20a2344c23a252850fc	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:31:23	2.6s	clever_hopper	ERR	d73b331463954f48a4577b96a86bea20	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:33:56	2.2s	magical_brattain	ERR	ac7bc08c6cc9bfbf375c1da13ab20d07	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:35:03	2.5s	stupefied_faggin	ERR	eabf30d12a495fdaeaa348166491d7f1	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:38:19	2.2s	fervent_franklin	ERR	c4ec536702a6dc4c958808bf67804467	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:38:36	3s	tender_lovelace	ERR	4a76cb80871f4ff239bc64e281e96cf4	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:43:55	2.7s	stoic_meninsky	ERR	b6cdfb5594e60ffa8987458d8256b890	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:50:52	2.1s	evil_brattain	ERR	bc15bb5ef6c891b3da17a3748d319dfc	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:53:55	3s	clever_cori	ERR	c9474db7a54e50073a609271b5f8aef7	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:54:44	2.4s	backstabbing_allen	ERR	86a8eabccc0355c05733ed0961cb7edf	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:55:03	2.6s	cranky_sax	ERR	e00950b184116fdf147f52bec8a65e3e	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:56:06	2.4s	spontaneous_caravaggio	ERR	4e7b87d13da787df99beffc6872af671	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:56:50	2.2s	tiny_goldberg	ERR	e8e2812bc3774217f582e92c7213bbce	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:57:53	2.4s	nostalgic_almeida	ERR	4b715f1aa0a406dc954e3a9449d9f8f2	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 10:58:55	2.2s	magical_archimedes	OK	29d497f9567c90be82826e94c5e4c2f8	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:12:40	2.2s	compassionate_brenner	OK	7d50987b8039888e6be98fbce1ef10cc	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:13:34	3.7s	backstabbing_lalande	ERR	9333fae42fd7fe385fe61b4f04801034	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:16:21	2.8s	chaotic_lumiere	ERR	9333fae42fd7fe385fe61b4f04801034	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:17:37	2.9s	sharp_brahmagupta	ERR	6079c0d25506fc4c048b19056d3dbae7	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:19:20	3.2s	mad_mclean	ERR	6079c0d25506fc4c048b19056d3dbae7	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:19:59	3s	mighty_ramanujan	ERR	06be5026deac8e8a315cdb7e6e579cbf	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:21:18	3s	furious_gautier	ERR	06be5026deac8e8a315cdb7e6e579cbf	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:21:33	3.1s	tiny_cantor	ERR	a26879f451cec0e144137d04a9177587	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:23:51	2.8s	adoring_gates	ERR	55ef39cd4dbd5e9479cf5151d920ae36	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:25:19	3.1s	wise_booth	ERR	607f8aee2d2cb825fcc59bc2b56c9be4	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 11:25:45	2.7s	fabulous_stone	ERR	f1c30d224a817d40a472c7d90cc53903	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:05:34	2.5s	nasty_volta	ERR	f1c30d224a817d40a472c7d90cc53903	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:10:28	3s	lethal_turing	ERR	cb19fbace11059328097e1daa8a78ccb	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:12:59	-	high_swanson	-	0b7f8ff3050cd591b8eeab47d9021890	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:13:12	2.8s	stupefied_cajal	ERR	8b12bc2a60313c311ef4ff4e538935b6	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:19:54	2.5s	distracted_darwin	ERR	b107ba59481a80a1221a2ef40b4a7c3e	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:20:56	-	furious_meucci	-	e2fc416ae87985b45e692a95886be94f	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:21:14	2.9s	extravagant_cray	ERR	c01560e1b35a1b63434a24550e7ed9d4	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:22:58	3.1s	grave_goldstine	ERR	83ab76a1bc28ae69ccfb26969a874af2	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:23:18	3s	admiring_rosalind	ERR	1e17b9e97d9e8ef45f12537b8206a294	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:24:15	2.9s	ridiculous_poitras	OK	4ff8cd0d53a50639094a819718ebcd69	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:30:15	2.6s	berserk_aryabhata	ERR	b7222c2c0aa9a6c4c5d7166f9c6eb503	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 16:31:47	5.6s	sick_snyder	ERR	46cc0f4a34ace052b484728de8fbe07c	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:19:49	-	astonishing_wing	-	30ada65052d0071690881dada0fd7f8d	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:21:58	2.6s	nasty_joliot	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:22:49	3.4s	sad_euler	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:23:33	3.6s	evil_wilson	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:27:41	3.3s	peaceful_cori	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:28:20	2.9s	compassionate_swanson	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:31:02	3.2s	ecstatic_mayer	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:37:14	4.1s	deadly_saha	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:38:05	3.2s	special_khorana	ERR	00c0b7a46257086c060ad681338df3ce	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:38:53	3.7s	amazing_einstein	ERR	93f9cfee890de9745f5d7d7713fcbc58	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:41:38	3.1s	cheeky_morse	ERR	6c9a6abf5f1dcc4d0381ab7d48835aed	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:42:26	2.8s	mad_agnesi	ERR	6c9a6abf5f1dcc4d0381ab7d48835aed	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:43:54	3.2s	wise_mahavira	ERR	6c9a6abf5f1dcc4d0381ab7d48835aed	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:47:48	3.3s	thirsty_brattain	ERR	6c9a6abf5f1dcc4d0381ab7d48835aed	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:50:46	3.4s	gloomy_ritchie	ERR	6c9a6abf5f1dcc4d0381ab7d48835aed	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:57:47	3.5s	berserk_bell	ERR	55e8b503b3c756ea817a93828e99317e	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 17:59:56	3.1s	peaceful_ampere	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:02:28	2.9s	magical_becquerel	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:04:20	3.4s	cheeky_cuvier	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:05:23	3.9s	extravagant_lalande	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:08:21	3.3s	zen_einstein	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:09:35	3.6s	clever_poincare	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:12:27	3.9s	goofy_chandrasekhar	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:12:56	3.1s	nostalgic_goodall	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:13:34	3.1s	furious_fermat	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:15:08	3.5s	focused_ramanujan	ERR	c137c64fd6164e5c67f91180886f96ab	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:17:53	2.8s	romantic_goldwasser	ERR	c137c64fd6164e5c67f91180886f96ab	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:18:11	3s	intergalactic_aryabhata	ERR	cf80175db75604f657cbe361424a9752	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:19:43	2.9s	intergalactic_ramanujan	ERR	e264df4b5435b934fdcbf8ff23a17cfd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:20:34	3.5s	ecstatic_bartik	ERR	c0dddd00bfba5e7839c26db56968f9dd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:21:11	3.7s	fervent_poisson	ERR	bfe3a6dd946de39ba06b157d496de7e4	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-11 18:21:37	3s	maniac_tesla	ERR	085e2908c9367c42abf48e309b2d7c40	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:34:47	4.3s	backstabbing_bhabha	ERR	085e2908c9367c42abf48e309b2d7c40	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:35:17	2.4s	jolly_swanson	ERR	3160678a0e8436ca9103c2d2978c60da	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:35:55	3.1s	shrivelled_noyce	OK	bc7c301e308a3e8b5cc66881ecf10d4a	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:41:36	3.6s	soggy_mestorf	OK	bc7c301e308a3e8b5cc66881ecf10d4a	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:42:09	-	naughty_saha	-	8cacdfb5d8251da79b30a76619aec81a	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:42:24	3.6s	extravagant_kare	OK	b7c3d6a9f7fc10ce55198b3614a6b232	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 09:46:23	3.4s	small_knuth	OK	b7c3d6a9f7fc10ce55198b3614a6b232	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 16:50:21	2.9s	nostalgic_mccarthy	ERR	92f48cd96fed2be387412caad743abc1	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 16:51:53	3.3s	goofy_carson	OK	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 16:57:34	2.6s	crazy_allen	OK	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 16:58:17	3.2s	suspicious_wilson	OK	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:01:05	3.4s	special_liskov	ERR	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:02:28	2.8s	disturbed_tesla	ERR	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:03:39	2.5s	silly_elion	OK	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:11:20	3s	mighty_austin	ERR	4cf71bb3a3e2563c734d148059faa199	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:11:26	2.6s	nasty_dijkstra	ERR	bcbbbc72bbdc8db58be1daea8749adec	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:25:34	-	modest_mandelbrot	-	205fb1ae7d755fa6f38fcca19004ab8e	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:28:13	-	infallible_roentgen	-	4da2f884ff14cc9adef64f830a414c35	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:31:12	3.6s	modest_mestorf	OK	cf1db79e1691f3fc99b1c554709d85fd	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:32:12	-	curious_mclean	-	31ef30325c035a47b21880d5b438bcb8	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:32:33	3s	stoic_borg	ERR	9dec34c51e4a4cc9f3c9e9ae888523a5	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:32:58	3.1s	special_bartik	ERR	1a60b994ae118543fd19126c1b6cc982	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:34:00	-	compassionate_bell	-	08d1a6f2f6a104cebf6fdfd783b824e8	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:37:50	-	soggy_ardinghelli	-	e13c3125458ecb8beb0166ec0a408bc2	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:38:04	2.6s	focused_roentgen	ERR	b9a4cb36d1bd570ca0fc50bf9e49955c	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:38:52	2.6s	sharp_agnesi	ERR	1674cbec0b9809d3b4a08039e45920d3	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:39:38	2.5s	clever_celsius	ERR	7786d79272005591b82d6cb521c7e59a	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:40:47	2.5s	small_shaw	ERR	94c66de51e5a7d59937383883ec3733d	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:40:58	2.3s	ecstatic_tuckerman	ERR	94c66de51e5a7d59937383883ec3733d	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:42:45	3.5s	berserk_hopper	ERR	94c66de51e5a7d59937383883ec3733d	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:45:20	2.6s	curious_colden	ERR	17427a7dcf9e87de59b415dc9dade2da	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:47:27	2.7s	suspicious_hilbert	ERR	4a6662e9e89885ab8dd0b21e0267146b	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:49:04	3.4s	focused_carson	ERR	693ed3830cb910a70b8e4e99c4bce8b3	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:50:55	2.3s	voluminous_jepsen	OK	6f479d7da9c9894e791b24057c551b0b	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:53:28	2.7s	sick_jones	OK	f4e8c3c93ef59de1f7ef6d145f988206	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:54:04	3s	fervent_woese	OK	f4e8c3c93ef59de1f7ef6d145f988206	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:56:17	2.8s	sad_cori	OK	fe02d9c0e0f6a51df87dc68534f33c32	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:57:59	-	lethal_wing	-	38630efe41fda4fc4906c63b58671f66	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 17:58:16	8.5s	cheesy_joliot	OK	adcc9ff90f0351b0d097a0e0560fa5f5	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 18:13:49	-	gigantic_bernard	-	6ad7945efe5fe00027299c04fc9674fc	3cc0194a-9516-4f80-a266-e74adc6f4af9	nextflow run -resume chip_seq_pipe.nf
+2022-10-17 18:14:03	-	desperate_ptolemy	-	6ad7945efe5fe00027299c04fc9674fc	f2ce48ed-f862-48b6-bfbe-2fa34c5447c5	nextflow run chip_seq_pipe.nf
+2022-10-17 18:15:06	-	soggy_lichterman	-	6ad7945efe5fe00027299c04fc9674fc	b879d378-9855-43ba-8158-39a0d50f3e47	nextflow run chip_seq_pipe.nf
+2022-10-17 18:18:16	-	desperate_lamarck	-	1bc2956c4feeb11c3dfeb78f3343cd51	379965d9-62c3-4b27-b45c-3e10c8be8d88	nextflow run chip_seq_pipe.nf
+2022-10-17 18:20:57	-	tender_hodgkin	-	1bc2956c4feeb11c3dfeb78f3343cd51	71a6fe89-7445-4dd2-ae6a-2cd3eeb44e24	nextflow run chip_seq_pipe.nf
+2022-10-17 18:21:26	-	small_hodgkin	-	1bc2956c4feeb11c3dfeb78f3343cd51	d3b17ae7-2baa-42a3-9054-747142c6a3d4	nextflow run chip_seq_pipe.nf
+2022-10-17 18:23:44	-	furious_hoover	-	535b78e50876a7138fb40218be62b8d3	004a3aed-ee4f-485c-a534-c6df324ba77e	nextflow run chip_seq_pipe.nf
+2022-10-17 18:24:57	-	pensive_yonath	-	efe099c9591b3650db5e9ac07fa2297e	132f5372-53e5-4a47-8581-31fd26a8f6ee	nextflow run chip_seq_pipe.nf
+2022-10-17 18:25:47	-	trusting_engelbart	-	f3f5478c486b958142fe55f7b9f5a3f9	02148c0a-6ac4-4c7a-aa85-aa3810e20460	nextflow run chip_seq_pipe.nf
+2022-10-17 18:26:20	10.3s	determined_venter	ERR	738c0a712540885a487744c0891b7ced	8195cf55-41e5-4a97-9de6-ffa47b707e8e	nextflow run chip_seq_pipe.nf
+2022-10-17 18:29:43	3.2s	distraught_watson	ERR	041ee86298f5f7d2311beb33c424d7c4	8195cf55-41e5-4a97-9de6-ffa47b707e8e	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:12:43	9.4s	special_heisenberg	ERR	041ee86298f5f7d2311beb33c424d7c4	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run chip_seq_pipe.nf
+2022-10-18 09:26:18	3s	gloomy_rubens	ERR	8e1feb9db94fe2d197c1e5b0822fa4e0	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:30:30	-	condescending_morse	-	bc03f540f9ba801a84254f522838d393	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:34:06	2m 8s	adoring_hilbert	OK	abe5422a5a6936d7ee1d836160d7bb2e	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:39:56	-	nostalgic_laplace	-	c47a93fbdc5686cc60ac971da295599c	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:40:18	3.2s	backstabbing_mandelbrot	OK	838f416d38132388a7d5340ec2c123c8	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:56:05	3.3s	spontaneous_kilby	OK	c2f38840e68bad33d0d07cf3f30c10c7	463789ae-07c0-4e96-a7d0-1a1ddafaca96	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 09:59:04	26.7s	condescending_coulomb	OK	bb1ebdcdfc45a7f49ce62315fb3f4d2c	8c3a2639-de5b-4e5c-9567-1f14a37b3421	nextflow run chip_seq_pipe.nf
+2022-10-18 10:00:34	2.5s	nauseous_knuth	OK	bb1ebdcdfc45a7f49ce62315fb3f4d2c	8c3a2639-de5b-4e5c-9567-1f14a37b3421	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:00:42	-	marvelous_agnesi	-	e7949defd3c4aa68157c858d6e4a2dd8	8c3a2639-de5b-4e5c-9567-1f14a37b3421	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:15:20	-	backstabbing_mcnulty	-	fa223f23dd58eaeae219224c8b9dac94	05051189-c61c-4378-90f3-db2e3f674804	nextflow run chip_seq_pipe.nf
+2022-10-18 10:16:31	-	stoic_pasteur	-	d2ded7e63b1c4ca88cecc24c06200ed7	20b368c8-ac0f-4cd3-9372-f95e1c2cd176	nextflow run chip_seq_pipe.nf
+2022-10-18 10:17:08	-	infallible_mcclintock	-	4e3e8f40018fbc931840acfc5f407675	96de2aa0-c246-4718-9db8-2207323d9c5d	nextflow run chip_seq_pipe.nf
+2022-10-18 10:17:28	24.5s	elegant_booth	OK	aab0d03109db07c277a654c1acbe4b24	e300e73e-2f46-47bf-a135-ecab075bdbd1	nextflow run chip_seq_pipe.nf
+2022-10-18 10:19:52	24.8s	cranky_shirley	OK	0a4b9ed4e00c66a52d9cb715e0c38f40	2138fef6-d86b-4609-856f-73a545c70395	nextflow run chip_seq_pipe.nf
+2022-10-18 10:21:29	-	modest_yalow	-	e2a3f60c2d7bd4f1ffc803f0a775a1c8	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:37:36	2.4s	cheesy_newton	ERR	e902f32544bd37f3ae15c2302243b693	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:38:11	2.9s	mad_murdock	ERR	e902f32544bd37f3ae15c2302243b693	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:39:44	3.5s	determined_mendel	ERR	e902f32544bd37f3ae15c2302243b693	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:40:21	2.8s	serene_poisson	ERR	089ad384be2c63a2fb3ced61313dda09	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:41:33	3s	nice_legentil	ERR	373309ca986d21402ff2166d82c500c4	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:42:10	8.9s	lonely_thompson	ERR	7199359f01ca3ce618cc140d6714de30	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 10:43:29	2.3s	jovial_jennings	OK	c2a6a426ce1b354177e6e39440ff690b	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:02:20	4.3s	nostalgic_ampere	ERR	b50fe0b41a43325af7e75f5375df4afb	2138fef6-d86b-4609-856f-73a545c70395	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:04:36	30.6s	deadly_mandelbrot	OK	6d29bea129beb60beb8bdbe83ffa2ca0	95f0dad4-f1ac-4d9f-ae57-53af40b46c82	nextflow run chip_seq_pipe.nf
+2022-10-18 11:08:45	28.5s	fabulous_picasso	OK	6330df9f1cf498864fe63b7723275718	e54b5837-f8bf-4f2f-9712-d55b159d6a9c	nextflow run chip_seq_pipe.nf
+2022-10-18 11:09:45	3.5s	romantic_descartes	OK	6330df9f1cf498864fe63b7723275718	e54b5837-f8bf-4f2f-9712-d55b159d6a9c	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:10:00	2.8s	disturbed_majorana	ERR	f619fbddd89f87fac19d8d83b89abbdc	e54b5837-f8bf-4f2f-9712-d55b159d6a9c	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:11:57	28.9s	zen_colden	ERR	f619fbddd89f87fac19d8d83b89abbdc	d5c5fae7-c22c-48a8-845b-9e85ee7e48d2	nextflow run chip_seq_pipe.nf
+2022-10-18 11:34:12	59.2s	nice_jang	OK	998aac503654ca41d606b5040a11c229	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run chip_seq_pipe.nf
+2022-10-18 11:46:39	-	reverent_lamarck	-	316d1e621b450abfc2ad74cf23bf294b	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:47:03	37.5s	big_keller	OK	110099b4dc7060c9bf1d3e275c2bbcaf	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:47:53	3.7s	determined_wescoff	ERR	2e4d06d779fa89dba961ab211d80cfcc	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:50:53	31.8s	modest_volta	OK	0344e123335ecd3dd8bf52263eb8d1b2	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:58:46	3.6s	berserk_murdock	ERR	0057c60570837fba7a25dee761286c58	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 11:59:51	35.8s	jolly_minsky	OK	3eb2fd7508fd3e2ef42e28075761052e	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:28:40	2.6s	trusting_pauling	ERR	b15aa6baccc36bfd2850562e43ea6505	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:29:07	2.3s	astonishing_austin	ERR	e93a6d928b84b537884441ecd0a82f83	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:29:51	3s	focused_wing	ERR	f1055c69e013ebb2c5065b47825b609b	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:31:17	2.4s	grave_liskov	ERR	7898a48f883fa502a3bf556a4434b9ff	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:31:37	3.5s	ecstatic_visvesvaraya	ERR	f3af93d6fa9cb4f446d69d4a4149c361	b6e1a27d-f80d-4733-af23-4a45ccad36f7	nextflow run -resume chip_seq_pipe.nf
+2022-10-18 12:48:44	-	dreamy_easley	-	6813fd99b9a7f5b84cf11fc056deaedd	d7d132a5-02f2-4b5b-b7b0-c161e7df1736	nextflow run parse_csv.nf
+2022-10-18 12:49:18	-	drunk_caravaggio	-	6813fd99b9a7f5b84cf11fc056deaedd	ce9c5415-9c0a-4e75-aaae-5d77b417636a	nextflow run parse_csv.nf
+2022-10-18 12:49:24	-	exotic_meucci	-	6813fd99b9a7f5b84cf11fc056deaedd	324139bb-a471-491f-8988-d2ca8b83884a	nextflow run parse_csv.nf
+2022-10-18 12:50:00	-	small_edison	-	85011e87a86cf1c7d5e33752f477ae08	879a3041-c740-4ccf-b63a-67f97cf5ba50	nextflow run parse_csv.nf
+2022-10-18 12:50:54	2s	awesome_torricelli	OK	0986488677817789ad22adba0c663e56	cbb4f110-79f6-438e-8666-79ce5b9142ee	nextflow run parse_csv.nf
+2022-10-18 12:51:07	-	stupefied_panini	-	71e7eb89504de21f38eb3dffd0f887e2	13fa0898-760c-41d4-8f3c-dc1802a2b230	nextflow run parse_csv.nf
+2022-10-18 12:51:47	-	agitated_franklin	-	b5bccfcba9b854fa667a6a9f175a110c	7691f58b-091e-459a-bdd4-ee90d3f2b274	nextflow run parse_csv.nf
+2022-10-18 12:52:22	1.7s	curious_mcclintock	ERR	7128f82c096d5a491f6b2dbee7669dd4	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run parse_csv.nf
+2022-10-18 12:59:47	-	loving_shannon	-	1c228f3f5a84c76a369fd4402342285e	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 13:00:50	-	gigantic_gilbert	-	e61724e73a2ec0ef02ef85f3c90f80f9	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 13:01:56	1s	festering_stonebraker	ERR	0ade85d735eacf3b200fa8cf75454c02	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 14:43:22	1.5s	maniac_stonebraker	OK	7f2297c1e00b9349de3dde1c3874e5f1	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 14:44:27	1.2s	elated_poisson	ERR	841c04532f8644955f9d32eff393851a	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 14:44:47	-	condescending_heyrovsky	-	f900c5f39a2f2e3a99402583f9a3b8d1	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 14:47:49	-	pensive_coulomb	-	a7c222a72975771e78cefa62e404e06b	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 14:49:43	-	festering_cuvier	-	24fc713c51235055246b23af0183cf17	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:00:18	1s	cheesy_elion	ERR	a561223ed405703f5daff2c2de3961dd	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:00:46	1.3s	big_linnaeus	OK	a561223ed405703f5daff2c2de3961dd	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:03:30	1.1s	infallible_archimedes	OK	66027f82ac341a225a72a3b5fe0b1472	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:04:32	-	silly_volhard	-	ebc61aca35d422849ced2c295ba6bf91	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:04:55	1.9s	reverent_northcutt	ERR	801c8c0f72afc1b9e567ebe0952e3522	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:05:31	1.6s	peaceful_cray	ERR	bcd8df2f8aaa1cfee14a8db4359fa62e	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:07:40	1.3s	gloomy_lavoisier	ERR	91d22ce02f75f8ed68b2af04f8d59036	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:09:40	1.7s	soggy_booth	ERR	f9156f624a65ad6d49e4b1aca1aa038a	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:10:00	1.5s	friendly_williams	ERR	d91818eb1d21a3b4df835e1291167876	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:10:24	1.9s	sick_shannon	ERR	62c465822effbdaa880954b0fca6b155	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:13:01	-	desperate_meitner	-	df4ae9ec2b4fc32a3abd1d4b8265ecc3	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:13:23	1.4s	magical_ekeblad	ERR	2e6000dbf5b6c8b3fa24c1b896c8cfea	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:13:55	-	berserk_woese	-	327c49efc2c52b8d96e10330ba598885	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:14:08	1.7s	jolly_brenner	ERR	4694b500761b725bf5634ea750e378c7	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:26:23	1.5s	elegant_goldberg	OK	542969ffff83e6504c914b59d7c6f32f	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:26:37	1.5s	distraught_brattain	OK	bd430f3624678178d29a826eaf63b28f	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:27:25	-	soggy_visvesvaraya	-	b930e190aa50ac2d82c7cc2dbe874c07	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:27:36	-	modest_mcclintock	-	e8d276f9762b18a8358f3574ff303a3c	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:27:52	-	crazy_liskov	-	e8d276f9762b18a8358f3574ff303a3c	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:28:36	1.2s	marvelous_allen	OK	e0651d7e0ed4f77c7644039d9fc8855c	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 15:28:48	1.2s	sad_faggin	OK	802cef7d4c90b0f28597c370cc67057c	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:11:23	-	suspicious_snyder	-	67c95112c6e77f0938044323d7e4bebf	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:11:47	-	distraught_koch	-	1f4d0ccf560d07678ce8ce1b4bacd423	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:15:22	1.4s	marvelous_mirzakhani	ERR	011648d6404f6c23aed668b37f5aa7ce	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:16:38	2.1s	small_darwin	OK	7852672886fec12638f23c116421a992	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:17:55	-	nasty_picasso	-	f576ad8398a93308105d9b300c5e7cac	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:18:17	1.4s	crazy_rubens	ERR	3e2f2ad949b8ae0f4947e8d9e71a3459	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:18:55	2.1s	angry_nobel	ERR	634a885133f497aa266ef8efb9b2c115	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:19:22	1.7s	tender_watson	ERR	634a885133f497aa266ef8efb9b2c115	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:19:52	2.3s	goofy_goldberg	ERR	eca0c47164b786566424915bb54d862b	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:20:54	2.2s	cheesy_pauling	ERR	0390e3c8f397afec078d6e8aca428b02	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:22:14	-	irreverent_shockley	-	46192002592ba67dee80e622b1b1fceb	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:23:05	-	modest_brenner	-	1534367b3c1cfab208878ca0eb177e7b	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:23:27	-	determined_thompson	-	1534367b3c1cfab208878ca0eb177e7b	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:23:57	1.5s	adoring_thompson	OK	f40d8b061ff910018f27a5ff76e95a7c	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf
+2022-10-18 16:27:43	-	angry_davinci	-	8c284448fc34b161b56f0c7977e0cae6	f41e8563-3367-467e-bf73-10aa8ccce29e	nextflow run -resume parse_csv.nf

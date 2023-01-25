@@ -1,0 +1,84 @@
+Sep-29 11:50:20.583 [main] DEBUG nextflow.cli.Launcher - $> nextflow run isugifNF/blast -profile test,ceres
+Sep-29 11:50:20.640 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.10.0
+Sep-29 11:50:21.435 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/lucas/.nextflow/assets/isugifNF/blast/.git/config; branch: master; remote: origin; url: https://github.com/isugifNF/blast.git
+Sep-29 11:50:21.447 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/lucas/.nextflow/assets/isugifNF/blast/.git/config; branch: master; remote: origin; url: https://github.com/isugifNF/blast.git
+Sep-29 11:50:21.515 [main] INFO  nextflow.cli.CmdRun - Launching `isugifNF/blast` [voluminous_booth] - revision: 799b748598 [master]
+Sep-29 11:50:22.140 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/lucas/.nextflow/assets/isugifNF/blast/nextflow.config
+Sep-29 11:50:22.141 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/lucas/.nextflow/assets/isugifNF/blast/nextflow.config
+Sep-29 11:50:22.154 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test,ceres`
+Sep-29 11:50:22.276 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [test, condo, singularity, ceres, local, nova, docker]
+Sep-29 11:50:22.299 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/lucas/.nextflow/plugins
+Sep-29 11:50:22.300 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Sep-29 11:50:22.308 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Sep-29 11:50:22.309 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Sep-29 11:50:22.312 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Sep-29 11:50:22.320 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Sep-29 11:50:22.363 [main] DEBUG nextflow.Session - Session uuid: 83dc241d-4f76-4348-8ef6-5d790ac3e6c2
+Sep-29 11:50:22.363 [main] DEBUG nextflow.Session - Run name: voluminous_booth
+Sep-29 11:50:22.363 [main] DEBUG nextflow.Session - Executor pool size: 8
+Sep-29 11:50:22.380 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.10.0 build 5640
+  Created: 11-11-2021 18:27 UTC (19:27 CEST)
+  System: Linux 4.15.0-193-generic
+  Runtime: Groovy 3.0.9 on Java HotSpot(TM) 64-Bit Server VM 13.0.2+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 29646@lucas-Precision-Tower-3620 [127.0.1.1]
+  CPUs: 8 - Mem: 31.3 GB (21.5 GB) - Swap: 31.9 GB (31.9 GB)
+Sep-29 11:50:22.394 [main] DEBUG nextflow.Session - Work-dir: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work [ext2/ext3]
+Sep-29 11:50:22.395 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/lucas/.nextflow/assets/isugifNF/blast/bin
+Sep-29 11:50:22.402 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Sep-29 11:50:22.412 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Sep-29 11:50:22.484 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Sep-29 11:50:22.616 [main] DEBUG nextflow.Session - Session start invoked
+Sep-29 11:50:23.010 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Sep-29 11:50:23.106 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Sep-29 11:50:23.132 [Actor Thread 1] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.fasta
+Sep-29 11:50:23.143 [Actor Thread 1] DEBUG n.splitter.AbstractTextSplitter - Splitter `Fasta` collector path: nextflow.splitter.TextFileCollector$CachePath(/mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/13/7662726ba1c625706259630db9586f/headtest.fasta, null)
+Sep-29 11:50:23.178 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:software_check` matches labels `software_check` for process with name software_check
+Sep-29 11:50:23.183 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:software_check` matches process software_check
+Sep-29 11:50:23.185 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-29 11:50:23.185 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-29 11:50:23.198 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Sep-29 11:50:23.205 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 20; pollInterval: 5s; dumpInterval: 5m 
+Sep-29 11:50:23.210 [main] DEBUG n.processor.TaskPollingMonitor - Creating submit rate limit of 10 reqs by 1 seconds
+Sep-29 11:50:23.213 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Sep-29 11:50:23.312 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:blast` matches labels `blast` for process with name runMakeBlastDB
+Sep-29 11:50:23.313 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:runMakeBlastDB` matches process runMakeBlastDB
+Sep-29 11:50:23.314 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Sep-29 11:50:23.314 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Sep-29 11:50:23.366 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nin
+Sep-29 11:50:23.367 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ptf
+Sep-29 11:50:23.367 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pdb
+Sep-29 11:50:23.368 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nhr
+Sep-29 11:50:23.368 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ndb
+Sep-29 11:50:23.369 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pin
+Sep-29 11:50:23.369 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nsq
+Sep-29 11:50:23.370 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.phr
+Sep-29 11:50:23.370 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.psq
+Sep-29 11:50:23.371 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pto
+Sep-29 11:50:23.371 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.not
+Sep-29 11:50:23.372 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.ntf
+Sep-29 11:50:23.372 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.pot
+Sep-29 11:50:23.372 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.nto
+Sep-29 11:50:23.419 [Task submitter] DEBUG nextflow.processor.TaskRun - Unable to dump error of process 'null' -- Cause: java.nio.file.NoSuchFileException: /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/bc/3e2f48a8e0b74949c5daa1ff419521/.command.log
+Sep-29 11:50:23.421 [Task submitter] ERROR nextflow.processor.TaskProcessor - Error executing process > 'software_check'
+
+Caused by:
+  Cannot run program "sbatch" (in directory "/mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/bc/3e2f48a8e0b74949c5daa1ff419521"): error=2, No such file or directory
+
+Command executed:
+
+  sbatch .command.run
+
+Command exit status:
+  -
+
+Command output:
+  (empty)
+
+Work dir:
+  /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/bc/3e2f48a8e0b74949c5daa1ff419521
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Sep-29 11:50:23.425 [Task submitter] DEBUG nextflow.Session - Session aborted -- Cause: Error submitting process 'software_check' for execution
+Sep-29 11:50:32.026 [SIGINT handler] INFO  nextflow.Session - Adieu

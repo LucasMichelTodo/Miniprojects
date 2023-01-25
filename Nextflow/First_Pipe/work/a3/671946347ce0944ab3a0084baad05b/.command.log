@@ -1,0 +1,25 @@
+/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/Results/Alignments/Reports/agregated_report.tsv
+re.compile('^[0-9]+ reads; of these:')
+915 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+973 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+939 reads; of these:
+re.compile('^[0-9]+ reads; of these:')
+989 reads; of these:
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 79, in <module>
+    parse_agregated_report(report_file, linestart, out_file)
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 66, in parse_agregated_report
+    out_df.rename(columns=col_names, inplace=True)
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/util/_decorators.py", line 309, in wrapper
+    return func(*args, **kwargs)
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/core/frame.py", line 4308, in rename
+    errors=errors,
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 947, in rename
+    new_index = ax._transform_index(f, level)
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 4836, in _transform_index
+    items = [func(x) for x in self]
+  File "/home/lucas/.local/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 4836, in <listcomp>
+    items = [func(x) for x in self]
+TypeError: 'list' object is not callable

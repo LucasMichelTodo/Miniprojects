@@ -1,0 +1,5 @@
+Namespace(o='Alignments/Reports/agregated_report.tsv', r='join_report.log', sl='^[0-9]+ reads; of these:')
+Traceback (most recent call last):
+  File "/mnt/Disc4T/Projects/Miniprojects/Nextflow/First_Pipe/bin/parse_bwt2_reports.py", line 76, in <module>
+    print(args.linestart)
+AttributeError: 'Namespace' object has no attribute 'linestart'

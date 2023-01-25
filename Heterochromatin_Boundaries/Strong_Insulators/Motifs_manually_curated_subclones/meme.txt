@@ -1,0 +1,2628 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.0 (Release date: Wed Sep 7 14:18:26 2022 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= ./Seqs/manually_curated_subclones.fasta
+CONTROL SEQUENCES= ../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+Pf3D7_01_v3:102283-10258 1.0000    300  Pf3D7_01_v3:522580-52288 1.0000    300  
+Pf3D7_02_v3:72200-72500  1.0000    300  Pf3D7_02_v3:360527-36082 1.0000    300  
+Pf3D7_02_v3:380829-38112 1.0000    300  Pf3D7_02_v3:835100-83540 1.0000    300  
+Pf3D7_03_v3:80056-80356  1.0000    300  Pf3D7_03_v3:115600-11590 1.0000    300  
+Pf3D7_03_v3:138973-13927 1.0000    300  Pf3D7_03_v3:1002571-1002 1.0000    300  
+Pf3D7_04_v3:171400-17170 1.0000    300  Pf3D7_04_v3:545686-54598 1.0000    300  
+Pf3D7_04_v3:613600-61390 1.0000    300  Pf3D7_04_v3:934730-93503 1.0000    300  
+Pf3D7_04_v3:993500-99380 1.0000    300  Pf3D7_04_v3:1120800-1121 1.0000    300  
+Pf3D7_05_v3:41404-41704  1.0000    300  Pf3D7_05_v3:1318230-1318 1.0000    300  
+Pf3D7_06_v3:73962-74262  1.0000    300  Pf3D7_06_v3:725049-72534 1.0000    300  
+Pf3D7_06_v3:745300-74560 1.0000    300  Pf3D7_06_v3:1301700-1302 1.0000    300  
+Pf3D7_07_v3:93142-93442  1.0000    300  Pf3D7_07_v3:508173-50847 1.0000    300  
+Pf3D7_07_v3:610523-61082 1.0000    300  Pf3D7_07_v3:1378700-1379 1.0000    300  
+Pf3D7_08_v3:85300-85600  1.0000    300  Pf3D7_08_v3:426700-42700 1.0000    300  
+Pf3D7_08_v3:466568-46686 1.0000    300  Pf3D7_08_v3:1381836-1382 1.0000    300  
+Pf3D7_09_v3:78875-79175  1.0000    300  Pf3D7_09_v3:1446628-1446 1.0000    300  
+Pf3D7_10_v3:61366-61966  1.0000    600  Pf3D7_10_v3:1568708-1569 1.0000    300  
+Pf3D7_11_v3:111430-11173 1.0000    300  Pf3D7_11_v3:1982353-1982 1.0000    300  
+Pf3D7_12_v3:64337-64637  1.0000    300  Pf3D7_12_v3:763643-76394 1.0000    300  
+Pf3D7_12_v3:785570-78587 1.0000    300  Pf3D7_12_v3:1684461-1684 1.0000    300  
+Pf3D7_12_v3:1746143-1746 1.0000    300  Pf3D7_12_v3:2161616-2161 1.0000    300  
+Pf3D7_13_v3:124416-12471 1.0000    300  Pf3D7_13_v3:2820777-2821 1.0000    300  
+Pf3D7_14_v3:43094-43394  1.0000    300  Pf3D7_14_v3:3147189-3147 1.0000    300  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme ./Seqs/manually_curated_subclones.fasta -o ./Motifs_manually_curated_subclones/ -objfun de -neg ../Data/PlasmoDB-61_Pfalciparum3D7_Genome.fasta -dna -revcomp -nmotifs 10 -seed 123 -mpi 
+
+model:  mod=         zoops    nmotifs=        10    evt=           inf
+objective function:           em=       Differential Enrichment mHG
+                              starts=   log likelihood ratio (LLR)
+strands: + -
+width:  minw=            8    maxw=           50
+nsites: minsites=        2    maxsites=       46    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+data:   n=           14100    N=              46
+sample: seed=          123    hsfrac=        0.5
+        searchsize=  14100    norand=         no    csites=         -1
+Letter frequencies in dataset:
+A 0.418 C 0.082 G 0.082 T 0.418 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.418 C 0.0821 G 0.0821 T 0.418 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF ATATATATRT MEME-1	width =  10  sites =  46  llr = 343  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  a:9:7:a:4:
+pos.-specific     C  ::::::::::
+probability       G  ::::21::6:
+matrix            T  :a1919:a:a
+
+         bits    3.6           
+                 3.2           
+                 2.9           
+                 2.5           
+Relative         2.2           
+Entropy          1.8           
+(10.8 bits)      1.4         * 
+                 1.1 ** * *****
+                 0.7 **********
+                 0.4 **********
+                 0.0 ----------
+
+Multilevel           ATATATATGT
+consensus                G   A 
+sequence                       
+                               
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value               Site 
+-------------            ------  ----- ---------            ----------
+Pf3D7_12_v3:763643-76394     +    137  6.28e-06 ATATATATAT ATATGTATGT ATTTTTTTTT
+Pf3D7_08_v3:466568-46686     +     17  6.28e-06 ATAGATGTAT ATATGTATGT ATATATTTTT
+Pf3D7_07_v3:610523-61082     -    125  6.28e-06 TTAATGTTGC ATATGTATGT AAAATGTTGT
+Pf3D7_06_v3:725049-72534     -    133  6.28e-06 ATTTGTATTT ATATGTATGT GTGAGTATTT
+Pf3D7_04_v3:934730-93503     -    274  6.28e-06 ATAGATGTAC ATATGTATGT AAATATTTTT
+Pf3D7_03_v3:138973-13927     -    166  6.28e-06 ATTTATATAT ATATGTATGT TTATATATAT
+Pf3D7_01_v3:522580-52288     -     12  6.28e-06 ATATATACAT ATATGTATGT GTTTTATTTT
+Pf3D7_14_v3:43094-43394      +    120  3.83e-05 TTTATAATAT ATATATATGT ATAATTTTAT
+Pf3D7_13_v3:124416-12471     -     34  3.83e-05 ATATATATAT ATATATATGT ATATTTTTTT
+Pf3D7_12_v3:2161616-2161     -    250  3.83e-05 ATATATATAT ATATATATGT GTGTTCCTAA
+Pf3D7_12_v3:1746143-1746     +     67  3.83e-05 ATATATATAT ATATATATGT ACACAGGACA
+Pf3D7_12_v3:785570-78587     +    126  3.83e-05 ATTAAAATGT ATATATATGT AAAGATAAAA
+Pf3D7_10_v3:61366-61966      +     69  3.83e-05 ATATATATAT ATATATATGT TTCATGTCTT
+Pf3D7_09_v3:1446628-1446     +    241  3.83e-05 TAAATATACC ATATATATGT TTATGTTTAT
+Pf3D7_08_v3:1381836-1382     +    149  3.83e-05 ATATATATAT ATATATATGT AGGAATTCAA
+Pf3D7_08_v3:426700-42700     -    154  3.83e-05 ACATCAAATT ATATATATGT GCAAATATAT
+Pf3D7_06_v3:1301700-1302     +    105  3.83e-05 TGATATTATT ATATATATGT TTAATAAGAA
+Pf3D7_06_v3:745300-74560     -      5  3.83e-05 ATATATATAT ATATATATGT ATTT      
+Pf3D7_06_v3:73962-74262      -     31  3.83e-05 TTCTGTAAAA ATATATATGT TAATGTACAA
+Pf3D7_04_v3:545686-54598     -      7  3.83e-05 GCTTACACAT ATATATATGT ATACTT    
+Pf3D7_03_v3:1002571-1002     +     20  3.83e-05 TTTTTCTTTT ATATATATGT GAATGATTTT
+Pf3D7_02_v3:380829-38112     -    150  3.83e-05 ATATATATAT ATATATATGT ATTCATTATA
+Pf3D7_02_v3:360527-36082     -    245  3.83e-05 ATATATATTT ATATATATGT GGACAATGTT
+Pf3D7_04_v3:171400-17170     -    207  9.40e-05 TTTCTAAAAT ATATCTATGT CTATCAAGCC
+Pf3D7_13_v3:2820777-2821     +      4  2.57e-04        GAA ATATATATAT TATAAATTAT
+Pf3D7_12_v3:1684461-1684     +     33  2.57e-04 ATATATATAT ATATATATAT ATATATATAT
+Pf3D7_12_v3:64337-64637      +     36  2.57e-04 TGACAAAAAT ATATATATAT ATATTTATAT
+Pf3D7_11_v3:111430-11173     +    165  2.57e-04 TTAATATTAT ATATATATAT ATTTATATAC
+Pf3D7_10_v3:1568708-1569     +    249  2.57e-04 AATTATATAT ATATATATAT TATGCATATT
+Pf3D7_09_v3:78875-79175      +    238  2.57e-04 CAGAAAAAGA ATATATATAT TTTTTTTTTC
+Pf3D7_07_v3:1378700-1379     +     58  2.57e-04 ATATACATAG ATATATATAT ATATATTTTT
+Pf3D7_07_v3:508173-50847     +    237  2.57e-04 ATATATATAT ATATATATAT TTTTTTTGTG
+Pf3D7_07_v3:93142-93442      +     51  2.57e-04 AAGTAAATTT ATATATATAT AAATATATAC
+Pf3D7_03_v3:80056-80356      +     53  2.57e-04 ATATATATAT ATATATATAT ATATATATTT
+Pf3D7_01_v3:102283-10258     +      6  2.57e-04      AAAAA ATATATATAT TAAAGTTTTA
+Pf3D7_04_v3:993500-99380     -    117  2.63e-04 CTAATCCTAA ATATGGATAT AACTATAAAT
+Pf3D7_04_v3:613600-61390     -    192  3.62e-04 ATTCTTTTGG ATTTGGATGT ATTTGGTTCA
+Pf3D7_02_v3:72200-72500      -    266  5.60e-04 TATGTTATTT ATTTGTATAT TTTATATTAT
+Pf3D7_14_v3:3147189-3147     +    143  8.05e-04 GCATATTGGT ATGTATATAT TTATATATGC
+Pf3D7_05_v3:1318230-1318     -    147  8.05e-04 AATATATTAT ATATTTATAT TAAAAATAAT
+Pf3D7_03_v3:115600-11590     -    260  1.11e-03 CATCATTGGA ATTTGGATAT TTATTATTTG
+Pf3D7_02_v3:835100-83540     +    174  1.15e-03 AACATATATA ATTTTTATGT TTTTTTCATA
+Pf3D7_11_v3:1982353-1982     -     24  1.57e-03 ATAGAAACCA AAATATATAT AAGCGTAATT
+Pf3D7_05_v3:41404-41704      -    226  1.57e-03 TAAGTATTAA ATAAATATAT TTAAAACTTA
+Pf3D7_08_v3:85300-85600      +     51  2.99e-03 TCTTATTGTT ATAATTATAT CTTTCCTCTT
+Pf3D7_04_v3:1120800-1121     +     16  9.10e-03 AGTAACCACA AAAGTGATAG TAACCACAAG
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_12_v3:763643-76394          6.3e-06  136_[+1]_154
+Pf3D7_08_v3:466568-46686          6.3e-06  16_[+1]_274
+Pf3D7_07_v3:610523-61082          6.3e-06  124_[-1]_166
+Pf3D7_06_v3:725049-72534          6.3e-06  132_[-1]_158
+Pf3D7_04_v3:934730-93503          6.3e-06  273_[-1]_17
+Pf3D7_03_v3:138973-13927          6.3e-06  165_[-1]_125
+Pf3D7_01_v3:522580-52288          6.3e-06  11_[-1]_279
+Pf3D7_14_v3:43094-43394           3.8e-05  119_[+1]_171
+Pf3D7_13_v3:124416-12471          3.8e-05  33_[-1]_257
+Pf3D7_12_v3:2161616-2161          3.8e-05  249_[-1]_41
+Pf3D7_12_v3:1746143-1746          3.8e-05  66_[+1]_224
+Pf3D7_12_v3:785570-78587          3.8e-05  125_[+1]_165
+Pf3D7_10_v3:61366-61966           3.8e-05  68_[+1]_522
+Pf3D7_09_v3:1446628-1446          3.8e-05  240_[+1]_50
+Pf3D7_08_v3:1381836-1382          3.8e-05  148_[+1]_142
+Pf3D7_08_v3:426700-42700          3.8e-05  153_[-1]_137
+Pf3D7_06_v3:1301700-1302          3.8e-05  104_[+1]_186
+Pf3D7_06_v3:745300-74560          3.8e-05  4_[-1]_286
+Pf3D7_06_v3:73962-74262           3.8e-05  30_[-1]_260
+Pf3D7_04_v3:545686-54598          3.8e-05  6_[-1]_284
+Pf3D7_03_v3:1002571-1002          3.8e-05  19_[+1]_271
+Pf3D7_02_v3:380829-38112          3.8e-05  149_[-1]_141
+Pf3D7_02_v3:360527-36082          3.8e-05  244_[-1]_46
+Pf3D7_04_v3:171400-17170          9.4e-05  206_[-1]_84
+Pf3D7_13_v3:2820777-2821          0.00026  3_[+1]_287
+Pf3D7_12_v3:1684461-1684          0.00026  32_[+1]_258
+Pf3D7_12_v3:64337-64637           0.00026  35_[+1]_255
+Pf3D7_11_v3:111430-11173          0.00026  164_[+1]_126
+Pf3D7_10_v3:1568708-1569          0.00026  248_[+1]_42
+Pf3D7_09_v3:78875-79175           0.00026  237_[+1]_53
+Pf3D7_07_v3:1378700-1379          0.00026  57_[+1]_233
+Pf3D7_07_v3:508173-50847          0.00026  236_[+1]_54
+Pf3D7_07_v3:93142-93442           0.00026  50_[+1]_240
+Pf3D7_03_v3:80056-80356           0.00026  52_[+1]_238
+Pf3D7_01_v3:102283-10258          0.00026  5_[+1]_285
+Pf3D7_04_v3:993500-99380          0.00026  116_[-1]_174
+Pf3D7_04_v3:613600-61390          0.00036  191_[-1]_99
+Pf3D7_02_v3:72200-72500           0.00056  265_[-1]_25
+Pf3D7_14_v3:3147189-3147          0.00081  142_[+1]_148
+Pf3D7_05_v3:1318230-1318          0.00081  146_[-1]_144
+Pf3D7_03_v3:115600-11590           0.0011  259_[-1]_31
+Pf3D7_02_v3:835100-83540           0.0012  173_[+1]_117
+Pf3D7_11_v3:1982353-1982           0.0016  23_[-1]_267
+Pf3D7_05_v3:41404-41704            0.0016  225_[-1]_65
+Pf3D7_08_v3:85300-85600             0.003  50_[+1]_240
+Pf3D7_04_v3:1120800-1121           0.0091  15_[+1]_275
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF ATATATATRT width=10 seqs=46
+Pf3D7_12_v3:763643-76394 (  137) ATATGTATGT  1 
+Pf3D7_08_v3:466568-46686 (   17) ATATGTATGT  1 
+Pf3D7_07_v3:610523-61082 (  125) ATATGTATGT  1 
+Pf3D7_06_v3:725049-72534 (  133) ATATGTATGT  1 
+Pf3D7_04_v3:934730-93503 (  274) ATATGTATGT  1 
+Pf3D7_03_v3:138973-13927 (  166) ATATGTATGT  1 
+Pf3D7_01_v3:522580-52288 (   12) ATATGTATGT  1 
+Pf3D7_14_v3:43094-43394  (  120) ATATATATGT  1 
+Pf3D7_13_v3:124416-12471 (   34) ATATATATGT  1 
+Pf3D7_12_v3:2161616-2161 (  250) ATATATATGT  1 
+Pf3D7_12_v3:1746143-1746 (   67) ATATATATGT  1 
+Pf3D7_12_v3:785570-78587 (  126) ATATATATGT  1 
+Pf3D7_10_v3:61366-61966  (   69) ATATATATGT  1 
+Pf3D7_09_v3:1446628-1446 (  241) ATATATATGT  1 
+Pf3D7_08_v3:1381836-1382 (  149) ATATATATGT  1 
+Pf3D7_08_v3:426700-42700 (  154) ATATATATGT  1 
+Pf3D7_06_v3:1301700-1302 (  105) ATATATATGT  1 
+Pf3D7_06_v3:745300-74560 (    5) ATATATATGT  1 
+Pf3D7_06_v3:73962-74262  (   31) ATATATATGT  1 
+Pf3D7_04_v3:545686-54598 (    7) ATATATATGT  1 
+Pf3D7_03_v3:1002571-1002 (   20) ATATATATGT  1 
+Pf3D7_02_v3:380829-38112 (  150) ATATATATGT  1 
+Pf3D7_02_v3:360527-36082 (  245) ATATATATGT  1 
+Pf3D7_04_v3:171400-17170 (  207) ATATCTATGT  1 
+Pf3D7_13_v3:2820777-2821 (    4) ATATATATAT  1 
+Pf3D7_12_v3:1684461-1684 (   33) ATATATATAT  1 
+Pf3D7_12_v3:64337-64637  (   36) ATATATATAT  1 
+Pf3D7_11_v3:111430-11173 (  165) ATATATATAT  1 
+Pf3D7_10_v3:1568708-1569 (  249) ATATATATAT  1 
+Pf3D7_09_v3:78875-79175  (  238) ATATATATAT  1 
+Pf3D7_07_v3:1378700-1379 (   58) ATATATATAT  1 
+Pf3D7_07_v3:508173-50847 (  237) ATATATATAT  1 
+Pf3D7_07_v3:93142-93442  (   51) ATATATATAT  1 
+Pf3D7_03_v3:80056-80356  (   53) ATATATATAT  1 
+Pf3D7_01_v3:102283-10258 (    6) ATATATATAT  1 
+Pf3D7_04_v3:993500-99380 (  117) ATATGGATAT  1 
+Pf3D7_04_v3:613600-61390 (  192) ATTTGGATGT  1 
+Pf3D7_02_v3:72200-72500  (  266) ATTTGTATAT  1 
+Pf3D7_14_v3:3147189-3147 (  143) ATGTATATAT  1 
+Pf3D7_05_v3:1318230-1318 (  147) ATATTTATAT  1 
+Pf3D7_03_v3:115600-11590 (  260) ATTTGGATAT  1 
+Pf3D7_02_v3:835100-83540 (  174) ATTTTTATGT  1 
+Pf3D7_11_v3:1982353-1982 (   24) AAATATATAT  1 
+Pf3D7_05_v3:41404-41704  (  226) ATAAATATAT  1 
+Pf3D7_08_v3:85300-85600  (   51) ATAATTATAT  1 
+Pf3D7_04_v3:1120800-1121 (   16) AAAGTGATAG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 10 n= 13686 bayes= 8.9509 E= 7.0e+000 
+   126  -1217  -1217  -1217 
+  -326  -1217  -1217    119 
+   109  -1217   -192   -226 
+  -326  -1217   -192    116 
+    64   -192    154   -226 
+ -1217  -1217      8    113 
+   126  -1217  -1217  -1217 
+ -1217  -1217  -1217    126 
+     6  -1217    278  -1217 
+ -1217  -1217   -192    123 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 10 nsites= 46 E= 7.0e+000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.043478  0.000000  0.000000  0.956522 
+ 0.891304  0.000000  0.021739  0.086957 
+ 0.043478  0.000000  0.021739  0.934783 
+ 0.652174  0.021739  0.239130  0.086957 
+ 0.000000  0.000000  0.086957  0.913043 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.434783  0.000000  0.565217  0.000000 
+ 0.000000  0.000000  0.021739  0.978261 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATRT MEME-1 regular expression
+--------------------------------------------------------------------------------
+ATAT[AG]TAT[GA]T
+--------------------------------------------------------------------------------
+
+
+
+
+Time 738.72 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF CCWMATVC MEME-2	width =   8  sites =  46  llr = 266  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 Description
+--------------------------------------------------------------------------------
+Simplified        A  11337:41
+pos.-specific     C  76262125
+probability       G  1:::::32
+matrix            T  135:1821
+
+         bits    3.6         
+                 3.2         
+                 2.9         
+                 2.5         
+Relative         2.2         
+Entropy          1.8 *       
+(8.4 bits)       1.4 ** *   *
+                 1.1 ** *   *
+                 0.7 ** *** *
+                 0.4 ** *****
+                 0.0 --------
+
+Multilevel           CCTCATAC
+consensus             TAA  GG
+sequence                   C 
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+Pf3D7_06_v3:725049-72534     +    260  1.61e-06 ACATCCACAT CCACATCC ACATACATAC
+Pf3D7_08_v3:85300-85600      -    163  1.84e-06 TTGGGTACCT CCACCCCC AGCGTTAGAA
+Pf3D7_04_v3:993500-99380     +    173  2.57e-06 AGGCTAATAA CCTCATGG ATATAATTAT
+Pf3D7_04_v3:613600-61390     -    238  7.53e-06 ATCCATTGTG CCACATAC TATTTTTTCA
+Pf3D7_08_v3:466568-46686     -    245  1.61e-05 AAGAAAAAAA CCTAATGC ATATTATGAA
+Pf3D7_07_v3:1378700-1379     -    241  2.09e-05 TATATAAAAC CCCCCTTG ATATTTTATG
+Pf3D7_03_v3:115600-11590     -    176  3.14e-05 AGATCATCCT CCTCTTCC GTTTCATCAC
+Pf3D7_10_v3:61366-61966      +    455  5.37e-05 GTACCATATG CATCCTCC TATTTTTTAC
+Pf3D7_11_v3:111430-11173     -     19  6.26e-05 TAAAAATTCT CTTCATGG TAGTTGTAAA
+Pf3D7_14_v3:3147189-3147     -    253  8.83e-05 AAATATCTCT CCTCTTCG TATATAGAAT
+Pf3D7_04_v3:1120800-1121     +     65  8.83e-05 GTGATAGTAA CCACATGA GCGATCATAA
+Pf3D7_04_v3:934730-93503     +     68  8.83e-05 AAAAAGAAAG CCTAATAC ATATTATCAA
+Pf3D7_04_v3:545686-54598     +     26  8.83e-05 TATGTGTAAG CCTAATAC ATATTTTGAA
+Pf3D7_03_v3:138973-13927     +    146  9.95e-05 AATATACCTA CAACATGC ACATATATAT
+Pf3D7_06_v3:1301700-1302     -    157  1.14e-04 AGATTAATTT ACACCTCC ATGTGAAATG
+Pf3D7_02_v3:360527-36082     +    227  1.44e-04 TTCGAAACTA CCACATCT AACATTGTCC
+Pf3D7_01_v3:522580-52288     +    277  1.56e-04 AAAGGTAATC CTACATAC AATGATACAT
+Pf3D7_08_v3:426700-42700     +    129  1.74e-04 CCATGTATGT CTACAGGC TATCAAAATA
+Pf3D7_07_v3:610523-61082     -     23  1.86e-04 TAATAGATGC TCTCATCC TATTTTGAGA
+Pf3D7_07_v3:93142-93442      +    129  2.13e-04 AAAGTTAACA CCTGATCG TTTCTACAAA
+Pf3D7_12_v3:2161616-2161     -     78  2.75e-04 TACAAACGTC CATCATAC CAAAAGAAAA
+Pf3D7_11_v3:1982353-1982     -    255  3.56e-04 AGATTTTCCA CCACATAA TTTATTTATT
+Pf3D7_12_v3:785570-78587     +     56  4.01e-04 GTCTGCTTCA CTAAATGC ATATCCTAAT
+Pf3D7_13_v3:2820777-2821     -    151  4.87e-04 TATGGGTTTC CCTTATCC TTCTTAATGA
+Pf3D7_14_v3:43094-43394      +     51  8.08e-04 TATGTGCAAA CCTCATTT TTTTTTTTTT
+Pf3D7_05_v3:1318230-1318     -      6  8.08e-04 ATAAACCATA CCACATTA TACAT     
+Pf3D7_03_v3:80056-80356      -    183  8.08e-04 TGAATTTTTA ACTCATAG ATGTACTGTA
+Pf3D7_13_v3:124416-12471     +    162  1.03e-03 GCATATAAAT ATTCATGC ATGTATAATT
+Pf3D7_06_v3:73962-74262      -    137  1.03e-03 ATTTTATAAT TTCCCTGC TTTTTATTAT
+Pf3D7_01_v3:102283-10258     -    148  1.03e-03 TAACAAATAC ATTCATGC AAGAAAAAAA
+Pf3D7_09_v3:1446628-1446     +     42  1.23e-03 TAAAAATATT CCAAAGAG TAATTTATAA
+Pf3D7_06_v3:745300-74560     +    104  1.23e-03 AAAATTCTTA CACCCCTG AAAAAATTGC
+Pf3D7_02_v3:835100-83540     -    282  1.35e-03 TATGTATTGA ATACATGC TTATATATTA
+Pf3D7_12_v3:763643-76394     -    272  1.49e-03 AACTTTACAA CACAATAC TGTCATTTTA
+Pf3D7_12_v3:1684461-1684     -    109  1.58e-03 AATTCATATG CCTACTAA AAATAAAGAG
+Pf3D7_03_v3:1002571-1002     +    132  1.70e-03 TATATATTTT CCCAATAT TTTATATATT
+Pf3D7_10_v3:1568708-1569     -     35  2.31e-03 TATATAATAA CCTATTAG TTTCCATATA
+Pf3D7_04_v3:171400-17170     +    124  2.55e-03 AAATACAACA ACCAACAC ATATAGTGTC
+Pf3D7_02_v3:380829-38112     +    288  2.85e-03 ATATTTATAT GCTACCTC TTTTT     
+Pf3D7_12_v3:64337-64637      +    222  3.68e-03 CCGCTCATAT TTTCATGG TACATATTTA
+Pf3D7_07_v3:508173-50847     +    286  4.69e-03 ATACTTTGAT GTCACTAC TATTATT   
+Pf3D7_05_v3:41404-41704      -    253  4.69e-03 TAATATAATA CTTCATTA AATTACTTAA
+Pf3D7_02_v3:72200-72500      +     81  5.13e-03 ATTTTATATT CCAAATTA CCAACGTTTA
+Pf3D7_09_v3:78875-79175      +    223  7.89e-03 ACGTGATTAA CAAAACAG AAAAAGAATA
+Pf3D7_08_v3:1381836-1382     -     92  7.89e-03 TTTTACATAG GTTAATAC ATTTTAATAA
+Pf3D7_12_v3:1746143-1746     +    237  1.53e-02 ATATAATCTA CTTAATAT ATATATATAT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_06_v3:725049-72534          1.6e-06  259_[+2]_33
+Pf3D7_08_v3:85300-85600           1.8e-06  162_[-2]_130
+Pf3D7_04_v3:993500-99380          2.6e-06  172_[+2]_120
+Pf3D7_04_v3:613600-61390          7.5e-06  237_[-2]_55
+Pf3D7_08_v3:466568-46686          1.6e-05  244_[-2]_48
+Pf3D7_07_v3:1378700-1379          2.1e-05  240_[-2]_52
+Pf3D7_03_v3:115600-11590          3.1e-05  175_[-2]_117
+Pf3D7_10_v3:61366-61966           5.4e-05  454_[+2]_138
+Pf3D7_11_v3:111430-11173          6.3e-05  18_[-2]_274
+Pf3D7_14_v3:3147189-3147          8.8e-05  252_[-2]_40
+Pf3D7_04_v3:1120800-1121          8.8e-05  64_[+2]_228
+Pf3D7_04_v3:934730-93503          8.8e-05  67_[+2]_225
+Pf3D7_04_v3:545686-54598          8.8e-05  25_[+2]_267
+Pf3D7_03_v3:138973-13927          9.9e-05  145_[+2]_147
+Pf3D7_06_v3:1301700-1302          0.00011  156_[-2]_136
+Pf3D7_02_v3:360527-36082          0.00014  226_[+2]_66
+Pf3D7_01_v3:522580-52288          0.00016  276_[+2]_16
+Pf3D7_08_v3:426700-42700          0.00017  128_[+2]_164
+Pf3D7_07_v3:610523-61082          0.00019  22_[-2]_270
+Pf3D7_07_v3:93142-93442           0.00021  128_[+2]_164
+Pf3D7_12_v3:2161616-2161          0.00028  77_[-2]_215
+Pf3D7_11_v3:1982353-1982          0.00036  254_[-2]_38
+Pf3D7_12_v3:785570-78587           0.0004  55_[+2]_237
+Pf3D7_13_v3:2820777-2821          0.00049  150_[-2]_142
+Pf3D7_14_v3:43094-43394           0.00081  50_[+2]_242
+Pf3D7_05_v3:1318230-1318          0.00081  5_[-2]_287
+Pf3D7_03_v3:80056-80356           0.00081  182_[-2]_110
+Pf3D7_13_v3:124416-12471            0.001  161_[+2]_131
+Pf3D7_06_v3:73962-74262             0.001  136_[-2]_156
+Pf3D7_01_v3:102283-10258            0.001  147_[-2]_145
+Pf3D7_09_v3:1446628-1446           0.0012  41_[+2]_251
+Pf3D7_06_v3:745300-74560           0.0012  103_[+2]_189
+Pf3D7_02_v3:835100-83540           0.0013  281_[-2]_11
+Pf3D7_12_v3:763643-76394           0.0015  271_[-2]_21
+Pf3D7_12_v3:1684461-1684           0.0016  108_[-2]_184
+Pf3D7_03_v3:1002571-1002           0.0017  131_[+2]_161
+Pf3D7_10_v3:1568708-1569           0.0023  34_[-2]_258
+Pf3D7_04_v3:171400-17170           0.0026  123_[+2]_169
+Pf3D7_02_v3:380829-38112           0.0029  287_[+2]_5
+Pf3D7_12_v3:64337-64637            0.0037  221_[+2]_71
+Pf3D7_07_v3:508173-50847           0.0047  285_[+2]_7
+Pf3D7_05_v3:41404-41704            0.0047  252_[-2]_40
+Pf3D7_02_v3:72200-72500            0.0051  80_[+2]_212
+Pf3D7_09_v3:78875-79175            0.0079  222_[+2]_70
+Pf3D7_08_v3:1381836-1382           0.0079  91_[-2]_201
+Pf3D7_12_v3:1746143-1746            0.015  236_[+2]_56
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF CCWMATVC width=8 seqs=46
+Pf3D7_06_v3:725049-72534 (  260) CCACATCC  1 
+Pf3D7_08_v3:85300-85600  (  163) CCACCCCC  1 
+Pf3D7_04_v3:993500-99380 (  173) CCTCATGG  1 
+Pf3D7_04_v3:613600-61390 (  238) CCACATAC  1 
+Pf3D7_08_v3:466568-46686 (  245) CCTAATGC  1 
+Pf3D7_07_v3:1378700-1379 (  241) CCCCCTTG  1 
+Pf3D7_03_v3:115600-11590 (  176) CCTCTTCC  1 
+Pf3D7_10_v3:61366-61966  (  455) CATCCTCC  1 
+Pf3D7_11_v3:111430-11173 (   19) CTTCATGG  1 
+Pf3D7_14_v3:3147189-3147 (  253) CCTCTTCG  1 
+Pf3D7_04_v3:1120800-1121 (   65) CCACATGA  1 
+Pf3D7_04_v3:934730-93503 (   68) CCTAATAC  1 
+Pf3D7_04_v3:545686-54598 (   26) CCTAATAC  1 
+Pf3D7_03_v3:138973-13927 (  146) CAACATGC  1 
+Pf3D7_06_v3:1301700-1302 (  157) ACACCTCC  1 
+Pf3D7_02_v3:360527-36082 (  227) CCACATCT  1 
+Pf3D7_01_v3:522580-52288 (  277) CTACATAC  1 
+Pf3D7_08_v3:426700-42700 (  129) CTACAGGC  1 
+Pf3D7_07_v3:610523-61082 (   23) TCTCATCC  1 
+Pf3D7_07_v3:93142-93442  (  129) CCTGATCG  1 
+Pf3D7_12_v3:2161616-2161 (   78) CATCATAC  1 
+Pf3D7_11_v3:1982353-1982 (  255) CCACATAA  1 
+Pf3D7_12_v3:785570-78587 (   56) CTAAATGC  1 
+Pf3D7_13_v3:2820777-2821 (  151) CCTTATCC  1 
+Pf3D7_14_v3:43094-43394  (   51) CCTCATTT  1 
+Pf3D7_05_v3:1318230-1318 (    6) CCACATTA  1 
+Pf3D7_03_v3:80056-80356  (  183) ACTCATAG  1 
+Pf3D7_13_v3:124416-12471 (  162) ATTCATGC  1 
+Pf3D7_06_v3:73962-74262  (  137) TTCCCTGC  1 
+Pf3D7_01_v3:102283-10258 (  148) ATTCATGC  1 
+Pf3D7_09_v3:1446628-1446 (   42) CCAAAGAG  1 
+Pf3D7_06_v3:745300-74560 (  104) CACCCCTG  1 
+Pf3D7_02_v3:835100-83540 (  282) ATACATGC  1 
+Pf3D7_12_v3:763643-76394 (  272) CACAATAC  1 
+Pf3D7_12_v3:1684461-1684 (  109) CCTACTAA  1 
+Pf3D7_03_v3:1002571-1002 (  132) CCCAATAT  1 
+Pf3D7_10_v3:1568708-1569 (   35) CCTATTAG  1 
+Pf3D7_04_v3:171400-17170 (  124) ACCAACAC  1 
+Pf3D7_02_v3:380829-38112 (  288) GCTACCTC  1 
+Pf3D7_12_v3:64337-64637  (  222) TTTCATGG  1 
+Pf3D7_07_v3:508173-50847 (  286) GTCACTAC  1 
+Pf3D7_05_v3:41404-41704  (  253) CTTCATTA  1 
+Pf3D7_02_v3:72200-72500  (   81) CCAAATTA  1 
+Pf3D7_09_v3:78875-79175  (  223) CAAAACAG  1 
+Pf3D7_08_v3:1381836-1382 (   92) GTTAATAC  1 
+Pf3D7_12_v3:1746143-1746 (  237) CTTAATAT  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 13778 bayes= 10.2128 E= 7.0e+000 
+  -168    317    -33   -268 
+  -168    284  -1217    -56 
+   -26     89  -1217     26 
+   -26    289   -192   -426 
+    82    125  -1217   -268 
+ -1217     41    -92    102 
+   -18    141    167   -146 
+  -168    273    154   -226 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 46 E= 7.0e+000 
+ 0.130435  0.739130  0.065217  0.065217 
+ 0.130435  0.586957  0.000000  0.282609 
+ 0.347826  0.152174  0.000000  0.500000 
+ 0.347826  0.608696  0.021739  0.021739 
+ 0.739130  0.195652  0.000000  0.065217 
+ 0.000000  0.108696  0.043478  0.847826 
+ 0.369565  0.217391  0.260870  0.152174 
+ 0.130435  0.543478  0.239130  0.086957 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CCWMATVC MEME-2 regular expression
+--------------------------------------------------------------------------------
+C[CT][TA][CA]AT[AGC][CG]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 1422.38 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF YAHAWAWTATATWY MEME-3	width =  14  sites =  46  llr = 294  p-value = -nane-nan  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 Description
+--------------------------------------------------------------------------------
+Simplified        A  :a3938519:a171
+pos.-specific     C  4:2::::1:2:::3
+probability       G  2:11::11:1::::
+matrix            T  3:3:714718:936
+
+         bits    3.6               
+                 3.2               
+                 2.9               
+                 2.5               
+Relative         2.2               
+Entropy          1.8               
+(9.2 bits)       1.4               
+                 1.1 **        **  
+                 0.7 ** * *  **** *
+                 0.4 ** *** *******
+                 0.0 --------------
+
+Multilevel           CAAATAATATATAT
+consensus            T T A T     TC
+sequence               C           
+                                   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                 Site   
+-------------            ------  ----- ---------            --------------
+Pf3D7_07_v3:508173-50847     +    213  6.84e-07 TATATGTATG CACATAATATATAT ATATATATAT
+Pf3D7_02_v3:380829-38112     +    233  1.77e-06 TAATAATCAT CACATATTATATAT TTTTTTAAAT
+Pf3D7_06_v3:725049-72534     +     89  3.27e-06 AATACATTTA CACAAAACACATAT ACAGAAACAT
+Pf3D7_08_v3:466568-46686     -    214  9.29e-06 GAAATATCCA CAAATATTATATTC ATATAAAATA
+Pf3D7_04_v3:934730-93503     +     93  9.29e-06 CAAATATATA CAAATATTATATTC ACATAAAATA
+Pf3D7_04_v3:545686-54598     +     57  9.29e-06 TATATGTATA CAAATATTATATTC ATATCAAATA
+Pf3D7_02_v3:835100-83540     +    159  1.65e-05 ACCGGATTAT CAGATAACATATAT AATTTTTATG
+Pf3D7_12_v3:1684461-1684     +    136  2.02e-05 TAATAATTCT CATATATTATATAT ATATATATAT
+Pf3D7_10_v3:61366-61966      -    118  4.37e-05 TCAAATATGT CACATGATATATAT TATGGGATAA
+Pf3D7_03_v3:1002571-1002     +    151  4.37e-05 TTATATATTC CATATATTAGATAT ATTTATATGT
+Pf3D7_08_v3:1381836-1382     -    199  5.29e-05 CATGAAAGAT GAAATAACATATAT CCATATATTT
+Pf3D7_05_v3:41404-41704      +    117  5.92e-05 TAATATTTAT TACATATCACATAT TTAATTTTAA
+Pf3D7_02_v3:360527-36082     +     94  6.67e-05 CTATAAAATG GACGTAAGATATAT ATGAGAATAT
+Pf3D7_12_v3:64337-64637      +    199  7.60e-05 TATATATATA TATATATTATATAC CGCTCATATT
+Pf3D7_08_v3:85300-85600      -     75  1.21e-04 ATGGGAGGAA GAGGTAGTAGATAC CCAGAAGAGG
+Pf3D7_03_v3:115600-11590     -    281  1.35e-04     CTTTTT CAAAAAATTTATAC ACATCATTGG
+Pf3D7_07_v3:93142-93442      +    141  1.75e-04 TGATCGTTTC TACAAAATATATTT CCATTTTATA
+Pf3D7_06_v3:1301700-1302     +    225  1.93e-04 ATTATAAAAT CACAAAATATAAAT GAAAATCTGT
+Pf3D7_05_v3:1318230-1318     +    214  2.12e-04 TTGTAGTACC TAAAAAATATATTC TTTTTTTTAT
+Pf3D7_03_v3:138973-13927     +     91  2.42e-04 TTTATATAAA TATATATTATATAT TTATATATTT
+Pf3D7_09_v3:78875-79175      -    168  3.36e-04 TTAATAAACG CATATATTATATAA AACTTTTAAT
+Pf3D7_06_v3:73962-74262      +    246  3.36e-04 CTATTTATAT TAAAAAATATATAT ATATATATAT
+Pf3D7_07_v3:1378700-1379     +    111  3.66e-04 TACATTTTTG CACAAAACACAATT ATCTTCTATT
+Pf3D7_04_v3:171400-17170     -     83  3.66e-04 TGTGTTGTTC CATATAATTCATTT TCCTTTCGTT
+Pf3D7_02_v3:72200-72500      +    140  4.02e-04 ACATTATAAT CATAAAATTTATAT TAAAAGATTT
+Pf3D7_10_v3:1568708-1569     -    202  4.54e-04 ATATTAAATA GATATAATACTTAC CAATATATTT
+Pf3D7_14_v3:3147189-3147     -     47  4.97e-04 AATAATTGAT CATATCATATAAAC ATAAATAATA
+Pf3D7_12_v3:1746143-1746     -    257  5.51e-04 ATTTATATAA AATATAACATATAC ATATATATAT
+Pf3D7_12_v3:763643-76394     -     57  6.57e-04 ACATGTTCAA GAAATAAAATATAT AATGAAGAAA
+Pf3D7_08_v3:426700-42700     +    238  6.57e-04 AAAATTATTA TATGTAATATATTT TGTGTTCATA
+Pf3D7_13_v3:2820777-2821     -     44  8.46e-04 TATAGATAAG TATGAATTATATAT TTATCGACAT
+Pf3D7_04_v3:993500-99380     +     97  8.46e-04 TTCATAATAT GAAATTATACATTT ATAGTTATAT
+Pf3D7_12_v3:2161616-2161     -     96  9.21e-04 TATATATATA TATATATAATATAC TACAAACGTC
+Pf3D7_12_v3:785570-78587     +    157  9.21e-04 TGATTTATAT GATAATATATATAT ATATATATAT
+Pf3D7_14_v3:43094-43394      +    212  9.87e-04 TTTTTACAAC CAAAAATTATATTA CAATTTTATT
+Pf3D7_04_v3:613600-61390     +    280  9.87e-04 TAACAAATGC TAGAACAGATATAC AAAAACA   
+Pf3D7_06_v3:745300-74560     -     49  1.06e-03 AATTAAAAAA AAAAAATTATATAC ACACATATAA
+Pf3D7_03_v3:80056-80356      -    150  1.16e-03 AACCTTTTTA GGAATATTATATTT TATATTAATA
+Pf3D7_01_v3:522580-52288     -    164  1.57e-03 ACATATGAAC GAATTAGTATATAT GTATGCAAAT
+Pf3D7_11_v3:1982353-1982     -     78  1.69e-03 ATAATACATA CAAAATGTAGATTT TTTTTTTTAT
+Pf3D7_11_v3:111430-11173     +    182  1.69e-03 TATATTTATA TACATAATATTTTT GTATATCATA
+Pf3D7_04_v3:1120800-1121     +    156  1.84e-03 CGATAATAAC CACAAAAGTGATAG TAACCACAAA
+Pf3D7_07_v3:610523-61082     -    233  1.99e-03 TAATACTATG TATAATTTATATTC AAATATATTT
+Pf3D7_09_v3:1446628-1446     -      7  2.49e-03 TATAACTAGA TAAATATTACATTA AAAAAA    
+Pf3D7_01_v3:102283-10258     -     72  2.49e-03 TATCTTGTTT TAAATATTTTATTT TCATAAAGAG
+Pf3D7_13_v3:124416-12471     -    213  6.89e-03 TGGTTGGTTA TATTTATAATATAC AAAAAATTGT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_07_v3:508173-50847          6.8e-07  212_[+3]_74
+Pf3D7_02_v3:380829-38112          1.8e-06  232_[+3]_54
+Pf3D7_06_v3:725049-72534          3.3e-06  88_[+3]_198
+Pf3D7_08_v3:466568-46686          9.3e-06  213_[-3]_73
+Pf3D7_04_v3:934730-93503          9.3e-06  92_[+3]_194
+Pf3D7_04_v3:545686-54598          9.3e-06  56_[+3]_230
+Pf3D7_02_v3:835100-83540          1.6e-05  158_[+3]_128
+Pf3D7_12_v3:1684461-1684            2e-05  135_[+3]_151
+Pf3D7_10_v3:61366-61966           4.4e-05  117_[-3]_469
+Pf3D7_03_v3:1002571-1002          4.4e-05  150_[+3]_136
+Pf3D7_08_v3:1381836-1382          5.3e-05  198_[-3]_88
+Pf3D7_05_v3:41404-41704           5.9e-05  116_[+3]_170
+Pf3D7_02_v3:360527-36082          6.7e-05  93_[+3]_193
+Pf3D7_12_v3:64337-64637           7.6e-05  198_[+3]_88
+Pf3D7_08_v3:85300-85600           0.00012  74_[-3]_212
+Pf3D7_03_v3:115600-11590          0.00014  280_[-3]_6
+Pf3D7_07_v3:93142-93442           0.00017  140_[+3]_146
+Pf3D7_06_v3:1301700-1302          0.00019  224_[+3]_62
+Pf3D7_05_v3:1318230-1318          0.00021  213_[+3]_73
+Pf3D7_03_v3:138973-13927          0.00024  90_[+3]_196
+Pf3D7_09_v3:78875-79175           0.00034  167_[-3]_119
+Pf3D7_06_v3:73962-74262           0.00034  245_[+3]_41
+Pf3D7_07_v3:1378700-1379          0.00037  110_[+3]_176
+Pf3D7_04_v3:171400-17170          0.00037  82_[-3]_204
+Pf3D7_02_v3:72200-72500            0.0004  139_[+3]_147
+Pf3D7_10_v3:1568708-1569          0.00045  201_[-3]_85
+Pf3D7_14_v3:3147189-3147           0.0005  46_[-3]_240
+Pf3D7_12_v3:1746143-1746          0.00055  256_[-3]_30
+Pf3D7_12_v3:763643-76394          0.00066  56_[-3]_230
+Pf3D7_08_v3:426700-42700          0.00066  237_[+3]_49
+Pf3D7_13_v3:2820777-2821          0.00085  43_[-3]_243
+Pf3D7_04_v3:993500-99380          0.00085  96_[+3]_190
+Pf3D7_12_v3:2161616-2161          0.00092  95_[-3]_191
+Pf3D7_12_v3:785570-78587          0.00092  156_[+3]_130
+Pf3D7_14_v3:43094-43394           0.00099  211_[+3]_75
+Pf3D7_04_v3:613600-61390          0.00099  279_[+3]_7
+Pf3D7_06_v3:745300-74560           0.0011  48_[-3]_238
+Pf3D7_03_v3:80056-80356            0.0012  149_[-3]_137
+Pf3D7_01_v3:522580-52288           0.0016  163_[-3]_123
+Pf3D7_11_v3:1982353-1982           0.0017  77_[-3]_209
+Pf3D7_11_v3:111430-11173           0.0017  181_[+3]_105
+Pf3D7_04_v3:1120800-1121           0.0018  155_[+3]_131
+Pf3D7_07_v3:610523-61082            0.002  232_[-3]_54
+Pf3D7_09_v3:1446628-1446           0.0025  6_[-3]_280
+Pf3D7_01_v3:102283-10258           0.0025  71_[-3]_215
+Pf3D7_13_v3:124416-12471           0.0069  212_[-3]_74
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF YAHAWAWTATATWY width=14 seqs=46
+Pf3D7_07_v3:508173-50847 (  213) CACATAATATATAT  1 
+Pf3D7_02_v3:380829-38112 (  233) CACATATTATATAT  1 
+Pf3D7_06_v3:725049-72534 (   89) CACAAAACACATAT  1 
+Pf3D7_08_v3:466568-46686 (  214) CAAATATTATATTC  1 
+Pf3D7_04_v3:934730-93503 (   93) CAAATATTATATTC  1 
+Pf3D7_04_v3:545686-54598 (   57) CAAATATTATATTC  1 
+Pf3D7_02_v3:835100-83540 (  159) CAGATAACATATAT  1 
+Pf3D7_12_v3:1684461-1684 (  136) CATATATTATATAT  1 
+Pf3D7_10_v3:61366-61966  (  118) CACATGATATATAT  1 
+Pf3D7_03_v3:1002571-1002 (  151) CATATATTAGATAT  1 
+Pf3D7_08_v3:1381836-1382 (  199) GAAATAACATATAT  1 
+Pf3D7_05_v3:41404-41704  (  117) TACATATCACATAT  1 
+Pf3D7_02_v3:360527-36082 (   94) GACGTAAGATATAT  1 
+Pf3D7_12_v3:64337-64637  (  199) TATATATTATATAC  1 
+Pf3D7_08_v3:85300-85600  (   75) GAGGTAGTAGATAC  1 
+Pf3D7_03_v3:115600-11590 (  281) CAAAAAATTTATAC  1 
+Pf3D7_07_v3:93142-93442  (  141) TACAAAATATATTT  1 
+Pf3D7_06_v3:1301700-1302 (  225) CACAAAATATAAAT  1 
+Pf3D7_05_v3:1318230-1318 (  214) TAAAAAATATATTC  1 
+Pf3D7_03_v3:138973-13927 (   91) TATATATTATATAT  1 
+Pf3D7_09_v3:78875-79175  (  168) CATATATTATATAA  1 
+Pf3D7_06_v3:73962-74262  (  246) TAAAAAATATATAT  1 
+Pf3D7_07_v3:1378700-1379 (  111) CACAAAACACAATT  1 
+Pf3D7_04_v3:171400-17170 (   83) CATATAATTCATTT  1 
+Pf3D7_02_v3:72200-72500  (  140) CATAAAATTTATAT  1 
+Pf3D7_10_v3:1568708-1569 (  202) GATATAATACTTAC  1 
+Pf3D7_14_v3:3147189-3147 (   47) CATATCATATAAAC  1 
+Pf3D7_12_v3:1746143-1746 (  257) AATATAACATATAC  1 
+Pf3D7_12_v3:763643-76394 (   57) GAAATAAAATATAT  1 
+Pf3D7_08_v3:426700-42700 (  238) TATGTAATATATTT  1 
+Pf3D7_13_v3:2820777-2821 (   44) TATGAATTATATAT  1 
+Pf3D7_04_v3:993500-99380 (   97) GAAATTATACATTT  1 
+Pf3D7_12_v3:2161616-2161 (   96) TATATATAATATAC  1 
+Pf3D7_12_v3:785570-78587 (  157) GATAATATATATAT  1 
+Pf3D7_14_v3:43094-43394  (  212) CAAAAATTATATTA  1 
+Pf3D7_04_v3:613600-61390 (  280) TAGAACAGATATAC  1 
+Pf3D7_06_v3:745300-74560 (   49) AAAAAATTATATAC  1 
+Pf3D7_03_v3:80056-80356  (  150) GGAATATTATATTT  1 
+Pf3D7_01_v3:522580-52288 (  164) GAATTAGTATATAT  1 
+Pf3D7_11_v3:1982353-1982 (   78) CAAAATGTAGATTT  1 
+Pf3D7_11_v3:111430-11173 (  182) TACATAATATTTTT  1 
+Pf3D7_04_v3:1120800-1121 (  156) CACAAAAGTGATAG  1 
+Pf3D7_07_v3:610523-61082 (  233) TATAATTTATATTC  1 
+Pf3D7_09_v3:1446628-1446 (    7) TAAATATTACATTA  1 
+Pf3D7_01_v3:102283-10258 (   72) TAAATATTTTATTT  1 
+Pf3D7_13_v3:124416-12471 (  213) TATTTATAATATAC  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 14 n= 13502 bayes= 10.1836 E= 7.0e+000 
+  -326    241    125    -36 
+   123  -1217   -192  -1217 
+   -26    154    -33    -26 
+   106  -1217      8   -326 
+   -26  -1217  -1217     64 
+   102    -92   -192   -226 
+    32  -1217    -33     -2 
+  -268     67    -33     82 
+   109  -1217  -1217   -194 
+ -1217     89      8     86 
+   119  -1217  -1217   -326 
+  -268  -1217  -1217    116 
+    64  -1217  -1217    -26 
+  -268    199   -192     49 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 14 nsites= 46 E= 7.0e+000 
+ 0.043478  0.434783  0.195652  0.326087 
+ 0.978261  0.000000  0.021739  0.000000 
+ 0.347826  0.239130  0.065217  0.347826 
+ 0.869565  0.000000  0.086957  0.043478 
+ 0.347826  0.000000  0.000000  0.652174 
+ 0.847826  0.043478  0.021739  0.086957 
+ 0.521739  0.000000  0.065217  0.413043 
+ 0.065217  0.130435  0.065217  0.739130 
+ 0.891304  0.000000  0.000000  0.108696 
+ 0.000000  0.152174  0.086957  0.760870 
+ 0.956522  0.000000  0.000000  0.043478 
+ 0.065217  0.000000  0.000000  0.934783 
+ 0.652174  0.000000  0.000000  0.347826 
+ 0.065217  0.326087  0.021739  0.586957 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAHAWAWTATATWY MEME-3 regular expression
+--------------------------------------------------------------------------------
+[CT]A[ATC]A[TA]A[AT]TATAT[AT][TC]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 2067.47 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AAAWAWAKAWAYA MEME-4	width =  13  sites =  46  llr = 317  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 Description
+--------------------------------------------------------------------------------
+Simplified        A  a9a38591959:9
+pos.-specific     C  :::::112:2:4:
+probability       G  :::121:31:1:1
+matrix            T  :1:6:3:4:3:5:
+
+         bits    3.6              
+                 3.2              
+                 2.9              
+                 2.5              
+Relative         2.2              
+Entropy          1.8              
+(9.9 bits)       1.4              
+                 1.1 * * * * * * *
+                 0.7 *** * *** ***
+                 0.4 *** * *** ***
+                 0.0 -------------
+
+Multilevel           AAATAAATAAATA
+consensus               A T G T C 
+sequence                          
+                                  
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                Site   
+-------------            ------  ----- ---------            -------------
+Pf3D7_03_v3:80056-80356      -     98  1.12e-06 AAAAAAAAAA AAAAAAAGACACA CAAAAATTTA
+Pf3D7_01_v3:102283-10258     -    109  2.98e-06 AAAAAAAAAA AAAAAAACACACA TTTCTTTTTC
+Pf3D7_12_v3:1684461-1684     +      3  2.65e-05         AT AAATAAAGAAATA TATATATATA
+Pf3D7_11_v3:111430-11173     +    247  2.65e-05 ATAAGTATTA AAATACATATACA ATAAAACAAT
+Pf3D7_07_v3:508173-50847     -    111  2.65e-05 AAATAATTAA AAATATATACACA TTTTTATTTA
+Pf3D7_03_v3:138973-13927     -     49  2.65e-05 ACATATATAT AAATACATATACA TACAGACATA
+Pf3D7_04_v3:545686-54598     +    166  3.58e-05 ACAAATTCAG AAATACACAAATA ATATATATAT
+Pf3D7_10_v3:61366-61966      -    357  5.09e-05 AAACTTTAAA AAATATACAAACG AAAATACTAT
+Pf3D7_04_v3:993500-99380     -    246  5.09e-05 TTGATGATAT AAAAAGAGAAACG TTATTAAAAA
+Pf3D7_14_v3:3147189-3147     -    160  6.37e-05 AAATAAATAA AAATGTACATGCA TATATAAATA
+Pf3D7_05_v3:1318230-1318     +    255  6.37e-05 ATGGGAAGAA AAAAAAAGAAATA AAAAAAATAT
+Pf3D7_12_v3:763643-76394     -     36  8.58e-05 ATAATGAAGA AAATAAACATATA CATATATATA
+Pf3D7_10_v3:1568708-1569     -    261  8.58e-05 ATATATATAT AAATAAATATGCA TAATATATAT
+Pf3D7_06_v3:1301700-1302     +     39  9.60e-05 AAGTCTACTA AAATGTATATACA TGTATATATT
+Pf3D7_06_v3:725049-72534     +     24  9.60e-05 CCACAAATAA ATATACAGAAACA CATATACATC
+Pf3D7_01_v3:522580-52288     -    187  9.60e-05 AAAGAAAAGA AAAGAAAGATATA CATATGAACG
+Pf3D7_12_v3:1746143-1746     +    169  1.10e-04 ATTAATAAAC AAATAACTAAACA TATATTTAAT
+Pf3D7_04_v3:934730-93503     +    163  1.10e-04 AAAAAAAAAA AAAAGAACAAATA TACAAATAAT
+Pf3D7_11_v3:1982353-1982     -    132  1.39e-04 TAAAAATTAT AAAAATAGAAATA AATAATTGTA
+Pf3D7_07_v3:610523-61082     +    270  1.72e-04 TATATCTTTA AAATAAATAAATA TGTATATATA
+Pf3D7_05_v3:41404-41704      -     86  1.72e-04 TAAGCTGATA AAATAGACATATA ATTTTGTTAT
+Pf3D7_02_v3:380829-38112     +      1  1.72e-04          . AAAAAAATACATA TATATATATA
+Pf3D7_02_v3:72200-72500      +    234  1.72e-04 ATGAATGAAT AAATGAATAAATA AATAAATAAA
+Pf3D7_07_v3:93142-93442      +     61  1.93e-04 ATATATATAT AAATATATACATA CTTTTTTTTT
+Pf3D7_08_v3:466568-46686     +      3  2.10e-04         AC AAATATAGATGTA TATATGTATG
+Pf3D7_13_v3:2820777-2821     -     78  2.47e-04 ATAAATAAAT AAATAAATATATA TATATATATA
+Pf3D7_12_v3:2161616-2161     -     21  2.47e-04 TTTTTAAGAC AAATAAAAAAACA AAAATTATCT
+Pf3D7_02_v3:360527-36082     -     37  2.47e-04 TACAAAAAAT AAATAAATATATA CGTTAACATG
+Pf3D7_04_v3:171400-17170     +    145  2.60e-04 TAGTGTCGCC AAACAAACATATA CTGATCCTAT
+Pf3D7_12_v3:785570-78587     +    103  2.99e-04 TCTAAAAAAA AAAAAAATAAATA ATTAAAATGT
+Pf3D7_14_v3:43094-43394      -    175  3.40e-04 AAAAAAAATT AAATATATAAATA TTGTAGTTGA
+Pf3D7_09_v3:1446628-1446     -    173  4.09e-04 TGAACAGAAA ATAAAAAGAAGCA AAATTAAATA
+Pf3D7_07_v3:1378700-1379     +    222  4.09e-04 TAATTCAAGA AAATATATGCATA AAATATCAAG
+Pf3D7_06_v3:745300-74560     -     72  4.09e-04 TTTTTTCTCC AAAAAAATATATA ATTAAAAAAA
+Pf3D7_12_v3:64337-64637      +    154  4.48e-04 ATATATATAT AAATATATATATA TATATATATA
+Pf3D7_08_v3:1381836-1382     +    181  4.48e-04 GTTTTGTAGA ATATACAGAAATA TATGGATATA
+Pf3D7_03_v3:115600-11590     +     87  4.48e-04 CAACCCCGAA AAATATAGAGATA ATAAAATGAA
+Pf3D7_06_v3:73962-74262      +     61  5.33e-04 AAAAAAAAAA AAAAAAAAATACA TTAAAATAAT
+Pf3D7_13_v3:124416-12471     +      5  8.77e-04       TCAA AAAGGAAGAAAAA AAAAAAAAAA
+Pf3D7_08_v3:85300-85600      -    105  8.77e-04 AACAGAGAAG AGAAGAAGACAGG GGACATATGG
+Pf3D7_03_v3:1002571-1002     -    223  9.38e-04 AACTATTTTT ATATATATATACA AATCAATAAA
+Pf3D7_02_v3:835100-83540     -     17  1.07e-03 AAAAAAAAAG AAAAGAAAAAATA AAATAAAAAT
+Pf3D7_08_v3:426700-42700     +      5  1.71e-03       TATA AAAGATCCGAAGA AATTTTATTT
+Pf3D7_04_v3:1120800-1121     +    243  2.28e-03 GAGCGATCAT AAGCACATGAGCG ATAATAACCA
+Pf3D7_09_v3:78875-79175      +    145  2.48e-03 TTTATATATA AGAAAGCAAAACA ATTAAAAGTT
+Pf3D7_04_v3:613600-61390     +    107  2.48e-03 TAACCAAAAA AAAAAAATGAAAA TCATCCAATT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_03_v3:80056-80356           1.1e-06  97_[-4]_190
+Pf3D7_01_v3:102283-10258            3e-06  108_[-4]_179
+Pf3D7_12_v3:1684461-1684          2.6e-05  2_[+4]_285
+Pf3D7_11_v3:111430-11173          2.6e-05  246_[+4]_41
+Pf3D7_07_v3:508173-50847          2.6e-05  110_[-4]_177
+Pf3D7_03_v3:138973-13927          2.6e-05  48_[-4]_239
+Pf3D7_04_v3:545686-54598          3.6e-05  165_[+4]_122
+Pf3D7_10_v3:61366-61966           5.1e-05  356_[-4]_231
+Pf3D7_04_v3:993500-99380          5.1e-05  245_[-4]_42
+Pf3D7_14_v3:3147189-3147          6.4e-05  159_[-4]_128
+Pf3D7_05_v3:1318230-1318          6.4e-05  254_[+4]_33
+Pf3D7_12_v3:763643-76394          8.6e-05  35_[-4]_252
+Pf3D7_10_v3:1568708-1569          8.6e-05  260_[-4]_27
+Pf3D7_06_v3:1301700-1302          9.6e-05  38_[+4]_249
+Pf3D7_06_v3:725049-72534          9.6e-05  23_[+4]_264
+Pf3D7_01_v3:522580-52288          9.6e-05  186_[-4]_101
+Pf3D7_12_v3:1746143-1746          0.00011  168_[+4]_119
+Pf3D7_04_v3:934730-93503          0.00011  162_[+4]_125
+Pf3D7_11_v3:1982353-1982          0.00014  131_[-4]_156
+Pf3D7_07_v3:610523-61082          0.00017  269_[+4]_18
+Pf3D7_05_v3:41404-41704           0.00017  85_[-4]_202
+Pf3D7_02_v3:380829-38112          0.00017  [+4]_287
+Pf3D7_02_v3:72200-72500           0.00017  233_[+4]_54
+Pf3D7_07_v3:93142-93442           0.00019  60_[+4]_227
+Pf3D7_08_v3:466568-46686          0.00021  2_[+4]_285
+Pf3D7_13_v3:2820777-2821          0.00025  77_[-4]_210
+Pf3D7_12_v3:2161616-2161          0.00025  20_[-4]_267
+Pf3D7_02_v3:360527-36082          0.00025  36_[-4]_251
+Pf3D7_04_v3:171400-17170          0.00026  144_[+4]_143
+Pf3D7_12_v3:785570-78587           0.0003  102_[+4]_185
+Pf3D7_14_v3:43094-43394           0.00034  174_[-4]_113
+Pf3D7_09_v3:1446628-1446          0.00041  172_[-4]_115
+Pf3D7_07_v3:1378700-1379          0.00041  221_[+4]_66
+Pf3D7_06_v3:745300-74560          0.00041  71_[-4]_216
+Pf3D7_12_v3:64337-64637           0.00045  153_[+4]_134
+Pf3D7_08_v3:1381836-1382          0.00045  180_[+4]_107
+Pf3D7_03_v3:115600-11590          0.00045  86_[+4]_201
+Pf3D7_06_v3:73962-74262           0.00053  60_[+4]_227
+Pf3D7_13_v3:124416-12471          0.00088  4_[+4]_283
+Pf3D7_08_v3:85300-85600           0.00088  104_[-4]_183
+Pf3D7_03_v3:1002571-1002          0.00094  222_[-4]_65
+Pf3D7_02_v3:835100-83540           0.0011  16_[-4]_271
+Pf3D7_08_v3:426700-42700           0.0017  4_[+4]_283
+Pf3D7_04_v3:1120800-1121           0.0023  242_[+4]_45
+Pf3D7_09_v3:78875-79175            0.0025  144_[+4]_143
+Pf3D7_04_v3:613600-61390           0.0025  106_[+4]_181
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF AAAWAWAKAWAYA width=13 seqs=46
+Pf3D7_03_v3:80056-80356  (   98) AAAAAAAGACACA  1 
+Pf3D7_01_v3:102283-10258 (  109) AAAAAAACACACA  1 
+Pf3D7_12_v3:1684461-1684 (    3) AAATAAAGAAATA  1 
+Pf3D7_11_v3:111430-11173 (  247) AAATACATATACA  1 
+Pf3D7_07_v3:508173-50847 (  111) AAATATATACACA  1 
+Pf3D7_03_v3:138973-13927 (   49) AAATACATATACA  1 
+Pf3D7_04_v3:545686-54598 (  166) AAATACACAAATA  1 
+Pf3D7_10_v3:61366-61966  (  357) AAATATACAAACG  1 
+Pf3D7_04_v3:993500-99380 (  246) AAAAAGAGAAACG  1 
+Pf3D7_14_v3:3147189-3147 (  160) AAATGTACATGCA  1 
+Pf3D7_05_v3:1318230-1318 (  255) AAAAAAAGAAATA  1 
+Pf3D7_12_v3:763643-76394 (   36) AAATAAACATATA  1 
+Pf3D7_10_v3:1568708-1569 (  261) AAATAAATATGCA  1 
+Pf3D7_06_v3:1301700-1302 (   39) AAATGTATATACA  1 
+Pf3D7_06_v3:725049-72534 (   24) ATATACAGAAACA  1 
+Pf3D7_01_v3:522580-52288 (  187) AAAGAAAGATATA  1 
+Pf3D7_12_v3:1746143-1746 (  169) AAATAACTAAACA  1 
+Pf3D7_04_v3:934730-93503 (  163) AAAAGAACAAATA  1 
+Pf3D7_11_v3:1982353-1982 (  132) AAAAATAGAAATA  1 
+Pf3D7_07_v3:610523-61082 (  270) AAATAAATAAATA  1 
+Pf3D7_05_v3:41404-41704  (   86) AAATAGACATATA  1 
+Pf3D7_02_v3:380829-38112 (    1) AAAAAAATACATA  1 
+Pf3D7_02_v3:72200-72500  (  234) AAATGAATAAATA  1 
+Pf3D7_07_v3:93142-93442  (   61) AAATATATACATA  1 
+Pf3D7_08_v3:466568-46686 (    3) AAATATAGATGTA  1 
+Pf3D7_13_v3:2820777-2821 (   78) AAATAAATATATA  1 
+Pf3D7_12_v3:2161616-2161 (   21) AAATAAAAAAACA  1 
+Pf3D7_02_v3:360527-36082 (   37) AAATAAATATATA  1 
+Pf3D7_04_v3:171400-17170 (  145) AAACAAACATATA  1 
+Pf3D7_12_v3:785570-78587 (  103) AAAAAAATAAATA  1 
+Pf3D7_14_v3:43094-43394  (  175) AAATATATAAATA  1 
+Pf3D7_09_v3:1446628-1446 (  173) ATAAAAAGAAGCA  1 
+Pf3D7_07_v3:1378700-1379 (  222) AAATATATGCATA  1 
+Pf3D7_06_v3:745300-74560 (   72) AAAAAAATATATA  1 
+Pf3D7_12_v3:64337-64637  (  154) AAATATATATATA  1 
+Pf3D7_08_v3:1381836-1382 (  181) ATATACAGAAATA  1 
+Pf3D7_03_v3:115600-11590 (   87) AAATATAGAGATA  1 
+Pf3D7_06_v3:73962-74262  (   61) AAAAAAAAATACA  1 
+Pf3D7_13_v3:124416-12471 (    5) AAAGGAAGAAAAA  1 
+Pf3D7_08_v3:85300-85600  (  105) AGAAGAAGACAGG  1 
+Pf3D7_03_v3:1002571-1002 (  223) ATATATATATACA  1 
+Pf3D7_02_v3:835100-83540 (   17) AAAAGAAAAAATA  1 
+Pf3D7_08_v3:426700-42700 (    5) AAAGATCCGAAGA  1 
+Pf3D7_04_v3:1120800-1121 (  243) AAGCACATGAGCG  1 
+Pf3D7_09_v3:78875-79175  (  145) AGAAAGCAAAACA  1 
+Pf3D7_04_v3:613600-61390 (  107) AAAAAAATGAAAA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 13 n= 13548 bayes= 8.97877 E= 7.0e+000 
+   126  -1217  -1217  -1217 
+   106  -1217    -92   -226 
+   123  -1217   -192  -1217 
+   -36    -92    -33     44 
+   102  -1217     89  -1217 
+    32     67    -33    -56 
+   116    -33  -1217  -1217 
+  -226    125    178      6 
+   113  -1217      8  -1217 
+    19     89   -192    -26 
+   109  -1217     41  -1217 
+  -326    225    -92     32 
+   113  -1217      8  -1217 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 13 nsites= 46 E= 7.0e+000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.869565  0.000000  0.043478  0.086957 
+ 0.978261  0.000000  0.021739  0.000000 
+ 0.326087  0.043478  0.065217  0.565217 
+ 0.847826  0.000000  0.152174  0.000000 
+ 0.521739  0.130435  0.065217  0.282609 
+ 0.934783  0.065217  0.000000  0.000000 
+ 0.086957  0.195652  0.282609  0.434783 
+ 0.913043  0.000000  0.086957  0.000000 
+ 0.478261  0.152174  0.021739  0.347826 
+ 0.891304  0.000000  0.108696  0.000000 
+ 0.043478  0.391304  0.043478  0.521739 
+ 0.913043  0.000000  0.086957  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AAAWAWAKAWAYA MEME-4 regular expression
+--------------------------------------------------------------------------------
+AAA[TA]A[AT]A[TG]A[AT]A[TC]A
+--------------------------------------------------------------------------------
+
+
+
+
+Time 2690.77 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF ATATATATATAT MEME-5	width =  12  sites =  46  llr = 300  p-value = -nane-nan  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 Description
+--------------------------------------------------------------------------------
+Simplified        A  9:9:827:9:7:
+pos.-specific     C  :1:2::::::::
+probability       G  ::::::::::::
+matrix            T  19:8183a193a
+
+         bits    3.6             
+                 3.2             
+                 2.9             
+                 2.5             
+Relative         2.2             
+Entropy          1.8             
+(9.4 bits)       1.4             
+                 1.1 ****   *   *
+                 0.7 **** * *** *
+                 0.4 ************
+                 0.0 ------------
+
+Multilevel           ATATATATATAT
+consensus                  T   T 
+sequence                         
+                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                Site  
+-------------            ------  ----- ---------            ------------
+Pf3D7_13_v3:2820777-2821     +     65  3.40e-05 ATACTTATCT ATATATATATAT ATATATATTT
+Pf3D7_13_v3:124416-12471     +     46  3.40e-05 ATATATATAT ATATATATATAT AATTATTTTT
+Pf3D7_12_v3:2161616-2161     +    268  3.40e-05 ATATATATAT ATATATATATAT ATATATATAT
+Pf3D7_12_v3:1746143-1746     +    245  3.40e-05 TACTTAATAT ATATATATATAT GTATATGTTA
+Pf3D7_12_v3:1684461-1684     +     45  3.40e-05 ATATATATAT ATATATATATAT ATGATTCTTT
+Pf3D7_12_v3:785570-78587     +    173  3.40e-05 ATATATATAT ATATATATATAT ATGTGTTCCA
+Pf3D7_12_v3:763643-76394     +     11  3.40e-05 ATATAAAAGG ATATATATATAT ATATATATAT
+Pf3D7_12_v3:64337-64637      +    178  3.40e-05 ATATATATAT ATATATATATAT ATATATATAT
+Pf3D7_10_v3:61366-61966      +     45  3.40e-05 CTATATATAT ATATATATATAT ATATATATAT
+Pf3D7_09_v3:1446628-1446     +    142  3.40e-05 ATATATGTAT ATATATATATAT TTATTTATTT
+Pf3D7_08_v3:1381836-1382     +    129  3.40e-05 TATTATATAT ATATATATATAT ATATATATAT
+Pf3D7_08_v3:466568-46686     +    101  3.40e-05 TAAATGATAT ATATATATATAT ATTATTTGTT
+Pf3D7_06_v3:1301700-1302     +    279  3.40e-05 ATATCTTTAT ATATATATATAT ATATATATTG
+Pf3D7_06_v3:745300-74560     +     21  3.40e-05 ATATATATAT ATATATATATAT ATATATTTAT
+Pf3D7_06_v3:725049-72534     +    193  3.40e-05 CACGAAACAC ATATATATATAT CCCAAAACAC
+Pf3D7_06_v3:73962-74262      +    264  3.40e-05 ATATATATAT ATATATATATAT ATTAAGTATA
+Pf3D7_04_v3:934730-93503     +     26  3.40e-05 CAACTATTAT ATATATATATAT ATAGTCATAC
+Pf3D7_04_v3:545686-54598     +    185  3.40e-05 AATAATATAT ATATATATATAT ATAAACCACA
+Pf3D7_03_v3:138973-13927     +    184  3.40e-05 ATATATATAA ATATATATATAT ACTTTTGTAG
+Pf3D7_03_v3:80056-80356      +     39  3.40e-05 ATAAATAAAT ATATATATATAT ATATATATAT
+Pf3D7_02_v3:380829-38112     +     15  3.40e-05 AAATACATAT ATATATATATAT AAATTAAATT
+Pf3D7_02_v3:360527-36082     +    257  3.40e-05 ATATATATAA ATATATATATAT ATAAATATAT
+Pf3D7_01_v3:522580-52288     +     34  3.40e-05 GTATATATAT ATATATATATAT ATATATATAT
+Pf3D7_08_v3:426700-42700     -     82  1.09e-04 AATTATTATT ATATATATATTT TATTAATATA
+Pf3D7_07_v3:610523-61082     -    219  1.09e-04 TTATATTCAA ATATATTTATAT TAAATTATTT
+Pf3D7_03_v3:1002571-1002     +    111  1.09e-04 GGTCTTTATT ATATATATATTT ATATATTTTC
+Pf3D7_07_v3:1378700-1379     -     44  1.22e-04 ATATATATCT ATGTATATATAT ATAAATATTT
+Pf3D7_09_v3:78875-79175      +    132  2.60e-04 TATGTACATA ATATTTATATAT AAGAAAGCAA
+Pf3D7_07_v3:508173-50847     -    174  3.86e-04 GCATAATAAA ATACAATTATAT ATTTTTAAAA
+Pf3D7_10_v3:1568708-1569     -    278  4.46e-04 ATAAAATAAA ACACTTATATAT ATATAAATAA
+Pf3D7_14_v3:3147189-3147     +     72  9.09e-04 TCAATTATTT TTATATTTATAT AAAGCCACAT
+Pf3D7_04_v3:993500-99380     +    268  1.03e-03 TATATCATCA ATATAATTATTT ATAATATTAT
+Pf3D7_04_v3:171400-17170     -    178  1.13e-03 GCCATTTATG ATATAAATTTAT TTGGTTTATA
+Pf3D7_02_v3:835100-83540     -    216  1.13e-03 CTAGTTTAAT ACACATTTAGAT AGACTTTTAT
+Pf3D7_05_v3:41404-41704      -    195  1.20e-03 ATTAAATATT ATATGAATATTT TTAAGAATAA
+Pf3D7_01_v3:102283-10258     +    181  1.83e-03 AAATTTGTTT TTATATTTATTT CTTTTAATTT
+Pf3D7_07_v3:93142-93442      -    251  2.29e-03 ACAATTTTAT ACACATTTTTTT TTTTTGTTTA
+Pf3D7_03_v3:115600-11590     +     61  2.55e-03 TATCATTATA ATACCTATTTTT TAAACAACCC
+Pf3D7_11_v3:1982353-1982     -    207  2.83e-03 AAATTCTAAA ATATATATCAAT TAATCTTATA
+Pf3D7_14_v3:43094-43394      -     87  2.97e-03 ATTATTTTTA ATATATATTTAA GATATATAGA
+Pf3D7_02_v3:72200-72500      -    202  3.45e-03 TCATTCATTC ATTCATTTATTT ATTCACTTTA
+Pf3D7_11_v3:111430-11173     +    208  4.34e-03 ATATCATAGC ATACTTTTAAAT AATTATAAAA
+Pf3D7_05_v3:1318230-1318     +     67  7.85e-03 AATATGTTGT ACATAAAAATTT TTATCAATTT
+Pf3D7_08_v3:85300-85600      +     28  9.96e-03 TCCTTCAGGT ATACTATTACTT CTCTTATTGT
+Pf3D7_04_v3:613600-61390     -     75  1.19e-02 TAGTGCAGGT ATAGTTTTTTTT TGTTTTAACT
+Pf3D7_04_v3:1120800-1121     -    275  4.00e-02 ATGATCGCTC TTGTGATTATTA TCGCTCTTGT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_13_v3:2820777-2821          3.4e-05  64_[+5]_224
+Pf3D7_13_v3:124416-12471          3.4e-05  45_[+5]_243
+Pf3D7_12_v3:2161616-2161          3.4e-05  267_[+5]_21
+Pf3D7_12_v3:1746143-1746          3.4e-05  244_[+5]_44
+Pf3D7_12_v3:1684461-1684          3.4e-05  44_[+5]_244
+Pf3D7_12_v3:785570-78587          3.4e-05  172_[+5]_116
+Pf3D7_12_v3:763643-76394          3.4e-05  10_[+5]_278
+Pf3D7_12_v3:64337-64637           3.4e-05  177_[+5]_111
+Pf3D7_10_v3:61366-61966           3.4e-05  44_[+5]_544
+Pf3D7_09_v3:1446628-1446          3.4e-05  141_[+5]_147
+Pf3D7_08_v3:1381836-1382          3.4e-05  128_[+5]_160
+Pf3D7_08_v3:466568-46686          3.4e-05  100_[+5]_188
+Pf3D7_06_v3:1301700-1302          3.4e-05  278_[+5]_10
+Pf3D7_06_v3:745300-74560          3.4e-05  20_[+5]_268
+Pf3D7_06_v3:725049-72534          3.4e-05  192_[+5]_96
+Pf3D7_06_v3:73962-74262           3.4e-05  263_[+5]_25
+Pf3D7_04_v3:934730-93503          3.4e-05  25_[+5]_263
+Pf3D7_04_v3:545686-54598          3.4e-05  184_[+5]_104
+Pf3D7_03_v3:138973-13927          3.4e-05  183_[+5]_105
+Pf3D7_03_v3:80056-80356           3.4e-05  38_[+5]_250
+Pf3D7_02_v3:380829-38112          3.4e-05  14_[+5]_274
+Pf3D7_02_v3:360527-36082          3.4e-05  256_[+5]_32
+Pf3D7_01_v3:522580-52288          3.4e-05  33_[+5]_255
+Pf3D7_08_v3:426700-42700          0.00011  81_[-5]_207
+Pf3D7_07_v3:610523-61082          0.00011  218_[-5]_70
+Pf3D7_03_v3:1002571-1002          0.00011  110_[+5]_178
+Pf3D7_07_v3:1378700-1379          0.00012  43_[-5]_245
+Pf3D7_09_v3:78875-79175           0.00026  131_[+5]_157
+Pf3D7_07_v3:508173-50847          0.00039  173_[-5]_115
+Pf3D7_10_v3:1568708-1569          0.00045  277_[-5]_11
+Pf3D7_14_v3:3147189-3147          0.00091  71_[+5]_217
+Pf3D7_04_v3:993500-99380            0.001  267_[+5]_21
+Pf3D7_04_v3:171400-17170           0.0011  177_[-5]_111
+Pf3D7_02_v3:835100-83540           0.0011  215_[-5]_73
+Pf3D7_05_v3:41404-41704            0.0012  194_[-5]_94
+Pf3D7_01_v3:102283-10258           0.0018  180_[+5]_108
+Pf3D7_07_v3:93142-93442            0.0023  250_[-5]_38
+Pf3D7_03_v3:115600-11590           0.0025  60_[+5]_228
+Pf3D7_11_v3:1982353-1982           0.0028  206_[-5]_82
+Pf3D7_14_v3:43094-43394             0.003  86_[-5]_202
+Pf3D7_02_v3:72200-72500            0.0034  201_[-5]_87
+Pf3D7_11_v3:111430-11173           0.0043  207_[+5]_81
+Pf3D7_05_v3:1318230-1318           0.0079  66_[+5]_222
+Pf3D7_08_v3:85300-85600              0.01  27_[+5]_261
+Pf3D7_04_v3:613600-61390            0.012  74_[-5]_214
+Pf3D7_04_v3:1120800-1121             0.04  274_[-5]_14
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF ATATATATATAT width=12 seqs=46
+Pf3D7_13_v3:2820777-2821 (   65) ATATATATATAT  1 
+Pf3D7_13_v3:124416-12471 (   46) ATATATATATAT  1 
+Pf3D7_12_v3:2161616-2161 (  268) ATATATATATAT  1 
+Pf3D7_12_v3:1746143-1746 (  245) ATATATATATAT  1 
+Pf3D7_12_v3:1684461-1684 (   45) ATATATATATAT  1 
+Pf3D7_12_v3:785570-78587 (  173) ATATATATATAT  1 
+Pf3D7_12_v3:763643-76394 (   11) ATATATATATAT  1 
+Pf3D7_12_v3:64337-64637  (  178) ATATATATATAT  1 
+Pf3D7_10_v3:61366-61966  (   45) ATATATATATAT  1 
+Pf3D7_09_v3:1446628-1446 (  142) ATATATATATAT  1 
+Pf3D7_08_v3:1381836-1382 (  129) ATATATATATAT  1 
+Pf3D7_08_v3:466568-46686 (  101) ATATATATATAT  1 
+Pf3D7_06_v3:1301700-1302 (  279) ATATATATATAT  1 
+Pf3D7_06_v3:745300-74560 (   21) ATATATATATAT  1 
+Pf3D7_06_v3:725049-72534 (  193) ATATATATATAT  1 
+Pf3D7_06_v3:73962-74262  (  264) ATATATATATAT  1 
+Pf3D7_04_v3:934730-93503 (   26) ATATATATATAT  1 
+Pf3D7_04_v3:545686-54598 (  185) ATATATATATAT  1 
+Pf3D7_03_v3:138973-13927 (  184) ATATATATATAT  1 
+Pf3D7_03_v3:80056-80356  (   39) ATATATATATAT  1 
+Pf3D7_02_v3:380829-38112 (   15) ATATATATATAT  1 
+Pf3D7_02_v3:360527-36082 (  257) ATATATATATAT  1 
+Pf3D7_01_v3:522580-52288 (   34) ATATATATATAT  1 
+Pf3D7_08_v3:426700-42700 (   82) ATATATATATTT  1 
+Pf3D7_07_v3:610523-61082 (  219) ATATATTTATAT  1 
+Pf3D7_03_v3:1002571-1002 (  111) ATATATATATTT  1 
+Pf3D7_07_v3:1378700-1379 (   44) ATGTATATATAT  1 
+Pf3D7_09_v3:78875-79175  (  132) ATATTTATATAT  1 
+Pf3D7_07_v3:508173-50847 (  174) ATACAATTATAT  1 
+Pf3D7_10_v3:1568708-1569 (  278) ACACTTATATAT  1 
+Pf3D7_14_v3:3147189-3147 (   72) TTATATTTATAT  1 
+Pf3D7_04_v3:993500-99380 (  268) ATATAATTATTT  1 
+Pf3D7_04_v3:171400-17170 (  178) ATATAAATTTAT  1 
+Pf3D7_02_v3:835100-83540 (  216) ACACATTTAGAT  1 
+Pf3D7_05_v3:41404-41704  (  195) ATATGAATATTT  1 
+Pf3D7_01_v3:102283-10258 (  181) TTATATTTATTT  1 
+Pf3D7_07_v3:93142-93442  (  251) ACACATTTTTTT  1 
+Pf3D7_03_v3:115600-11590 (   61) ATACCTATTTTT  1 
+Pf3D7_11_v3:1982353-1982 (  207) ATATATATCAAT  1 
+Pf3D7_14_v3:43094-43394  (   87) ATATATATTTAA  1 
+Pf3D7_02_v3:72200-72500  (  202) ATTCATTTATTT  1 
+Pf3D7_11_v3:111430-11173 (  208) ATACTTTTAAAT  1 
+Pf3D7_05_v3:1318230-1318 (   67) ACATAAAAATTT  1 
+Pf3D7_08_v3:85300-85600  (   28) ATACTATTACTT  1 
+Pf3D7_04_v3:613600-61390 (   75) ATAGTTTTTTTT  1 
+Pf3D7_04_v3:1120800-1121 (  275) TTGTGATTATTA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 12 n= 13594 bayes= 8.98367 E= 7.0e+000 
+   116  -1217  -1217   -268 
+ -1217      8  -1217    113 
+   116  -1217    -92   -426 
+ -1217    108   -192     94 
+    98   -192    -92   -194 
+  -146  -1217  -1217    102 
+    82  -1217  -1217    -68 
+  -426  -1217  -1217    123 
+   106   -192  -1217   -194 
+  -326   -192   -192    113 
+    82  -1217  -1217    -68 
+  -326  -1217  -1217    119 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 12 nsites= 46 E= 7.0e+000 
+ 0.934783  0.000000  0.000000  0.065217 
+ 0.000000  0.086957  0.000000  0.913043 
+ 0.934783  0.000000  0.043478  0.021739 
+ 0.000000  0.173913  0.021739  0.804348 
+ 0.826087  0.021739  0.043478  0.108696 
+ 0.152174  0.000000  0.000000  0.847826 
+ 0.739130  0.000000  0.000000  0.260870 
+ 0.021739  0.000000  0.000000  0.978261 
+ 0.869565  0.021739  0.000000  0.108696 
+ 0.043478  0.021739  0.021739  0.913043 
+ 0.739130  0.000000  0.000000  0.260870 
+ 0.043478  0.000000  0.000000  0.956522 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif ATATATATATAT MEME-5 regular expression
+--------------------------------------------------------------------------------
+ATATAT[AT]TAT[AT]T
+--------------------------------------------------------------------------------
+
+
+
+
+Time 3264.34 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AHATATAT MEME-6	width =   8  sites =  46  llr = 235  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 Description
+--------------------------------------------------------------------------------
+Simplified        A  929:a29:
+pos.-specific     C  1311:1::
+probability       G  ::::::1:
+matrix            T  :4:9:7:a
+
+         bits    3.6         
+                 3.2         
+                 2.9         
+                 2.5         
+Relative         2.2         
+Entropy          1.8         
+(7.4 bits)       1.4         
+                 1.1 * ***  *
+                 0.7 * *** **
+                 0.4 ********
+                 0.0 --------
+
+Multilevel           ATATATAT
+consensus             C      
+sequence              A      
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+Pf3D7_12_v3:2161616-2161     -    157  1.83e-04 TATATCAAGC ACATATAT CTTATAGAAG
+Pf3D7_09_v3:1446628-1446     -    132  1.83e-04 ATATATATAT ACATATAT ATATATACAT
+Pf3D7_08_v3:426700-42700     +    263  1.83e-04 GTGTTCATAC ACATATAT ACAAAAAAAA
+Pf3D7_07_v3:508173-50847     -    202  1.83e-04 TTATGTGCAT ACATATAT TGTATTGCAT
+Pf3D7_06_v3:725049-72534     +    109  1.83e-04 ATATACAGAA ACATATAT ATATCCAAAT
+Pf3D7_06_v3:73962-74262      +      5  1.83e-04       TTAC ACATATAT AAAATATATT
+Pf3D7_04_v3:545686-54598     -     46  1.83e-04 ATATTTGTAT ACATATAT ATTTCAAAAT
+Pf3D7_03_v3:138973-13927     -     64  1.83e-04 ATACATATAT ACATATAT ATAAATACAT
+Pf3D7_01_v3:522580-52288     -     60  1.83e-04 CTCTTTTACA ACATATAT ATATATATAT
+Pf3D7_06_v3:745300-74560     -     41  2.55e-04 AATTATATAC ACACATAT AAATATATAT
+Pf3D7_03_v3:80056-80356      -    251  2.55e-04 ATTAAAGAGT ACACATAT AATTATTTTA
+Pf3D7_04_v3:934730-93503     +    186  2.91e-04 TACAAATAAT ACATATGT ATATAATCAA
+Pf3D7_08_v3:85300-85600      +     95  3.48e-04 CCTCTTCCTC CCATATGT CCCCTGTCTT
+Pf3D7_02_v3:72200-72500      +    281  5.90e-04 CAAATAAATA ACATAAAT ACTAAATATA
+Pf3D7_12_v3:1746143-1746     +     59  1.54e-03 GGAAATATAT ATATATAT ATATATATGT
+Pf3D7_12_v3:1684461-1684     +     17  1.54e-03 AAAGAAATAT ATATATAT ATATATATAT
+Pf3D7_12_v3:763643-76394     +     27  1.54e-03 ATATATATAT ATATATAT GTATATGTTT
+Pf3D7_12_v3:64337-64637      +    282  1.54e-03 ATTCAAATAT ATATATAT ATATTACAAA
+Pf3D7_10_v3:61366-61966      +     37  1.54e-03 ACATTTTCCT ATATATAT ATATATATAT
+Pf3D7_09_v3:78875-79175      +    282  1.54e-03 AATTATTATA ATATATAT AATTCATTTT
+Pf3D7_08_v3:1381836-1382     +     28  1.54e-03 ATTTAAATAA ATATATAT TTATATATTT
+Pf3D7_07_v3:610523-61082     +    257  1.54e-03 CATAGTATTA ATATATAT CTTTAAAATA
+Pf3D7_06_v3:1301700-1302     +    291  1.54e-03 ATATATATAT ATATATAT TG        
+Pf3D7_04_v3:993500-99380     +     63  1.54e-03 TCATTTTTTC ATATATAT TTGATAAAAG
+Pf3D7_04_v3:171400-17170     +     52  1.54e-03 AATAAAATTG ATATATAT GATGAGTTAC
+Pf3D7_02_v3:380829-38112     +    162  1.54e-03 ATATATATAT ATATATAT TATTTTTTTT
+Pf3D7_02_v3:360527-36082     +    279  1.54e-03 ATAAATATAT ATATATAT ATAAATATAT
+Pf3D7_02_v3:835100-83540     -     87  1.62e-03 AATAAAATAT CCATAAAT AATCAAAATA
+Pf3D7_14_v3:43094-43394      +     78  2.02e-03 TTTTTTTTTT CTATATAT CTTAAATATA
+Pf3D7_10_v3:1568708-1569     +     78  2.04e-03 GTAATAATTC CCCTATGT ATACAATTAG
+Pf3D7_07_v3:1378700-1379     -     68  3.15e-03 AAAAAAAAAA AAATATAT ATATATATAT
+Pf3D7_05_v3:41404-41704      +     65  3.15e-03 TTTTATACAG AAATATAT TCCATAACAA
+Pf3D7_03_v3:1002571-1002     +     40  3.15e-03 GAATGATTTT AAATATAT TACAATAAGA
+Pf3D7_03_v3:115600-11590     +     13  3.83e-03 TCTTATTCTA ATATACAT GCACTTCAAG
+Pf3D7_05_v3:1318230-1318     -     58  4.35e-03 TTTTTATGTA CAACATAT TATGTTATCT
+Pf3D7_13_v3:2820777-2821     +    284  5.59e-03 ATTGTAATTT AAATACAT TTGATAAAT 
+Pf3D7_13_v3:124416-12471     +    154  5.59e-03 CAATAAATGC ATATAAAT ATTCATGCAT
+Pf3D7_12_v3:785570-78587     -    149  5.59e-03 ATATATTATC ATATAAAT CATTTTTATC
+Pf3D7_11_v3:1982353-1982     -      4  5.59e-03 GCGTAATTTA ATATAAAT CAT       
+Pf3D7_08_v3:466568-46686     +    193  5.59e-03 TTTTTTTGTA CAATATGT GATTATTTTA
+Pf3D7_01_v3:102283-10258     -    282  5.59e-03 AAATACAACA ATATAAAT TACAATGAAT
+Pf3D7_14_v3:3147189-3147     -    175  7.51e-03 TAACACAATT AAATAAAT AAAAATGTAC
+Pf3D7_07_v3:93142-93442      +     37  8.99e-03 ATCAAACAAC AAACAAGT AAATTTATAT
+Pf3D7_04_v3:1120800-1121     +     99  9.08e-03 GAGCGATCAT AACCACAT GAGCGATCAT
+Pf3D7_04_v3:613600-61390     +    184  9.45e-03 AATTGCTGTG AACCAAAT ACATCCAAAT
+Pf3D7_11_v3:111430-11173     +    139  1.21e-02 ATTTTTTATA AAATATTT CCTTTTCCTT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_12_v3:2161616-2161          0.00018  156_[-6]_136
+Pf3D7_09_v3:1446628-1446          0.00018  131_[-6]_161
+Pf3D7_08_v3:426700-42700          0.00018  262_[+6]_30
+Pf3D7_07_v3:508173-50847          0.00018  201_[-6]_91
+Pf3D7_06_v3:725049-72534          0.00018  108_[+6]_184
+Pf3D7_06_v3:73962-74262           0.00018  4_[+6]_288
+Pf3D7_04_v3:545686-54598          0.00018  45_[-6]_247
+Pf3D7_03_v3:138973-13927          0.00018  63_[-6]_229
+Pf3D7_01_v3:522580-52288          0.00018  59_[-6]_233
+Pf3D7_06_v3:745300-74560          0.00025  40_[-6]_252
+Pf3D7_03_v3:80056-80356           0.00025  250_[-6]_42
+Pf3D7_04_v3:934730-93503          0.00029  185_[+6]_107
+Pf3D7_08_v3:85300-85600           0.00035  94_[+6]_198
+Pf3D7_02_v3:72200-72500           0.00059  280_[+6]_12
+Pf3D7_12_v3:1746143-1746           0.0015  58_[+6]_234
+Pf3D7_12_v3:1684461-1684           0.0015  16_[+6]_276
+Pf3D7_12_v3:763643-76394           0.0015  26_[+6]_266
+Pf3D7_12_v3:64337-64637            0.0015  281_[+6]_11
+Pf3D7_10_v3:61366-61966            0.0015  36_[+6]_556
+Pf3D7_09_v3:78875-79175            0.0015  281_[+6]_11
+Pf3D7_08_v3:1381836-1382           0.0015  27_[+6]_265
+Pf3D7_07_v3:610523-61082           0.0015  256_[+6]_36
+Pf3D7_06_v3:1301700-1302           0.0015  290_[+6]_2
+Pf3D7_04_v3:993500-99380           0.0015  62_[+6]_230
+Pf3D7_04_v3:171400-17170           0.0015  51_[+6]_241
+Pf3D7_02_v3:380829-38112           0.0015  161_[+6]_131
+Pf3D7_02_v3:360527-36082           0.0015  278_[+6]_14
+Pf3D7_02_v3:835100-83540           0.0016  86_[-6]_206
+Pf3D7_14_v3:43094-43394             0.002  77_[+6]_215
+Pf3D7_10_v3:1568708-1569            0.002  77_[+6]_215
+Pf3D7_07_v3:1378700-1379           0.0032  67_[-6]_225
+Pf3D7_05_v3:41404-41704            0.0032  64_[+6]_228
+Pf3D7_03_v3:1002571-1002           0.0032  39_[+6]_253
+Pf3D7_03_v3:115600-11590           0.0038  12_[+6]_280
+Pf3D7_05_v3:1318230-1318           0.0043  57_[-6]_235
+Pf3D7_13_v3:2820777-2821           0.0056  283_[+6]_9
+Pf3D7_13_v3:124416-12471           0.0056  153_[+6]_139
+Pf3D7_12_v3:785570-78587           0.0056  148_[-6]_144
+Pf3D7_11_v3:1982353-1982           0.0056  3_[-6]_289
+Pf3D7_08_v3:466568-46686           0.0056  192_[+6]_100
+Pf3D7_01_v3:102283-10258           0.0056  281_[-6]_11
+Pf3D7_14_v3:3147189-3147           0.0075  174_[-6]_118
+Pf3D7_07_v3:93142-93442             0.009  36_[+6]_256
+Pf3D7_04_v3:1120800-1121           0.0091  98_[+6]_194
+Pf3D7_04_v3:613600-61390           0.0094  183_[+6]_109
+Pf3D7_11_v3:111430-11173            0.012  138_[+6]_154
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF AHATATAT width=8 seqs=46
+Pf3D7_12_v3:2161616-2161 (  157) ACATATAT  1 
+Pf3D7_09_v3:1446628-1446 (  132) ACATATAT  1 
+Pf3D7_08_v3:426700-42700 (  263) ACATATAT  1 
+Pf3D7_07_v3:508173-50847 (  202) ACATATAT  1 
+Pf3D7_06_v3:725049-72534 (  109) ACATATAT  1 
+Pf3D7_06_v3:73962-74262  (    5) ACATATAT  1 
+Pf3D7_04_v3:545686-54598 (   46) ACATATAT  1 
+Pf3D7_03_v3:138973-13927 (   64) ACATATAT  1 
+Pf3D7_01_v3:522580-52288 (   60) ACATATAT  1 
+Pf3D7_06_v3:745300-74560 (   41) ACACATAT  1 
+Pf3D7_03_v3:80056-80356  (  251) ACACATAT  1 
+Pf3D7_04_v3:934730-93503 (  186) ACATATGT  1 
+Pf3D7_08_v3:85300-85600  (   95) CCATATGT  1 
+Pf3D7_02_v3:72200-72500  (  281) ACATAAAT  1 
+Pf3D7_12_v3:1746143-1746 (   59) ATATATAT  1 
+Pf3D7_12_v3:1684461-1684 (   17) ATATATAT  1 
+Pf3D7_12_v3:763643-76394 (   27) ATATATAT  1 
+Pf3D7_12_v3:64337-64637  (  282) ATATATAT  1 
+Pf3D7_10_v3:61366-61966  (   37) ATATATAT  1 
+Pf3D7_09_v3:78875-79175  (  282) ATATATAT  1 
+Pf3D7_08_v3:1381836-1382 (   28) ATATATAT  1 
+Pf3D7_07_v3:610523-61082 (  257) ATATATAT  1 
+Pf3D7_06_v3:1301700-1302 (  291) ATATATAT  1 
+Pf3D7_04_v3:993500-99380 (   63) ATATATAT  1 
+Pf3D7_04_v3:171400-17170 (   52) ATATATAT  1 
+Pf3D7_02_v3:380829-38112 (  162) ATATATAT  1 
+Pf3D7_02_v3:360527-36082 (  279) ATATATAT  1 
+Pf3D7_02_v3:835100-83540 (   87) CCATAAAT  1 
+Pf3D7_14_v3:43094-43394  (   78) CTATATAT  1 
+Pf3D7_10_v3:1568708-1569 (   78) CCCTATGT  1 
+Pf3D7_07_v3:1378700-1379 (   68) AAATATAT  1 
+Pf3D7_05_v3:41404-41704  (   65) AAATATAT  1 
+Pf3D7_03_v3:1002571-1002 (   40) AAATATAT  1 
+Pf3D7_03_v3:115600-11590 (   13) ATATACAT  1 
+Pf3D7_05_v3:1318230-1318 (   58) CAACATAT  1 
+Pf3D7_13_v3:2820777-2821 (  284) AAATACAT  1 
+Pf3D7_13_v3:124416-12471 (  154) ATATAAAT  1 
+Pf3D7_12_v3:785570-78587 (  149) ATATAAAT  1 
+Pf3D7_11_v3:1982353-1982 (    4) ATATAAAT  1 
+Pf3D7_08_v3:466568-46686 (  193) CAATATGT  1 
+Pf3D7_01_v3:102283-10258 (  282) ATATAAAT  1 
+Pf3D7_14_v3:3147189-3147 (  175) AAATAAAT  1 
+Pf3D7_07_v3:93142-93442  (   37) AAACAAGT  1 
+Pf3D7_04_v3:1120800-1121 (   99) AACCACAT  1 
+Pf3D7_04_v3:613600-61390 (  184) AACCAAAT  1 
+Pf3D7_11_v3:111430-11173 (  139) AAATATTT  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 13778 bayes= 8.96059 E= 7.0e+000 
+   106     67  -1217  -1217 
+   -81    208  -1217     -2 
+   116    -33  -1217  -1217 
+ -1217     67  -1217    106 
+   126  -1217  -1217  -1217 
+  -109    -33  -1217     82 
+   106  -1217     41   -426 
+ -1217  -1217  -1217    126 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 46 E= 7.0e+000 
+ 0.869565  0.130435  0.000000  0.000000 
+ 0.239130  0.347826  0.000000  0.413043 
+ 0.934783  0.065217  0.000000  0.000000 
+ 0.000000  0.130435  0.000000  0.869565 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.195652  0.065217  0.000000  0.739130 
+ 0.869565  0.000000  0.108696  0.021739 
+ 0.000000  0.000000  0.000000  1.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AHATATAT MEME-6 regular expression
+--------------------------------------------------------------------------------
+A[TCA]ATATAT
+--------------------------------------------------------------------------------
+
+
+
+
+Time 3808.38 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF YAAAWAWWTATATAM MEME-7	width =  15  sites =  46  llr = 243  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 Description
+--------------------------------------------------------------------------------
+Simplified        A  167a67641817175
+pos.-specific     C  3:3::1::21212:4
+probability       G  :::::::::::::2:
+matrix            T  53::42468173711
+
+         bits    3.6                
+                 3.2                
+                 2.9                
+                 2.5                
+Relative         2.2                
+Entropy          1.8                
+(7.6 bits)       1.4                
+                 1.1    *           
+                 0.7 * **    **   **
+                 0.4 * *************
+                 0.0 ---------------
+
+Multilevel           TAAAAAATTATATAA
+consensus            CTC T TA  CT GC
+sequence                            
+                                    
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                 Site    
+-------------            ------  ----- ---------            ---------------
+Pf3D7_08_v3:466568-46686     -    149  1.12e-06 ATTTATCACA CAAAAAATTATATAC AAATAAAAAA
+Pf3D7_03_v3:138973-13927     +     13  2.18e-06 AGATAATTAT CACAAATATATATAC ATAGATATGT
+Pf3D7_04_v3:545686-54598     +    126  5.61e-06 ATTTATCACA CTAAAAATTATATAC AAATAAAGTA
+Pf3D7_06_v3:725049-72534     +    237  1.55e-05 ATCCACAAAA CACATATACATCCAC ATCCACATCC
+Pf3D7_08_v3:85300-85600      +    280  5.17e-05 TGGTCTTCCA TACATCATTCCTTGA CCCCAC    
+Pf3D7_03_v3:80056-80356      +    191  9.43e-05 ATCTATGAGT TAAAAATTCACATAA AAAATATTTT
+Pf3D7_02_v3:380829-38112     +    267  1.10e-04 AATAAGCTTA CAAATAATTACATAT TTATATGCTA
+Pf3D7_07_v3:508173-50847     -     59  1.45e-04 CCAATGTTTC TTAATATTTATATAC ACTTATATTT
+Pf3D7_09_v3:1446628-1446     -    267  1.65e-04 TATAAAAATA AACATAAATATATAC ATATACATAA
+Pf3D7_01_v3:102283-10258     -    220  1.88e-04 ATATAAATTA CAAATTATTATTTAC ATGTAATATC
+Pf3D7_06_v3:73962-74262      -    221  2.16e-04 ATATAAATAG TAAAAAAATATATAA AAATAAAATA
+Pf3D7_10_v3:61366-61966      -    316  2.76e-04 ATCAATTACA TAAAAATATATTTAC TGACATGGAA
+Pf3D7_12_v3:1684461-1684     +    262  3.14e-04 TTCAATATTA CAAAAAAATATATAT CCTACGAAGA
+Pf3D7_06_v3:745300-74560     +    129  3.53e-04 TGCATTTTTA TTCAAATATATACAA ATATAAATAT
+Pf3D7_07_v3:1378700-1379     +    200  4.42e-04 ATATTTTGAA TGAAAAATTATATAA TTCAAGAAAA
+Pf3D7_04_v3:934730-93503     +    132  4.98e-04 ATATTATACA CAAAAAAATAAATAA ATAAAAAAAA
+Pf3D7_14_v3:43094-43394      -     32  6.18e-04 ATGAGGTTTG CACATAAATTTACAA CTATTTCGTC
+Pf3D7_12_v3:1746143-1746     -    197  6.93e-04 TCAAACATTT TTAATATTTATATAA AAATTATTAA
+Pf3D7_09_v3:78875-79175      +    112  8.49e-04 TCTGAAAGAA CAAAATTTTATATGT ACATAATATT
+Pf3D7_07_v3:93142-93442      +    166  8.49e-04 CATTTTATAA TAAATCATTATATAT AATCTAATTT
+Pf3D7_05_v3:1318230-1318     -    194  8.49e-04 TTTTAGGTAC TACAATAACATTTGA GTCTTTATTG
+Pf3D7_02_v3:835100-83540     +    195  8.49e-04 TTTTTCATAT TTCATTTTTACATAA AAGTCTATCT
+Pf3D7_02_v3:360527-36082     -     53  9.43e-04 TATAATATAA CACAAATGTACAAAA AATAAATAAA
+Pf3D7_12_v3:2161616-2161     -    208  1.04e-03 TTTTGCTTCA TAAAAAATAACATAA AATTAAAAAC
+Pf3D7_08_v3:426700-42700     +    139  1.04e-03 CTACAGGCTA TCAAAATATATTTGC ACATATATAT
+Pf3D7_06_v3:1301700-1302     -     10  1.04e-03 AGACTTTATT CTAATTTTTCTACAA AACACTATA 
+Pf3D7_04_v3:613600-61390     -    169  1.15e-03 GTATTTGGTT CACAGCAATTTTTGC CATTCTTGTT
+Pf3D7_12_v3:785570-78587     +    266  1.68e-03 ATCAAATTCA TTCAACTTTAGCTGA TCAATAACAT
+Pf3D7_03_v3:115600-11590     +    102  1.68e-03 TAGAGATAAT AAAATGAATCCATAC TTACACAGAT
+Pf3D7_04_v3:1120800-1121     +     40  1.84e-03 CACAAGAGCG ATCATAATCACAAGA GTGATAGTAA
+Pf3D7_13_v3:124416-12471     +    139  2.01e-03 ATAAAATAGA TAGATCAATAAATGC ATATAAATAT
+Pf3D7_08_v3:1381836-1382     -    270  2.01e-03 TAATTATTTC TTAAAAAATATATAT ATATATATAT
+Pf3D7_05_v3:41404-41704      -    150  2.01e-03 AATTTCTCAT CAAAAAATAAAATGA ATGATACGAT
+Pf3D7_07_v3:610523-61082     +    104  2.61e-03 AAAATTTACA TTAATAATGATACAA CATTTTACAT
+Pf3D7_02_v3:72200-72500      -     99  2.61e-03 AAAAATTGTA TTAATAATTATAGAA TAAACGTTGG
+Pf3D7_12_v3:763643-76394     +    240  2.84e-03 AAAAAAAACA AAAAAAAACATTTAA TTTTTTTTAA
+Pf3D7_13_v3:2820777-2821     -    191  3.07e-03 ATATATCTTA AAAAAATTCATATTC AGAAATAAAT
+Pf3D7_10_v3:1568708-1569     -     50  3.62e-03 TTATTACATT TAAAACATTTCATAT ATAATAACCT
+Pf3D7_14_v3:3147189-3147     +    114  4.23e-03 ATGATTTTTA TGAAAATTTCTCTTC GTCTGCATAT
+Pf3D7_12_v3:64337-64637      +    230  4.23e-03 ATTTTCATGG TACATATTTACTATC ATATAAATAT
+Pf3D7_04_v3:993500-99380     -    228  4.23e-03 AGAAACGTTA TTAAAAATCAATAGC TTAAAAGAAA
+Pf3D7_03_v3:1002571-1002     -    248  4.55e-03 TATAAAAGAA ATAATAATTCTTTAA GTAACTATTT
+Pf3D7_01_v3:522580-52288     -    235  6.57e-03 TTTTAAGGTA CATAAAATTAAACAA AAATAGAAAG
+Pf3D7_04_v3:171400-17170     -    218  7.55e-03 TTTTTATTAC TAAATTTTTCTAAAA TATATCTATG
+Pf3D7_11_v3:1982353-1982     +    275  9.85e-03 GAAAATCTTG TAATAAAATATTTGA TCAGCGTATA
+Pf3D7_11_v3:111430-11173     +     89  1.05e-02 CTAATATGAA TTAAATTTAATTCAC TTAAAAGTTG
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_08_v3:466568-46686          1.1e-06  148_[-7]_137
+Pf3D7_03_v3:138973-13927          2.2e-06  12_[+7]_273
+Pf3D7_04_v3:545686-54598          5.6e-06  125_[+7]_160
+Pf3D7_06_v3:725049-72534          1.5e-05  236_[+7]_49
+Pf3D7_08_v3:85300-85600           5.2e-05  279_[+7]_6
+Pf3D7_03_v3:80056-80356           9.4e-05  190_[+7]_95
+Pf3D7_02_v3:380829-38112          0.00011  266_[+7]_19
+Pf3D7_07_v3:508173-50847          0.00014  58_[-7]_227
+Pf3D7_09_v3:1446628-1446          0.00016  266_[-7]_19
+Pf3D7_01_v3:102283-10258          0.00019  219_[-7]_66
+Pf3D7_06_v3:73962-74262           0.00022  220_[-7]_65
+Pf3D7_10_v3:61366-61966           0.00028  315_[-7]_270
+Pf3D7_12_v3:1684461-1684          0.00031  261_[+7]_24
+Pf3D7_06_v3:745300-74560          0.00035  128_[+7]_157
+Pf3D7_07_v3:1378700-1379          0.00044  199_[+7]_86
+Pf3D7_04_v3:934730-93503           0.0005  131_[+7]_154
+Pf3D7_14_v3:43094-43394           0.00062  31_[-7]_254
+Pf3D7_12_v3:1746143-1746          0.00069  196_[-7]_89
+Pf3D7_09_v3:78875-79175           0.00085  111_[+7]_174
+Pf3D7_07_v3:93142-93442           0.00085  165_[+7]_120
+Pf3D7_05_v3:1318230-1318          0.00085  193_[-7]_92
+Pf3D7_02_v3:835100-83540          0.00085  194_[+7]_91
+Pf3D7_02_v3:360527-36082          0.00094  52_[-7]_233
+Pf3D7_12_v3:2161616-2161            0.001  207_[-7]_78
+Pf3D7_08_v3:426700-42700            0.001  138_[+7]_147
+Pf3D7_06_v3:1301700-1302            0.001  9_[-7]_276
+Pf3D7_04_v3:613600-61390           0.0012  168_[-7]_117
+Pf3D7_12_v3:785570-78587           0.0017  265_[+7]_20
+Pf3D7_03_v3:115600-11590           0.0017  101_[+7]_184
+Pf3D7_04_v3:1120800-1121           0.0018  39_[+7]_246
+Pf3D7_13_v3:124416-12471            0.002  138_[+7]_147
+Pf3D7_08_v3:1381836-1382            0.002  269_[-7]_16
+Pf3D7_05_v3:41404-41704             0.002  149_[-7]_136
+Pf3D7_07_v3:610523-61082           0.0026  103_[+7]_182
+Pf3D7_02_v3:72200-72500            0.0026  98_[-7]_187
+Pf3D7_12_v3:763643-76394           0.0028  239_[+7]_46
+Pf3D7_13_v3:2820777-2821           0.0031  190_[-7]_95
+Pf3D7_10_v3:1568708-1569           0.0036  49_[-7]_236
+Pf3D7_14_v3:3147189-3147           0.0042  113_[+7]_172
+Pf3D7_12_v3:64337-64637            0.0042  229_[+7]_56
+Pf3D7_04_v3:993500-99380           0.0042  227_[-7]_58
+Pf3D7_03_v3:1002571-1002           0.0046  247_[-7]_38
+Pf3D7_01_v3:522580-52288           0.0066  234_[-7]_51
+Pf3D7_04_v3:171400-17170           0.0076  217_[-7]_68
+Pf3D7_11_v3:1982353-1982           0.0098  274_[+7]_11
+Pf3D7_11_v3:111430-11173            0.011  88_[+7]_197
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF YAAAWAWWTATATAM width=15 seqs=46
+Pf3D7_08_v3:466568-46686 (  149) CAAAAAATTATATAC  1 
+Pf3D7_03_v3:138973-13927 (   13) CACAAATATATATAC  1 
+Pf3D7_04_v3:545686-54598 (  126) CTAAAAATTATATAC  1 
+Pf3D7_06_v3:725049-72534 (  237) CACATATACATCCAC  1 
+Pf3D7_08_v3:85300-85600  (  280) TACATCATTCCTTGA  1 
+Pf3D7_03_v3:80056-80356  (  191) TAAAAATTCACATAA  1 
+Pf3D7_02_v3:380829-38112 (  267) CAAATAATTACATAT  1 
+Pf3D7_07_v3:508173-50847 (   59) TTAATATTTATATAC  1 
+Pf3D7_09_v3:1446628-1446 (  267) AACATAAATATATAC  1 
+Pf3D7_01_v3:102283-10258 (  220) CAAATTATTATTTAC  1 
+Pf3D7_06_v3:73962-74262  (  221) TAAAAAAATATATAA  1 
+Pf3D7_10_v3:61366-61966  (  316) TAAAAATATATTTAC  1 
+Pf3D7_12_v3:1684461-1684 (  262) CAAAAAAATATATAT  1 
+Pf3D7_06_v3:745300-74560 (  129) TTCAAATATATACAA  1 
+Pf3D7_07_v3:1378700-1379 (  200) TGAAAAATTATATAA  1 
+Pf3D7_04_v3:934730-93503 (  132) CAAAAAAATAAATAA  1 
+Pf3D7_14_v3:43094-43394  (   32) CACATAAATTTACAA  1 
+Pf3D7_12_v3:1746143-1746 (  197) TTAATATTTATATAA  1 
+Pf3D7_09_v3:78875-79175  (  112) CAAAATTTTATATGT  1 
+Pf3D7_07_v3:93142-93442  (  166) TAAATCATTATATAT  1 
+Pf3D7_05_v3:1318230-1318 (  194) TACAATAACATTTGA  1 
+Pf3D7_02_v3:835100-83540 (  195) TTCATTTTTACATAA  1 
+Pf3D7_02_v3:360527-36082 (   53) CACAAATGTACAAAA  1 
+Pf3D7_12_v3:2161616-2161 (  208) TAAAAAATAACATAA  1 
+Pf3D7_08_v3:426700-42700 (  139) TCAAAATATATTTGC  1 
+Pf3D7_06_v3:1301700-1302 (   10) CTAATTTTTCTACAA  1 
+Pf3D7_04_v3:613600-61390 (  169) CACAGCAATTTTTGC  1 
+Pf3D7_12_v3:785570-78587 (  266) TTCAACTTTAGCTGA  1 
+Pf3D7_03_v3:115600-11590 (  102) AAAATGAATCCATAC  1 
+Pf3D7_04_v3:1120800-1121 (   40) ATCATAATCACAAGA  1 
+Pf3D7_13_v3:124416-12471 (  139) TAGATCAATAAATGC  1 
+Pf3D7_08_v3:1381836-1382 (  270) TTAAAAAATATATAT  1 
+Pf3D7_05_v3:41404-41704  (  150) CAAAAAATAAAATGA  1 
+Pf3D7_07_v3:610523-61082 (  104) TTAATAATGATACAA  1 
+Pf3D7_02_v3:72200-72500  (   99) TTAATAATTATAGAA  1 
+Pf3D7_12_v3:763643-76394 (  240) AAAAAAAACATTTAA  1 
+Pf3D7_13_v3:2820777-2821 (  191) AAAAAATTCATATTC  1 
+Pf3D7_10_v3:1568708-1569 (   50) TAAAACATTTCATAT  1 
+Pf3D7_14_v3:3147189-3147 (  114) TGAAAATTTCTCTTC  1 
+Pf3D7_12_v3:64337-64637  (  230) TACATATTTACTATC  1 
+Pf3D7_04_v3:993500-99380 (  228) TTAAAAATCAATAGC  1 
+Pf3D7_03_v3:1002571-1002 (  248) ATAATAATTCTTTAA  1 
+Pf3D7_01_v3:522580-52288 (  235) CATAAAATTAAACAA  1 
+Pf3D7_04_v3:171400-17170 (  218) TAAATTTTTCTAAAA  1 
+Pf3D7_11_v3:1982353-1982 (  275) TAATAAAATATTTGA  1 
+Pf3D7_11_v3:111430-11173 (   89) TTAAATTTAATTCAC  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 15 n= 13456 bayes= 10.2818 E= 7.0e+000 
+  -168    199  -1217     38 
+    59   -192    -92    -46 
+    69    178   -192   -426 
+   123  -1217  -1217   -426 
+    44  -1217   -192     -2 
+    73     67   -192   -146 
+    54  -1217  -1217     -9 
+   -18  -1217   -192     54 
+  -268     89   -192     86 
+    94     67  -1217   -268 
+  -194    141   -192     64 
+    69    -33  -1217    -68 
+  -194     89   -192     78 
+    73  -1217    154   -268 
+    26    217  -1217   -168 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 15 nsites= 46 E= 7.0e+000 
+ 0.130435  0.326087  0.000000  0.543478 
+ 0.630435  0.021739  0.043478  0.304348 
+ 0.673913  0.282609  0.021739  0.021739 
+ 0.978261  0.000000  0.000000  0.021739 
+ 0.565217  0.000000  0.021739  0.413043 
+ 0.695652  0.130435  0.021739  0.152174 
+ 0.608696  0.000000  0.000000  0.391304 
+ 0.369565  0.000000  0.021739  0.608696 
+ 0.065217  0.152174  0.021739  0.760870 
+ 0.804348  0.130435  0.000000  0.065217 
+ 0.108696  0.217391  0.021739  0.652174 
+ 0.673913  0.065217  0.000000  0.260870 
+ 0.108696  0.152174  0.021739  0.717391 
+ 0.695652  0.000000  0.239130  0.065217 
+ 0.500000  0.369565  0.000000  0.130435 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif YAAAWAWWTATATAM MEME-7 regular expression
+--------------------------------------------------------------------------------
+[TC][AT][AC]A[AT]A[AT][TA]TA[TC][AT]T[AG][AC]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 4343.47 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AMAAAAAA MEME-8	width =   8  sites =  46  llr = 283  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 Description
+--------------------------------------------------------------------------------
+Simplified        A  96a7a79a
+pos.-specific     C  14::::1:
+probability       G  :::3:3::
+matrix            T  ::::::::
+
+         bits    3.6         
+                 3.2         
+                 2.9         
+                 2.5         
+Relative         2.2         
+Entropy          1.8         
+(8.9 bits)       1.4         
+                 1.1 ********
+                 0.7 ********
+                 0.4 ********
+                 0.0 --------
+
+Multilevel           AAAAAAAA
+consensus             C G G  
+sequence                     
+                             
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value              Site
+-------------            ------  ----- ---------            --------
+Pf3D7_08_v3:85300-85600      -    119  7.06e-06 ATCCAATGGA ACAGAGAA GAGAAGAAGA
+Pf3D7_12_v3:64337-64637      +    110  4.44e-05 TTAAAAATGT ACAGAAAA TTGGAATTAT
+Pf3D7_06_v3:73962-74262      +     45  4.44e-05 ATATATTTTT ACAGAAAA AAAAAAAAAA
+Pf3D7_09_v3:78875-79175      -     94  8.04e-05 TTCTTTCAGA ACAAAGAA TTCTAATAAT
+Pf3D7_03_v3:138973-13927     +    258  8.04e-05 TCCAAATTAA ACAAAGAA GAAAGAGAAA
+Pf3D7_02_v3:380829-38112     -    133  1.25e-04 TATTCATTAT AAAGAGAA AAAGAGAGAA
+Pf3D7_01_v3:102283-10258     -     60  1.25e-04 TTATTTTCAT AAAGAGAA ATCGTTCATT
+Pf3D7_10_v3:61366-61966      +    575  1.32e-04 AGAATATGTA CCAAAGAA GGATATATAT
+Pf3D7_13_v3:124416-12471     +     75  3.15e-04 TTTTAAATGA ACAAAAAA AAAAAAAAAA
+Pf3D7_12_v3:1746143-1746     +     30  3.15e-04 ATGAAACAAA ACAAAAAA ACAGAAAGAA
+Pf3D7_08_v3:466568-46686     -     32  3.15e-04 CAGCAAACAT ACAAAAAA TATATACATA
+Pf3D7_08_v3:426700-42700     -     26  3.15e-04 TATAAACAAA ACAAAAAA ATAAAATTTC
+Pf3D7_07_v3:508173-50847     -    248  3.15e-04 GTATGTACGC ACAAAAAA AATATATATA
+Pf3D7_05_v3:41404-41704      -     20  3.15e-04 ACGGAAAATA ACAAAAAA TAACGTTTTA
+Pf3D7_04_v3:934730-93503     +     55  3.15e-04 TACATTTTGT ACAAAAAA GAAAGCCTAA
+Pf3D7_04_v3:545686-54598     +     93  3.15e-04 TACATATTAT ACAAAAAA AAAAAAATTA
+Pf3D7_14_v3:3147189-3147     -    210  5.21e-04 AAACACAACA AAAGAAAA AACTAGGATT
+Pf3D7_14_v3:43094-43394      +    289  5.21e-04 AATCTTTATT AAAGAAAA AGAA      
+Pf3D7_12_v3:2161616-2161     -     68  5.21e-04 CATCATACCA AAAGAAAA AAAAAATATT
+Pf3D7_12_v3:763643-76394     -    104  5.21e-04 TATATATAAT AAAGAAAA ATAATAATAA
+Pf3D7_04_v3:993500-99380     -    217  5.21e-04 CAATAGCTTA AAAGAAAA TATAGAAAAT
+Pf3D7_03_v3:1002571-1002     -     11  5.21e-04 CATATATATA AAAGAAAA ATAATAAATT
+Pf3D7_01_v3:522580-52288     -    202  5.21e-04 AAAAAAAAAA AAAGAAAA GAAAAGAAAG
+Pf3D7_12_v3:1684461-1684     -     61  7.47e-04 TATCATCAAA AAAAAGAA TCATATATAT
+Pf3D7_11_v3:111430-11173     -     44  7.47e-04 AGAGTGGAAT AAAAAGAA CTATCTATAA
+Pf3D7_07_v3:93142-93442      -    208  7.47e-04 AAAAAAAAAA AAAAAGAA GAAAAAGAAA
+Pf3D7_03_v3:115600-11590     +     39  8.07e-04 AGAAACCTTG ACAAGGAA ACCATATCAT
+Pf3D7_08_v3:1381836-1382     -    170  8.44e-04 TGTATATTCT ACAAAACA ATTGAATTCC
+Pf3D7_06_v3:1301700-1302     -    259  9.17e-04 AAAGATATAT CAAAAGAA TTAAAATAAA
+Pf3D7_04_v3:613600-61390     +    203  9.17e-04 CATCCAAATC CAAAAGAA TTAGTGGCAA
+Pf3D7_12_v3:785570-78587     -    222  1.85e-03 TAAGGAAAAA AAAAAAAA AATAATAATA
+Pf3D7_11_v3:1982353-1982     +     70  1.85e-03 AAAATATAAT AAAAAAAA AAATCTACAT
+Pf3D7_10_v3:1568708-1569     +    112  1.85e-03 AGATGAATAT AAAAAAAA GGAAAGTTGG
+Pf3D7_09_v3:1446628-1446     +     88  1.85e-03 TGAAAAAAAA AAAAAAAA AAAAAAATAT
+Pf3D7_07_v3:1378700-1379     -     80  1.85e-03 TATATTAAAA AAAAAAAA AAAAAAATAT
+Pf3D7_06_v3:745300-74560     +     90  1.85e-03 TTTTTGGAGA AAAAAAAA TTCTTACACC
+Pf3D7_05_v3:1318230-1318     +     39  1.85e-03 TTAAAAAAAA AAAAAAAA AAGATAACAT
+Pf3D7_04_v3:171400-17170     +    109  1.85e-03 ACAACACATC AAAAAAAA TACAACAACC
+Pf3D7_03_v3:80056-80356      -    118  1.85e-03 GATATGAGAA AAAAAAAA AAAAAAAAAA
+Pf3D7_02_v3:835100-83540     -     39  1.85e-03 AAAAAAAAAA AAAAAAAA AAAAAAAAGA
+Pf3D7_02_v3:360527-36082     -    195  1.85e-03 ATTTTTAAAA AAAAAAAA AAAGTGTAGA
+Pf3D7_06_v3:725049-72534     +    206  1.94e-03 TATATATATC CCAAAACA CCCACACATA
+Pf3D7_04_v3:1120800-1121     +    173  1.98e-03 GTGATAGTAA CCACAAAA GTGATAGTAA
+Pf3D7_07_v3:610523-61082     -     64  2.25e-03 TACTTTTGAT AAAGGAAA AGATGCATAC
+Pf3D7_13_v3:2820777-2821     +    236  2.50e-03 TTTTAGATAT AAAAAACA ATTCCAATGA
+Pf3D7_02_v3:72200-72500      +    181  2.68e-03 TCAAAAATAA AAACAAAA TAATAAAGTG
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_08_v3:85300-85600           7.1e-06  118_[-8]_174
+Pf3D7_12_v3:64337-64637           4.4e-05  109_[+8]_183
+Pf3D7_06_v3:73962-74262           4.4e-05  44_[+8]_248
+Pf3D7_09_v3:78875-79175             8e-05  93_[-8]_199
+Pf3D7_03_v3:138973-13927            8e-05  257_[+8]_35
+Pf3D7_02_v3:380829-38112          0.00012  132_[-8]_160
+Pf3D7_01_v3:102283-10258          0.00012  59_[-8]_233
+Pf3D7_10_v3:61366-61966           0.00013  574_[+8]_18
+Pf3D7_13_v3:124416-12471          0.00031  74_[+8]_218
+Pf3D7_12_v3:1746143-1746          0.00031  29_[+8]_263
+Pf3D7_08_v3:466568-46686          0.00031  31_[-8]_261
+Pf3D7_08_v3:426700-42700          0.00031  25_[-8]_267
+Pf3D7_07_v3:508173-50847          0.00031  247_[-8]_45
+Pf3D7_05_v3:41404-41704           0.00031  19_[-8]_273
+Pf3D7_04_v3:934730-93503          0.00031  54_[+8]_238
+Pf3D7_04_v3:545686-54598          0.00031  92_[+8]_200
+Pf3D7_14_v3:3147189-3147          0.00052  209_[-8]_83
+Pf3D7_14_v3:43094-43394           0.00052  288_[+8]_4
+Pf3D7_12_v3:2161616-2161          0.00052  67_[-8]_225
+Pf3D7_12_v3:763643-76394          0.00052  103_[-8]_189
+Pf3D7_04_v3:993500-99380          0.00052  216_[-8]_76
+Pf3D7_03_v3:1002571-1002          0.00052  10_[-8]_282
+Pf3D7_01_v3:522580-52288          0.00052  201_[-8]_91
+Pf3D7_12_v3:1684461-1684          0.00075  60_[-8]_232
+Pf3D7_11_v3:111430-11173          0.00075  43_[-8]_249
+Pf3D7_07_v3:93142-93442           0.00075  207_[-8]_85
+Pf3D7_03_v3:115600-11590          0.00081  38_[+8]_254
+Pf3D7_08_v3:1381836-1382          0.00084  169_[-8]_123
+Pf3D7_06_v3:1301700-1302          0.00092  258_[-8]_34
+Pf3D7_04_v3:613600-61390          0.00092  202_[+8]_90
+Pf3D7_12_v3:785570-78587           0.0018  221_[-8]_71
+Pf3D7_11_v3:1982353-1982           0.0018  69_[+8]_223
+Pf3D7_10_v3:1568708-1569           0.0018  111_[+8]_181
+Pf3D7_09_v3:1446628-1446           0.0018  87_[+8]_205
+Pf3D7_07_v3:1378700-1379           0.0018  79_[-8]_213
+Pf3D7_06_v3:745300-74560           0.0018  89_[+8]_203
+Pf3D7_05_v3:1318230-1318           0.0018  38_[+8]_254
+Pf3D7_04_v3:171400-17170           0.0018  108_[+8]_184
+Pf3D7_03_v3:80056-80356            0.0018  117_[-8]_175
+Pf3D7_02_v3:835100-83540           0.0018  38_[-8]_254
+Pf3D7_02_v3:360527-36082           0.0018  194_[-8]_98
+Pf3D7_06_v3:725049-72534           0.0019  205_[+8]_87
+Pf3D7_04_v3:1120800-1121            0.002  172_[+8]_120
+Pf3D7_07_v3:610523-61082           0.0022  63_[-8]_229
+Pf3D7_13_v3:2820777-2821           0.0025  235_[+8]_57
+Pf3D7_02_v3:72200-72500            0.0027  180_[+8]_112
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF AMAAAAAA width=8 seqs=46
+Pf3D7_08_v3:85300-85600  (  119) ACAGAGAA  1 
+Pf3D7_12_v3:64337-64637  (  110) ACAGAAAA  1 
+Pf3D7_06_v3:73962-74262  (   45) ACAGAAAA  1 
+Pf3D7_09_v3:78875-79175  (   94) ACAAAGAA  1 
+Pf3D7_03_v3:138973-13927 (  258) ACAAAGAA  1 
+Pf3D7_02_v3:380829-38112 (  133) AAAGAGAA  1 
+Pf3D7_01_v3:102283-10258 (   60) AAAGAGAA  1 
+Pf3D7_10_v3:61366-61966  (  575) CCAAAGAA  1 
+Pf3D7_13_v3:124416-12471 (   75) ACAAAAAA  1 
+Pf3D7_12_v3:1746143-1746 (   30) ACAAAAAA  1 
+Pf3D7_08_v3:466568-46686 (   32) ACAAAAAA  1 
+Pf3D7_08_v3:426700-42700 (   26) ACAAAAAA  1 
+Pf3D7_07_v3:508173-50847 (  248) ACAAAAAA  1 
+Pf3D7_05_v3:41404-41704  (   20) ACAAAAAA  1 
+Pf3D7_04_v3:934730-93503 (   55) ACAAAAAA  1 
+Pf3D7_04_v3:545686-54598 (   93) ACAAAAAA  1 
+Pf3D7_14_v3:3147189-3147 (  210) AAAGAAAA  1 
+Pf3D7_14_v3:43094-43394  (  289) AAAGAAAA  1 
+Pf3D7_12_v3:2161616-2161 (   68) AAAGAAAA  1 
+Pf3D7_12_v3:763643-76394 (  104) AAAGAAAA  1 
+Pf3D7_04_v3:993500-99380 (  217) AAAGAAAA  1 
+Pf3D7_03_v3:1002571-1002 (   11) AAAGAAAA  1 
+Pf3D7_01_v3:522580-52288 (  202) AAAGAAAA  1 
+Pf3D7_12_v3:1684461-1684 (   61) AAAAAGAA  1 
+Pf3D7_11_v3:111430-11173 (   44) AAAAAGAA  1 
+Pf3D7_07_v3:93142-93442  (  208) AAAAAGAA  1 
+Pf3D7_03_v3:115600-11590 (   39) ACAAGGAA  1 
+Pf3D7_08_v3:1381836-1382 (  170) ACAAAACA  1 
+Pf3D7_06_v3:1301700-1302 (  259) CAAAAGAA  1 
+Pf3D7_04_v3:613600-61390 (  203) CAAAAGAA  1 
+Pf3D7_12_v3:785570-78587 (  222) AAAAAAAA  1 
+Pf3D7_11_v3:1982353-1982 (   70) AAAAAAAA  1 
+Pf3D7_10_v3:1568708-1569 (  112) AAAAAAAA  1 
+Pf3D7_09_v3:1446628-1446 (   88) AAAAAAAA  1 
+Pf3D7_07_v3:1378700-1379 (   80) AAAAAAAA  1 
+Pf3D7_06_v3:745300-74560 (   90) AAAAAAAA  1 
+Pf3D7_05_v3:1318230-1318 (   39) AAAAAAAA  1 
+Pf3D7_04_v3:171400-17170 (  109) AAAAAAAA  1 
+Pf3D7_03_v3:80056-80356  (  118) AAAAAAAA  1 
+Pf3D7_02_v3:835100-83540 (   39) AAAAAAAA  1 
+Pf3D7_02_v3:360527-36082 (  195) AAAAAAAA  1 
+Pf3D7_06_v3:725049-72534 (  206) CCAAAACA  1 
+Pf3D7_04_v3:1120800-1121 (  173) CCACAAAA  1 
+Pf3D7_07_v3:610523-61082 (   64) AAAGGAAA  1 
+Pf3D7_13_v3:2820777-2821 (  236) AAAAAACA  1 
+Pf3D7_02_v3:72200-72500  (  181) AAACAAAA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 8 n= 13778 bayes= 8.96059 E= 7.0e+000 
+   109     41  -1217  -1217 
+    54    225  -1217  -1217 
+   126  -1217  -1217  -1217 
+    69    -92    178  -1217 
+   119  -1217    -92  -1217 
+    82  -1217    167  -1217 
+   116    -33  -1217  -1217 
+   126  -1217  -1217  -1217 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 8 nsites= 46 E= 7.0e+000 
+ 0.891304  0.108696  0.000000  0.000000 
+ 0.608696  0.391304  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.673913  0.043478  0.282609  0.000000 
+ 0.956522  0.000000  0.043478  0.000000 
+ 0.739130  0.000000  0.260870  0.000000 
+ 0.934783  0.065217  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AMAAAAAA MEME-8 regular expression
+--------------------------------------------------------------------------------
+A[AC]A[AG]A[AG]AA
+--------------------------------------------------------------------------------
+
+
+
+
+Time 4835.60 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AWAATAHWTAAAAWHRWAHA MEME-9	width =  20  sites =  46  llr = 245  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 Description
+--------------------------------------------------------------------------------
+Simplified        A  a4872846385775454538
+pos.-specific     C  :11:212:::21:2312231
+probability       G  :::1::1:111111:3:::1
+matrix            T  :513623461213231423:
+
+         bits    3.6                     
+                 3.2                     
+                 2.9                     
+                 2.5                     
+Relative         2.2                     
+Entropy          1.8                     
+(7.7 bits)       1.4                     
+                 1.1 *                   
+                 0.7 * *      *         *
+                 0.4 * **** *** ** ** ***
+                 0.0 --------------------
+
+Multilevel           ATAATAAATAAAAAAAAATA
+consensus             A TC TTA T TTTGTTA 
+sequence                   C       C  CC 
+                                         
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                    Site      
+-------------            ------  ----- ---------            --------------------
+Pf3D7_13_v3:124416-12471     +    229  1.04e-06 TATAAATATA ACCAACCATAGAACCGCTCA AAATGAATTT
+Pf3D7_12_v3:763643-76394     +    209  2.82e-06 AAATTTAAAA ATAACACATAAAAAAGTAAA GAAAAAAAAC
+Pf3D7_14_v3:3147189-3147     -     23  5.99e-06 ATAAACATAA ATAATACAAGGAAACGAATA AAAGAACAAA
+Pf3D7_04_v3:545686-54598     +    253  7.17e-06 AAAAATATAT ATAACACATACAAATAAAAA CCACAAGAAA
+Pf3D7_08_v3:426700-42700     -    198  3.84e-05 TAATATGCGA ATATCAGATAAAACAACAAA ATAATATGAA
+Pf3D7_08_v3:466568-46686     -     41  6.07e-05 AAAAAAAAAA AAAAAAAAAAACAGCAAACA TACAAAAAAT
+Pf3D7_03_v3:1002571-1002     -    196  8.17e-05 ACAAATCAAT AAAATAGAAGCATCTGTTCA TAACAATTTG
+Pf3D7_07_v3:610523-61082     -    186  1.44e-04 ATTATTTTAT AAAATACATAAGAAAATATA TTAATGCAGA
+Pf3D7_13_v3:2820777-2821     -    112  1.64e-04 AATGAATCCA ACAATAAATAAAAATAAATA AATAAAAATA
+Pf3D7_03_v3:138973-13927     -    228  1.64e-04 TTAATTTGGA ATAATTATTAGCAACATTCA TGAAAAAAAC
+Pf3D7_06_v3:1301700-1302     +     68  1.88e-04 TATTGTAATA ATAATAAATAAATAAGTAAA CATTATATGA
+Pf3D7_01_v3:102283-10258     -    246  1.88e-04 GAATAAAATA AAAATAAAAAGAAAAGAAAA AATATAAATT
+Pf3D7_06_v3:725049-72534     +    167  2.44e-04 ATATCTAAAT ACTTCACATACATATACACG AAACACATAT
+Pf3D7_07_v3:508173-50847     +     10  2.77e-04  AATTATAAT ATATTATAAAAAACAGAATA TATATAATAA
+Pf3D7_04_v3:934730-93503     +    209  2.77e-04 ATCAACAAAA AAAATATATATAATCCACAA ATAATATATA
+Pf3D7_06_v3:73962-74262      +     76  4.03e-04 AAAATACATT AAAATAATTAAAATTATTCA TAAAAAGGAC
+Pf3D7_02_v3:835100-83540     -    260  4.03e-04 ATACATGCTT ATATATTATGAAAACAACCA TAAGATGATT
+Pf3D7_04_v3:613600-61390     +     42  4.54e-04 CGATTTGAAT ACAATTAAAACAATAGTTCA AGAAGTTAAA
+Pf3D7_12_v3:64337-64637      +     54  5.72e-04 ATATATTTAT ATATCTAAGATATCCCTCTA TAAGAGGAAA
+Pf3D7_10_v3:61366-61966      -    420  6.41e-04 GGTACATATT ATAACACTATCGTTCATACG TACGAAGAAT
+Pf3D7_08_v3:85300-85600      +    228  6.41e-04 TATAAAAATT ATAACCTCTTCCATCTCCCA TAAATGGAAC
+Pf3D7_03_v3:80056-80356      -     68  7.17e-04 CAAAAATTTA AAAATAAATAAATATAAATA TATATATATA
+Pf3D7_09_v3:1446628-1446     +    221  8.01e-04 ATATAATAAA ATAACATTAATAAATATACC ATATATATGT
+Pf3D7_07_v3:1378700-1379     -    277  8.01e-04       TTTT ATAATCTTTATAATCATCAA CTGTATTATC
+Pf3D7_12_v3:2161616-2161     -    183  8.93e-04 CATAAAATTA AAAACAAATAAAAAATAATA GGAACTCATA
+Pf3D7_06_v3:745300-74560     -    217  9.95e-04 TATATTATGA AAAAAACTTAACATTATATA TATATATATA
+Pf3D7_02_v3:72200-72500      -     35  1.10e-03 TCGATAGATT ATGATAATATCAAAAGTACA ATGAAATTAT
+Pf3D7_12_v3:1684461-1684     -    183  1.35e-03 TTTCAAATGT AACGTATTTAAATAAGCATG GTAAATGGAT
+Pf3D7_01_v3:522580-52288     -    133  1.49e-03 TATGCAAATC ATAATAAATTCATATATCAA ATTAGTTGAT
+Pf3D7_02_v3:360527-36082     +    142  1.65e-03 TATATATAAC AAAATATAGAACGTAAAATG TAACTCTTTT
+Pf3D7_14_v3:43094-43394      +    241  1.81e-03 TTATTATAAT ATAATTCTTAAATAAATAAA AAAAAAGAAT
+Pf3D7_07_v3:93142-93442      +    228  1.81e-03 TTTTTTTTTT AAATCATTTAAATTAAACAA AAAAAAAAAA
+Pf3D7_03_v3:115600-11590     +    217  1.99e-03 CAAAATAAGG AACAAAATAAGAACCAATTA GAGGTCAACT
+Pf3D7_12_v3:785570-78587     -    186  2.40e-03 AATAAATAAT AAATTAATAAATGGAACACA TATATATATA
+Pf3D7_11_v3:111430-11173     -    116  2.86e-03 AATATTTTAT AAAAAATAGGAAATTAAATA TACAACTTTT
+Pf3D7_12_v3:1746143-1746     +     99  3.39e-03 AATCCTTTTG AAAATATTTATCAATATTTA AAATAAAATA
+Pf3D7_04_v3:1120800-1121     +    193  3.68e-03 GATAGTAACC ACAAAAGTGATAGTAACCAC AAGAGCGATC
+Pf3D7_05_v3:41404-41704      +    265  4.33e-03 ATGAAGTATT ATATTACATTTAACTATTTA ATTACTATAA
+Pf3D7_10_v3:1568708-1569     -    132  5.07e-03 AAATTTCGAG AAAGTAATGAATTCACAAAA TTCCAACTTT
+Pf3D7_08_v3:1381836-1382     +     52  6.34e-03 ATTTTTAATA ATATTATATATAGAACATTA AAAGGAAATG
+Pf3D7_04_v3:993500-99380     -     34  7.30e-03 TGAAAAAATG ATATTAACTAATAATTTCCA AGAGAACAAT
+Pf3D7_11_v3:1982353-1982     -     34  7.82e-03 TTTTACCAAT AGAATTAAAAATAGAAACCA AAATATATAT
+Pf3D7_09_v3:78875-79175      -     34  8.95e-03 ATTATTAAAG ATATAATTTATATGCGATTC ATATGTTACA
+Pf3D7_02_v3:380829-38112     -     54  8.95e-03 TATTAATATT AATGTAAATATAAATGTTAA TATTGATATA
+Pf3D7_04_v3:171400-17170     +    257  9.55e-03 TGGTTAAATA AATTAAATGAAGAATGCAAA AATAATAACA
+Pf3D7_05_v3:1318230-1318     +     15  1.80e-02 ATAATGTGGT ATGGTTTATGAAACTTAAAA AAAAAAAAAA
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_13_v3:124416-12471            1e-06  228_[+9]_52
+Pf3D7_12_v3:763643-76394          2.8e-06  208_[+9]_72
+Pf3D7_14_v3:3147189-3147            6e-06  22_[-9]_258
+Pf3D7_04_v3:545686-54598          7.2e-06  252_[+9]_28
+Pf3D7_08_v3:426700-42700          3.8e-05  197_[-9]_83
+Pf3D7_08_v3:466568-46686          6.1e-05  40_[-9]_240
+Pf3D7_03_v3:1002571-1002          8.2e-05  195_[-9]_85
+Pf3D7_07_v3:610523-61082          0.00014  185_[-9]_95
+Pf3D7_13_v3:2820777-2821          0.00016  111_[-9]_169
+Pf3D7_03_v3:138973-13927          0.00016  227_[-9]_53
+Pf3D7_06_v3:1301700-1302          0.00019  67_[+9]_213
+Pf3D7_01_v3:102283-10258          0.00019  245_[-9]_35
+Pf3D7_06_v3:725049-72534          0.00024  166_[+9]_114
+Pf3D7_07_v3:508173-50847          0.00028  9_[+9]_271
+Pf3D7_04_v3:934730-93503          0.00028  208_[+9]_72
+Pf3D7_06_v3:73962-74262            0.0004  75_[+9]_205
+Pf3D7_02_v3:835100-83540           0.0004  259_[-9]_21
+Pf3D7_04_v3:613600-61390          0.00045  41_[+9]_239
+Pf3D7_12_v3:64337-64637           0.00057  53_[+9]_227
+Pf3D7_10_v3:61366-61966           0.00064  419_[-9]_161
+Pf3D7_08_v3:85300-85600           0.00064  227_[+9]_53
+Pf3D7_03_v3:80056-80356           0.00072  67_[-9]_213
+Pf3D7_09_v3:1446628-1446           0.0008  220_[+9]_60
+Pf3D7_07_v3:1378700-1379           0.0008  276_[-9]_4
+Pf3D7_12_v3:2161616-2161          0.00089  182_[-9]_98
+Pf3D7_06_v3:745300-74560          0.00099  216_[-9]_64
+Pf3D7_02_v3:72200-72500            0.0011  34_[-9]_246
+Pf3D7_12_v3:1684461-1684           0.0014  182_[-9]_98
+Pf3D7_01_v3:522580-52288           0.0015  132_[-9]_148
+Pf3D7_02_v3:360527-36082           0.0016  141_[+9]_139
+Pf3D7_14_v3:43094-43394            0.0018  240_[+9]_40
+Pf3D7_07_v3:93142-93442            0.0018  227_[+9]_53
+Pf3D7_03_v3:115600-11590            0.002  216_[+9]_64
+Pf3D7_12_v3:785570-78587           0.0024  185_[-9]_95
+Pf3D7_11_v3:111430-11173           0.0029  115_[-9]_165
+Pf3D7_12_v3:1746143-1746           0.0034  98_[+9]_182
+Pf3D7_04_v3:1120800-1121           0.0037  192_[+9]_88
+Pf3D7_05_v3:41404-41704            0.0043  264_[+9]_16
+Pf3D7_10_v3:1568708-1569           0.0051  131_[-9]_149
+Pf3D7_08_v3:1381836-1382           0.0063  51_[+9]_229
+Pf3D7_04_v3:993500-99380           0.0073  33_[-9]_247
+Pf3D7_11_v3:1982353-1982           0.0078  33_[-9]_247
+Pf3D7_09_v3:78875-79175            0.0089  33_[-9]_247
+Pf3D7_02_v3:380829-38112           0.0089  53_[-9]_227
+Pf3D7_04_v3:171400-17170           0.0096  256_[+9]_24
+Pf3D7_05_v3:1318230-1318            0.018  14_[+9]_266
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF AWAATAHWTAAAAWHRWAHA width=20 seqs=46
+Pf3D7_13_v3:124416-12471 (  229) ACCAACCATAGAACCGCTCA  1 
+Pf3D7_12_v3:763643-76394 (  209) ATAACACATAAAAAAGTAAA  1 
+Pf3D7_14_v3:3147189-3147 (   23) ATAATACAAGGAAACGAATA  1 
+Pf3D7_04_v3:545686-54598 (  253) ATAACACATACAAATAAAAA  1 
+Pf3D7_08_v3:426700-42700 (  198) ATATCAGATAAAACAACAAA  1 
+Pf3D7_08_v3:466568-46686 (   41) AAAAAAAAAAACAGCAAACA  1 
+Pf3D7_03_v3:1002571-1002 (  196) AAAATAGAAGCATCTGTTCA  1 
+Pf3D7_07_v3:610523-61082 (  186) AAAATACATAAGAAAATATA  1 
+Pf3D7_13_v3:2820777-2821 (  112) ACAATAAATAAAAATAAATA  1 
+Pf3D7_03_v3:138973-13927 (  228) ATAATTATTAGCAACATTCA  1 
+Pf3D7_06_v3:1301700-1302 (   68) ATAATAAATAAATAAGTAAA  1 
+Pf3D7_01_v3:102283-10258 (  246) AAAATAAAAAGAAAAGAAAA  1 
+Pf3D7_06_v3:725049-72534 (  167) ACTTCACATACATATACACG  1 
+Pf3D7_07_v3:508173-50847 (   10) ATATTATAAAAAACAGAATA  1 
+Pf3D7_04_v3:934730-93503 (  209) AAAATATATATAATCCACAA  1 
+Pf3D7_06_v3:73962-74262  (   76) AAAATAATTAAAATTATTCA  1 
+Pf3D7_02_v3:835100-83540 (  260) ATATATTATGAAAACAACCA  1 
+Pf3D7_04_v3:613600-61390 (   42) ACAATTAAAACAATAGTTCA  1 
+Pf3D7_12_v3:64337-64637  (   54) ATATCTAAGATATCCCTCTA  1 
+Pf3D7_10_v3:61366-61966  (  420) ATAACACTATCGTTCATACG  1 
+Pf3D7_08_v3:85300-85600  (  228) ATAACCTCTTCCATCTCCCA  1 
+Pf3D7_03_v3:80056-80356  (   68) AAAATAAATAAATATAAATA  1 
+Pf3D7_09_v3:1446628-1446 (  221) ATAACATTAATAAATATACC  1 
+Pf3D7_07_v3:1378700-1379 (  277) ATAATCTTTATAATCATCAA  1 
+Pf3D7_12_v3:2161616-2161 (  183) AAAACAAATAAAAAATAATA  1 
+Pf3D7_06_v3:745300-74560 (  217) AAAAAACTTAACATTATATA  1 
+Pf3D7_02_v3:72200-72500  (   35) ATGATAATATCAAAAGTACA  1 
+Pf3D7_12_v3:1684461-1684 (  183) AACGTATTTAAATAAGCATG  1 
+Pf3D7_01_v3:522580-52288 (  133) ATAATAAATTCATATATCAA  1 
+Pf3D7_02_v3:360527-36082 (  142) AAAATATAGAACGTAAAATG  1 
+Pf3D7_14_v3:43094-43394  (  241) ATAATTCTTAAATAAATAAA  1 
+Pf3D7_07_v3:93142-93442  (  228) AAATCATTTAAATTAAACAA  1 
+Pf3D7_03_v3:115600-11590 (  217) AACAAAATAAGAACCAATTA  1 
+Pf3D7_12_v3:785570-78587 (  186) AAATTAATAAATGGAACACA  1 
+Pf3D7_11_v3:111430-11173 (  116) AAAAAATAGGAAATTAAATA  1 
+Pf3D7_12_v3:1746143-1746 (   99) AAAATATTTATCAATATTTA  1 
+Pf3D7_04_v3:1120800-1121 (  193) ACAAAAGTGATAGTAACCAC  1 
+Pf3D7_05_v3:41404-41704  (  265) ATATTACATTTAACTATTTA  1 
+Pf3D7_10_v3:1568708-1569 (  132) AAAGTAATGAATTCACAAAA  1 
+Pf3D7_08_v3:1381836-1382 (   52) ATATTATATATAGAACATTA  1 
+Pf3D7_04_v3:993500-99380 (   34) ATATTAACTAATAATTTCCA  1 
+Pf3D7_11_v3:1982353-1982 (   34) AGAATTAAAAATAGAAACCA  1 
+Pf3D7_09_v3:78875-79175  (   34) ATATAATTTATATGCGATTC  1 
+Pf3D7_02_v3:380829-38112 (   54) AATGTAAATATAAATGTTAA  1 
+Pf3D7_04_v3:171400-17170 (  257) AATTAAATGAAGAATGCAAA  1 
+Pf3D7_05_v3:1318230-1318 (   15) ATGGTTTATGAAACTTAAAA  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 20 n= 13226 bayes= 8.90148 E= 7.0e+000 
+   126  -1217  -1217  -1217 
+    -2     41   -192     13 
+    98    -33    -92   -268 
+    64  -1217      8    -68 
+  -109    141  -1217     49 
+    90    -33  -1217   -146 
+    -2    141    -33    -46 
+    49    -92  -1217    -18 
+   -68  -1217     67     54 
+    90  -1217     41   -194 
+    26    108     41    -94 
+    78     67    -33   -226 
+    64  -1217      8    -68 
+    19    125      8    -81 
+    -9    167  -1217    -26 
+    38      8    178   -226 
+    -2    108  -1217     -2 
+    38    141  -1217    -81 
+   -36    199  -1217    -26 
+   102    -33      8  -1217 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 20 nsites= 46 E= 7.0e+000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.413043  0.108696  0.021739  0.456522 
+ 0.826087  0.065217  0.043478  0.065217 
+ 0.652174  0.000000  0.086957  0.260870 
+ 0.195652  0.217391  0.000000  0.586957 
+ 0.782609  0.065217  0.000000  0.152174 
+ 0.413043  0.217391  0.065217  0.304348 
+ 0.586957  0.043478  0.000000  0.369565 
+ 0.260870  0.000000  0.130435  0.608696 
+ 0.782609  0.000000  0.108696  0.108696 
+ 0.500000  0.173913  0.108696  0.217391 
+ 0.717391  0.130435  0.065217  0.086957 
+ 0.652174  0.000000  0.086957  0.260870 
+ 0.478261  0.195652  0.086957  0.239130 
+ 0.391304  0.260870  0.000000  0.347826 
+ 0.543478  0.086957  0.282609  0.086957 
+ 0.413043  0.173913  0.000000  0.413043 
+ 0.543478  0.217391  0.000000  0.239130 
+ 0.326087  0.326087  0.000000  0.347826 
+ 0.847826  0.065217  0.086957  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AWAATAHWTAAAAWHRWAHA MEME-9 regular expression
+--------------------------------------------------------------------------------
+A[TA]A[AT][TC]A[ATC][AT][TA]A[AT]A[AT][AT][ATC][AG][AT][ATC][TAC]A
+--------------------------------------------------------------------------------
+
+
+
+
+Time 5313.89 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+MOTIF TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10	width =  28  sites =  46  llr = 235  p-value = 1.0e+000  E-value = 7.0e+000
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 Description
+--------------------------------------------------------------------------------
+Simplified        A  :335333423223424234526343546
+pos.-specific     C  :::1:11:::1222:1::::1:1:2123
+probability       G  :1:::12::1:::::2:21::212:::1
+matrix            T  957475467675547485557254545:
+
+         bits    3.6                             
+                 3.2                             
+                 2.9                             
+                 2.5                             
+Relative         2.2                             
+Entropy          1.8                             
+(7.4 bits)       1.4                             
+                 1.1                             
+                 0.7 *                          *
+                 0.4 * * *  ** ** ** ** ***     *
+                 0.0 ----------------------------
+
+Multilevel           TTTATTTTTTTTTTTTTTTATATATATA
+consensus             AATAAAAAA AAAAA AAT TATATAC
+sequence                        C C   G          
+                                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name            Strand  Start   P-value                        Site          
+-------------            ------  ----- ---------            ----------------------------
+Pf3D7_08_v3:85300-85600      -    172  2.01e-07 CAACATATGG TATATGGAAGACCCTATTATTGGGTACC TCCACCCCCA
+Pf3D7_06_v3:73962-74262      +    167  3.17e-07 AAAATTTTTT TTTTTTTTTTTCACTTTGATTATTTAAA AAAAAGAATA
+Pf3D7_07_v3:93142-93442      +     84  7.66e-07 CTTTTTTTTT TTTTTTTTTTTTTTTTTTTATATTCAAC TTCAAAAAAA
+Pf3D7_02_v3:380829-38112     -     79  5.64e-06 TTCTTTTTTC TTTTTTCTTTTTTCTTTTTTTATTATTA ATATTAATGT
+Pf3D7_08_v3:426700-42700     +     52  9.73e-06 TAGAAAGACA TGTTATGTTTTTTCTTTATATATATTAA TAAAATATAT
+Pf3D7_13_v3:124416-12471     -    269  1.38e-05       CTCT TTTTTTTATTTCATTTTATTTATATTTC CTTTGAATTT
+Pf3D7_12_v3:785570-78587     +     12  1.64e-05 TAAATCATAT TATCTTGTTTTCTAATTAATTGTATACA TGCAGGGTCT
+Pf3D7_07_v3:1378700-1379     -      9  2.29e-05 TATATAAATA TTTATATTTTTTTATATTTTTTTACACA TTATTGTA  
+Pf3D7_10_v3:61366-61966      -    512  4.36e-05 GAAATTGTTG TTTCACATTTTTATTCTTATTACACACC TAAATATAAA
+Pf3D7_06_v3:725049-72534     -     37  5.92e-05 GGTGTTTGGA TGTATATATATATCTGTTGATGTATATG TGTTTCTGTA
+Pf3D7_03_v3:138973-13927     -    116  7.98e-05 GCATGTTGTA GGTATATTTTTTCATGTATACGTATAAA AAAATATATA
+Pf3D7_12_v3:1684461-1684     +    227  1.06e-04 ACAATTTATC TTTATGGTATCCTTATATTTTAGGATTC AATATTACAA
+Pf3D7_04_v3:1120800-1121     -    110  1.85e-04 CGCTCTTGTG GTTATGATCGCTCTTGTGGTTATGATCG CTCATGTGGT
+Pf3D7_12_v3:763643-76394     +    154  2.73e-04 TGTATTTTTT TTTTTTTTTTCCCATTTTAAATAGTAAA ATGATTATAA
+Pf3D7_08_v3:466568-46686     +    254  3.51e-04 TGCATTAGGT TTTTTTCTTTTTTTATATAATATGTAAA TAATTATGTA
+Pf3D7_02_v3:835100-83540     +    123  4.47e-04 TTCTTTTAAT TTAAACATTATTATTTTGTTTATAACAC CGGATTATCA
+Pf3D7_11_v3:1982353-1982     -    227  5.65e-04 CACCACATAA TTTATTTATTCCATTATACTCATATAAA ATTCTAAAAT
+Pf3D7_04_v3:613600-61390     +    134  7.92e-04 CCAATTAAGT TTTTTGAAAATTTTGTTGAAAATGTAAC AAGAATGGCA
+Pf3D7_03_v3:1002571-1002     +    266  8.84e-04 TTATTATTTC TTTTATATTTTTCATGATAATTATTTTC TATATCA   
+Pf3D7_01_v3:522580-52288     -     68  8.84e-04 TTCATTTAAT TAAATTTTTTTCTTTTTACTCTTTTACA ACATATATAT
+Pf3D7_06_v3:745300-74560     -    145  9.84e-04 TATATTTATT TATTAATTTATTTATATTTATATTTATA TTTGTATATA
+Pf3D7_11_v3:111430-11173     -    272  1.09e-03          T TATATTTTATTTTTTATGAAAATAATAA TCATTGTTTT
+Pf3D7_02_v3:72200-72500      +      6  1.09e-03      CGTGG TAAACTCATTTTTTTATGTATAATTTCA TTGTACTTTT
+Pf3D7_03_v3:115600-11590     -    186  1.21e-03 TTTTGTTCCT TATTTTGGTCTACATCTGAAAGATCATC CTCCTCTTCC
+Pf3D7_09_v3:1446628-1446     +    103  1.34e-03 AAAAAAAAAA TATATATATATATATATATATGTATATA TATATATGTA
+Pf3D7_12_v3:64337-64637      -    121  1.48e-03 TATTTATATA TATATTGATATTCTATCTTTTATAATTC CAATTTTCTG
+Pf3D7_07_v3:508173-50847     -     83  1.48e-03 TATATACACA TTTTTATTTATTTATATTTTAAATATTC CAATGTTTCT
+Pf3D7_04_v3:545686-54598     +    220  1.48e-03 AAAATATGTA TTTATATATTTTACAATGAAAAAAAAAA TATATATAAC
+Pf3D7_06_v3:1301700-1302     -    173  1.64e-03 CATCATATCT TTTATTGTATTAAATCATTTTACTTCAG ATTAATTTAC
+Pf3D7_04_v3:993500-99380     +    141  1.81e-03 GATTAGATTC TTTTTGATTGACAAAATTTTTAAGGCTA ATAACCTCAT
+Pf3D7_08_v3:1381836-1382     +    241  3.12e-03 TAAATAATAT TTATTAATTATATATATATATATATATA TATATATATT
+Pf3D7_05_v3:1318230-1318     -     92  3.40e-03 TTCTACTCAA TATAATATTGTAAAGATTTATAGTTCAG ATAAAATTGA
+Pf3D7_14_v3:3147189-3147     -    225  3.70e-03 CTCCTCTTCG TATATAGAATAATCTATAAACACACAAA CACAACAAAA
+Pf3D7_12_v3:2161616-2161     -    110  4.02e-03 GATAATGTAT TTATAATATATATATATATATATATATA TATATATAAT
+Pf3D7_07_v3:610523-61082     +    141  5.53e-03 ATATGCAACA TTAATTAATAACTCTTATTTTTATCTAA ACTGTCCTCT
+Pf3D7_03_v3:80056-80356      +    263  6.42e-03 ATGTGTACTC TTTAATATATTTACTTTTATATATTAAA TTTTTTTTCG
+Pf3D7_04_v3:934730-93503     -    232  7.43e-03 ATTTTTTGTA TGTTTGCATTTTTTTGTTAATTATATAT TATTTGTGGA
+Pf3D7_05_v3:41404-41704      +    166  8.54e-03 TATTTTTTGA TGAGAAATTTTTTTAATATTTATTCTTA AAAATATTCA
+Pf3D7_14_v3:43094-43394      +    135  9.14e-03 TATGTATAAT TTTATTTAATTTACTTAAGAAGAAATTA ATTCAACTAC
+Pf3D7_02_v3:360527-36082     +    162  9.14e-03 ACGTAAAATG TAACTCTTTTTAAAAGAATTTTTTCTAC ACTTTTTTTT
+Pf3D7_01_v3:102283-10258     +     22  9.77e-03 ATATTAAAGT TTTAATTTTTATAAACAGAATAATACTA AATGAACGAT
+Pf3D7_12_v3:1746143-1746     -    130  1.26e-02 TTTATTAATT TAAATATTTATTATAATTTTTTTTATTA ATATTTTATT
+Pf3D7_04_v3:171400-17170     -      4  1.69e-02 GTGGTTGACA CGACTTAAGGTATCATTGATTAAATCTA TTC       
+Pf3D7_10_v3:1568708-1569     +    216  1.89e-02 GTATTATATC TATTTAATATAATTTATTAATTGAATTA TATATATATA
+Pf3D7_09_v3:78875-79175      -    186  2.21e-02 GTTAATCACG TAATAAAAATATATTGTGTAAATTAATA AACGCATATA
+Pf3D7_13_v3:2820777-2821     -    159  3.38e-02 ATATTCAGAA ATAAATAATAACAATTATTATGGGTTTC CCTTATCCTT
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_08_v3:85300-85600             2e-07  171_[-10]_101
+Pf3D7_06_v3:73962-74262           3.2e-07  166_[+10]_106
+Pf3D7_07_v3:93142-93442           7.7e-07  83_[+10]_189
+Pf3D7_02_v3:380829-38112          5.6e-06  78_[-10]_194
+Pf3D7_08_v3:426700-42700          9.7e-06  51_[+10]_221
+Pf3D7_13_v3:124416-12471          1.4e-05  268_[-10]_4
+Pf3D7_12_v3:785570-78587          1.6e-05  11_[+10]_261
+Pf3D7_07_v3:1378700-1379          2.3e-05  8_[-10]_264
+Pf3D7_10_v3:61366-61966           4.4e-05  511_[-10]_61
+Pf3D7_06_v3:725049-72534          5.9e-05  36_[-10]_236
+Pf3D7_03_v3:138973-13927            8e-05  115_[-10]_157
+Pf3D7_12_v3:1684461-1684          0.00011  226_[+10]_46
+Pf3D7_04_v3:1120800-1121          0.00018  109_[-10]_163
+Pf3D7_12_v3:763643-76394          0.00027  153_[+10]_119
+Pf3D7_08_v3:466568-46686          0.00035  253_[+10]_19
+Pf3D7_02_v3:835100-83540          0.00045  122_[+10]_150
+Pf3D7_11_v3:1982353-1982          0.00057  226_[-10]_46
+Pf3D7_04_v3:613600-61390          0.00079  133_[+10]_139
+Pf3D7_03_v3:1002571-1002          0.00088  265_[+10]_7
+Pf3D7_01_v3:522580-52288          0.00088  67_[-10]_205
+Pf3D7_06_v3:745300-74560          0.00098  144_[-10]_128
+Pf3D7_11_v3:111430-11173           0.0011  271_[-10]_1
+Pf3D7_02_v3:72200-72500            0.0011  5_[+10]_267
+Pf3D7_03_v3:115600-11590           0.0012  185_[-10]_87
+Pf3D7_09_v3:1446628-1446           0.0013  102_[+10]_170
+Pf3D7_12_v3:64337-64637            0.0015  120_[-10]_152
+Pf3D7_07_v3:508173-50847           0.0015  82_[-10]_190
+Pf3D7_04_v3:545686-54598           0.0015  219_[+10]_53
+Pf3D7_06_v3:1301700-1302           0.0016  172_[-10]_100
+Pf3D7_04_v3:993500-99380           0.0018  140_[+10]_132
+Pf3D7_08_v3:1381836-1382           0.0031  240_[+10]_32
+Pf3D7_05_v3:1318230-1318           0.0034  91_[-10]_181
+Pf3D7_14_v3:3147189-3147           0.0037  224_[-10]_48
+Pf3D7_12_v3:2161616-2161            0.004  109_[-10]_163
+Pf3D7_07_v3:610523-61082           0.0055  140_[+10]_132
+Pf3D7_03_v3:80056-80356            0.0064  262_[+10]_10
+Pf3D7_04_v3:934730-93503           0.0074  231_[-10]_41
+Pf3D7_05_v3:41404-41704            0.0085  165_[+10]_107
+Pf3D7_14_v3:43094-43394            0.0091  134_[+10]_138
+Pf3D7_02_v3:360527-36082           0.0091  161_[+10]_111
+Pf3D7_01_v3:102283-10258           0.0098  21_[+10]_251
+Pf3D7_12_v3:1746143-1746            0.013  129_[-10]_143
+Pf3D7_04_v3:171400-17170            0.017  3_[-10]_269
+Pf3D7_10_v3:1568708-1569            0.019  215_[+10]_57
+Pf3D7_09_v3:78875-79175             0.022  185_[-10]_87
+Pf3D7_13_v3:2820777-2821            0.034  158_[-10]_114
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF TWTWTWWWTTTTWHTWTWWWTAWWWWWA width=28 seqs=46
+Pf3D7_08_v3:85300-85600  (  172) TATATGGAAGACCCTATTATTGGGTACC  1 
+Pf3D7_06_v3:73962-74262  (  167) TTTTTTTTTTTCACTTTGATTATTTAAA  1 
+Pf3D7_07_v3:93142-93442  (   84) TTTTTTTTTTTTTTTTTTTATATTCAAC  1 
+Pf3D7_02_v3:380829-38112 (   79) TTTTTTCTTTTTTCTTTTTTTATTATTA  1 
+Pf3D7_08_v3:426700-42700 (   52) TGTTATGTTTTTTCTTTATATATATTAA  1 
+Pf3D7_13_v3:124416-12471 (  269) TTTTTTTATTTCATTTTATTTATATTTC  1 
+Pf3D7_12_v3:785570-78587 (   12) TATCTTGTTTTCTAATTAATTGTATACA  1 
+Pf3D7_07_v3:1378700-1379 (    9) TTTATATTTTTTTATATTTTTTTACACA  1 
+Pf3D7_10_v3:61366-61966  (  512) TTTCACATTTTTATTCTTATTACACACC  1 
+Pf3D7_06_v3:725049-72534 (   37) TGTATATATATATCTGTTGATGTATATG  1 
+Pf3D7_03_v3:138973-13927 (  116) GGTATATTTTTTCATGTATACGTATAAA  1 
+Pf3D7_12_v3:1684461-1684 (  227) TTTATGGTATCCTTATATTTTAGGATTC  1 
+Pf3D7_04_v3:1120800-1121 (  110) GTTATGATCGCTCTTGTGGTTATGATCG  1 
+Pf3D7_12_v3:763643-76394 (  154) TTTTTTTTTTCCCATTTTAAATAGTAAA  1 
+Pf3D7_08_v3:466568-46686 (  254) TTTTTTCTTTTTTTATATAATATGTAAA  1 
+Pf3D7_02_v3:835100-83540 (  123) TTAAACATTATTATTTTGTTTATAACAC  1 
+Pf3D7_11_v3:1982353-1982 (  227) TTTATTTATTCCATTATACTCATATAAA  1 
+Pf3D7_04_v3:613600-61390 (  134) TTTTTGAAAATTTTGTTGAAAATGTAAC  1 
+Pf3D7_03_v3:1002571-1002 (  266) TTTTATATTTTTCATGATAATTATTTTC  1 
+Pf3D7_01_v3:522580-52288 (   68) TAAATTTTTTTCTTTTTACTCTTTTACA  1 
+Pf3D7_06_v3:745300-74560 (  145) TATTAATTTATTTATATTTATATTTATA  1 
+Pf3D7_11_v3:111430-11173 (  272) TATATTTTATTTTTTATGAAAATAATAA  1 
+Pf3D7_02_v3:72200-72500  (    6) TAAACTCATTTTTTTATGTATAATTTCA  1 
+Pf3D7_03_v3:115600-11590 (  186) TATTTTGGTCTACATCTGAAAGATCATC  1 
+Pf3D7_09_v3:1446628-1446 (  103) TATATATATATATATATATATGTATATA  1 
+Pf3D7_12_v3:64337-64637  (  121) TATATTGATATTCTATCTTTTATAATTC  1 
+Pf3D7_07_v3:508173-50847 (   83) TTTTTATTTATTTATATTTTAAATATTC  1 
+Pf3D7_04_v3:545686-54598 (  220) TTTATATATTTTACAATGAAAAAAAAAA  1 
+Pf3D7_06_v3:1301700-1302 (  173) TTTATTGTATTAAATCATTTTACTTCAG  1 
+Pf3D7_04_v3:993500-99380 (  141) TTTTTGATTGACAAAATTTTTAAGGCTA  1 
+Pf3D7_08_v3:1381836-1382 (  241) TTATTAATTATATATATATATATATATA  1 
+Pf3D7_05_v3:1318230-1318 (   92) TATAATATTGTAAAGATTTATAGTTCAG  1 
+Pf3D7_14_v3:3147189-3147 (  225) TATATAGAATAATCTATAAACACACAAA  1 
+Pf3D7_12_v3:2161616-2161 (  110) TTATAATATATATATATATATATATATA  1 
+Pf3D7_07_v3:610523-61082 (  141) TTAATTAATAACTCTTATTTTTATCTAA  1 
+Pf3D7_03_v3:80056-80356  (  263) TTTAATATATTTACTTTTATATATTAAA  1 
+Pf3D7_04_v3:934730-93503 (  232) TGTTTGCATTTTTTTGTTAATTATATAT  1 
+Pf3D7_05_v3:41404-41704  (  166) TGAGAAATTTTTTTAATATTTATTCTTA  1 
+Pf3D7_14_v3:43094-43394  (  135) TTTATTTAATTTACTTAAGAAGAAATTA  1 
+Pf3D7_02_v3:360527-36082 (  162) TAACTCTTTTTAAAAGAATTTTTTCTAC  1 
+Pf3D7_01_v3:102283-10258 (   22) TTTAATTTTTATAAACAGAATAATACTA  1 
+Pf3D7_12_v3:1746143-1746 (  130) TAAATATTTATTATAATTTTTTTTATTA  1 
+Pf3D7_04_v3:171400-17170 (    4) CGACTTAAGGTATCATTGATTAAATCTA  1 
+Pf3D7_10_v3:1568708-1569 (  216) TATTTAATATAATTTATTAATTGAATTA  1 
+Pf3D7_09_v3:78875-79175  (  186) TAATAAAAATATATTGTGTAAATTAATA  1 
+Pf3D7_13_v3:2820777-2821 (  159) ATAAATAATAACAATTATTATGGGTTTC  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 28 n= 12858 bayes= 8.86068 E= 7.0e+000 
+  -426   -192    -92    113 
+   -36  -1217     67     38 
+   -68  -1217  -1217     82 
+    26      8   -192     -9 
+   -68   -192  -1217     78 
+   -46    -33     67     26 
+   -36      8    108     -2 
+   -18  -1217   -192     54 
+   -94   -192   -192     82 
+   -68   -192     41     54 
+  -126      8  -1217     82 
+   -81    154  -1217     32 
+   -26     89  -1217     26 
+   -18    154  -1217     -9 
+   -81  -1217    -92     78 
+   -18      8     89     -9 
+  -109   -192  -1217     90 
+   -56  -1217    154     19 
+   -18    -92    -33     32 
+    32  -1217  -1217     19 
+  -109      8  -1217     78 
+    54  -1217    108    -94 
+   -56    -33     41     38 
+    -2  -1217    108     -2 
+   -46    108   -192     26 
+    19     67  -1217     -9 
+    -9     89  -1217     13 
+    54    178      8   -426 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 28 nsites= 46 E= 7.0e+000 
+ 0.021739  0.021739  0.043478  0.913043 
+ 0.326087  0.000000  0.130435  0.543478 
+ 0.260870  0.000000  0.000000  0.739130 
+ 0.500000  0.086957  0.021739  0.391304 
+ 0.260870  0.021739  0.000000  0.717391 
+ 0.304348  0.065217  0.130435  0.500000 
+ 0.326087  0.086957  0.173913  0.413043 
+ 0.369565  0.000000  0.021739  0.608696 
+ 0.217391  0.021739  0.021739  0.739130 
+ 0.260870  0.021739  0.108696  0.608696 
+ 0.173913  0.086957  0.000000  0.739130 
+ 0.239130  0.239130  0.000000  0.521739 
+ 0.347826  0.152174  0.000000  0.500000 
+ 0.369565  0.239130  0.000000  0.391304 
+ 0.239130  0.000000  0.043478  0.717391 
+ 0.369565  0.086957  0.152174  0.391304 
+ 0.195652  0.021739  0.000000  0.782609 
+ 0.282609  0.000000  0.239130  0.478261 
+ 0.369565  0.043478  0.065217  0.521739 
+ 0.521739  0.000000  0.000000  0.478261 
+ 0.195652  0.086957  0.000000  0.717391 
+ 0.608696  0.000000  0.173913  0.217391 
+ 0.282609  0.065217  0.108696  0.543478 
+ 0.413043  0.000000  0.173913  0.413043 
+ 0.304348  0.173913  0.021739  0.500000 
+ 0.478261  0.130435  0.000000  0.391304 
+ 0.391304  0.152174  0.000000  0.456522 
+ 0.608696  0.282609  0.086957  0.021739 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif TWTWTWWWTTTTWHTWTWWWTAWWWWWA MEME-10 regular expression
+--------------------------------------------------------------------------------
+T[TA][TA][AT][TA][TA][TA][TA][TA][TA]T[TAC][TA][TAC][TA][TA]T[TAG][TA][AT]T[AT][TA][AT][TA][AT][TA][AC]
+--------------------------------------------------------------------------------
+
+
+
+
+Time 5776.92 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+Pf3D7_01_v3:102283-10258         2.64e-05  108_[-4(2.98e-06)]_3_\
+    [+10(2.70e-05)]_87_[+10(5.92e-05)]_33
+Pf3D7_01_v3:522580-52288         2.31e-04  11_[-1(6.28e-06)]_4_[+5(3.40e-05)]_\
+    [+5(3.40e-05)]_[+5(3.40e-05)]_120_[+1(7.78e-05)]_99_[-1(6.28e-06)]
+Pf3D7_02_v3:72200-72500          3.57e-01  300
+Pf3D7_02_v3:360527-36082         3.97e-06  35_[-7(5.17e-05)]_43_[+3(6.67e-05)]_\
+    84_[+10(6.88e-05)]_6_[+9(3.29e-05)]_11_[+5(3.40e-05)]_4_[+5(3.40e-05)]_16
+Pf3D7_02_v3:380829-38112         3.06e-08  6_[+5(5.59e-06)]_60_[-10(5.64e-06)]_\
+    41_[+5(5.59e-06)]_18_[+10(5.09e-05)]_27_[+3(1.77e-06)]_28_[+7(4.53e-06)]_\
+    11
+Pf3D7_02_v3:835100-83540         2.66e-02  38_[+10(9.22e-05)]_92_\
+    [+3(1.65e-05)]_128
+Pf3D7_03_v3:80056-80356          7.29e-06  36_[+5(3.40e-05)]_[+5(3.40e-05)]_37_\
+    [-4(1.12e-06)]_80_[+7(9.43e-05)]_95
+Pf3D7_03_v3:115600-11590         1.45e-01  175_[-2(3.14e-05)]_117
+Pf3D7_03_v3:138973-13927         2.69e-09  12_[+7(2.18e-06)]_6_[+1(8.02e-05)]_\
+    5_[-4(2.65e-05)]_[-5(5.59e-06)]_42_[-10(7.98e-05)]_2_[+2(9.95e-05)]_\
+    [-1(3.83e-05)]_4_[+5(5.59e-06)]_4_[+5(3.40e-05)]_62_[+8(8.04e-05)]_35
+Pf3D7_03_v3:1002571-1002         2.06e-03  19_[+1(3.83e-05)]_121_\
+    [+3(4.37e-05)]_31_[-9(8.17e-05)]_85
+Pf3D7_04_v3:171400-17170         7.55e-03  108_[+9(1.71e-05)]_78_\
+    [-1(9.40e-05)]_84
+Pf3D7_04_v3:545686-54598         2.05e-08  4_[+5(5.59e-06)]_9_[+2(8.83e-05)]_\
+    10_[-5(5.59e-06)]_1_[+3(9.29e-06)]_55_[+7(5.61e-06)]_32_[+3(1.25e-05)]_\
+    [+5(3.40e-05)]_54_[+9(7.17e-06)]_28
+Pf3D7_04_v3:613600-61390         1.82e-02  106_[+9(2.38e-05)]_69_\
+    [+2(3.14e-05)]_34_[-2(7.53e-06)]_55
+Pf3D7_04_v3:934730-93503         4.38e-07  23_[+5(3.40e-05)]_32_[+2(8.83e-05)]_\
+    17_[+3(9.29e-06)]_19_[-10(2.29e-05)]_24_[+3(9.29e-06)]_82_[-1(6.28e-06)]_2_\
+    [-1(4.58e-05)]_5
+Pf3D7_04_v3:993500-99380         1.22e-02  172_[+2(2.57e-06)]_65_\
+    [-4(5.09e-05)]_42
+Pf3D7_04_v3:1120800-1121         8.23e-01  64_[+2(8.83e-05)]_10_[+2(8.83e-05)]_\
+    10_[+2(8.83e-05)]_192
+Pf3D7_05_v3:41404-41704          2.15e-01  116_[+3(5.92e-05)]_170
+Pf3D7_05_v3:1318230-1318         9.05e-03  164_[-3(8.52e-05)]_68_\
+    [-10(2.70e-05)]_26
+Pf3D7_06_v3:73962-74262          5.70e-06  30_[-1(3.83e-05)]_5_[-10(3.73e-05)]_\
+    93_[+10(3.17e-07)]_57_[+5(3.40e-05)]_[+5(3.40e-05)]_25
+Pf3D7_06_v3:725049-72534         5.16e-10  2_[+7(8.19e-06)]_[+4(3.58e-05)]_6_\
+    [-10(5.92e-05)]_24_[+3(3.27e-06)]_6_[-1(3.83e-05)]_14_[-1(6.28e-06)]_29_\
+    [-1(6.28e-06)]_1_[+3(1.44e-05)]_22_[-1(6.28e-06)]_1_[+3(3.27e-06)]_4_\
+    [+2(1.61e-06)]_4_[+2(1.61e-06)]_8_[+5(3.51e-05)]_13
+Pf3D7_06_v3:745300-74560         1.94e-04  2_[+5(5.59e-06)]_[+5(3.40e-05)]_\
+    [+5(3.40e-05)]_32_[-7(4.45e-05)]_98_[+5(3.40e-05)]_[+5(3.40e-05)]_\
+    [+5(3.40e-05)]_81
+Pf3D7_06_v3:1301700-1302         4.15e-04  38_[+4(9.60e-05)]_53_[+1(3.83e-05)]_\
+    162_[+5(3.40e-05)]_12
+Pf3D7_07_v3:93142-93442          5.41e-05  59_[+7(4.45e-05)]_9_[+10(7.66e-07)]_\
+    147_[-7(9.43e-05)]_27
+Pf3D7_07_v3:508173-50847         8.28e-06  110_[-4(2.65e-05)]_89_\
+    [+3(6.84e-07)]_[+5(3.40e-05)]_62
+Pf3D7_07_v3:610523-61082         4.24e-03  124_[-1(6.28e-06)]_145_\
+    [+1(7.78e-05)]_11
+Pf3D7_07_v3:1378700-1379         8.58e-04  8_[-10(2.29e-05)]_21_[+5(3.40e-05)]_\
+    171_[-2(2.09e-05)]_52
+Pf3D7_08_v3:85300-85600          1.72e-06  87_[+2(1.88e-05)]_23_[-8(7.06e-06)]_\
+    36_[-2(1.84e-06)]_1_[-10(2.01e-07)]_8_[-2(6.26e-05)]_16_[+2(3.14e-05)]_40_\
+    [+7(5.17e-05)]_6
+Pf3D7_08_v3:426700-42700         3.36e-05  51_[+10(9.73e-06)]_74_\
+    [-1(3.83e-05)]_34_[-9(3.84e-05)]_48_[-10(6.78e-06)]_7
+Pf3D7_08_v3:466568-46686         9.58e-09  4_[+1(4.58e-05)]_10_[-3(5.17e-06)]_\
+    2_[-9(6.07e-05)]_46_[-3(1.25e-05)]_28_[-7(1.12e-06)]_50_[-3(9.29e-06)]_17_\
+    [-2(1.61e-05)]_24_[-7(3.69e-05)]_9
+Pf3D7_08_v3:1381836-1382         2.09e-04  122_[+5(3.40e-05)]_[+5(3.40e-05)]_2_\
+    [+1(3.83e-05)]_17_[-10(3.73e-05)]_46_[+5(3.40e-05)]_[+5(3.40e-05)]_27
+Pf3D7_09_v3:78875-79175          1.03e-01  93_[-8(8.04e-05)]_125_\
+    [+8(4.44e-05)]_66
+Pf3D7_09_v3:1446628-1446         3.91e-05  101_[+5(3.40e-05)]_2_[-5(5.59e-06)]_\
+    2_[-5(5.59e-06)]_[+5(3.40e-05)]_31_[-8(4.44e-05)]_48_[+1(3.83e-05)]_12_\
+    [+1(7.78e-05)]_28
+Pf3D7_10_v3:61366-61966          9.33e-05  36_[+5(3.40e-05)]_[+5(3.40e-05)]_\
+    [+5(3.40e-05)]_45_[-3(4.37e-05)]_221_[-9(2.80e-05)]_82_[+2(5.37e-05)]_49_\
+    [-10(4.36e-05)]_61
+Pf3D7_10_v3:1568708-1569         1.16e-02  66_[+10(9.73e-06)]_148_\
+    [+5(3.40e-05)]_6_[-4(8.58e-05)]_27
+Pf3D7_11_v3:111430-11173         1.47e-03  18_[-2(6.26e-05)]_136_\
+    [+5(3.40e-05)]_72_[+4(2.65e-05)]_41
+Pf3D7_11_v3:1982353-1982         8.40e-02  300
+Pf3D7_12_v3:64337-64637          1.33e-02  33_[+5(3.40e-05)]_64_[+8(4.44e-05)]_\
+    38_[+5(3.40e-05)]_[+5(3.40e-05)]_[+5(3.40e-05)]_[+5(3.40e-05)]_74_\
+    [+5(3.40e-05)]_11
+Pf3D7_12_v3:763643-76394         1.06e-07  10_[+5(3.40e-05)]_4_[-5(5.59e-06)]_\
+    76_[+5(3.40e-05)]_13_[+10(3.87e-06)]_41_[+9(2.82e-06)]_72
+Pf3D7_12_v3:785570-78587         7.35e-04  11_[+10(1.64e-05)]_86_\
+    [+1(3.83e-05)]_25_[+5(3.40e-05)]_[+5(3.40e-05)]_61_[+2(7.14e-05)]_47
+Pf3D7_12_v3:1684461-1684         6.49e-04  2_[+4(2.65e-05)]_1_[+5(3.40e-05)]_\
+    [+5(3.40e-05)]_[+5(3.40e-05)]_83_[+3(2.02e-05)]_[+5(3.40e-05)]_139
+Pf3D7_12_v3:1746143-1746         7.52e-04  52_[+5(3.40e-05)]_2_[+1(3.83e-05)]_\
+    172_[-5(5.59e-06)]_40
+Pf3D7_12_v3:2161616-2161         1.87e-03  102_[+5(3.40e-05)]_[+5(3.40e-05)]_\
+    125_[+5(3.40e-05)]_[+5(3.40e-05)]_[+5(3.40e-05)]_13
+Pf3D7_13_v3:124416-12471         7.09e-07  31_[+5(5.59e-06)]_[+5(3.40e-05)]_10_\
+    [-10(8.13e-06)]_135_[+9(1.04e-06)]_20_[-10(1.38e-05)]_4
+Pf3D7_13_v3:2820777-2821         1.64e-02  64_[+5(3.40e-05)]_19_\
+    [+10(9.22e-05)]_177
+Pf3D7_14_v3:43094-43394          6.76e-04  119_[-5(5.59e-06)]_54_\
+    [+10(6.88e-05)]_87
+Pf3D7_14_v3:3147189-3147         4.30e-05  22_[-9(5.99e-06)]_98_[-7(4.45e-05)]_\
+    4_[-4(6.37e-05)]_50_[-4(1.44e-05)]_17_[-2(8.83e-05)]_40
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (10) found.
+********************************************************************************
+
+CPU: lucas-Precision-Tower-3620
+
+********************************************************************************

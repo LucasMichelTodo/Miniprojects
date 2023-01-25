@@ -1,0 +1,10 @@
+
+
+Building a new DB, current time: 09/29/2022 11:50:54
+New DB name:   /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/08/a25dfb1a5e3172e9a798dd8aaccdb4/testData/headtest
+New DB title:  /home/lucas/.nextflow/assets/isugifNF/blast/testData/headtest.fasta
+Sequence type: Nucleotide
+Deleted existing Nucleotide BLAST database named /mnt/Disc4T/Projects/Miniprojects/Nextflow/Tutorial_1/work/08/a25dfb1a5e3172e9a798dd8aaccdb4/testData/headtest
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 500 sequences in 0.09394 seconds.

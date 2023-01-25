@@ -1,0 +1,4 @@
+Error: Could not open alignment output file Alignments/NCV26_me.sam
+Error: Encountered internal Bowtie 2 exception (#1)
+Command: /home/lucas/Programs/bowtie2-2.3.0-legacy/bowtie2-align-s --wrapper basic-0 -S Alignments/NCV26_me.sam --very-sensitive --local -5 4 -3 4 -I 50 -X 2000 -x /home/lucas/Programs/bowtie2-2.3.0-legacy/Pf3D7 -1 NCV26_me_R1_subset1000_cleanReads.fq -2 NCV26_me_R2_subset1000_cleanReads.fq 
+(ERR): bowtie2-align exited with value 1

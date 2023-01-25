@@ -1,0 +1,5 @@
+sample,replicate,antibody,reads1,reads2
+sample_1,1,me,./Raw_Data/NCV26_me_R1_subset1000.fq,./Raw_Data/NCV26_me_R2_subset1000.fq
+sample_1,1,in,./Raw_Data/NCV27_in_R1_subset1000.fq,./Raw_Data/NCV27_in_R2_subset1000.fq
+sample_2,1,me,./Raw_Data/NCV28_me_R1_subset1000.fq,./Raw_Data/NCV28_me_R2_subset1000.fq
+sample_2,1,in,./Raw_Data/NCV29_in_R1_subset1000.fq,./Raw_Data/NCV29_in_R2_subset1000.fq

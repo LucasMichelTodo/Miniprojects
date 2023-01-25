@@ -1,0 +1,32 @@
+Using fastq_screen v0.15.0
+Reading configuration from '/home/lucas/Programs/FastQ-Screen-0.15.0/fastq_screen.conf'
+Aligner (--aligner) not specified, but Bowtie2 path and index files found: mapping with Bowtie2
+Using '/home/lucas/Programs/bowtie2-2.3.0-legacy/bowtie2' as Bowtie 2 path
+Adding database Pf3D7
+Adding database Human
+Adding database Mycoplasma_alaidlawii
+Adding database Mycoplasma_marginini
+Adding database Mycoplasma_mfermentans
+Adding database Mycoplasma_mhominis
+Adding database Mycoplasma_mhyorinis
+Adding database Mycoplasma_morale
+Adding database S.Aureus
+Adding database P.falc_ribosomal
+Using 8 threads for searches
+Option --subset set to 100000 reads
+Processing NCV29_in_R1_subset1000_cleanReads.fq
+Ignoring reads shorter than 20bp
+Counting sequences in NCV29_in_R1_subset1000_cleanReads.fq
+Not making subset of 100000 since 915 actual sequences is too low or close enough
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Pf3D7
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Human
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_alaidlawii
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_marginini
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_mfermentans
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_mhominis
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_mhyorinis
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against Mycoplasma_morale
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against S.Aureus
+Searching NCV29_in_R1_subset1000_cleanReads.fq_temp_subset.fastq against P.falc_ribosomal
+Perl module GD::Graph::bars not installed, skipping charts
+Processing complete

@@ -140,8 +140,9 @@ def bowtie2_align_pipe(read1s_list, read2s_list, params, outpath = './'):
     os.makedirs(outpath, exist_ok=True)
     
     for r1, r2 in zip(read1s_list, read2s_list):
-        
-        name = common_start(os.path.basename(r1), os.path.basename(r2))
+        name1 = r1.rsplit('/', 1)[1].rsplit('.', 1)[0]
+        name2 = r2.rsplit('/', 1)[1].rsplit('.', 1)[0]
+        name = common_start(name1, name2)
         out = outpath+name+'.sam'
         print('\n'+f'Aligning: {out}'+'\n')
         call_Bowtie2(r1, r2, out, params)
