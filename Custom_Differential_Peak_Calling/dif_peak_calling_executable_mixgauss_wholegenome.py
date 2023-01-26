@@ -50,10 +50,6 @@ def plot_components(cov_vector, gm, plotname):
     plt.savefig(plotname)
     plt.clf()
 
-
-def get_probs(coverage, gm):
-    return(gm.predict_proba(coverage.reshape(-1, 1)))
-
 def get_differential_peaks(
         peakfile1, peakfile2,
         covfile1, covfile2,
@@ -88,17 +84,16 @@ def get_differential_peaks(
     os.makedirs(outfld+'Data/PreFilter_Difpeaks/', exist_ok = True)
 
 
-    ## Generate GaussianMixture distribution with 2 components for coverage in peaks
+    ## Generate GaussianMixture distribution with 2 components for coverage
     ## Peaks coverage
-    print('Fitting distribution...')
+    print('Fitting distributions... (This might take a while)')
 
-    pf1 = pb.BedTool(peakfile1)
-    pf2 = pb.BedTool(peakfile2)
     cf1 = pb.BedTool(covfile1)
     cf2 = pb.BedTool(covfile2)
 
-    cov_peaks1 = np.array([float(f.fields[10]) for f in pf1.map(cf1, c = 4, o='mean')])
-    cov_peaks2 = np.array([float(f.fields[10]) for f in pf2.map(cf2, c = 4, o='mean')])
+    cov_field = 3
+    cov1 = np.array([float(feat.fields[cov_field]) for feat in cf1])
+    cov2 = np.array([float(feat.fields[cov_field]) for feat in cf2])
 
     ## All sklearn estimators use as input a 2D array,
     ## with samples as rows and features as columns.
@@ -108,14 +103,14 @@ def get_differential_peaks(
     ## -1 in reshape just means whatever it takes to make it work!
     ## So (-1, 1) means: any number of rows and 1 column
 
-    gm1 = GaussianMixture(n_components=2).fit(cov_peaks1.reshape(-1, 1))
-    gm2 = GaussianMixture(n_components=2).fit(cov_peaks2.reshape(-1, 1))
+    gm1 = GaussianMixture(n_components=2).fit(cov1.reshape(-1, 1))
+    gm2 = GaussianMixture(n_components=2).fit(cov2.reshape(-1, 1))
 
-    suffix = '_peak_coverage_fit.png'
-    plot_gaussian_mixture(cov_peaks1, gm1, f'{outfld}Data/Plots/{prefix1}{suffix}')
-    plot_gaussian_mixture(cov_peaks2, gm2, f'{outfld}Data/Plots/{prefix2}{suffix}')
-    plot_components(cov_peaks1, gm1, f'{outfld}Data/Plots/{prefix1}_components_cdf.png')
-    plot_components(cov_peaks2, gm2, f'{outfld}Data/Plots/{prefix2}_components_cdf.png')
+    suffix = '_coverage_fit.png'
+    plot_gaussian_mixture(cov1, gm1, f'{outfld}Data/Plots/{prefix1}{suffix}')
+    plot_gaussian_mixture(cov2, gm2, f'{outfld}Data/Plots/{prefix2}{suffix}')
+    plot_components(cov1, gm1, f'{outfld}Data/Plots/{prefix1}_components_cdf.png')
+    plot_components(cov2, gm2, f'{outfld}Data/Plots/{prefix2}_components_cdf.png')
 
     ## Create window reference
     print('Creating windowed coverage...')
@@ -134,43 +129,49 @@ def get_differential_peaks(
     sp.call(' '.join(cmd), shell = True)
     union_bed = pb.BedTool(outfile)
 
-    ## Create common peaks bed
-    print('Creating common peaks bed...')
-
-    files_to_cross = []
-    str_beds = peakfile1 + ' ' + peakfile2
-    outfile = f'{outfld}Data/Common_Peaks/{prefix1}_{prefix2}_common_peaks.bed'
-    cmd = 'awk \'{print}\' '+f'{str_beds} > {outfile}'
-    sp.call(cmd, shell = True)
-    common_peaks = pb.BedTool(outfile).sort()
-
-    ## Subset union_bed to common_peaks
-    common_cov_common_peaks = union_bed.intersect(common_peaks)
-
     ## Call differential peaks
-    print('Calling differential peaks (this might take a while)...')
+    print('Calling differential peaks... (this might take a while)')
 
-    c1s = [float(x.fields[3]) for x in common_cov_common_peaks]
-    c2s = [float(x.fields[4]) for x in common_cov_common_peaks]
+    c1s = [float(x.fields[3]) for x in union_bed]
+    c2s = [float(x.fields[4]) for x in union_bed]
 
     c1s = np.array(c1s)
     c2s = np.array(c2s)
 
-    prob1s_pre = get_probs(c1s, gm1)
-    prob2s_pre = get_probs(c2s, gm2)
-    prob1s = prob1s_pre[:,0]
-    prob2s = prob2s_pre[:,0]
+    ## Identify components
+    labels1 = gm1.predict(c1s.reshape(-1, 1))
+    labels2 = gm2.predict(c2s.reshape(-1, 1))
+
+    comp1_cov1 = np.mean(c1s[labels1 == 0])
+    comp2_cov1 = np.mean(c1s[labels1 == 1])
+
+    comp1_cov2 = np.mean(c2s[labels2 == 0])
+    comp2_cov2 = np.mean(c2s[labels2 == 1])
+
+    peakcomp1 = 0 if comp1_cov1 > comp2_cov1 else 1
+    peakcomp2 = 0 if comp1_cov2 > comp2_cov2 else 1
+
+    print((
+        f'Comparing component {peakcomp1+1} from sample {prefix1} '
+        f'to component {peakcomp2+1} from sample {prefix2}.'
+    ))
+
+    ## Comparing probability of being a peak
+    prob1s_pre = gm1.predict_proba(c1s.reshape(-1, 1))
+    prob2s_pre = gm2.predict_proba(c2s.reshape(-1, 1))
+    prob1s = prob1s_pre[:,peakcomp1]
+    prob2s = prob2s_pre[:,peakcomp2]
 
     probdifs = prob1s - prob2s
     peaks1over2 = probdifs > minprobdif
     peaks2over1 = -probdifs > minprobdif
-    chroms = [x.chrom for x in common_cov_common_peaks]
-    starts = [x.start for x in common_cov_common_peaks]
-    stops = [x.stop for x in common_cov_common_peaks]
+    chroms = [x.chrom for x in union_bed]
+    starts = [x.start for x in union_bed]
+    stops = [x.stop for x in union_bed]
 
-    pd.DataFrame(common_cov_common_peaks)
+    pd.DataFrame(union_bed)
     df = pd.read_table(
-        common_cov_common_peaks.fn,
+        union_bed.fn,
         names=['#chrom', 'start', 'stop', 'cov1', 'cov2']
                )
     rawout1 = (f'{outfld}Data/PreFilter_Difpeaks/'
@@ -206,6 +207,8 @@ def get_differential_peaks(
     end = time.time()
     print('Finished! Elapsed time:')
     print(end - start)
+    print(f'Results in: {outfld}\n')
+
 
 ## Parse Arguments and run program
 
@@ -326,5 +329,4 @@ def run():
 
 if __name__ == "__main__":
     run()
-    print(wd)
 

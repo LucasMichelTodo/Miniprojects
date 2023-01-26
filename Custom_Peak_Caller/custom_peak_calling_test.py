@@ -74,6 +74,10 @@ probs = gm.predict_proba(cov.reshape(-1,1))
 
 labels = gm.predict(cov.reshape(-1,1))
 labels
+
+np.mean(cov[labels == 0])
+np.mean(cov[labels == 1])
+
 np.unique(labels)
 mask
 mask = probs[:,0] < probs[:,1]

@@ -7,9 +7,10 @@ from datetime import datetime
 
 #### FUNCTIONS ####
 
-def call_BBDUK(in1, in2, outfolder='./', params=''):
+## Pre-Processing
 
-    ref = '/home/lucas/Programs/bbmap/resources/adapters.fa'
+def call_BBDUK(in1, in2, ref, outfolder='./', params=''):
+
     if not outfolder.endswith('/'): outfolder = outfolder+'/'
 
     extension = '.'+in1.rsplit('.', 1)[1]
@@ -39,6 +40,7 @@ def call_fastqc(fastq_file_list, threads = '4', outdir = './'):
     cmd = ['fastqc', '--threads', threads, '--outdir', outdir] + fastq_file_list
     sp.run(cmd)
 
+## Alignment
 def call_Bowtie2(in1, in2, out, params):
     cmd = ['bowtie2', '-1', in1, '-2', in2, '-S', out]
     params = params.split(' ')
@@ -54,41 +56,6 @@ def call_Bowtie2(in1, in2, out, params):
 
     with open(rep_name, 'a+') as outfile:
         outfile.write(str_result)
-
-
-def from_sam_to_bam(samfile):
-
-    name = samfile.rsplit(".", 1)[0]
-    cmd = "samtools view -bS {} > {}" .format(samfile, name+".bam")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    ### Erase SAM after creating BAM
-    cmd = "rm {}" .format(samfile)
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    cmd = "samtools sort {} > {}" .format(name+".bam", name+"_sort.bam")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    ### Erase bam after creating sortedBAM
-    cmd = "rm {}" .format(name+".bam")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    cmd = "samtools index {} > {}" .format(name+"_sort.bam", name+"_sort.bam.bai")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    ## Filter only >=q5 reads
-    cmd = "samtools view -b -q 5 {} > {}" .format(name+"_sort.bam", name+"_q5_sort.bam")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
-
-    cmd = "samtools index {} > {}" .format(name+"_q5_sort.bam", name+"_q5_sort.bam.bai")
-    print('\n'+cmd+'\n')
-    sp.call(cmd, shell=True)
 
 def parse_agregated_report(report, start_line, out_name):
     with open(report, 'r+') as infile:
@@ -199,7 +166,127 @@ def bowtie2_align_pipe(read1s_list, read2s_list, params, outpath = './'):
     ## Generate table report
     parse_agregated_report('full_report.txt', outpath, 'full_report_table.tsv')
 
+
+## Samtools
+def from_sam_to_bam(samfile):
+
+    name = samfile.rsplit(".", 1)[0]
+    cmd = "samtools view -bS {} > {}" .format(samfile, name+".bam")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    ### Erase SAM after creating BAM
+    cmd = "rm {}" .format(samfile)
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    cmd = "samtools sort {} > {}" .format(name+".bam", name+"_sort.bam")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    ### Erase bam after creating sortedBAM
+    cmd = "rm {}" .format(name+".bam")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    cmd = "samtools index {} > {}" .format(name+"_sort.bam", name+"_sort.bam.bai")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    ## Filter only >=q5 reads
+    cmd = "samtools view -b -q 5 {} > {}" .format(name+"_sort.bam", name+"_q5_sort.bam")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+    cmd = "samtools index {} > {}" .format(name+"_q5_sort.bam", name+"_q5_sort.bam.bai")
+    print('\n'+cmd+'\n')
+    sp.call(cmd, shell=True)
+
+## Remove Duplicates
+
+def remove_duplicates(indir, outdir, bam):
+
+    gatk_path = '/home/lucas/Programs/gatk-4.1.9.0/gatk-package-4.1.9.0-local.jar'
+    i = indir+bam
+    o = outdir+bam.replace(".bam", "_noDup.bam")
+    m = outdir+bam.replace(".bam", "_metrics.txt")
+
+    cmd = (f"java -jar {gatk_path} MarkDuplicates "
+           "REMOVE_DUPLICATES=true I={} O={} M={}") .format(i, o, m)
+
+    sp.call(cmd, shell=True)
+
+## Get coverage (Tracks)
+
+def get_RPKMs(bam, bs, smooth, norm, outfld):
+    
+    outfld = outfld if outfld.endswith('/') else outfld + '/'
+    name = bam.rsplit('/', 1)[1]
+    outname = outfld+name.replace('.bam', f'_rpkm_raw_bs{bs}_smth{smooth}.bdg')
+
+    cmd = (
+        f'bamCoverage -b {bam} '
+        '--outFileFormat bedgraph '
+        f'--normalizeUsing {norm} '
+        '-p 8 '
+        f'-bs {bs} '
+        f'--smoothLength {smooth} '
+        f'-o {outname}'
+    )
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+
+def get_RPKMs_normInput(
+        bam_IP,
+        bam_in,
+        bs = 50,
+        smooth = 150,
+        norm = 'RPKM',
+        of = 'bedgraph',
+        outfld = './',
+        pseudo = 1,
+        num_process = 8,
+):
+    outfld = outfld if outfld.endswith('/') else outfld + '/'
+    name = bam_IP.rsplit('/', 1)[1]
+    outname = name.replace('.bam', f'_rpkm_normInput_bs{bs}_smth{smooth}_pseudo{pseudo}.bdg')
+    cmd = (
+        f'bamCompare -b1 {bam_IP} -b2 {bam_in} '
+        '--outFileFormat bedgraph '
+        '--scaleFactorsMethod None '
+        f'--normalizeUsing {norm} '
+        f'-p {num_process} '
+        f'-bs {bs} '
+        f'--smoothLength {smooth} '
+        f'--pseudocount {pseudo} '
+        f'-o {outfld+outname} '
+        f'-of {of}'
+    )
+
+    print(cmd)
+    subprocess.call(cmd, shell=True)
+
+def params_to_name(params_dict):
+    """
+    Take a dicttionary with params and convert it to a string to add to name files.
+    """
+    suffix = ''
+    for k,v in params_dict.items():
+        k_str = k.replace('-', '').strip()
+        v_str = v.strip()
+        suffix += f'_{k_str}{v_str}'
+    return(suffix)
+
+def input_parser(input_file):
+    with open(input_file, 'r+') as params:
+        for line in params:
+            
+
+
 #### Parse Arguments and Run ####
+
+bbduk_ref = '/home/lucas/Programs/bbmap/resources/adapters.fa'
 
 
 ## Input Data

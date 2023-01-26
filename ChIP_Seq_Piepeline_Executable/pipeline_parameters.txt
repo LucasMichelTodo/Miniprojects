@@ -1,0 +1,45 @@
+###################################################################
+###                ChIP-Seq Pipeline: by Lucas MT               ###
+###################################################################
+
+Fill in this form to run the pipeline. Lines starting with ">"
+denote entries to fill. Entries must be written one per line.
+
+########################## Raw Data ###############################
+>Data_Folder:
+/mnt/Disc4T/Projects/Miniprojects/Chip_Seq_Pipeline_Executable/Raw_Data/
+
+>IPs_Read1s:
+NCV26_me_R1_subset1000.fq
+NCV28_me_R1_subset1000.fq
+
+>IPs_Read2s:
+NCV26_me_R2_subset1000.fq
+NCV28_me_R2_subset1000.fq
+
+>Inputs_Read1s:
+NCV27_in_R1_subset1000.fq
+NCV27_in_R1_subset1000.fq
+
+>Inputs_Read2s:
+NCV29_in_R2_subset1000.fq
+NCV29_in_R2_subset1000.fq
+
+########################## Parameters #############################
+
+>Bowtie2_params
+-p 8 --very-sensitive --local -5 4 -3 4 -I 50 -X 2000 -x /home/lucas/Programs/bowtie2-2.3.0-legacy/Pf3D7
+
+###################### Paths to programs ##########################
+
+>Path_to_BBDUK
+bbduk.sh
+
+>Path_to_FastQC
+fastqc
+
+>Path_to_BBDUK
+fasta_screen
+
+>Path_to_BBDUK
+fasta_screen
