@@ -1,0 +1,18 @@
+RNA_Pipe_Test//Alignments/rna_16.sam
+
+bowtie2 -1 RNA_Pipe_Test//Clean_Reads/rna_00016_NCV96_lib_18889AAD_GTGAAA_R1_001_subset10000_clean.fq -2 RNA_Pipe_Test//Clean_Reads/rna_00016_NCV96_lib_18889AAD_GTGAAA_R2_001_subset10000_clean.fq -S RNA_Pipe_Test//Alignments/rna_16.sam -p 8 --very-sensitive --local -5 4 -3 4 -I 50 -X 2000 -x /home/lucas/Programs/bowtie2-2.3.0-legacy/Pf3D7
+9987 reads; of these:
+  9987 (100.00%) were paired; of these:
+    843 (8.44%) aligned concordantly 0 times
+    5554 (55.61%) aligned concordantly exactly 1 time
+    3590 (35.95%) aligned concordantly >1 times
+    ----
+    843 pairs aligned concordantly 0 times; of these:
+      590 (69.99%) aligned discordantly 1 time
+    ----
+    253 pairs aligned 0 times concordantly or discordantly; of these:
+      506 mates make up the pairs; of these:
+        78 (15.42%) aligned 0 times
+        65 (12.85%) aligned exactly 1 time
+        363 (71.74%) aligned >1 times
+99.61% overall alignment rate

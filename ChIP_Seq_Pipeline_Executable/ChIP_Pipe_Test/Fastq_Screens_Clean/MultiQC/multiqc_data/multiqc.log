@@ -1,0 +1,254 @@
+[2023-01-27 18:03:34,349] multiqc                                            [DEBUG  ]  This is MultiQC v1.11 (dff8a9a)
+[2023-01-27 18:03:34,349] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/lucas/.local/lib/python3.6/site-packages/multiqc_config.yaml
+[2023-01-27 18:03:34,349] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/lucas/.multiqc_config.yaml
+[2023-01-27 18:03:34,349] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2023-01-27 18:03:34,349] multiqc                                            [DEBUG  ]  Command used: /home/lucas/.local/bin/multiqc ChIP_Pipe_Test/Fastq_Screens_Clean/ -f -o ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/
+[2023-01-27 18:03:35,830] multiqc                                            [WARNING]  MultiQC Version v1.14 now available!
+[2023-01-27 18:03:35,831] multiqc                                            [DEBUG  ]  Command     : /home/lucas/.local/bin/multiqc ChIP_Pipe_Test/Fastq_Screens_Clean/ -f -o ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/
+[2023-01-27 18:03:35,831] multiqc                                            [DEBUG  ]  Working dir : /mnt/Disc4T/Projects/Miniprojects/ChIP_Seq_Pipeline_Executable
+[2023-01-27 18:03:35,831] multiqc                                            [DEBUG  ]  Template    : default
+[2023-01-27 18:03:35,831] multiqc                                            [DEBUG  ]  Running Python 3.6.9 (default, Nov 25 2022, 14:10:45)  [GCC 8.4.0]
+[2023-01-27 18:03:35,832] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype
+[2023-01-27 18:03:35,833] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpbofbv02x
+[2023-01-27 18:03:35,946] multiqc                                            [INFO   ]  Search path : /mnt/Disc4T/Projects/Miniprojects/ChIP_Seq_Pipeline_Executable/ChIP_Pipe_Test/Fastq_Screens_Clean
+[2023-01-27 18:03:35,950] multiqc                                            [DEBUG  ]  Ignoring directory as matched fn_ignore_dirs: ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_data
+[2023-01-27 18:03:35,977] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,978] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,978] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,978] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,980] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,981] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:35,988] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV29_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:36,299] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,300] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,300] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,300] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,302] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,308] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV28_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,621] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,621] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,621] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,622] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,623] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,629] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV26_me_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,940] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,941] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,941] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,941] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,943] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:36,949] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV27_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,258] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,259] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,259] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,259] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,260] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,267] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV27_in_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,578] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,579] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,579] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,579] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,581] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,589] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV26_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:37,900] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,901] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,901] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,901] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,903] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:37,909] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV29_in_R2_subset1000_clean_screen.html
+[2023-01-27 18:03:38,223] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,223] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,223] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,224] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,225] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,231] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: NCV28_me_R1_subset1000_clean_screen.html
+[2023-01-27 18:03:38,537] multiqc                                            [DEBUG  ]  File ignored by ccs/v4 because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,538] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,538] multiqc                                            [DEBUG  ]  File ignored by nanostat because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,538] multiqc                                            [DEBUG  ]  File ignored by lima/summary because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by vep/vep_html because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by vep/vep_txt because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by rockhopper because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by rseqc/bam_stat because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by rseqc/junction_annotation because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by rseqc/read_distribution because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,540] multiqc                                            [DEBUG  ]  File ignored by rseqc/infer_experiment because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,543] multiqc                                            [DEBUG  ]  File ignored by stacks/sumstats because it exceeded search pattern filesize limit: multiqc_report.html
+[2023-01-27 18:03:38,869] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.3.4
+[2023-01-27 18:03:38,870] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.3.4
+[2023-01-27 18:03:38,870] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2023-01-27 18:03:38,874] multiqc                                            [DEBUG  ]  No samples found: ccs
+[2023-01-27 18:03:38,877] multiqc                                            [DEBUG  ]  No samples found: ngsderive
+[2023-01-27 18:03:38,881] multiqc                                            [DEBUG  ]  No samples found: purple
+[2023-01-27 18:03:38,885] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2023-01-27 18:03:38,888] multiqc                                            [DEBUG  ]  No samples found: lima
+[2023-01-27 18:03:38,891] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2023-01-27 18:03:38,895] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2023-01-27 18:03:38,899] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2023-01-27 18:03:38,903] multiqc.modules.mosdepth.mosdepth                  [DEBUG  ]  include_contigs: []
+[2023-01-27 18:03:38,903] multiqc.modules.mosdepth.mosdepth                  [DEBUG  ]  exclude_contigs: []
+[2023-01-27 18:03:38,903] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2023-01-27 18:03:38,906] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2023-01-27 18:03:38,909] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2023-01-27 18:03:38,913] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2023-01-27 18:03:38,916] multiqc                                            [DEBUG  ]  No samples found: quast
+[2023-01-27 18:03:38,919] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2023-01-27 18:03:38,922] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2023-01-27 18:03:38,925] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2023-01-27 18:03:38,928] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2023-01-27 18:03:38,932] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2023-01-27 18:03:38,936] multiqc                                            [DEBUG  ]  No samples found: busco
+[2023-01-27 18:03:38,939] multiqc                                            [DEBUG  ]  No samples found: bustools
+[2023-01-27 18:03:38,942] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2023-01-27 18:03:38,945] multiqc                                            [DEBUG  ]  No samples found: gffcompare
+[2023-01-27 18:03:38,948] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2023-01-27 18:03:38,951] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2023-01-27 18:03:38,955] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2023-01-27 18:03:38,958] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2023-01-27 18:03:38,961] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2023-01-27 18:03:38,965] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2023-01-27 18:03:38,968] multiqc                                            [DEBUG  ]  No samples found: happy
+[2023-01-27 18:03:38,971] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2023-01-27 18:03:38,974] multiqc                                            [DEBUG  ]  No samples found: sambamba
+[2023-01-27 18:03:38,977] multiqc                                            [DEBUG  ]  No samples found: homer
+[2023-01-27 18:03:38,981] multiqc                                            [DEBUG  ]  No samples found: hops
+[2023-01-27 18:03:38,984] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2023-01-27 18:03:38,987] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2023-01-27 18:03:38,990] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2023-01-27 18:03:38,994] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2023-01-27 18:03:38,997] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2023-01-27 18:03:39,000] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2023-01-27 18:03:39,003] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2023-01-27 18:03:39,007] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2023-01-27 18:03:39,011] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2023-01-27 18:03:39,014] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2023-01-27 18:03:39,017] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2023-01-27 18:03:39,023] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2023-01-27 18:03:39,026] multiqc                                            [DEBUG  ]  No samples found: jcvi
+[2023-01-27 18:03:39,029] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2023-01-27 18:03:39,032] multiqc                                            [DEBUG  ]  No samples found: picard
+[2023-01-27 18:03:39,035] multiqc                                            [DEBUG  ]  No samples found: vep
+[2023-01-27 18:03:39,038] multiqc                                            [DEBUG  ]  No samples found: sentieon
+[2023-01-27 18:03:39,041] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2023-01-27 18:03:39,044] multiqc                                            [DEBUG  ]  No samples found: qc3C
+[2023-01-27 18:03:39,048] multiqc                                            [DEBUG  ]  No samples found: nanostat
+[2023-01-27 18:03:39,050] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2023-01-27 18:03:39,054] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2023-01-27 18:03:39,057] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2023-01-27 18:03:39,060] multiqc                                            [DEBUG  ]  No samples found: eigenstratdatabasetools
+[2023-01-27 18:03:39,063] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2023-01-27 18:03:39,066] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2023-01-27 18:03:39,069] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2023-01-27 18:03:39,072] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2023-01-27 18:03:39,075] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2023-01-27 18:03:39,078] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2023-01-27 18:03:39,081] multiqc                                            [DEBUG  ]  No samples found: snippy
+[2023-01-27 18:03:39,085] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2023-01-27 18:03:39,089] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2023-01-27 18:03:39,092] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2023-01-27 18:03:39,095] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2023-01-27 18:03:39,098] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2023-01-27 18:03:39,101] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2023-01-27 18:03:39,104] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2023-01-27 18:03:39,107] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2023-01-27 18:03:39,110] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2023-01-27 18:03:39,113] multiqc                                            [DEBUG  ]  No samples found: star
+[2023-01-27 18:03:39,116] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2023-01-27 18:03:39,119] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2023-01-27 18:03:39,122] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2023-01-27 18:03:39,125] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2023-01-27 18:03:39,128] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2023-01-27 18:03:39,131] multiqc                                            [DEBUG  ]  No samples found: odgi
+[2023-01-27 18:03:39,134] multiqc                                            [DEBUG  ]  No samples found: pangolin
+[2023-01-27 18:03:39,137] multiqc                                            [DEBUG  ]  No samples found: kat
+[2023-01-27 18:03:39,140] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2023-01-27 18:03:39,143] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2023-01-27 18:03:39,146] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2023-01-27 18:03:39,149] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2023-01-27 18:03:39,152] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2023-01-27 18:03:39,155] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2023-01-27 18:03:39,158] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2023-01-27 18:03:39,161] multiqc                                            [DEBUG  ]  No samples found: malt
+[2023-01-27 18:03:39,164] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2023-01-27 18:03:39,167] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2023-01-27 18:03:39,170] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2023-01-27 18:03:39,173] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2023-01-27 18:03:39,176] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2023-01-27 18:03:39,182] multiqc.modules.fastq_screen.fastq_screen          [INFO   ]  Found 8 reports
+[2023-01-27 18:03:39,185] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2023-01-27 18:03:39,188] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2023-01-27 18:03:39,191] multiqc                                            [DEBUG  ]  No samples found: fastqc
+[2023-01-27 18:03:39,195] multiqc                                            [DEBUG  ]  No samples found: pychopper
+[2023-01-27 18:03:39,198] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2023-01-27 18:03:39,201] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2023-01-27 18:03:39,204] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2023-01-27 18:03:39,207] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2023-01-27 18:03:39,212] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2023-01-27 18:03:39,217] multiqc                                            [DEBUG  ]  No samples found: bclconvert
+[2023-01-27 18:03:39,220] multiqc                                            [DEBUG  ]  No samples found: interop
+[2023-01-27 18:03:39,225] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2023-01-27 18:03:39,231] multiqc                                            [DEBUG  ]  No samples found: flash
+[2023-01-27 18:03:39,236] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2023-01-27 18:03:39,239] multiqc                                            [DEBUG  ]  No samples found: optitype
+[2023-01-27 18:03:39,239] multiqc                                            [INFO   ]  Compressing plot data
+[2023-01-27 18:03:39,240] multiqc                                            [WARNING]  Deleting    : ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_report.html   (-f was specified)
+[2023-01-27 18:03:39,240] multiqc                                            [WARNING]  Deleting    : ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_data   (-f was specified)
+[2023-01-27 18:03:39,241] multiqc                                            [INFO   ]  Report      : ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_report.html
+[2023-01-27 18:03:39,241] multiqc                                            [INFO   ]  Data        : ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_data
+[2023-01-27 18:03:39,241] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpbofbv02x/multiqc_data' to 'ChIP_Pipe_Test/Fastq_Screens_Clean/MultiQC/multiqc_data'
+[2023-01-27 18:03:39,308] multiqc                                            [INFO   ]  MultiQC complete

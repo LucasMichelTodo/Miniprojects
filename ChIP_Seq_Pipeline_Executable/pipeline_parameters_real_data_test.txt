@@ -1,0 +1,174 @@
+###################################################################
+###                ChIP-Seq Pipeline: by Lucas MT               ###
+###################################################################
+
+# Fill in this form to run the pipeline. Lines starting with ">"
+# denote entries to fill. Entries must be written one per line.
+# Lines starting with '#' are for comments, they won't affect the script.
+# Empty lines won't affect the script either.
+
+########################## Raw Data ###############################
+
+# Take special care in the order of the samples!
+
+>Reads_folder
+/mnt/Disc4T/Projects/Cristina/Cristina_ChIP_All/Data/Raw_Data/
+
+# IPs and their corresponding inputs must be in the same order!
+>IPs_Read1s
+1.2B_me_read1.fastq.gz
+1.2B_ac_read1.fastq.gz
+10G_me_read1.fastq.gz
+10G_ac_read1.fastq.gz
+A7K9_me_read1.fastq.gz
+E5K9_me_read1.fastq.gz
+C2_ac_read1.fastq.gz
+
+>IPs_Read2s
+1.2B_me_read2.fastq.gz
+1.2B_ac_read2.fastq.gz
+10G_me_read2.fastq.gz
+10G_ac_read2.fastq.gz
+A7K9_me_read2.fastq.gz
+E5K9_me_read1.fastq.gz
+C2_ac_read2.fastq.gz
+C2_me_read1.fastq.gz
+
+>Inputs_Read1s
+1.2B_in_read1.fastq.gz
+1.2B_in_read1.fastq.gz
+10G_in_read1.fastq.gz
+10G_in_read1.fastq.gz
+A7K9_in_read1.fastq.gz
+E5K9_in_read1.fastq.gz
+C2_in_read1.fastq.gz
+C2_in_read1.fastq.gz
+
+>Inputs_Read2s
+1.2B_in_read2.fastq.gz
+1.2B_in_read2.fastq.gz
+10G_in_read2.fastq.gz
+10G_in_read2.fastq.gz
+A7K9_in_read2.fastq.gz
+E5K9_in_read2.fastq.gz
+C2_in_read2.fastq.gz
+C2_in_read2.fastq.gz
+
+# Must be in the same order as Reads files!
+>IPs_names
+1.2B_me
+1.2B_ac
+10G_me
+10G_ac
+A7K9_me
+E5K9_me
+C2_ac
+C2_me
+
+>Inputs_names
+1.2B_in
+1.2B_in
+10G_in
+10G_in
+A7K9_in
+E5K9_in
+C2_in
+C2_in
+
+########################### Others ################################
+
+>Out_folder
+/home/lucas/ISGlobal/Projects/ChIP_Seq_Pipe_Test
+
+# Number of processors to use
+>Threads
+8
+
+############################ Steps ################################
+
+# Define which steps of the pipeline to run. Set each entriy to
+# 'yes' or 'no'. Useful if the pipeline fails at some point and
+# has to be re-run (and you don't want to re-run all steps).
+
+# Reads Cleaning
+>Run_BBDUK
+yes
+
+# Quality Control
+>Run_FastQC
+yes
+
+# Screening of other organisms
+>Run_Fastq_Screen
+yes
+
+# Alignment
+>Run_Bowtie2
+yes
+
+# Remove Duplicates
+>Run_GATK
+yes
+
+# Make tracks 'Raw'
+>Run_BamCoverage
+yes
+
+# Make tracks Normalized by Input
+>Run_BamCompare
+yes
+
+
+###################### Program Parameters #########################
+
+#-------------------------- BBDUK ---------------------------------
+>BBDUK_path
+bbduk.sh
+
+>BBDUK_params
+ktrim=r k=22 mink=6 overwrite=t
+
+>BBDUK_ref
+/home/lucas/Programs/bbmap/resources/adapters.fa
+
+#-------------------------- FastQC --------------------------------
+>FastQC_path
+fastqc
+
+#----------------------- Fastq_Screen -----------------------------
+>Fastq_Screen_path
+fastq_screen
+
+#-------------------------- MultiQC -------------------------------
+>MultiQC_path
+multiqc
+
+#------------------------- Bowtie2 --------------------------------
+>Bowtie2_path
+bowtie2
+
+>Bowtie2_params
+--very-sensitive --local -5 4 -3 4 -I 50 -X 2000 -x /home/lucas/Programs/bowtie2-2.3.0-legacy/Pf3D7
+
+#------------------------- Samtools -------------------------------
+>Samtools_path
+samtools
+
+#------------------------ GATK Suite ------------------------------
+>GATK_path
+java -jar /home/lucas/Programs/gatk-4.1.9.0/gatk-package-4.1.9.0-local.jar
+
+#------------------------- DeepTools ------------------------------
+# 'Raw' tracks
+>BamCoverage_path
+bamCoverage
+
+>BamCoverage_params
+--outFileFormat bedgraph --normalizeUsing RPKM -bs 10 --smoothLength 200
+
+#Normalized by input tracks
+>BamCompare_path
+bamCompare
+
+>BamCompare_params
+--outFileFormat bedgraph --scaleFactorsMethod None --normalizeUsing RPKM -bs 10 --smoothLength 200 --pseudocount 10 -of bedgraph

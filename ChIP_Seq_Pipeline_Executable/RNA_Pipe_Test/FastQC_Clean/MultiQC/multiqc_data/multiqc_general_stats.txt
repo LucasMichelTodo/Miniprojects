@@ -1,0 +1,5 @@
+Sample	FastQC_mqc-generalstats-fastqc-percent_duplicates	FastQC_mqc-generalstats-fastqc-percent_gc	FastQC_mqc-generalstats-fastqc-avg_sequence_length	FastQC_mqc-generalstats-fastqc-percent_fails	FastQC_mqc-generalstats-fastqc-total_sequences
+rna_00015_NCV95_lib_18888AAD_GTCCGC_R1_001_subset10000_clean	11.889724310776941	26.0	141.98877192982457	27.27272727272727	9975.0
+rna_00015_NCV95_lib_18888AAD_GTCCGC_R2_001_subset10000_clean	2.436090225563916	25.0	142.89804511278194	18.181818181818183	9975.0
+rna_00016_NCV96_lib_18889AAD_GTGAAA_R1_001_subset10000_clean	1.3617703013918003	22.0	144.895764493842	18.181818181818183	9987.0
+rna_00016_NCV96_lib_18889AAD_GTGAAA_R2_001_subset10000_clean	1.1615099629518397	22.0	145.3557624912386	18.181818181818183	9987.0

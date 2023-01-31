@@ -4,7 +4,7 @@ import multiprocessing as mp
 
 ## Functions
 
-def subset_fastq(fastq, nreads):
+def subset_fastq(fastq, nreads, np):
     ext = '.'+'.'.join(fastq.split('.')[1:])
     out_fq = fastq.replace(ext, f'_subset{nreads}.fq')
 
@@ -14,8 +14,8 @@ def subset_fastq(fastq, nreads):
     with open(out_fq, 'w+') as outfile:
         outfile.write(subset)
 
-def subset_fastq_paired_parallel(fastq1, fastq2, nreads):
-    pool = mp.Pool(2)
+def subset_fastq_paired_parallel(fastq1, fastq2, nreads, np):
+    pool = mp.Pool(np)
     pool.starmap(subset_fastq, [[fastq1, nreads], [fastq2, nreads]])
 
 ## Calls
