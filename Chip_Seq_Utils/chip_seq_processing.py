@@ -38,7 +38,7 @@ def get_RPKMs_normInput(
         norm = 'RPKM',
         of = 'bedgraph',
         outfld = './',
-        pseudo = 1,
+        pseudo = 10,
         num_process = 8,
 ):
     outfld = outfld if outfld.endswith('/') else outfld + '/'

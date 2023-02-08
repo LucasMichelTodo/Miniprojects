@@ -78,7 +78,7 @@ C2_in
 ########################### Others ################################
 
 >Out_folder
-/home/lucas/ISGlobal/Projects/ChIP_Seq_Pipe_Test
+/home/lucas/ISGlobal/Projects/ChIP_Seq_Pipe_RealDataTest
 
 # Number of processors to use
 >Threads
